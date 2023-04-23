@@ -2,8 +2,8 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-file1="outputCommonLangRevised/cts_01-01-2000_01-01-2023.csv"
-file2="outputCommonLang/commons-lang-wRM_01-01-2000_01-01-2023.csv"
+file1="io/outputRevisedLatest/commons-lang/new.csv"
+file2="io/outputRevisedLatest/commons-lang/original.csv"
 
 with open(file1, 'r') as a, open(file2, 'r') as b:
     file1 = csv.reader(a, delimiter=',') 
@@ -11,13 +11,13 @@ with open(file1, 'r') as a, open(file2, 'r') as b:
 
     alter = []
     for each1 in file1:
-        match_found = False
-        for each2 in file2:
-            if each1[4] == each2[4]:
-                print([each1[1], each1[4]])
-                match_found = True
-                break
-        if not match_found:
-            alter.append([each1[1], each1[4]])
+        if each1[1] != '':
+            match_found = False
+            for each2 in file2:
+                if each1[1] == each2[1]:
+                    match_found = True
+                    break
+            if not match_found:
+                alter.append([each1[1]])
 
-    export_to_csv(headers=["Hash", "Testcase"], records=alter, filename="diff", dir="outputCommonLang")
+    export_to_csv(headers=["Hash"], records=alter, filename="diff", dir="io/outputRevisedLatest/commons-lang")

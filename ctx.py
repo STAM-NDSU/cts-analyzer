@@ -2,7 +2,7 @@ import pandas as pd
 import os.path
 from pathlib import Path
 
-INPUT_DIR = 'outputCts'
+INPUT_DIR = 'io/outputCts'
 OUTPUT_FILE = 'cts_analyzer.xlsx'
 
 # Keep in sync with .sh file

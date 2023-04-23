@@ -20,7 +20,7 @@ OUTPUT_DIRECTORY = os.getenv("OUTPUT_DIR", "../output")
 
 # Refactors file generated from Refactoring Minor(https://github.com/tsantalis/RefactoringMiner)
 # used to filter out false positive
-REFACTOR_FILE = "./files/" + os.getenv("REFACTOR_FILE", "refactorings.json")
+REFACTOR_FILE = "./io/files/" + os.getenv("REFACTOR_FILE", "refactorings.json")
 HANDLE_REFACTOR = os.getenv("HANDLE_REFACTOR", "false")
 HANDLE_MOVED = os.getenv("HANDLE_MOVED", "false")
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 import random
 
-INPUT_DIR = "outputRevisedLatest"
+INPUT_DIR = "io/outputRevisedLatest"
 OUTPUT_FILE = "survey.xlsx"
 files = [
     {

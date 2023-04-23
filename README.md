@@ -86,4 +86,5 @@ e65d6bebdba9df211b258fae996fe34b6eadb787
 ssss
 ```
 
-
+    public void testLANG_831(final TriFunction<String, TimeZone, Locale, DateParser> dpProvider) throws Exception {
+        testSdfAndFdp(dpProvider, "M E", "3  Tue", true);
