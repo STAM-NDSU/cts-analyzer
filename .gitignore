@@ -1,0 +1,9 @@
+venv
+.env
+.DS_Store
+.idea
+__pycache__
+.mypy_cache
+pyd*
+nohup.out
+io
