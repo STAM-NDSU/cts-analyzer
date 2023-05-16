@@ -18,12 +18,12 @@ import pandas as pd
 #     {"filename": "joda-time-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "joda-time-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# 3. PMD
-INPUT_DIR = 'io/outputRevisedLatest/pmd'
-OUTPUT_FILE = 'pmd_analyzer.xlsx'
-files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-    {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-        {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# # 3. PMD
+# INPUT_DIR = 'io/outputRevisedLatest/pmd'
+# OUTPUT_FILE = 'pmd_analyzer.xlsx'
+# files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+#     {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+#         {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 4. Gson
 # INPUT_DIR = 'io/outputRevisedLatest/gson'
@@ -46,12 +46,12 @@ files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step
 #     {"filename": "jfreechart-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "jfreechart-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# # 7. CTS
-# INPUT_DIR = 'io/outputRevisedLatest/cts'
-# OUTPUT_FILE = 'cts_analyzer.xlsx'
-# files = [{"filename": "cts-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-#     {"filename": "cts-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-#         {"filename": "cts-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# 7. CTS
+INPUT_DIR = 'io/outputRevisedLatest/cts'
+OUTPUT_FILE = 'cts_analyzer.xlsx'
+files = [{"filename": "cts-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+    {"filename": "cts-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+        {"filename": "cts-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 def parse_filename(file, ext=True):
     if ext:

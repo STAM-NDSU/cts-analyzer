@@ -88,3 +88,19 @@ ssss
 
     public void testLANG_831(final TriFunction<String, TimeZone, Locale, DateParser> dpProvider) throws Exception {
         testSdfAndFdp(dpProvider, "M E", "3  Tue", true);
+
+
+public void testAddElementRolling() {
+		ra = new FixedDoubleArray(6);
+
+		super.testAddElementRolling();
+
+		assertEquals( "FixedDoubleArray should have 6 size internal storage", 
+								6, ((FixedDoubleArray) ra).internalArray.length);		
+	}
+
+    public void testAddElementRolling() {
+		super.testAddElementRolling();
+		assertTrue( "Even though there are only 6 element, internal storage should be less than 2.5 times the number of elements", 
+			((ExpandableDoubleArray) da).getInternalLength() < ((int) 6 * 2.5) );
+	}

@@ -70,10 +70,11 @@ def get_removed_test_functions2(file_changes: str) -> List:
         raw_removed_testcases = [x.group() for x in matched_grp]
 
         for each in raw_removed_testcases:
+            # print(each, "removed 2")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             removed_testcases.append(function_name)
-            # print(function_name, "removed 2")
+            print(function_name, "removed 2")
 
         return removed_testcases
     else:

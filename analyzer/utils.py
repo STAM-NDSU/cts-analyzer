@@ -26,7 +26,9 @@ def create_dir(directory: str) -> None:
 
 # Strip characters polluting function prototype such as '+', '-', '{' and ' '
 def cleanup_function_prototype(func_prototype: str) -> str:
-    return func_prototype.translate(func_prototype.maketrans("", "", "+-{")).strip()
+    c = func_prototype.translate(func_prototype.maketrans("", "", "+-{")).strip()
+    c = c.replace("@Test(", "")
+    return c
 
 
 # Strip characters polluting function name like '(', ')' and ' '
@@ -37,7 +39,9 @@ def cleanup_function_name(func_name:str) -> str:
 # Return name of function from function prototype
 def get_function_name_from_prototype(function_prototype):
     func_name_search = re.search(Pattern.FUNCTION_NAME.value, function_prototype)
-    func_name = cleanup_function_name(func_name_search.group())
+    func_name =''
+    if func_name_search:
+        func_name = cleanup_function_name(func_name_search.group())
     return func_name
 
 # Convert datetime to local timezone
