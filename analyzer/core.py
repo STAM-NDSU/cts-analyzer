@@ -9,9 +9,9 @@ from . import config
 #  Analyze commit files to detect tests cases(functions and assertions) removed
 def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test_cases_in_commit: List) -> Collection[Tuple[str, bool]]:
     file_changes = file.diff
-    candidate_removed_test_functions = get_removed_test_functions(file_changes)
-    candidate_added_test_functions = get_added_test_functions(file_changes)
-    refactored_test_functions = get_refactored_test_functions(file_changes)
+    candidate_removed_test_functions = get_removed_test_functions(file_changes, file)
+    candidate_added_test_functions = get_added_test_functions(file_changes, file)
+    refactored_test_functions = get_refactored_test_functions(file_changes, file)
     removed_test_functions = []
 
     # Added test functions across modified files in a commit
@@ -43,38 +43,37 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
 
 
 #  Get list of removed test functions from file changes
-def get_removed_test_functions(file_changes: str) -> List:
+def get_removed_test_functions(file_changes: str, file) -> List:
     removed_testcases = []
     matched_grp = re.finditer(Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE.value, file_changes)
     if matched_grp:
         raw_removed_testcases = [x.group() for x in matched_grp]
-
+        
         for each in raw_removed_testcases:
+            print(each, file.filename, "removed")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
-            # print(function_name, "removed")
+            print(function_name, file.filename, "removed")
             removed_testcases.append(function_name)
 
-        removed_testcases2 = get_removed_test_functions2(file_changes)
-        
-        
+        removed_testcases2 = get_removed_test_functions2(file_changes, file)
         return list({*removed_testcases2, *removed_testcases})
     else:
         return  []
 
 #  Get list of removed test functions from file changes
-def get_removed_test_functions2(file_changes: str) -> List:
+def get_removed_test_functions2(file_changes: str, file) -> List:
     removed_testcases = []
     matched_grp = re.finditer(Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE2.value, file_changes)
     if matched_grp:
         raw_removed_testcases = [x.group() for x in matched_grp]
 
         for each in raw_removed_testcases:
-            # print(each, "removed 2")
+            print(each, file.filename, "removed 2")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             removed_testcases.append(function_name)
-            print(function_name, "removed 2")
+            print(function_name, file.filename, "removed 2")
 
         return removed_testcases
     else:
@@ -82,39 +81,84 @@ def get_removed_test_functions2(file_changes: str) -> List:
 
 
 #  Get refactored test functions from file changes
-def get_refactored_test_functions(file_changes: str) -> List:
+def get_refactored_test_functions(file_changes: str, file) -> List:
     refactored_testcases = []
     matched_grp = re.finditer(Pattern.REFACTORED_TEST_FUNCTION_PROTOTYPE.value, file_changes)
     if matched_grp:
         raw_refactored_testcases = [x.group() for x in matched_grp]
-
+        
         for each in raw_refactored_testcases:
+            print(each, file.filename, "refactored")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             refactored_testcases.append(function_name)
-
-        return raw_refactored_testcases
+            print(function_name, file.filename, "refactored")
+        
+        refactored_testcases2 = get_refactored_test_functions2(file_changes, file)
+        
+        return list({*refactored_testcases2, *refactored_testcases})
     else:
         return []
 
+#  Get list of refactored test functions from file changes
+def get_refactored_test_functions2(file_changes: str, file) -> List:
+    refactored_testcases = []
+    matched_grp = re.finditer(Pattern.REFACTORED_TEST_FUNCTION_PROTOTYPE2.value, file_changes)
+    if matched_grp:
+        raw_refactored_testcases = [x.group() for x in matched_grp]
 
+        for each in raw_refactored_testcases:
+            print(each, file.filename, "refactored 2")
+            function_prototype = cleanup_function_prototype(each)
+            function_name = get_function_name_from_prototype(function_prototype)
+            refactored_testcases.append(function_name)
+            print(function_name, file.filename, "refactored 2")
+
+        return refactored_testcases
+    else:
+        return []
+    
 #  Get added test functions from file changes
-def get_added_test_functions(file_changes: str) -> List:
+def get_added_test_functions(file_changes: str, file) -> List:
     added_testcases = []
     matched_grp = re.finditer(Pattern.ADDED_TEST_FUNCTION_PROTOTYPE.value, file_changes)
     if matched_grp:
+        
         raw_added_testcases = [x.group() for x in matched_grp]
+        
         for each in raw_added_testcases:
+            print(each, file.filename, "added")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             added_testcases.append(function_name)
-            # print(function_name, "added")
-        return added_testcases
+            print(function_name, file.filename, "added")
+            
+        added_testcases2 = get_added_test_functions2(file_changes, file)
+        
+        return list({*added_testcases2, *added_testcases})
     else:
         return []
 
+#  Get added test functions from file changes
+def get_added_test_functions2(file_changes: str, file) -> List:
+    added_testcases = []
+    matched_grp = re.finditer(Pattern.ADDED_TEST_FUNCTION_PROTOTYPE2.value, file_changes)
+    if matched_grp:
+        
+        raw_added_testcases = [x.group() for x in matched_grp]
+       
+        for each in raw_added_testcases:
+            print(each, file.filename, "added2")
+            function_prototype = cleanup_function_prototype(each)
+            function_name = get_function_name_from_prototype(function_prototype)
+            added_testcases.append(function_name)
+            print(function_name, file.filename, "added2")
+        return added_testcases
+    else:
+        return []
+    
 #  Get removed test assertions from file changes
-def get_removed_test_assertions(file_changes: str) -> List:
+def get_removed_test_assertions(file_changes: str, file) -> List:
     removed_assertions = []
     matched_grp = re.finditer(Pattern.REMOVED_ASSERT_FUNCTION_PROTOTYPE.value, file_changes)
     if matched_grp:

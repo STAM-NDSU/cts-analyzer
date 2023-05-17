@@ -28,6 +28,7 @@ def create_dir(directory: str) -> None:
 def cleanup_function_prototype(func_prototype: str) -> str:
     c = func_prototype.translate(func_prototype.maketrans("", "", "+-{")).strip()
     c = c.replace("@Test(", "")
+    c = c.replace("@SuppressWarnings(", "")
     return c
 
 
