@@ -27,9 +27,9 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
             # becomes removed from one file and added in another file; false positive
             if candidate_removed_test_function in all_added_test_cases_in_commit:
                 continue
-
+            print(candidate_removed_test_function, "candidate")
         removed_test_functions.append(candidate_removed_test_function)
-
+    print(len(removed_test_functions), "total candidate")
     result = {}
     # Deleted tests in a modified file having no added tests is of HIGH confidence
     if len(candidate_added_test_functions) == 0:

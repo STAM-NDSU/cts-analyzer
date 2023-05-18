@@ -6,7 +6,7 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles/joda-time"
+IO_DIR = "io/validationFiles/pmd"
 OUTPUT_FILE = "validation_diff"
 
 base_columns=[
@@ -27,8 +27,8 @@ columns=[
             "Suraj Comments",
         ]
 
-step3_file = "io/outputRevisedLatest2/joda-time/joda-time_hydrated_step_3.csv"
-validated_file = "io/validationFiles/joda-time/joda-time_validation_hydrated.csv"
+step3_file = "io/outputRevisedLatest2/pmd/pmd_hydrated_step_3.csv"
+validated_file = "io/validationFiles/pmd/pmd_validation_hydrated.csv"
 
 
 # writer = pd.ExcelWriter(f"{IO_DIR}/{OUTPUT_FILE}", engine="xlsxwriter")

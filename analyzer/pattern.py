@@ -10,10 +10,10 @@ class Pattern(str, Enum):
     REMOVED_TEST_FUNCTION_PROTOTYPE2 = "-([ \t]*)@Test(.*?)([ \t\n\r]*)(-([ \t]*)@(.*?)([ \t\n\r]*))*-([ \t]*)(public)([ \t]*)([a-zA-Z0-9<>._?, ]+)([ \t]*)([a-zA-Z0-9_]+)" \
                                       "([ \t]*)\\("
     REFACTORED_TEST_FUNCTION_PROTOTYPE = "-([ \t]*)(public)([ \t]*)([a-zA-Z0-9<>._?, ]+)([ \t]*)test([a-zA-Z0-9_]+)" \
-                                            "([ \t]*)\\([a-zA-Z0-9<>\\[\\]._?, \n]*\\)([ \t\n\r]*)([a-zA-Z0-9_ ,\\-\t\n\r]*)\\{" \
+                                            "([ \t]*)\\([a-zA-Z0-9<>\\[\\]._?, \n]*\\)([ \t\n\r]*)([a-zA-Z0-9_ ,\\-\t\n\r]*)\\{?" \
                                             "([a-zA-Z0-9_ ,\\-\t\n\r]*)\\+"
     REFACTORED_TEST_FUNCTION_PROTOTYPE2 = "-([ \t]*)@Test(.*?)([ \t\n\r]*)(-([ \t]*)@(.*?)([ \t\n\r]*))*-([ \t]*)(public)([ \t]*)([a-zA-Z0-9<>._?, ]+)([ \t]*)([a-zA-Z0-9_]+)" \
-                                      "([ \t]*)\\([a-zA-Z0-9<>\\[\\]._?, \n]*\\)([ \t\n\r]*)([a-zA-Z0-9_ ,\\-\t\n\r]*)\\{" \
+                                      "([ \t]*)\\([a-zA-Z0-9<>\\[\\]._?, \n]*\\)([ \t\n\r]*)([a-zA-Z0-9_ ,\\-\t\n\r]*)\\{?" \
                                     "([a-zA-Z0-9_ ,\\-\t\n\r]*)\\+"
     ADDED_TEST_FUNCTION_PROTOTYPE = "\\+([ \t]*)(public)([ \t]*)([a-zA-Z0-9<>._?, ]+)([ \t]*)test([a-zA-Z0-9_]+)" \
                                     "([ \t]*)\\("

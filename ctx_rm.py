@@ -4,12 +4,12 @@ import pandas as pd
 
 # Customize for required projects
 
-# # 1. CommonsLang
-# INPUT_DIR = 'io/outputRevisedLatest2/commons-lang'
-# OUTPUT_FILE = 'commons_lang_analyzer.xlsx'
-# files = [{"filename": "commons-lang-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-#     {"filename": "commons-lang-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-#         {"filename": "commons-lang-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# 1. CommonsLang
+INPUT_DIR = 'io/outputRevisedLatest2/commons-lang'
+OUTPUT_FILE = 'commons_lang_analyzer.xlsx'
+files = [{"filename": "commons-lang-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+    {"filename": "commons-lang-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+        {"filename": "commons-lang-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 2. Joda Time
 # INPUT_DIR = 'io/outputRevisedLatest2/joda-time'
@@ -18,12 +18,12 @@ import pandas as pd
 #     {"filename": "joda-time-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "joda-time-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# 3. PMD
-INPUT_DIR = 'io/outputRevisedLatest2/pmd'
-OUTPUT_FILE = 'pmd_analyzer.xlsx'
-files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-    {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-        {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# # 3. PMD
+# INPUT_DIR = 'io/outputRevisedLatest2/pmd'
+# OUTPUT_FILE = 'pmd_analyzer.xlsx'
+# files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+#     {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+#         {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 4. Gson
 # INPUT_DIR = 'io/outputRevisedLatest2/gson'
