@@ -8,7 +8,7 @@ import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 IO_DIR = "io/validationFiles"
-PROJECT = "pmd"
+PROJECT = "joda-time"
 OUTPUT_FILE = "validation_diff_done_dehydrated"
 files = [
     {

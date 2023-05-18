@@ -1,3 +1,5 @@
+# customized for jodatime
+
 import os.path
 from pathlib import Path
 import pandas as pd
@@ -25,6 +27,8 @@ for file_index, filepath in enumerate(parse_files(files)):
         df = pd.read_csv(f"{full_file_path}")
         
         df = df.iloc[:, 0:11]
+        all_data = []
+        
         prev = {
             "DATETIME": None,
             "HASH": None,
@@ -116,6 +120,23 @@ for file_index, filepath in enumerate(parse_files(files)):
                 # else:
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
              
-                    
-        df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}.csv", index=False)
+            # new_df = pd.concat([new_df,row])
+            data = [row["DATETIME"],row["HASH"], row["COMMIT MSG"], row["FILENAME"], row["REMOVED TEST CASE"], row["CONFIDENCE"], row["Manual Validation"], row["Ajay Manual Validation"], row["Suraj Manual Validation"], row["Ajay Comments"], row["Suraj Comments"]]
+            all_data.append(data)
+           
+            # new_df.append(row, ignore_index=True)
+            # if index == 2 or index == 3:
+            #     print(new_df.loc[index]) 
+        new_df = pd.DataFrame(data=all_data, columns=[ "DATETIME",
+            "HASH",
+            "COMMIT MSG",
+            "FILENAME",
+            "REMOVED TEST CASE",
+            "CONFIDENCE",
+            "Manual Validation",
+            "Ajay Manual Validation",
+            "Suraj Manual Validation",
+            "Ajay Comments",
+            "Suraj Comments"])          
+        new_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}.csv", index=False)
 

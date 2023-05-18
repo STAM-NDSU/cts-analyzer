@@ -6,7 +6,7 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles/pmd"
+IO_DIR = "io/validationFiles/joda-time"
 OUTPUT_FILE = "validation_diff"
 
 base_columns=[
@@ -27,11 +27,11 @@ columns=[
             "Suraj Comments",
         ]
 
-step3_file = "io/outputRevisedLatest2/pmd/pmd_hydrated_step_3.csv"
-validated_file = "io/validationFiles/pmd/pmd_validation_hydrated.csv"
+step3_file = "io/outputRevisedLatest2/joda-time/joda-time_hydrated_step_3.csv"
+validated_file = "io/validationFiles/joda-time/joda-time_validation_hydrated.csv"
 
 
-writer = pd.ExcelWriter(f"{IO_DIR}/{OUTPUT_FILE}", engine="xlsxwriter")
+# writer = pd.ExcelWriter(f"{IO_DIR}/{OUTPUT_FILE}", engine="xlsxwriter")
 with open(step3_file, "r") as a, open(validated_file, "r") as b:
     step3_file = list(csv.reader(a, delimiter=","))
     validated_file = list(csv.reader(b, delimiter=","))
@@ -40,7 +40,9 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
     
     print(len(step3_file), len(validated_file))
      
-    print(step3_file[0], validated_file[0])
+    print(step3_file[0][1])
+    print("__________")
+    print(validated_file[0][1])
     # diff
     alter = []
     matched = []
@@ -48,7 +50,7 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
         match_found = False
 
         all_validated_and_related = list(filter(lambda each: each[1] == step3_record[1], validated_file))
-        # print(all_validated_and_related)
+        print(all_validated_and_related)
         for validated_record in all_validated_and_related:
             if step3_record[3] == validated_record[3] and step3_record[4] == validated_record[4]:
                 match_found = True
@@ -63,11 +65,11 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
         alter,
         columns=base_columns,
     )
-    alter_df.to_excel(writer, sheet_name="leftovers", index=False)
+    # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
     alter_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_leftovers.csv", index=False)
     
     matched_df = pd.DataFrame(matched, columns=columns)
-    matched_df.to_excel(writer, sheet_name="done", index=False)
+    # matched_df.to_excel(writer, sheet_name="done", index=False)
     matched_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_done.csv", index=False)
     
-writer.close()
+# writer.close()

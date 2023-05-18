@@ -7,19 +7,19 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
 IO_DIR = "io/outputRevisedLatest2"
-PROJECT = "pmd"
+PROJECT = "commons-lang"
 
 """ Step 1"""
-OUTPUT_FILE = "pmd_hydrated_step"
+OUTPUT_FILE = "commons-lang_hydrated_step"
 files = [
     {
-        "filename": "pmd-step1_01-01-2000_01-01-2023",
+        "filename": "commons-lang-step1_01-01-2000_01-01-2023",
     },
     {
-        "filename": "pmd-step2_01-01-2000_01-01-2023",
+        "filename": "commons-lang-step2_01-01-2000_01-01-2023",
     },
     {
-        "filename": "pmd-step3_01-01-2000_01-01-2023",
+        "filename": "commons-lang-step3_01-01-2000_01-01-2023",
     },
 ]
 

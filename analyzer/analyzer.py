@@ -62,7 +62,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         commits = Repository(repo_url, only_in_branch=branch,
                             only_modifications_with_file_types=config.JAVA_FILE_EXT,
                             since=since, to=to,
-                            #  single="8474131f5bd11c3851de4ea40e3041b60c8fe22c",  # use it only for debugging
+                            # single="8474131f5bd11c3851de4ea40e3041b60c8fe22c",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
         

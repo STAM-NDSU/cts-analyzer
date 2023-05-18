@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 IO_DIR = "io/validationFiles"
-PROJECT = "pmd"
+PROJECT = "joda-time"
 OUTPUT_FILE = "validation_diff_leftovers_dehydrated"
 files = [{"Filename": "validation_diff_leftovers"}]
 

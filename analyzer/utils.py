@@ -27,8 +27,8 @@ def create_dir(directory: str) -> None:
 # Strip characters polluting function prototype such as '+', '-', '{' and ' '
 def cleanup_function_prototype(func_prototype: str) -> str:
     c = func_prototype.translate(func_prototype.maketrans("", "", "+-{")).strip()
-    c = c.replace("@Test(", "")
-    c = c.replace("@SuppressWarnings(", "")
+    # c = c.replace("@Test(", "")
+    # c = c.replace("@SuppressWarnings(", "")
     return c
 
 

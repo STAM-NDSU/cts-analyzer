@@ -21,5 +21,6 @@ class Pattern(str, Enum):
                                       "([ \t]*)\\("                                
     REMOVED_ASSERT_FUNCTION_PROTOTYPE = "-([ \t]*)assert([a-zA-Z0-9_]+) *\\([a-zA-Z0-9<>\\[\\]._?, \t\n]*\\)"
     FUNCTION_NAME_AND_SIGNATURE = "([a-zA-Z0-9_]+) *\\([a-zA-Z0-9<>\\[\\]._?, \n]*\\)"
-    FUNCTION_NAME = "([a-zA-Z0-9_]+)([ \t]*)\\("
+    FUNCTION_NAME = " ([a-zA-Z0-9_]+)([ \t]*)\\("
+    # FUNCTION_NAME = "(?<!@)([a-zA-Z0-9_]+)([ \t]*)\\("
     FUNCTION_ARGUMENTS = "\\(.*\\)"
