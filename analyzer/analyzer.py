@@ -176,6 +176,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                                     # Toggle commit included flag
                                     commit_included = True
                                 # Compute key stats
+                                analyzer_global.total_commit_test_removal += 1
                                 if confidence == "HIGH":
                                     analyzer_global.total_high_conf_test_removal += 1
                                 else:
