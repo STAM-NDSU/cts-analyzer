@@ -28,11 +28,15 @@ class AnalyzerGlobal:
         self.commits = None
         self.current_commit=None
         self.results = []
-        self.total_commit = 0
-        self.total_commit_test_removal = 0
+        self.total_commits = 0
+        self.total_test_removal_commits = 0
         self.total_high_conf_test_removal = 0
         self.total_low_conf_test_removal = 0
         
+    @property
+    def total_testcases(self):
+        return len(self.results) 
+    
     def __repr__(self) -> str:
         return f"<since={self.since} to={self.to} commit={self.current_commit.hash}"
        
@@ -50,11 +54,13 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         results[0].insert(6, "Total Commits")
         results[0].insert(7, analyzer_global.total_commits)
         results[1].insert(6, "Total Commits Test Removal")
-        results[1].insert(7, analyzer_global.total_commit_test_removal)
+        results[1].insert(7, analyzer_global.total_test_removal_commits)
         results[2].insert(6, "Total High")
         results[2].insert(7, analyzer_global.total_high_conf_test_removal)
         results[3].insert(6, "Total Low")
         results[3].insert(7, analyzer_global.total_low_conf_test_removal)
+        results[4].insert(6, "Total Testcases")
+        results[4].insert(7, analyzer_global.total_testcases)
         
     def traverse_commits(analyzer_global):
         since= analyzer_global.since
@@ -65,7 +71,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                             only_modifications_with_file_types=config.JAVA_FILE_EXT,
                             since=since, to=to,
                             only_no_merge=True,
-                            # single="937eb90a705bf7a2e009c4a61ef229e2709e98fa",  # use it only for debugging
+                            # single="8ce2128585be00b451355dd616fc995ddb0be741",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
         
@@ -76,7 +82,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         while(not is_completed):
             commit = next(commits, None)
             if commit:  
-                analyzer_global.total_commit +=1
+                analyzer_global.total_commits +=1
                 # Update current_commit pointer; to skip the corrupted ones
                 analyzer_global.current_commit = commit
                 analyzer_global.since = commit.committer_date
@@ -105,6 +111,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                         file, all_added_test_cases_in_commit)
                     all_removed_test_cases_file_data["file_index"] = file_idx
                     all_removed_test_cases_file_data["filename"] = filename
+                    all_removed_test_cases_file_data["filepath"] = file.old_path
                     all_removed_test_cases_in_commit.append(all_removed_test_cases_file_data)
 
                 # Prune moved and refactored test files
@@ -115,12 +122,12 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                         continue
                     
                     for removed_test_case in removed_test_cases_in_file:
-                        # Filter out moved test cases(across files in commit) from removed test cases
+                        # Filter out moved test cases(across files in commit) from removed test cases [Hypothesis 3]
                         if config.HANDLE_MOVED == "true":
                             if removed_test_case in all_added_test_cases_in_commit:
                                 temp_all_removed_test_cases_in_commit[index]["removed_test_functions"].remove(removed_test_case)
 
-                        # Filter our refactored test cases
+                        # Filter our refactored test cases [ suggested by RefMiner]
                         if config.HANDLE_REFACTOR == "true":
                             # refactors_commit_data = list(filter(lambda each: each["sha1"] == commit.hash, repo_refactors))[0]
                             refactors_commit_data = next((each for each in repo_refactors if each["sha1"] == commit.hash), None)
@@ -128,9 +135,13 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                             # print("no", refactor["refactors_commit"])
                             for refactor in refactors_commit:
                                 for each in refactor["leftSideLocations"]:
+                                    # Check if removed test function is in refactored codeElement of same file path
+                                    # print(each["filePath"])
+                                    # print(temp_all_removed_test_cases_in_commit[index]["filepath"])
                                     if each["codeElement"] and removed_test_case in each["codeElement"] \
                                             and removed_test_case in \
-                                            temp_all_removed_test_cases_in_commit[index]["removed_test_functions"]:
+                                            temp_all_removed_test_cases_in_commit[index]["removed_test_functions"] \
+                                            and temp_all_removed_test_cases_in_commit[index]["filepath"] == each["filePath"]:
                                         temp_all_removed_test_cases_in_commit[index]["removed_test_functions"].remove(
                                             removed_test_case)
 
@@ -151,7 +162,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                                 data = [*commit_master_data, *data]
 
                                 # Compute key stats
-                                analyzer_global.total_commit_test_removal += 1
+                                analyzer_global.total_test_removal_commits += 1
                                 if confidence == "HIGH":
                                     analyzer_global.total_high_conf_test_removal += 1
                                 else:
@@ -180,7 +191,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                                     # Toggle commit included flag
                                     commit_included = True
                                 # Compute key stats
-                                analyzer_global.total_commit_test_removal += 1
+                                analyzer_global.total_test_removal_commits += 1
                                 if confidence == "HIGH":
                                     analyzer_global.total_high_conf_test_removal += 1
                                 else:

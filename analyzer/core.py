@@ -54,32 +54,36 @@ def get_removed_test_functions(file_changes: str, file) -> List:
             # print(each, file.filename, "removed")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
-            # print(function_name, file.filename, "removed")
+            print(function_name, file.filename, "removed")
             removed_testcases.append(function_name)
-
-        removed_testcases_lizard = get_removed_test_functions_lizard(file_changes, file)
+        
         removed_testcases2 = get_removed_test_functions2(file_changes, file)
-        return list({*removed_testcases, *removed_testcases_lizard, *removed_testcases2})
+        all_removed_testcases_before_lizard = list({*removed_testcases, *removed_testcases2})
+        removed_testcases_lizard = get_removed_test_functions_lizard(file_changes, file, all_removed_testcases_before_lizard)
+        all_removed_testcases = list({*all_removed_testcases_before_lizard, *removed_testcases_lizard})
+        print(all_removed_testcases, "all removed")
+        return all_removed_testcases
     else:
         return  []
 
 
 #  Get list of removed test functions from file changes using lizard
-def get_removed_test_functions_lizard(file_changes: str, file) -> List:
+def get_removed_test_functions_lizard(file_changes: str, file, all_removed_testcases_before_lizard) -> List:
     # print(file.change_type)
     # print(file.old_path)
     # print(file.new_path)
     # print("_____")
     methods = []
-    methods_before = []
     removed_methods = []
     for x in file.methods:
-        methods.append(x.name)
+        methods.append({"name": x.name, "long_name": x.long_name})
     for x in file.methods_before:
-        methods_before.append(x.name)
-        if x.name not in methods:
-            function_name = get_test_function_name_from_prototype(x.name)
-            removed_methods.append(function_name)
+        match_found = list(filter(lambda each: each["name"] == x.name, methods))
+        if not match_found:
+            function_name = get_test_function_name_from_prototype(x.long_name)
+            if function_name and function_name not in all_removed_testcases_before_lizard:
+                print(function_name, "removed lizard")
+                removed_methods.append(function_name)
 
     return removed_methods
     
@@ -156,10 +160,29 @@ def get_added_test_functions(file_changes: str, file) -> List:
             # print(function_name, file.filename, "added")
             
         added_testcases2 = get_added_test_functions2(file_changes, file)
-        
-        return list({*added_testcases2, *added_testcases})
+        all_added_testcases_before_lizard = list({*added_testcases, *added_testcases2})
+        added_testcases_lizard = get_added_test_functions_lizard(file_changes, file, all_added_testcases_before_lizard)
+        all_added_testcases = list({*all_added_testcases_before_lizard, *added_testcases_lizard})
+        print(all_added_testcases, "all added")
+        return all_added_testcases
     else:
         return []
+
+
+def get_added_test_functions_lizard(file_changes: str, file, all_added_testcases_before_lizard) -> List:
+    methods_before = []
+    added_methods = []
+    for x in file.methods_before:
+        methods_before.append({"name": x.name, "long_name": x.long_name})
+    for x in file.methods:
+        match_found = list(filter(lambda each: each["name"] == x.name, methods_before))
+        if not match_found:
+            function_name = get_test_function_name_from_prototype(x.long_name)
+            if function_name and function_name not in all_added_testcases_before_lizard:
+                # print(function_name, "added lizard")
+                added_methods.append(function_name)
+
+    return added_methods
 
 #  Get added test functions from file changes
 def get_added_test_functions2(file_changes: str, file) -> List:

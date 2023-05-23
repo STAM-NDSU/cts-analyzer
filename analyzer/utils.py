@@ -39,7 +39,7 @@ def cleanup_function_name(func_name: str) -> str:
 
 # Return name of function from function prototype
 def get_function_name_from_prototype(function_prototype):
-    func_name_search = re.search(Pattern.FUNCTION_NAME.value, function_prototype)
+    func_name_search = re.search(Pattern.FUNCTION_NAME_WITH_SPACE_BEFORE.value, function_prototype)
     func_name = ""
     if func_name_search:
         func_name = cleanup_function_name(func_name_search.group())
@@ -52,6 +52,10 @@ def get_test_function_name_from_prototype(function_prototype):
     if func_name_search:
         func_name = cleanup_function_name(func_name_search.group())
     return func_name
+
+# Return test function name from function prototype given by lizard
+def get_test_function_name_from_prototype_lizard(function_prototype):
+    return function_prototype.split("::")[-1]
 
 # Convert datetime to local timezone
 def format_commit_datetime(commit_date: datetime) -> str:
