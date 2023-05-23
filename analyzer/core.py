@@ -1,36 +1,14 @@
 import re
 from typing import List, Collection, Tuple
 from pydriller.domain.commit import ModifiedFile
-from .utils import cleanup_function_prototype, get_function_name_from_prototype
+from .utils import cleanup_function_prototype, get_function_name_from_prototype, get_test_function_name_from_prototype
 from .pattern import Pattern
 from . import config
 
 
 #  Analyze commit files to detect tests cases(functions and assertions) removed
 def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test_cases_in_commit: List) -> Collection[Tuple[str, bool]]:
-    file_changes = file.diff
-    # print(file.change_type)
-    # print(file.old_path)
-    # print(file.new_path)
-    # print("_____")
-    # methods = []
-    # for x in file.methods:
-    #     methods.append(x.name)
-        
-    # print("_____")
-    # methods_before = []
-    # removed_methods = []
-    # for x in file.methods_before:
-    #     methods_before.append(x.name)
-    #     if x.name not in methods:
-    #         removed_methods.append(x.name)
-    # print("_____")
-    # print(removed_methods)
-    # changed_methods = []
-    # for x in file.changed_methods:
-    #     changed_methods.append(x.name)
-    # print("_____")
-    
+    file_changes = file.diff  
     candidate_removed_test_functions = get_removed_test_functions(file_changes, file)
     candidate_added_test_functions = get_added_test_functions(file_changes, file)
     refactored_test_functions = get_refactored_test_functions(file_changes, file)
@@ -68,6 +46,7 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
 def get_removed_test_functions(file_changes: str, file) -> List:
     removed_testcases = []
     matched_grp = re.finditer(Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE.value, file_changes)
+    
     if matched_grp:
         raw_removed_testcases = [x.group() for x in matched_grp]
         
@@ -78,11 +57,32 @@ def get_removed_test_functions(file_changes: str, file) -> List:
             # print(function_name, file.filename, "removed")
             removed_testcases.append(function_name)
 
+        removed_testcases_lizard = get_removed_test_functions_lizard(file_changes, file)
         removed_testcases2 = get_removed_test_functions2(file_changes, file)
-        return list({*removed_testcases2, *removed_testcases})
+        return list({*removed_testcases, *removed_testcases_lizard, *removed_testcases2})
     else:
         return  []
 
+
+#  Get list of removed test functions from file changes using lizard
+def get_removed_test_functions_lizard(file_changes: str, file) -> List:
+    # print(file.change_type)
+    # print(file.old_path)
+    # print(file.new_path)
+    # print("_____")
+    methods = []
+    methods_before = []
+    removed_methods = []
+    for x in file.methods:
+        methods.append(x.name)
+    for x in file.methods_before:
+        methods_before.append(x.name)
+        if x.name not in methods:
+            function_name = get_test_function_name_from_prototype(x.name)
+            removed_methods.append(function_name)
+
+    return removed_methods
+    
 #  Get list of removed test functions from file changes
 def get_removed_test_functions2(file_changes: str, file) -> List:
     removed_testcases = []

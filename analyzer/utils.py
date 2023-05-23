@@ -33,14 +33,22 @@ def cleanup_function_prototype(func_prototype: str) -> str:
 
 
 # Strip characters polluting function name like '(', ')' and ' '
-def cleanup_function_name(func_name:str) -> str:
+def cleanup_function_name(func_name: str) -> str:
     return func_name.translate(func_name.maketrans("", "", "()")).strip()
 
 
 # Return name of function from function prototype
 def get_function_name_from_prototype(function_prototype):
     func_name_search = re.search(Pattern.FUNCTION_NAME.value, function_prototype)
-    func_name =''
+    func_name = ""
+    if func_name_search:
+        func_name = cleanup_function_name(func_name_search.group())
+    return func_name
+
+# Return test function name from function prototype
+def get_test_function_name_from_prototype(function_prototype):
+    func_name_search = re.search(Pattern.TEST_FUNCTION_NAME.value, function_prototype)
+    func_name = ""
     if func_name_search:
         func_name = cleanup_function_name(func_name_search.group())
     return func_name
