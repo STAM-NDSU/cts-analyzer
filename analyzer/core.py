@@ -9,6 +9,18 @@ from . import config
 #  Analyze commit files to detect tests cases(functions and assertions) removed
 def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test_cases_in_commit: List) -> Collection[Tuple[str, bool]]:
     file_changes = file.diff
+    print(file.change_type)
+    print(file.old_path)
+    print(file.new_path)
+    # print("_____")
+    for x in file.methods:
+        print(x.long_name)
+    # print("_____")
+    # for x in file.methods_before:
+    #     print(x.name)
+    # print("_____")
+    # for x in file.changed_methods:
+    #     print(x.name)
     candidate_removed_test_functions = get_removed_test_functions(file_changes, file)
     candidate_added_test_functions = get_added_test_functions(file_changes, file)
     refactored_test_functions = get_refactored_test_functions(file_changes, file)
@@ -27,9 +39,9 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
             # becomes removed from one file and added in another file; false positive
             if candidate_removed_test_function in all_added_test_cases_in_commit:
                 continue
-            print(candidate_removed_test_function, "candidate")
+            # print(candidate_removed_test_function, "candidate")
         removed_test_functions.append(candidate_removed_test_function)
-    print(len(removed_test_functions), "total candidate")
+    # print(len(removed_test_functions), "total candidate")
     result = {}
     # Deleted tests in a modified file having no added tests is of HIGH confidence
     if len(candidate_added_test_functions) == 0:
@@ -50,10 +62,10 @@ def get_removed_test_functions(file_changes: str, file) -> List:
         raw_removed_testcases = [x.group() for x in matched_grp]
         
         for each in raw_removed_testcases:
-            print(each, file.filename, "removed")
+            # print(each, file.filename, "removed")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
-            print(function_name, file.filename, "removed")
+            # print(function_name, file.filename, "removed")
             removed_testcases.append(function_name)
 
         removed_testcases2 = get_removed_test_functions2(file_changes, file)
@@ -69,11 +81,11 @@ def get_removed_test_functions2(file_changes: str, file) -> List:
         raw_removed_testcases = [x.group() for x in matched_grp]
 
         for each in raw_removed_testcases:
-            print(each, file.filename, "removed 2")
+            # print(each, file.filename, "removed 2")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             removed_testcases.append(function_name)
-            print(function_name, file.filename, "removed 2")
+            # print(function_name, file.filename, "removed 2")
 
         return removed_testcases
     else:
@@ -88,11 +100,11 @@ def get_refactored_test_functions(file_changes: str, file) -> List:
         raw_refactored_testcases = [x.group() for x in matched_grp]
         
         for each in raw_refactored_testcases:
-            print(each, file.filename, "refactored")
+            # print(each, file.filename, "refactored")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             refactored_testcases.append(function_name)
-            print(function_name, file.filename, "refactored")
+            # print(function_name, file.filename, "refactored")
         
         refactored_testcases2 = get_refactored_test_functions2(file_changes, file)
         
@@ -108,11 +120,11 @@ def get_refactored_test_functions2(file_changes: str, file) -> List:
         raw_refactored_testcases = [x.group() for x in matched_grp]
 
         for each in raw_refactored_testcases:
-            print(each, file.filename, "refactored 2")
+            # print(each, file.filename, "refactored 2")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             refactored_testcases.append(function_name)
-            print(function_name, file.filename, "refactored 2")
+            # print(function_name, file.filename, "refactored 2")
 
         return refactored_testcases
     else:
@@ -127,11 +139,11 @@ def get_added_test_functions(file_changes: str, file) -> List:
         raw_added_testcases = [x.group() for x in matched_grp]
         
         for each in raw_added_testcases:
-            print(each, file.filename, "added")
+            # print(each, file.filename, "added")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             added_testcases.append(function_name)
-            print(function_name, file.filename, "added")
+            # print(function_name, file.filename, "added")
             
         added_testcases2 = get_added_test_functions2(file_changes, file)
         
@@ -148,11 +160,11 @@ def get_added_test_functions2(file_changes: str, file) -> List:
         raw_added_testcases = [x.group() for x in matched_grp]
        
         for each in raw_added_testcases:
-            print(each, file.filename, "added2")
+            # print(each, file.filename, "added2")
             function_prototype = cleanup_function_prototype(each)
             function_name = get_function_name_from_prototype(function_prototype)
             added_testcases.append(function_name)
-            print(function_name, file.filename, "added2")
+            # print(function_name, file.filename, "added2")
         return added_testcases
     else:
         return []

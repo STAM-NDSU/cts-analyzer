@@ -4,12 +4,12 @@ import pandas as pd
 
 # Customize for required projects
 
-# 1. CommonsLang
-INPUT_DIR = 'io/outputRevisedLatest2/commons-lang'
-OUTPUT_FILE = 'commons_lang_analyzer.xlsx'
-files = [{"filename": "commons-lang-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-    {"filename": "commons-lang-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-        {"filename": "commons-lang-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# # 1. CommonsLang
+# INPUT_DIR = 'io/outputRevisedLatest2/commons-lang'
+# OUTPUT_FILE = 'commons_lang_analyzer.xlsx'
+# files = [{"filename": "commons-lang-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+#     {"filename": "commons-lang-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+#         {"filename": "commons-lang-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 2. Joda Time
 # INPUT_DIR = 'io/outputRevisedLatest2/joda-time'
@@ -32,12 +32,12 @@ files = [{"filename": "commons-lang-step1_01-01-2000_01-01-2023", "excel_filenam
 #     {"filename": "gson-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "gson-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# # 5. Commons Math
-# INPUT_DIR = 'io/outputRevisedLatest2/commons-math'
-# OUTPUT_FILE = 'commons-math_analyzer.xlsx'
-# files = [{"filename": "commons-math-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-#     {"filename": "commons-math-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-#         {"filename": "commons-math-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# 5. Commons Math
+INPUT_DIR = 'io/outputRevisedLatest2/commons-math'
+OUTPUT_FILE = 'commons-math_analyzer.xlsx'
+files = [{"filename": "commons-math-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+    {"filename": "commons-math-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+        {"filename": "commons-math-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 6. Jfreechart
 # INPUT_DIR = 'io/outputRevisedLatest2/jfreechart'
