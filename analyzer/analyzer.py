@@ -60,9 +60,11 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         results = analyzer_global.results
         total_commit_test_removal = analyzer_global.total_commit_test_removal
         commits = Repository(repo_url, only_in_branch=branch,
-                            only_modifications_with_file_types=config.JAVA_FILE_EXT,
-                            # since=since, to=to,
-                            single="fb761ffb51ba1436163b094255b6af40bf69bd83",  # use it only for debugging
+                            # only_modifications_with_file_types=config.JAVA_FILE_EXT,
+                            since=since, to=to,
+                            only_releases =True,
+                            # only_no_merge=True,
+                            # single="937eb90a705bf7a2e009c4a61ef229e2709e98fa",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
         
@@ -70,9 +72,12 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
             print("No Commits--- Oops")
             
         is_completed = False
+        i = 0
         while(not is_completed):
             commit = next(commits, None)
-            if commit:            
+            if commit:  
+                i += 1
+                print(i)
                 # Update current_commit pointer; to skip the corrupted ones
                 analyzer_global.current_commit = commit
                 analyzer_global.since = commit.committer_date
