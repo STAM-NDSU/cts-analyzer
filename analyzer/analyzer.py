@@ -12,7 +12,7 @@ from .utils import is_candidate_file, format_commit_datetime, get_full_commit_ur
   from java test files that match the function definition regex 
 """
 
-MIN_ROWS = 3
+MIN_ROWS = 4
 MIN_COLUMNS = 6
 
 
@@ -28,6 +28,7 @@ class AnalyzerGlobal:
         self.commits = None
         self.current_commit=None
         self.results = []
+        self.total_commit = 0
         self.total_commit_test_removal = 0
         self.total_high_conf_test_removal = 0
         self.total_low_conf_test_removal = 0
@@ -46,24 +47,24 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
             fill_columns = MIN_COLUMNS
             filled_rows = [[" "] * fill_columns for _ in range(0, fill_rows)]
             results = results + filled_rows
-
         results[0].insert(6, "Total Commits")
-        results[0].insert(7, analyzer_global.total_commit_test_removal)
-        results[1].insert(6, "Total High")
-        results[1].insert(7, analyzer_global.total_high_conf_test_removal)
-        results[2].insert(6, "Total Low")
-        results[2].insert(7, analyzer_global.total_low_conf_test_removal)
+        results[0].insert(7, analyzer_global.total_commits)
+        results[1].insert(6, "Total Commits Test Removal")
+        results[1].insert(7, analyzer_global.total_commit_test_removal)
+        results[2].insert(6, "Total High")
+        results[2].insert(7, analyzer_global.total_high_conf_test_removal)
+        results[3].insert(6, "Total Low")
+        results[3].insert(7, analyzer_global.total_low_conf_test_removal)
         
     def traverse_commits(analyzer_global):
         since= analyzer_global.since
         to= analyzer_global.to
         results = analyzer_global.results
-        total_commit_test_removal = analyzer_global.total_commit_test_removal
-        commits = Repository(repo_url, only_in_branch=branch,
-                            # only_modifications_with_file_types=config.JAVA_FILE_EXT,
+        commits = Repository(repo_url, 
+                            only_in_branch=branch,
+                            only_modifications_with_file_types=config.JAVA_FILE_EXT,
                             since=since, to=to,
-                            only_releases =True,
-                            # only_no_merge=True,
+                            only_no_merge=True,
                             # single="937eb90a705bf7a2e009c4a61ef229e2709e98fa",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
@@ -72,12 +73,10 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
             print("No Commits---- Oopss")
             
         is_completed = False
-        i = 0
         while(not is_completed):
             commit = next(commits, None)
             if commit:  
-                i += 1
-                print(i)
+                analyzer_global.total_commit +=1
                 # Update current_commit pointer; to skip the corrupted ones
                 analyzer_global.current_commit = commit
                 analyzer_global.since = commit.committer_date
