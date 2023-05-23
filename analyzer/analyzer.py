@@ -69,7 +69,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         analyzer_global.commits = commits
         
         if not commits:
-            print("No Commits--- Oopss")
+            print("No Commits---- Oopss")
             
         is_completed = False
         i = 0
