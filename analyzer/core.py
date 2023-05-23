@@ -14,10 +14,10 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
     print(file.new_path)
     # print("_____")
     for x in file.methods:
-        # print(x.long_name)
-    # print("_____")
-    # for x in file.methods_before:
-    #     print(x.name)
+        print(x.long_name)
+    print("_____")
+    for x in file.methods_before:
+        print(x.name)
     # print("_____")
     # for x in file.changed_methods:
     #     print(x.name)
