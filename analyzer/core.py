@@ -9,15 +9,20 @@ from . import config
 #  Analyze commit files to detect tests cases(functions and assertions) removed
 def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test_cases_in_commit: List) -> Collection[Tuple[str, bool]]:
     file_changes = file.diff
-    print(file.change_type)
-    print(file.old_path)
-    print(file.new_path)
+    # print(file.change_type)
+    # print(file.old_path)
+    # print(file.new_path)
     # print("_____")
     for x in file.methods:
         print(x.long_name)
     print("_____")
+
+    # for x in file.methods_before:
+    #     print(x.name)
+
     for x in file.methods_before:
         print(x.name)
+
     # print("_____")
     # for x in file.changed_methods:
     #     print(x.name)
