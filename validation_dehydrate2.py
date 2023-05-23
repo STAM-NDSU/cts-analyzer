@@ -8,7 +8,7 @@ import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 IO_DIR = "io/validationFiles"
-PROJECT = "pmd"
+PROJECT = "joda-time"
 OUTPUT_FILE = "validation_diff_done_dehydrated"
 files = [
     {
@@ -24,7 +24,7 @@ for file_index, filepath in enumerate(parse_files(files)):
 
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
-        
+        all_data = []
         df = df.iloc[:, 0:11]
         prev = {
             "Datetime": None,
@@ -103,6 +103,22 @@ for file_index, filepath in enumerate(parse_files(files)):
                 #     row["Suraj Comments"] = prev["Suraj Comments"]
                 # else:
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
-                    
-        df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
+            data = [row["Datetime"],row["Hash"], row["Commit Msg"], row["Filename"], row["Removed Test Case"], row["Confidence"], row["Manual Validation"], row["Ajay Manual Validation"], row["Suraj Manual Validation"], row["Ajay Comments"], row["Suraj Comments"]]
+            all_data.append(data)
+           
+            # new_df.append(row, ignore_index=True)
+            # if index == 2 or index == 3:
+            #     print(new_df.loc[index]) 
+        new_df = pd.DataFrame(data=all_data, columns=[ "Datetime",
+            "Hash",
+            "Commit Msg",
+            "Filename",
+            "Removed Test Case",
+            "Confidence",
+            "Manual Validation",
+            "Ajay Manual Validation",
+            "Suraj Manual Validation",
+            "Ajay Comments",
+            "Suraj Comments"])     
+        new_df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
 

@@ -61,8 +61,8 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
         total_commit_test_removal = analyzer_global.total_commit_test_removal
         commits = Repository(repo_url, only_in_branch=branch,
                             only_modifications_with_file_types=config.JAVA_FILE_EXT,
-                            since=since, to=to,
-                            # single="8474131f5bd11c3851de4ea40e3041b60c8fe22c",  # use it only for debugging
+                            # since=since, to=to,
+                            single="fb761ffb51ba1436163b094255b6af40bf69bd83",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
         
@@ -176,6 +176,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                                     # Toggle commit included flag
                                     commit_included = True
                                 # Compute key stats
+                                analyzer_global.total_commit_test_removal += 1
                                 if confidence == "HIGH":
                                     analyzer_global.total_high_conf_test_removal += 1
                                 else:

@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 IO_DIR = "io/validationFiles"
-PROJECT = "joda-time"
+PROJECT = "pmd"
 OUTPUT_FILE = "validation_diff_leftovers_dehydrated"
 files = [{"Filename": "validation_diff_leftovers"}]
 
@@ -41,18 +41,22 @@ for file_index, filepath in enumerate(parse_files(files)):
 
             else:
                 if row["Hash"] == prev["Hash"]:
-                    row["Hash"] = ""
-                    row["Commit Msg"] = ""
-                    row["Datetime"] = ""
+                    row["Hash"] = ''
+                    row["Commit Msg"] = ''
+                    row["Datetime"] = ''
+                    
+                    if row["Filename"] == prev["Filename"]:
+                        row["Filename"] = ''
+                        row["Confidence"] = ''
+                    else:
+                        prev["Filename"] = row["Filename"]
+                        prev["Confidence"] = row["Confidence"]
+                    
                 else:
                     prev["Hash"] = row["Hash"]
                     prev["Datetime"] = row["Datetime"]
                     prev["Commit Msg"] = prev["Commit Msg"]
-
-                if row["Filename"] == prev["Filename"]:
-                    row["Filename"] = ""
-                    row["Confidence"] = ""
-                else:
+                    
                     prev["Filename"] = row["Filename"]
                     prev["Confidence"] = row["Confidence"]
 

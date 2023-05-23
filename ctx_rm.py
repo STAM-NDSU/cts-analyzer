@@ -18,12 +18,12 @@ import pandas as pd
 #     {"filename": "joda-time-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "joda-time-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# 3. PMD
-INPUT_DIR = 'io/outputRevisedLatest2/pmd'
-OUTPUT_FILE = 'pmd_analyzer.xlsx'
-files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-    {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-        {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# # 3. PMD
+# INPUT_DIR = 'io/outputRevisedLatest2/pmd'
+# OUTPUT_FILE = 'pmd_analyzer.xlsx'
+# files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+#     {"filename": "pmd-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+#         {"filename": "pmd-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 4. Gson
 # INPUT_DIR = 'io/outputRevisedLatest2/gson'
@@ -32,12 +32,12 @@ files = [{"filename": "pmd-step1_01-01-2000_01-01-2023", "excel_filename": "step
 #     {"filename": "gson-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
 #         {"filename": "gson-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
-# # 5. Commons Math
-# INPUT_DIR = 'io/outputRevisedLatest2/commons-math'
-# OUTPUT_FILE = 'commons-math_analyzer.xlsx'
-# files = [{"filename": "commons-math-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
-#     {"filename": "commons-math-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
-#         {"filename": "commons-math-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
+# 5. Commons Math
+INPUT_DIR = 'io/outputRevisedLatest2/commons-math'
+OUTPUT_FILE = 'commons-math_analyzer.xlsx'
+files = [{"filename": "commons-math-step1_01-01-2000_01-01-2023", "excel_filename": "step 1"}, \
+    {"filename": "commons-math-step2_01-01-2000_01-01-2023", "excel_filename": "step 2"}, \
+        {"filename": "commons-math-step3_01-01-2000_01-01-2023", "excel_filename": "step 3"}]
 
 # # 6. Jfreechart
 # INPUT_DIR = 'io/outputRevisedLatest2/jfreechart'
