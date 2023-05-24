@@ -1,3 +1,5 @@
+# WARNING: Make sure .env is correct set to desired Project
+
 import os.path
 from pathlib import Path
 import pandas as pd
@@ -7,11 +9,11 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles/joda-time"
-OUTPUT_FILE = "joda-time_validation_hydrated"
+IO_DIR = "io/validationFiles3/pmd"
+OUTPUT_FILE = "pmd_validation_hydrated"
 files = [
     {
-        "filename": "manual_validation_compiled - joda-time"
+        "filename": "pmd_validated"
     }
 ]
 
@@ -24,7 +26,7 @@ for file_index, filepath in enumerate(parse_files(files)):
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
         
-        df = df.iloc[:, 0:11]
+        df = df.iloc[:, 0:12]
         prev = {
             "DATETIME": None,
             "HASH": None,
@@ -33,6 +35,7 @@ for file_index, filepath in enumerate(parse_files(files)):
             "REMOVED TEST CASE": None,
             "CONFIDENCE": None,
             "Manual Validation": None,
+            "Final Results": None,
             "Ajay Manual Validation": None,
             "Suraj Manual Validation": None,
             "Ajay Comments": None,
@@ -48,6 +51,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "REMOVED TEST CASE": row["REMOVED TEST CASE"],
                     "CONFIDENCE": row["CONFIDENCE"],
                     "Manual Validation": row["Manual Validation"],
+                    "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
                     "Suraj Manual Validation": row["Suraj Manual Validation"],
                     "Ajay Comments": row["Ajay Comments"],
@@ -115,7 +119,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                 #     row["Suraj Comments"] = prev["Suraj Comments"]
                 # else:
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
-             
                     
         df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}.csv", index=False)
 

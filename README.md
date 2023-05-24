@@ -104,3 +104,5 @@ public void testAddElementRolling() {
 		assertTrue( "Even though there are only 6 element, internal storage should be less than 2.5 times the number of elements", 
 			((ExpandableDoubleArray) da).getInternalLength() < ((int) 6 * 2.5) );
 	}
+
+	pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller

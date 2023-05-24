@@ -2,7 +2,7 @@ import os.path
 from pathlib import Path
 import pandas as pd
 
-IO_DIR = "io/validationFiles"
+IO_DIR = "io/validationFiles3"
 PROJECT = "pmd"
 OUTPUT_FILE = "validation_diff_leftovers_dehydrated"
 files = [{"Filename": "validation_diff_leftovers"}]

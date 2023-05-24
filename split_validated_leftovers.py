@@ -6,7 +6,7 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles/pmd"
+IO_DIR = "io/validationFiles3/pmd"
 OUTPUT_FILE = "validation_diff"
 
 base_columns=[
@@ -21,14 +21,15 @@ base_columns=[
 columns=[
             *base_columns,
             "Manual Validation",
+            "Final Results",
             "Ajay Manual Validation",
             "Suraj Manual Validation",
             "Ajay Comments",
             "Suraj Comments",
         ]
 
-step3_file = "io/outputRevisedLatest2/pmd/pmd_hydrated_step_3.csv"
-validated_file = "io/validationFiles/pmd/pmd_validation_hydrated.csv"
+step3_file = "io/outputRevisedLatest3/pmd/pmd_hydrated_step_3.csv"
+validated_file = "io/validationFiles3/pmd/pmd_validation_hydrated.csv"
 
 
 # writer = pd.ExcelWriter(f"{IO_DIR}/{OUTPUT_FILE}", engine="xlsxwriter")
@@ -50,7 +51,7 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
         match_found = False
 
         all_validated_and_related = list(filter(lambda each: each[1] == step3_record[1], validated_file))
-        print(all_validated_and_related)
+        # print(all_validated_and_related)
         for validated_record in all_validated_and_related:
             if step3_record[3] == validated_record[3] and step3_record[4] == validated_record[4]:
                 match_found = True

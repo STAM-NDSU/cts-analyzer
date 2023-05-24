@@ -7,7 +7,7 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles"
+IO_DIR = "io/validationFiles3"
 PROJECT = "pmd"
 OUTPUT_FILE = "validation_diff_done_dehydrated"
 files = [
@@ -25,7 +25,7 @@ for file_index, filepath in enumerate(parse_files(files)):
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
         
-        df = df.iloc[:, 0:11]
+        df = df.iloc[:, 0:12]
         prev = {
             "Datetime": None,
             "Hash": None,
@@ -34,6 +34,7 @@ for file_index, filepath in enumerate(parse_files(files)):
             "Removed Test Case": None,
             "Confidence": None,
             "Manual Validation": None,
+            "Final Results": None,
             "Ajay Manual Validation": None,
             "Suraj Manual Validation": None,
             "Ajay Comments": None,
@@ -50,6 +51,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Removed Test Case": row["Removed Test Case"],
                     "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
+                    "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
                     "Suraj Manual Validation": row["Suraj Manual Validation"],
                     "Ajay Comments": row["Ajay Comments"],

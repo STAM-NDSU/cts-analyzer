@@ -14,6 +14,9 @@ def analyze_test_cases_removal_in_commit_file(file: ModifiedFile, all_added_test
     refactored_test_functions = get_refactored_test_functions(file_changes, file)
     removed_test_functions = []
 
+    print(file.testcases)
+    print("_____")
+    print(file.testcases_before)
     # Added test functions across modified files in a commit
     all_added_test_cases_in_commit += candidate_added_test_functions
 
@@ -69,10 +72,6 @@ def get_removed_test_functions(file_changes: str, file) -> List:
 
 #  Get list of removed test functions from file changes using lizard
 def get_removed_test_functions_lizard(file_changes: str, file, all_removed_testcases_before_lizard) -> List:
-    # print(file.change_type)
-    # print(file.old_path)
-    # print(file.new_path)
-    # print("_____")
     methods = []
     removed_methods = []
     for x in file.methods:
@@ -82,7 +81,7 @@ def get_removed_test_functions_lizard(file_changes: str, file, all_removed_testc
         if not match_found:
             function_name = get_test_function_name_from_prototype(x.long_name)
             if function_name and function_name not in all_removed_testcases_before_lizard:
-                print(function_name, "removed lizard")
+                # print(function_name, "removed lizard")
                 removed_methods.append(function_name)
 
     return removed_methods
