@@ -4,7 +4,7 @@ from analyzer.analyzer import get_removed_test_functions_and_assertions_details
 from analyzer.utils import *
 from analyzer.config import OUTPUT_DIRECTORY, OUTPUT_FILENAME
 import json
-import pydriller
+import traceback
 
 refactoring_file = open(conf.REFACTOR_FILE)
 refactorings_data = json.load(refactoring_file)["commits"]
@@ -20,6 +20,7 @@ if repo_path:
     except Exception as e:
         print(f"Error occurred: {type(e).__name__}")
         print(e)
+        traceback.print_exc()
 else:
     print("Repository path not found in .env file")
 

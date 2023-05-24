@@ -12,7 +12,7 @@ from .utils import is_candidate_file, format_commit_datetime, get_full_commit_ur
   from java test files that match the function definition regex 
 """
 
-MIN_ROWS = 4
+MIN_ROWS = 5
 MIN_COLUMNS = 6
 
 
@@ -71,7 +71,7 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
                             only_modifications_with_file_types=config.JAVA_FILE_EXT,
                             # since=since, to=to,
                             # only_no_merge=True,
-                            single="fb761ffb51ba1436163b094255b6af40bf69bd83",  # use it only for debugging
+                            single="213e37f2a4b1ac04c138b01de54b933a45086967",  # use it only for debugging
                             ).traverse_commits()
         analyzer_global.commits = commits
         
@@ -234,6 +234,3 @@ def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_ref
     main()
             
     return analyzer_global.results
-    
-
-# 29d9255f668b8da42fc4fcd40b2a5e716b9b7a53
