@@ -6,6 +6,9 @@ from analyzer.config import OUTPUT_DIRECTORY, OUTPUT_FILENAME
 import json
 import traceback
 
+import sys
+sys.setrecursionlimit(10000)
+
 refactoring_file = open(conf.REFACTOR_FILE)
 refactorings_data = json.load(refactoring_file)["commits"]
 
