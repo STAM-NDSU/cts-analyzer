@@ -207,6 +207,10 @@ class AnalyzerGlobal:
                     "hash": "e7d21364b5dc746f7086aef1ad6a0e1851ced2f4",
                     "filename": "EnumTest.java",
                 },
+                {
+                    "hash": "04e9eb14e7f5dbf55ba41819b9cb2d2f0c3c4b55",
+                    "filename": "AllLangTestSuite.java",
+                },
             ],
             "commons-math": [
                 {
@@ -247,8 +251,16 @@ class AnalyzerGlobal:
                     "hash": "4a06faf9b60f61e37e2d661beac75b845e3e5bf1",
                     "filename": "PackageManagerShellCommandTest.java",
                 },
-                 {
+                {
                     "hash": "5ee7e2c15f67074e3684b7408ebecae986413fd0",
+                    "filename": "PackageManagerShellCommandTest.java",
+                },
+                {
+                    "hash": "aecdd4554625022277deee46dfe377840f013329",
+                    "filename": "PackageManagerShellCommandTest.java",
+                },
+                {
+                    "hash": "20b890d8099e2f91e9b27dc2d53f2ee5ea00ae02",
                     "filename": "PackageManagerShellCommandTest.java",
                 },
             ],
