@@ -25,7 +25,9 @@ files = [
 
 
 def parse_files(files):
-    return map(lambda file_data: file_data["dir"] + "/" + file_data["filename"] + ".csv", files)
+    return map(
+        lambda file_data: file_data["dir"] + "/" + file_data["filename"] + ".csv", files
+    )
 
 
 def get_sheet_name(filepath):
@@ -42,86 +44,86 @@ for index, filepath in enumerate(parse_files(files)):
         # print(df.shape)
         df = df.iloc[:, 0:6]
         prev = {
-            "DATETIME": None,
-            "HASH": None,
-            "COMMIT MSG": None,
-            "FILENAME": None,
-            "REMOVED TEST CASE": None,
-            "CONFIDENCE": None,
+            "Datetime": None,
+            "Hash": None,
+            "Commit Msg": None,
+            "Filename": None,
+            "Removed Test Case": None,
+            "Confidence": None,
         }
         for index, row in df.iterrows():
             if index == 0:
                 prev = {
-                    "DATETIME": row["DATETIME"],
-                    "HASH": row["HASH"],
-                    "COMMIT MSG": row["COMMIT MSG"],
-                    "FILENAME": row["FILENAME"],
-                    "REMOVED TEST CASE": row["REMOVED TEST CASE"],
-                    "CONFIDENCE": row["CONFIDENCE"],
+                    "Datetime": row["Datetime"],
+                    "Hash": row["Hash"],
+                    "Commit Msg": row["Commit Msg"],
+                    "Filename": row["Filename"],
+                    "Removed Test Case": row["Removed Test Case"],
+                    "Confidence": row["Confidence"],
                 }
 
             else:
-                if pd.isna(row["DATETIME"]) or pd.isnull(row["DATETIME"]):
-                    row["DATETIME"] = prev["DATETIME"]
+                if pd.isna(row["Datetime"]) or pd.isnull(row["Datetime"]):
+                    row["Datetime"] = prev["Datetime"]
                 else:
-                    prev["DATETIME"] = row["DATETIME"]
+                    prev["Datetime"] = row["Datetime"]
 
-                if pd.isna(row["HASH"]) or pd.isnull(row["HASH"]):
-                    row["HASH"] = prev["HASH"]
+                if pd.isna(row["Hash"]) or pd.isnull(row["Hash"]):
+                    row["Hash"] = prev["Hash"]
                 else:
-                    prev["HASH"] = row["HASH"]
+                    prev["Hash"] = row["Hash"]
 
-                if pd.isna(row["COMMIT MSG"]) or pd.isnull(row["COMMIT MSG"]):
-                    row["COMMIT MSG"] = prev["COMMIT MSG"]
+                if pd.isna(row["Commit Msg"]) or pd.isnull(row["Commit Msg"]):
+                    row["Commit Msg"] = prev["Commit Msg"]
                 else:
-                    prev["COMMIT MSG"] = row["COMMIT MSG"]
+                    prev["Commit Msg"] = row["Commit Msg"]
 
-                if pd.isna(row["FILENAME"]) or pd.isnull(row["FILENAME"]):
-                    row["FILENAME"] = prev["FILENAME"]
+                if pd.isna(row["Filename"]) or pd.isnull(row["Filename"]):
+                    row["Filename"] = prev["Filename"]
                 else:
-                    prev["FILENAME"] = row["FILENAME"]
+                    prev["Filename"] = row["Filename"]
 
-                if pd.isna(row["REMOVED TEST CASE"]) or pd.isnull(
-                    row["REMOVED TEST CASE"]
+                if pd.isna(row["Removed Test Case"]) or pd.isnull(
+                    row["Removed Test Case"]
                 ):
-                    row["REMOVED TEST CASE"] = prev["REMOVED TEST CASE"]
+                    row["Removed Test Case"] = prev["Removed Test Case"]
                 else:
-                    prev["REMOVED TEST CASE"] = row["REMOVED TEST CASE"]
+                    prev["Removed Test Case"] = row["Removed Test Case"]
 
-                if pd.isna(row["CONFIDENCE"]) or pd.isnull(row["CONFIDENCE"]):
-                    row["CONFIDENCE"] = prev["CONFIDENCE"]
+                if pd.isna(row["Confidence"]) or pd.isnull(row["Confidence"]):
+                    row["Confidence"] = prev["Confidence"]
                 else:
-                    prev["CONFIDENCE"] = row["CONFIDENCE"]
+                    prev["Confidence"] = row["Confidence"]
 
             # print(row)
         # print(df)
 
         # Separate LOW testcases
-        low_df = df.loc[df["CONFIDENCE"] == "LOW"]
-        low_df = low_df.sample(frac = 1)
+        low_df = df.loc[df["Confidence"] == "LOW"]
+        low_df = low_df.sample(frac=1)
         if low_df.shape[0] > 20:
             low_candidate_df_index = random.sample(range(0, low_df.shape[0]), 20)
             print(filepath, low_candidate_df_index, low_df.shape[0])
             low_candidate_df = low_df.iloc[low_candidate_df_index]
         else:
             low_candidate_df = low_df
-            
+
         # Seperate HIGH testcases
-        high_df = df.loc[df["CONFIDENCE"] == "HIGH"]
-        high_df = high_df.sample(frac = 1)
+        high_df = df.loc[df["Confidence"] == "HIGH"]
+        high_df = high_df.sample(frac=1)
         if high_df.shape[0] > 20:
             high_candidate_df_index = random.sample(range(0, high_df.shape[0]), 20)
             print(filepath, high_candidate_df_index, high_df.shape[0])
             high_candidate_df = high_df.iloc[high_candidate_df_index]
         else:
             high_candidate_df = high_df
-            
+
         # New dataframe consisting of equal no of LOW and HIGH testcases
         new_df = pd.concat([low_candidate_df, high_candidate_df], axis=0)
         new_df["Manual Validation"] = " "
-        
-        # Option 2: Try with group by 
-        # for i, g in df.groupby(['CONFIDENCE']):
+
+        # Option 2: Try with group by
+        # for i, g in df.groupby(['Confidence']):
         #     print (type(g))
 
         #     candidate_rows = random.sample(range(0, g.shape[0]), 20)
@@ -130,8 +132,7 @@ for index, filepath in enumerate(parse_files(files)):
 
         # print(new_df)
         # pd.concat([new_df[0], new_df[1]], axis=0)
-        
-        
+
         new_df.to_excel(writer, sheet_name=get_sheet_name(filepath), index=False)
 
 writer.close()

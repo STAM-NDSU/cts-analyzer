@@ -6,13 +6,15 @@ from datetime import datetime, timedelta
 load_dotenv()
 
 # Url to cts repo
-REPO_PATH = os.getenv("CTS_REPO_PATH", None)
+REPO_PATH = os.getenv("REPO_PATH", None)
 
 # Branch of the cts repo to be analyzed
-TARGET_BRANCH = os.getenv("CTS_TARGET_BRANCH", "master")
+TARGET_BRANCH = os.getenv("TARGET_BRANCH", "master")
 
 # Url to cts repo
-COMMIT_BASE_URL = os.getenv("CTS_COMMIT_BASE_URL", "https://android.googlesource.com/platform/cts/+/")
+COMMIT_BASE_URL = os.getenv(
+    "COMMIT_BASE_URL", "https://android.googlesource.com/platform/cts/+/"
+)
 
 # Directory where generated csv file is stored
 HANDLE_EXPORT = os.getenv("HANDLE_EXPORT", "false")
@@ -25,32 +27,52 @@ HANDLE_REFACTOR = os.getenv("HANDLE_REFACTOR", "false")
 HANDLE_MOVED = os.getenv("HANDLE_MOVED", "false")
 
 # Valid java file extensions
-JAVA_FILE_EXT = ['.java']
+JAVA_FILE_EXT = [".java"]
 
 # Generated csv file headers
-CSV_HEADERS = ['DATETIME', 'HASH', 'COMMIT MSG', 'FILENAME', 'REMOVED TEST CASE', 'CONFIDENCE', ' ', ' ', ' ']
+CSV_HEADERS = [
+    "Datetime",
+    "Hash",
+    "Commit Msg",
+    "Filepath",
+    "Filename",
+    "Removed Test Case",
+    "Check Annot",
+    " ",
+    " ",
+    " ",
+]
 
 DEFAULT_COMMIT_RANGE_DAYS_INTERVAL = 365
 
 # Datetime formats
 DATE_FORMAT = "%m/%d/%Y"
-DATETIME_FORMAT = "%m/%d/%Y %H:%M:%S"
+Datetime_FORMAT = "%m/%d/%Y %H:%M:%S"
 
 # Commit daterange filters
-cts_commit_start_date = os.getenv("CTS_COMMIT_START_DATE")
-cts_commit_end_date = os.getenv("CTS_COMMIT_END_DATE")
+COMMIT_START_DATE = os.getenv("COMMIT_START_DATE")
+COMMIT_END_DATE = os.getenv("COMMIT_END_DATE")
 now = datetime.now()
 # Define interval in no of days to compute relative time diff
 interval = int(os.getenv("CTS_COMMIT_INTERVAL", DEFAULT_COMMIT_RANGE_DAYS_INTERVAL))
-COMMIT_START_DATETIME = datetime.strptime(cts_commit_start_date, DATE_FORMAT) \
-    if cts_commit_start_date else (now - timedelta(days=interval))
-COMMIT_END_DATETIME = datetime.strptime(cts_commit_end_date, DATE_FORMAT) \
-    if cts_commit_start_date else now
+COMMIT_START_Datetime = (
+    datetime.strptime(COMMIT_START_DATE, DATE_FORMAT)
+    if COMMIT_START_DATE
+    else (now - timedelta(days=interval))
+)
+COMMIT_END_Datetime = (
+    datetime.strptime(COMMIT_END_DATE, DATE_FORMAT) if COMMIT_START_DATE else now
+)
 
+
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "io/cts")
 
 # Filename of generated csv file
-base_filename = os.getenv("OUTPUT_FILENAME", "cts")
-date_format = "%m-%d-%Y"
-parsed_cts_commit_start_date = COMMIT_START_DATETIME.strftime(date_format)
-parsed_cts_commit_end_date = COMMIT_END_DATETIME.strftime(date_format)
-OUTPUT_FILENAME = base_filename + '_' + parsed_cts_commit_start_date + '_' + parsed_cts_commit_end_date + '.csv'
+PROJECT = os.getenv("PROJECT", "cts")
+STEP = os.getenv("STEP", "step-1")
+# date_format = "%m-%d-%Y"
+# parsed_COMMIT_START_DATE = COMMIT_START_Datetime.strftime(date_format)
+# parsed_COMMIT_END_DATE = COMMIT_END_Datetime.strftime(date_format)
+# OUTPUT_Filename = BASE_Filename + '.csv'
+BASE_Filename = PROJECT + "-" + STEP
+OUTPUT_Filename = BASE_Filename + ".csv"

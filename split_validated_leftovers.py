@@ -6,8 +6,11 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles3/pmd"
+IO_DIR = "io/validationFiles4/commons-math"
 OUTPUT_FILE = "validation_diff"
+
+step3_file = "io/outputRevisedLatest4/commons-math/hydrated_commons-math-step3.csv"
+validated_file = "io/validationFiles4/commons-math/validation_hydrated.csv"
 
 base_columns=[
             "Datetime",
@@ -15,11 +18,11 @@ base_columns=[
             "Commit Msg",
             "Filename",
             "Removed Test Case",
-            "Confidence",
         ]
 
 columns=[
             *base_columns,
+            "Confidence",
             "Manual Validation",
             "Final Results",
             "Ajay Manual Validation",
@@ -27,10 +30,6 @@ columns=[
             "Ajay Comments",
             "Suraj Comments",
         ]
-
-step3_file = "io/outputRevisedLatest3/pmd/pmd_hydrated_step_3.csv"
-validated_file = "io/validationFiles3/pmd/pmd_validation_hydrated.csv"
-
 
 # writer = pd.ExcelWriter(f"{IO_DIR}/{OUTPUT_FILE}", engine="xlsxwriter")
 with open(step3_file, "r") as a, open(validated_file, "r") as b:
@@ -40,25 +39,30 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
     validated_file.pop(0)
     
     print(len(step3_file), len(validated_file))
-     
-    print(step3_file[0][1])
-    print("__________")
-    print(validated_file[0][1])
+  
     # diff
     alter = []
     matched = []
     for step3_record in step3_file:
+        # Ignore Filepath and Check Annot
+        format_step3_record = [step3_record[0], step3_record[1], step3_record[2], step3_record[4], step3_record[5]]
+        
         match_found = False
-
-        all_validated_and_related = list(filter(lambda each: each[1] == step3_record[1], validated_file))
+        all_validated_and_related = list(filter(lambda each: each[1] == format_step3_record[1], validated_file))
+        # print(all_validated_and_related)
         # print(all_validated_and_related)
         for validated_record in all_validated_and_related:
-            if step3_record[3] == validated_record[3] and step3_record[4] == validated_record[4]:
+            # Ignore Confidence
+            print(validated_record)
+           
+            format_step3_record = [step3_record[0], step3_record[1], step3_record[2], step3_record[4], step3_record[5]]
+       
+            if format_step3_record[3] == validated_record[3] and format_step3_record[4] == validated_record[4]:
                 match_found = True
                 matched.append([*validated_record])
                 break
         if not match_found:
-            alter.append([*step3_record])
+            alter.append([*format_step3_record])
 
     
     print(len(alter), len(matched))
@@ -67,10 +71,10 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
         columns=base_columns,
     )
     # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
-    alter_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_leftovers.csv", index=False)
+    alter_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv", index=False)
     
     matched_df = pd.DataFrame(matched, columns=columns)
     # matched_df.to_excel(writer, sheet_name="done", index=False)
-    matched_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_done.csv", index=False)
+    matched_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_done_hydrated.csv", index=False)
     
 # writer.close()

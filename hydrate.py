@@ -6,85 +6,110 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/outputRevisedLatest3"
-PROJECT = "pmd"
-
-""" Step 1"""
-OUTPUT_FILE = "pmd_hydrated_step"
-files = [
+IO_DIR = "io/outputRevisedLatest4"
+projects = [
     {
-        "filename": "pmd-step1_01-01-2000_01-01-2023",
+        "project": "pmd",
+        "filename": ["pmd-step1", "pmd-step3"],
     },
-    {
-        "filename": "pmd-step2_01-01-2000_01-01-2023",
-    },
-    {
-        "filename": "pmd-step3_01-01-2000_01-01-2023",
-    },
+    # {
+    #     "project": "commons-math",
+    #     "filename": ["commons-math-step3"],
+    # },
+    # {
+    #     "project": "commons-lang",
+    #     "filename": ["commons-lang-step1"],
+    # },
+    # {
+    #     "project": "jodatime",
+    #     "filename": ["jodatime-step3"],
+    # },
+    # {
+    #     "project": "gson",
+    #     "filename": ["gson-step3"],
+    # },
+    # {
+    #     "project": "jfreechart",
+    #     "filename": ["jfreechart-step3"],
+    # },
+    # {
+    #     "project": "joda-time",
+    #     "filename": ["joda-time-step3"],
+    # },
 ]
 
 
-def parse_files(files):
-    return map(lambda file_data: file_data["filename"] + ".csv", files)
+for project in projects:
+    for file in project["filename"]:
+        full_file_path = Path(f"{IO_DIR}/{project['project']}/{file}.csv")
 
+        if not os.path.exists(f"{full_file_path}"):
+            continue
 
-for file_index, filepath in enumerate(parse_files(files)):
-    full_file_path = Path(f"{IO_DIR}/{PROJECT}/{filepath}")
+        with open(full_file_path, "r") as a:
+            df = pd.read_csv(f"{full_file_path}")
 
-    if os.path.exists(f"{full_file_path}"):
-        df = pd.read_csv(f"{full_file_path}")
-
-        df = df.iloc[:, 0:6]
+        df = df.iloc[:, 0:7]
         prev = {
-            "DATETIME": None,
-            "HASH": None,
-            "COMMIT MSG": None,
-            "FILENAME": None,
-            "REMOVED TEST CASE": None,
-            "CONFIDENCE": None,
+            "Datetime": None,
+            "Hash": None,
+            "Commit Msg": None,
+            "Filepath": None,
+            "Filename": None,
+            "Removed Test Case": None,
+            "Check Annot": None,
         }
         for index, row in df.iterrows():
             if index == 0:
-                
                 prev = {
-                    "DATETIME": row["DATETIME"],
-                    "HASH": row["HASH"],
-                    "COMMIT MSG": row["COMMIT MSG"],
-                    "FILENAME": row["FILENAME"],
-                    "REMOVED TEST CASE": row["REMOVED TEST CASE"],
-                    "CONFIDENCE": row["CONFIDENCE"],
+                    "Datetime": row["Datetime"],
+                    "Hash": row["Hash"],
+                    "Commit Msg": row["Commit Msg"],
+                    "Filepath": row["Filepath"],
+                    "Filename": row["Filename"],
+                    "Removed Test Case": row["Removed Test Case"],
+                    "Check Annot": row["Check Annot"],
                 }
 
+                if "Confidence" in row:
+                    prev["Confidence"] = row["Confidence"]
+
             else:
-                if pd.isna(row["DATETIME"]) or pd.isnull(row["DATETIME"]):
-                    row["DATETIME"] = prev["DATETIME"]
+                if pd.isna(row["Datetime"]) or pd.isnull(row["Datetime"]):
+                    row["Datetime"] = prev["Datetime"]
                 else:
-                    prev["DATETIME"] = row["DATETIME"]
+                    prev["Datetime"] = row["Datetime"]
 
-                if pd.isna(row["HASH"]) or pd.isnull(row["HASH"]):
-                    row["HASH"] = prev["HASH"]
+                if pd.isna(row["Hash"]) or pd.isnull(row["Hash"]):
+                    row["Hash"] = prev["Hash"]
                 else:
-                    prev["HASH"] = row["HASH"]
+                    prev["Hash"] = row["Hash"]
 
-                if pd.isna(row["COMMIT MSG"]) or pd.isnull(row["COMMIT MSG"]):
-                    row["COMMIT MSG"] = prev["COMMIT MSG"]
+                if pd.isna(row["Commit Msg"]) or pd.isnull(row["Commit Msg"]):
+                    row["Commit Msg"] = prev["Commit Msg"]
                 else:
-                    prev["COMMIT MSG"] = row["COMMIT MSG"]
+                    prev["Commit Msg"] = row["Commit Msg"]
 
-                if pd.isna(row["FILENAME"]) or pd.isnull(row["FILENAME"]):
-                    row["FILENAME"] = prev["FILENAME"]
+                if pd.isna(row["Filepath"]) or pd.isnull(row["Filepath"]):
+                    row["Filepath"] = prev["Filepath"]
                 else:
-                    prev["FILENAME"] = row["FILENAME"]
+                    prev["Filepath"] = row["Filepath"]
 
-                if pd.isna(row["REMOVED TEST CASE"]) or pd.isnull(
-                    row["REMOVED TEST CASE"]
+                if pd.isna(row["Filename"]) or pd.isnull(row["Filename"]):
+                    row["Filename"] = prev["Filename"]
+                else:
+                    prev["Filename"] = row["Filename"]
+
+                if pd.isna(row["Removed Test Case"]) or pd.isnull(
+                    row["Removed Test Case"]
                 ):
-                    row["REMOVED TEST CASE"] = prev["REMOVED TEST CASE"]
+                    row["Removed Test Case"] = prev["Removed Test Case"]
                 else:
-                    prev["REMOVED TEST CASE"] = row["REMOVED TEST CASE"]
+                    prev["Removed Test Case"] = row["Removed Test Case"]
 
-                if pd.isna(row["CONFIDENCE"]) or pd.isnull(row["CONFIDENCE"]):
-                    row["CONFIDENCE"] = prev["CONFIDENCE"]
+                if pd.isna(row["Check Annot"]) or pd.isnull(row["Check Annot"]):
+                    row["Check Annot"] = prev["Check Annot"]
                 else:
-                    prev["CONFIDENCE"] = row["CONFIDENCE"]
-        df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}_{file_index+1}.csv", index=False)
+                    prev["Check Annot"] = row["Check Annot"]
+
+        df.to_csv(f"{IO_DIR}/{project['project']}/hydrated_{file}.csv", index=False)

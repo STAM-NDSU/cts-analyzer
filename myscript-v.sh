@@ -32,5 +32,5 @@ do
 #    do
 #      echo "${date_arr[j]}"
 #    done
-    CTS_COMMIT_START_DATE="${date_arr[0]}"  CTS_COMMIT_END_DATE="${date_arr[1]}" OUTPUT_FILENAME="${date_arr[2]}" nohup python3 main.py &
+    COMMIT_START_DATE="${date_arr[0]}"  COMMIT_END_DATE="${date_arr[1]}" OUTPUT_Filename="${date_arr[2]}" nohup python3 main.py &
 done

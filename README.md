@@ -1,7 +1,7 @@
 # cts-analyzer
 
 Analyzes the git commits in the [Compatibility Test Suite (CTS)](https://source.android.com/docs/compatibility/cts) that remove the test cases.
-A `<OUTPUT_FILENAME>_<CTS_COMMIT_START_DATE>_<CTS_COMMIT_END_DATE>.csv` file with rows containing `datetime`,  `hash`, `commit msg`, `filename`, `test case`
+A `<OUTPUT_Filename>_<COMMIT_START_DATE>_<COMMIT_END_DATE>.csv` file with rows containing `datetime`, `hash`, `commit msg`, `filename`, `test case`
 is generated.
 
 ## Getting Started
@@ -37,15 +37,15 @@ pip install -r requirements.txt
 
 Then, create a .env file and copy the contents of .env.example
 
-`CTS_REPO_PATH` : Url of the [cts repository](https://android.googlesource.com/platform/cts) to be analyzed or could be a local path to the repository installed on the machine
-`CTS_TARGET_BRANCH` : Branch of the repository to be analyzed  
-`CTS_COMMIT_START_DATE` : Start date of the target commit history  
-`CTS_COMMIT_END_DATE` : End date of the target commit history. If it is not defined, it will be set to current date by default   
-`CTS_COMMIT_INTERVAL` : Interval in days to auto compute `CTS_COMMIT_START_DATE`. If `CTS_COMMIT_START_DATE` is defined, it will override the interval. By default, interval is 365 days  
+`REPO_PATH` : Url of the [cts repository](https://android.googlesource.com/platform/cts) to be analyzed or could be a local path to the repository installed on the machine
+`TARGET_BRANCH` : Branch of the repository to be analyzed  
+`COMMIT_START_DATE` : Start date of the target commit history  
+`COMMIT_END_DATE` : End date of the target commit history. If it is not defined, it will be set to current date by default  
+`CTS_COMMIT_INTERVAL` : Interval in days to auto compute `COMMIT_START_DATE`. If `COMMIT_START_DATE` is defined, it will override the interval. By default, interval is 365 days  
 `OUTPUT_DIR` : Directory in the project root that will contain the generated csv file  
-`OUTPUT_FILENAME`: Filename of the generated csv file. Default is `cts`   
+`OUTPUT_Filename`: Filename of the generated csv file. Default is `cts`
 
- :warning: :  `CTS_TARGET_BRANCH` should be a valid repository branch. The default branch of repository `master`. Configure accordingly in the `.env` file. Branches other than `master` should be written as `origin/<branch-name>`. Incorrect configuration will throw `GitCommandError` in the console
+:warning: : `TARGET_BRANCH` should be a valid repository branch. The default branch of repository `master`. Configure accordingly in the `.env` file. Branches other than `master` should be written as `origin/<branch-name>`. Incorrect configuration will throw `GitCommandError` in the console
 
 Finally, run following command
 
@@ -66,13 +66,14 @@ To speed up the analysis speed, you can clone the cts repository in the project 
 git clone https://android.googlesource.com/platform/cts
 ```
 
-And, change the CTS repository path in the .env file as 
-```
-CTS_REPO_PATH=cts
-```
+And, change the CTS repository path in the .env file as
 
+```
+REPO_PATH=cts
+```
 
 ## Limitations
+
 Currently, it fails to analyze the commits for the below dates
 
 ```
@@ -89,20 +90,19 @@ ssss
     public void testLANG_831(final TriFunction<String, TimeZone, Locale, DateParser> dpProvider) throws Exception {
         testSdfAndFdp(dpProvider, "M E", "3  Tue", true);
 
-
 public void testAddElementRolling() {
-		ra = new FixedDoubleArray(6);
+ra = new FixedDoubleArray(6);
 
-		super.testAddElementRolling();
+    	super.testAddElementRolling();
 
-		assertEquals( "FixedDoubleArray should have 6 size internal storage", 
-								6, ((FixedDoubleArray) ra).internalArray.length);		
-	}
+    	assertEquals( "FixedDoubleArray should have 6 size internal storage",
+    							6, ((FixedDoubleArray) ra).internalArray.length);
+    }
 
     public void testAddElementRolling() {
-		super.testAddElementRolling();
-		assertTrue( "Even though there are only 6 element, internal storage should be less than 2.5 times the number of elements", 
-			((ExpandableDoubleArray) da).getInternalLength() < ((int) 6 * 2.5) );
-	}
+    	super.testAddElementRolling();
+    	assertTrue( "Even though there are only 6 element, internal storage should be less than 2.5 times the number of elements",
+    		((ExpandableDoubleArray) da).getInternalLength() < ((int) 6 * 2.5) );
+    }
 
-	pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller
+    pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller

@@ -3,12 +3,12 @@ import os
 from datetime import datetime
 from dateutil import tz
 from .pattern import Pattern
-from .config import DATETIME_FORMAT, COMMIT_BASE_URL
+from .config import Datetime_FORMAT, COMMIT_BASE_URL
 
 
 # Checks if file is a candidate file
 def is_candidate_file(filename: str) -> bool:
-    if filename and re.search(Pattern.TEST_FILENAME.value, filename):
+    if filename and re.search(Pattern.TEST_Filename.value, filename):
         return True
     else:
         return False
@@ -39,11 +39,28 @@ def cleanup_function_name(func_name: str) -> str:
 
 # Return name of function from function prototype
 def get_function_name_from_prototype(function_prototype):
-    func_name_search = re.search(Pattern.FUNCTION_NAME_WITH_SPACE_BEFORE.value, function_prototype)
+    func_name_search = re.search(Pattern.FUNCTION_NAME.value, function_prototype)
     func_name = ""
     if func_name_search:
         func_name = cleanup_function_name(func_name_search.group())
     return func_name
+
+
+# Return name of function from function prototype
+def get_function_name_from_prototype_with_space_before(function_prototype):
+    func_name_search = re.search(
+        Pattern.FUNCTION_NAME_WITH_SPACE_BEFORE.value, function_prototype
+    )
+    func_name = ""
+    if func_name_search:
+        func_name = cleanup_function_name(func_name_search.group())
+    return func_name
+
+
+# Return test function name from function prototype given by lizard
+def get_function_name_from_prototype_lizard(function_prototype):
+    return function_prototype.split("::")[-1]
+
 
 # Return test function name from function prototype
 def get_test_function_name_from_prototype(function_prototype):
@@ -53,14 +70,11 @@ def get_test_function_name_from_prototype(function_prototype):
         func_name = cleanup_function_name(func_name_search.group())
     return func_name
 
-# Return test function name from function prototype given by lizard
-def get_test_function_name_from_prototype_lizard(function_prototype):
-    return function_prototype.split("::")[-1]
 
 # Convert datetime to local timezone
 def format_commit_datetime(commit_date: datetime) -> str:
     local_datetime = commit_date.astimezone(tz.tzlocal())
-    return local_datetime.strftime(DATETIME_FORMAT)
+    return local_datetime.strftime(Datetime_FORMAT)
 
 
 # Parse commit hash as hyperlink
@@ -77,5 +91,15 @@ def get_full_commit_url(tail: str) -> str:
 def get_repo_name(repo_url):
     if repo_url:
         return repo_url.split("/")[-1].replace(".git", "")
+    else:
+        return None
+
+
+# Strip commit url
+def strip_commit_url(repo_url):
+    if repo_url:
+        return (
+            repo_url.split(",")[-1].replace('"', "").replace(")", "").replace(" ", "")
+        )
     else:
         return None

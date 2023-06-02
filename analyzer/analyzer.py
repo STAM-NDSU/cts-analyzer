@@ -1,10 +1,21 @@
 from copy import deepcopy
 from datetime import timedelta
 from pydriller import Repository
+import pandas as pd
 from . import config
-from .core import analyze_test_cases_removal_in_commit_file
-from .utils import is_candidate_file, format_commit_datetime, get_full_commit_url, \
-    parse_commit_as_hyperlink, get_repo_name
+from .core import (
+    analyze_test_cases_removal_in_commit_file,
+    analyze_test_cases_addition_in_commit_file,
+    analyze_true_test_cases_deletion_in_commit_file,
+)
+from .utils import (
+    is_candidate_file,
+    format_commit_datetime,
+    get_full_commit_url,
+    parse_commit_as_hyperlink,
+    get_repo_name,
+    strip_commit_url,
+)
 
 """
   Analyze the target branch of the repository and get commits 
@@ -12,228 +23,314 @@ from .utils import is_candidate_file, format_commit_datetime, get_full_commit_ur
   from java test files that match the function definition regex 
 """
 
-MIN_ROWS = 4
-MIN_COLUMNS = 6
-
 
 class AnalyzerGlobal:
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(AnalyzerGlobal, cls).__new__(cls)
         return cls.instance
 
     def __init__(self):
-        self.since= config.COMMIT_START_DATETIME
-        self.to=config.COMMIT_END_DATETIME
+        self.since = config.COMMIT_START_Datetime
+        self.to = config.COMMIT_END_Datetime
         self.commits = None
-        self.current_commit=None
+        self.current_commit = None
         self.results = []
         self.total_commits = 0
         self.total_test_removal_commits = 0
         self.total_high_conf_test_removal = 0
         self.total_low_conf_test_removal = 0
-        
+        self.step1_hydrated_df = None
+        self.cloned_step1_hydrated_df = None
+        self.step11_hydrated_df = None
+        self.step2_hydrated_df = None
+        self.cloned_step2_hydrated_df = None
+        self.step3_hydrated_df = None
+
     @property
     def total_testcases(self):
-        return len(self.results) 
-    
+        return len(self.results)
+
     def __repr__(self) -> str:
         return f"<since={self.since} to={self.to} commit={self.current_commit.hash}"
-       
-            
-def get_removed_test_functions_and_assertions_details(repo_url, branch, repo_refactors):
 
-    
+
+def get_removed_test_functions_details(
+    repo_url, branch, step=None, previous_step_df=None
+):
     def pretify_csv_results(analyzer_global):
+        MIN_ROWS = 3
+        MIN_COLUMNS = 9
+
         results = analyzer_global.results
         if len(results) < MIN_ROWS:
             fill_rows = MIN_ROWS - len(results)
             fill_columns = MIN_COLUMNS
             filled_rows = [[" "] * fill_columns for _ in range(0, fill_rows)]
             results = results + filled_rows
-        results[0].insert(6, "Total Commits")
-        results[0].insert(7, analyzer_global.total_commits)
-        results[1].insert(6, "Total Commits Test Removal")
-        results[1].insert(7, analyzer_global.total_test_removal_commits)
-        results[2].insert(6, "Total High")
-        results[2].insert(7, analyzer_global.total_high_conf_test_removal)
-        results[3].insert(6, "Total Low")
-        results[3].insert(7, analyzer_global.total_low_conf_test_removal)
-        results[4].insert(6, "Total Testcases")
-        results[4].insert(7, analyzer_global.total_testcases)
-        
+        results[0].insert(8, "Total Commits")
+        results[0].insert(9, analyzer_global.total_commits)
+        results[1].insert(8, "Total Testcases")
+        results[1].insert(9, analyzer_global.total_testcases)
+
     def traverse_commits(analyzer_global):
-        since= analyzer_global.since
-        to= analyzer_global.to
+        since = analyzer_global.since
+        to = analyzer_global.to
         results = analyzer_global.results
-        commits = Repository(repo_url, 
-                            only_in_branch=branch,
-                            only_modifications_with_file_types=config.JAVA_FILE_EXT,
-                            # since=since, to=to,
-                            # only_no_merge=True,
-                            single="fb761ffb51ba1436163b094255b6af40bf69bd83",  # use it only for debugging
-                            ).traverse_commits()
+        commits = Repository(
+            repo_url,
+            only_in_branch=branch,
+            only_modifications_with_file_types=config.JAVA_FILE_EXT,
+            since=since,
+            to=to,
+            only_no_merge=True,
+            # single="4621d27dfede6b7c5741cba211042a40375a198f",  # use it only for debugging
+        ).traverse_commits()
         analyzer_global.commits = commits
-        
+
         if not commits:
             print("No Commits---- Oopss")
+
+        commits_to_look = []
+        if step == 11:
+            step1_hydrated_df = previous_step_df
+            analyzer_global.cloned_step1_hydrated_df = step1_hydrated_df.copy(deep=True)
+            print("Initial Dataframe: ", analyzer_global.cloned_step1_hydrated_df.shape)
             
+            
+            if previous_step_df is not None:
+                commits_to_look = previous_step_df[
+                    previous_step_df["Check Annot"] == "check"
+                ].to_dict("list")["Hash"]
+                commits_to_look = list(
+                    set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
+                )
+            print("Total commits to scan: ", len(commits_to_look) )
+        elif step == 3:
+            step2_hydrated_df = previous_step_df
+            analyzer_global.cloned_step2_hydrated_df = step2_hydrated_df.copy(deep=True)
+            print("Initial Dataframe: ", analyzer_global.cloned_step2_hydrated_df.shape)
+
+            if previous_step_df is not None:
+                commits_to_look = previous_step_df.to_dict("list")["Hash"]
+                commits_to_look = list(
+                    set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
+                )
+            print("Total commits to scan: ", len(commits_to_look))
+
+
         is_completed = False
-        while(not is_completed):
+        while not is_completed:
             commit = next(commits, None)
-            if commit:  
-                analyzer_global.total_commits +=1
-                # Update current_commit pointer; to skip the corrupted ones
-                analyzer_global.current_commit = commit
-                analyzer_global.since = commit.committer_date
-                
+            if commit:
                 commit_datetime = format_commit_datetime(commit.committer_date)
-                commit_hash = parse_commit_as_hyperlink(label=commit.hash,
-                                                        url=get_full_commit_url(commit.hash))
-
+                commit_hash = parse_commit_as_hyperlink(
+                    label=commit.hash, url=get_full_commit_url(commit.hash)
+                )
                 commit_msg = commit.msg
-                commit_master_data = [commit_datetime, commit_hash, commit_msg]
-                empty_commit_master_data = ['', '', '']
 
-                commit_included = False
-                # Holds all test cases across multiple modified files; helps to eliminate
-                # considering moved test cases having same name
-                all_added_test_cases_in_commit = []
-                all_removed_test_cases_in_commit = []
+                # Handles step 1
+                if step == 1:
+                    analyzer_global.total_commits += 1
+                    # Update current_commit pointer; to skip the corrupted ones
+                    analyzer_global.current_commit = commit
+                    analyzer_global.since = commit.committer_date
+                    commit_master_data = [commit_datetime, commit_hash, commit_msg]
 
-                for file_idx, file in enumerate(commit.modified_files):
-                    filename = file.filename
-                    # Check if file is a candidate file
-                    if not is_candidate_file(filename):
-                        continue
+                    # Holds all test cases removed across multiple modified files;
+                    all_removed_test_cases_in_commit = []
 
-                    all_removed_test_cases_file_data = analyze_test_cases_removal_in_commit_file(
-                        file, all_added_test_cases_in_commit)
-                    all_removed_test_cases_file_data["file_index"] = file_idx
-                    all_removed_test_cases_file_data["filename"] = filename
-                    all_removed_test_cases_file_data["filepath"] = file.old_path
-                    all_removed_test_cases_in_commit.append(all_removed_test_cases_file_data)
+                    for file_idx, file in enumerate(commit.modified_files):
+                        filename = file.filename
+                        # Check if file is a candidate file
+                        if not is_candidate_file(filename):
+                            continue
 
-                # Prune moved and refactored test files
-                temp_all_removed_test_cases_in_commit = deepcopy(all_removed_test_cases_in_commit)
-                for index, removed_test_cases_in_file_data in enumerate(all_removed_test_cases_in_commit):
-                    removed_test_cases_in_file = removed_test_cases_in_file_data["removed_test_functions"]
-                    if not removed_test_cases_in_file:
-                        continue
-                    
-                    for removed_test_case in removed_test_cases_in_file:
-                        # Filter out moved test cases(across files in commit) from removed test cases [Hypothesis 3]
-                        if config.HANDLE_MOVED == "true":
-                            if removed_test_case in all_added_test_cases_in_commit:
-                                temp_all_removed_test_cases_in_commit[index]["removed_test_functions"].remove(removed_test_case)
-
-                        # Filter our refactored test cases [ suggested by RefMiner]
-                        if config.HANDLE_REFACTOR == "true":
-                            # refactors_commit_data = list(filter(lambda each: each["sha1"] == commit.hash, repo_refactors))[0]
-                            refactors_commit_data = next((each for each in repo_refactors if each["sha1"] == commit.hash), None)
-                            refactors_commit = refactors_commit_data["refactorings"] if not refactors_commit_data is None else []
-                            # print("no", refactor["refactors_commit"])
-                            for refactor in refactors_commit:
-                                for each in refactor["leftSideLocations"]:
-                                    # Check if removed test function is in refactored codeElement of same file path
-                                    # print(each["filePath"])
-                                    # print(temp_all_removed_test_cases_in_commit[index]["filepath"])
-                                    if each["codeElement"] and removed_test_case in each["codeElement"] \
-                                            and removed_test_case in \
-                                            temp_all_removed_test_cases_in_commit[index]["removed_test_functions"] \
-                                            and temp_all_removed_test_cases_in_commit[index]["filepath"] == each["filePath"]:
-                                        temp_all_removed_test_cases_in_commit[index]["removed_test_functions"].remove(
-                                            removed_test_case)
-
-                    all_removed_test_cases_in_commit = temp_all_removed_test_cases_in_commit
-                for rm_test_case_file_data_idx, removed_test_cases_in_file_data in enumerate(
-                        all_removed_test_cases_in_commit):
-                    removed_test_cases_in_file = removed_test_cases_in_file_data["removed_test_functions"]
-                    confidence = removed_test_cases_in_file_data["confidence"]
-                    filename = removed_test_cases_in_file_data["filename"]
-                    for removed_test_case_idx_in_file, removed_test_case in enumerate(removed_test_cases_in_file):
-                        if rm_test_case_file_data_idx == 0:
-                            if removed_test_case_idx_in_file == 0:
-                                data = [
-                                    filename,
-                                    removed_test_case,
-                                    confidence
-                                ]
-                                data = [*commit_master_data, *data]
-
-                                # Compute key stats
-                                analyzer_global.total_test_removal_commits += 1
-                                if confidence == "HIGH":
-                                    analyzer_global.total_high_conf_test_removal += 1
-                                else:
-                                    analyzer_global.total_low_conf_test_removal += 1
-
-                                # Toggle commit included flag
-                                commit_included = True
-                            else:
-                                data = [
-                                    '',
-                                    removed_test_case,
-                                    ''
-                                ]
-                                data = [*empty_commit_master_data, *data]
-                        else:
-                            if removed_test_case_idx_in_file == 0:
-                                data = [
-                                    filename,
-                                    removed_test_case,
-                                    confidence
-                                ]
-                                if commit_included:
-                                    data = [*empty_commit_master_data, *data]
-                                else:
-                                    data = [*commit_master_data, *data]
-                                    # Toggle commit included flag
-                                    commit_included = True
-                                # Compute key stats
-                                analyzer_global.total_test_removal_commits += 1
-                                if confidence == "HIGH":
-                                    analyzer_global.total_high_conf_test_removal += 1
-                                else:
-                                    analyzer_global.total_low_conf_test_removal += 1
-                            else:
-                                data = [
-                                    '',
-                                    removed_test_case,
-                                    ''
-                                ]
-                                data = [*empty_commit_master_data, *data]
-                        results.append(
-                            data
+                        all_removed_test_cases_file_data = (
+                            analyze_test_cases_removal_in_commit_file(file)
                         )
-                print(get_repo_name(repo_url) + \
-                        "......... Analyzing commit .........." + commit.hash + '.....' + commit_datetime)
+                        all_removed_test_cases_file_data["file_index"] = file_idx
+                        all_removed_test_cases_file_data["filename"] = filename
+                        all_removed_test_cases_file_data["filepath"] = file.old_path
+                        all_removed_test_cases_in_commit.append(
+                            all_removed_test_cases_file_data
+                        )
+
+                    # Fully hydrate test cases ecords
+                    for (
+                        removed_test_cases_in_file_data
+                    ) in all_removed_test_cases_in_commit:
+                        removed_test_cases_in_file = removed_test_cases_in_file_data[
+                            "removed_test_functions"
+                        ]
+                        filepath = removed_test_cases_in_file_data["filepath"]
+                        filename = removed_test_cases_in_file_data["filename"]
+                        for removed_test_case in removed_test_cases_in_file:
+                            data = [
+                                filepath,
+                                filename,
+                                removed_test_case["name"],
+                                removed_test_case["check_annot"],
+                            ]
+                            data = [*commit_master_data, *data]
+                            results.append(data)
+
+                # Handles step 11
+                elif step == 11:
+                    if commit.hash not in commits_to_look:
+                        continue
+
+                    commit_hash = parse_commit_as_hyperlink(
+                        label=commit.hash, url=get_full_commit_url(commit.hash)
+                    )
+                    # NOTE: Ignore filepath for now [causes issue for moved test file]
+                    # filepaths_to_look = previous_step_df[
+                    #     previous_step_df["Hash"] == commit_hash
+                    # ].to_dict("list")["Filepath"]
+                    
+                    filenames_to_look = previous_step_df[
+                        previous_step_df["Hash"] == commit_hash
+                    ].to_dict("list")["Filename"]
+
+                    for file_idx, file in enumerate(commit.modified_files):
+                        filename = file.filename
+                        print(filename, "helllo")
+                        # NOTE: Ignore filepath for now [causes issue for moved test file]
+                        # filepath = (
+                        #     file.new_path
+                        #     if file.new_path is not None
+                        #     else file.old_path
+                        # )
+                        # if filepath not in filepaths_to_look:
+                        #     continue
+
+                        if filename not in filenames_to_look:
+                            continue
+                        
+                        # Store all false testcases deletion in a commit
+                        all_true_test_cases_deletion_in_commit_file = []
+                        analyze_true_test_cases_deletion_in_commit_file(
+                            file, all_true_test_cases_deletion_in_commit_file
+                        )
+
+                        # print(all_true_test_cases_deletion_in_commit_file)
+                        data = analyzer_global.cloned_step1_hydrated_df[
+                            (
+                                analyzer_global.cloned_step1_hydrated_df["Hash"]
+                                == commit_hash
+                            )
+                            & (
+                                analyzer_global.cloned_step1_hydrated_df["Filename"]
+                                == filename
+                            )
+                        ]
+
+                        if len(all_true_test_cases_deletion_in_commit_file):
+                            data = data[
+                                ~data["Removed Test Case"].isin(
+                                    all_true_test_cases_deletion_in_commit_file
+                                )
+                            ]
+
+                        data = pd.concat(
+                            [analyzer_global.cloned_step1_hydrated_df, data]
+                        ).drop_duplicates(keep=False)
+                        analyzer_global.cloned_step1_hydrated_df = data
+                    print("Current Dataframe: ", analyzer_global.cloned_step1_hydrated_df.shape)
+
+                # Handles step 3
+                elif step == 3:
+                    if commit.hash not in commits_to_look:
+                        continue
+
+                    commit_hash = parse_commit_as_hyperlink(
+                        label=commit.hash, url=get_full_commit_url(commit.hash)
+                    )
+
+                    all_added_test_cases_in_commit = []
+                    for file_idx, file in enumerate(commit.modified_files):
+                        filename = file.filename
+                        # NOTE: Ignore filepath for now [causes issue for moved test file]
+                        # filepath = file.new_path
+
+                        # Store all added testcases in a commit
+                        analyze_test_cases_addition_in_commit_file(
+                            file, all_added_test_cases_in_commit
+                        )
+
+                    all_added_test_cases_in_commit = list(
+                        set(all_added_test_cases_in_commit)
+                    )
+
+                    for added_testcase_name in all_added_test_cases_in_commit:
+                        data = analyzer_global.cloned_step2_hydrated_df[
+                            (
+                                analyzer_global.cloned_step2_hydrated_df["Hash"]
+                                == commit.hash
+                            )
+                            & (
+                                analyzer_global.cloned_step2_hydrated_df["Filepath"]
+                                == filename
+                            )
+                            & (
+                                analyzer_global.cloned_step2_hydrated_df[
+                                    "Removed Test Case"
+                                ]
+                                == added_testcase_name
+                            )
+                        ]
+                        data = pd.concat(
+                            [analyzer_global.cloned_step2_hydrated_df, data]
+                        ).drop_duplicates(keep=False)
+                        analyzer_global.cloned_step2_hydrated_df = data
+                    print("Current Dataframe: ", analyzer_global.cloned_step2_hydrated_df.shape)
+                    
+                print(
+                    get_repo_name(repo_url)
+                    + "......... Analyzing commit .........."
+                    + commit.hash
+                    + "....."
+                    + commit_datetime
+                )
             else:
+                if step == 11:
+                    # Set dataframe computed for step 11
+                    analyzer_global.step11_hydrated_df = (
+                        analyzer_global.cloned_step1_hydrated_df
+                    )
+                elif step == 3:
+                    # Set dataframe computed for step 3
+                    analyzer_global.step3_hydrated_df = (
+                        analyzer_global.cloned_step2_hydrated_df
+                    )
+
                 is_completed = True
 
-    
-    analyzer_global =  AnalyzerGlobal()
     def main():
         try:
             traverse_commits(analyzer_global)
-            pretify_csv_results(analyzer_global)
-            return analyzer_global.results
+            if step == 1:
+                pretify_csv_results(analyzer_global)
+
         except ValueError as e:
             print("Analyzer: Value Error Detected")
             if analyzer_global.current_commit:
                 print("Corrupted Commit ", {type(e).__name__})
-                print(analyzer_global)
+                # print(analyzer_global)
                 # analyzer_global.current_commit = next(analyzer_global.commits)
                 analyzer_global.since = analyzer_global.since + timedelta(days=1)
                 main()
-                return analyzer_global.results
+            else:
+                raise e
         except Exception as e:
             print("Analyzer: Exception Detected")
             raise e
-    
-    main()
-            
-    return analyzer_global.results
-    
 
-# 29d9255f668b8da42fc4fcd40b2a5e716b9b7a53
+    analyzer_global = AnalyzerGlobal()
+    main()
+    if step == 3:
+        return analyzer_global.step3_hydrated_df
+    elif step == 11:
+        return analyzer_global.step11_hydrated_df
+    else:
+        return analyzer_global.results

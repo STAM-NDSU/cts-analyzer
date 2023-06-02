@@ -10,9 +10,9 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles3/pmd"
-OUTPUT_FILE = "pmd_validation_hydrated"
-files = [{"filename": "pmd_validated"}]
+IO_DIR = "io/validationFiles4/commons-math"
+OUTPUT_FILE = "validation_hydrated"
+files = [{"filename": "validated"}]
 
 
 def parse_files(files):
@@ -29,12 +29,12 @@ for file_index, filepath in enumerate(parse_files(files)):
         all_data = []
 
         prev = {
-            "DATETIME": None,
-            "HASH": None,
-            "COMMIT MSG": None,
-            "FILENAME": None,
-            "REMOVED TEST CASE": None,
-            "CONFIDENCE": None,
+            "Datetime": None,
+            "Hash": None,
+            "Commit Msg": None,
+            "Filename": None,
+            "Removed Test Case": None,
+            "Confidence": None,
             "Manual Validation": None,
             "Final Results": None,
             "Ajay Manual Validation": None,
@@ -46,11 +46,11 @@ for file_index, filepath in enumerate(parse_files(files)):
         for index, row in df.iterrows():
             if index == 0:
                 prev = {
-                    "DATETIME": row["DATETIME"],
-                    "COMMIT MSG": row["COMMIT MSG"],
-                    "FILENAME": row["FILENAME"],
-                    "REMOVED TEST CASE": row["REMOVED TEST CASE"],
-                    "CONFIDENCE": row["CONFIDENCE"],
+                    "Datetime": row["Datetime"],
+                    "Commit Msg": row["Commit Msg"],
+                    "Filename": row["Filename"],
+                    "Removed Test Case": row["Removed Test Case"],
+                    "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
                     "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
@@ -58,45 +58,45 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Ajay Comments": row["Ajay Comments"],
                     "Suraj Comments": row["Suraj Comments"],
                 }
-                prev["HASH"] = parse_commit_as_hyperlink(
-                    label=row["HASH"], url=get_full_commit_url(row["HASH"])
+                prev["Hash"] = parse_commit_as_hyperlink(
+                    label=row["Hash"], url=get_full_commit_url(row["Hash"])
                 )
-                row["HASH"] = prev["HASH"]
+                row["Hash"] = prev["Hash"]
             else:
-                if pd.isna(row["DATETIME"]) or pd.isnull(row["DATETIME"]):
-                    row["DATETIME"] = prev["DATETIME"]
+                if pd.isna(row["Datetime"]) or pd.isnull(row["Datetime"]):
+                    row["Datetime"] = prev["Datetime"]
                 else:
-                    prev["DATETIME"] = row["DATETIME"]
+                    prev["Datetime"] = row["Datetime"]
 
-                if pd.isna(row["HASH"]) or pd.isnull(row["HASH"]):
-                    row["HASH"] = prev["HASH"]
+                if pd.isna(row["Hash"]) or pd.isnull(row["Hash"]):
+                    row["Hash"] = prev["Hash"]
                 else:
-                    prev["HASH"] = parse_commit_as_hyperlink(
-                        label=row["HASH"], url=get_full_commit_url(row["HASH"])
+                    prev["Hash"] = parse_commit_as_hyperlink(
+                        label=row["Hash"], url=get_full_commit_url(row["Hash"])
                     )
-                    row["HASH"] = prev["HASH"]
+                    row["Hash"] = prev["Hash"]
 
-                if pd.isna(row["COMMIT MSG"]) or pd.isnull(row["COMMIT MSG"]):
-                    row["COMMIT MSG"] = prev["COMMIT MSG"]
+                if pd.isna(row["Commit Msg"]) or pd.isnull(row["Commit Msg"]):
+                    row["Commit Msg"] = prev["Commit Msg"]
                 else:
-                    prev["COMMIT MSG"] = row["COMMIT MSG"]
+                    prev["Commit Msg"] = row["Commit Msg"]
 
-                if pd.isna(row["FILENAME"]) or pd.isnull(row["FILENAME"]):
-                    row["FILENAME"] = prev["FILENAME"]
+                if pd.isna(row["Filename"]) or pd.isnull(row["Filename"]):
+                    row["Filename"] = prev["Filename"]
                 else:
-                    prev["FILENAME"] = row["FILENAME"]
+                    prev["Filename"] = row["Filename"]
 
-                if pd.isna(row["REMOVED TEST CASE"]) or pd.isnull(
-                    row["REMOVED TEST CASE"]
+                if pd.isna(row["Removed Test Case"]) or pd.isnull(
+                    row["Removed Test Case"]
                 ):
-                    row["REMOVED TEST CASE"] = prev["REMOVED TEST CASE"]
+                    row["Removed Test Case"] = prev["Removed Test Case"]
                 else:
-                    prev["REMOVED TEST CASE"] = row["REMOVED TEST CASE"]
+                    prev["Removed Test Case"] = row["Removed Test Case"]
 
-                if pd.isna(row["CONFIDENCE"]) or pd.isnull(row["CONFIDENCE"]):
-                    row["CONFIDENCE"] = prev["CONFIDENCE"]
+                if pd.isna(row["Confidence"]) or pd.isnull(row["Confidence"]):
+                    row["Confidence"] = prev["Confidence"]
                 else:
-                    prev["CONFIDENCE"] = row["CONFIDENCE"]
+                    prev["Confidence"] = row["Confidence"]
 
                 # if pd.isna(row["Manual Validation"]) or pd.isnull(row["Manual Validation"]):
                 #     row["Manual Validation"] = prev["Manual Validation"]
@@ -125,12 +125,12 @@ for file_index, filepath in enumerate(parse_files(files)):
 
             # new_df = pd.concat([new_df,row])
             data = [
-                row["DATETIME"],
-                row["HASH"],
-                row["COMMIT MSG"],
-                row["FILENAME"],
-                row["REMOVED TEST CASE"],
-                row["CONFIDENCE"],
+                row["Datetime"],
+                row["Hash"],
+                row["Commit Msg"],
+                row["Filename"],
+                row["Removed Test Case"],
+                row["Confidence"],
                 row["Manual Validation"],
                 row["Final Results"],
                 row["Ajay Manual Validation"],
@@ -146,12 +146,12 @@ for file_index, filepath in enumerate(parse_files(files)):
         new_df = pd.DataFrame(
             data=all_data,
             columns=[
-                "DATETIME",
-                "HASH",
-                "COMMIT MSG",
-                "FILENAME",
-                "REMOVED TEST CASE",
-                "CONFIDENCE",
+                "Datetime",
+                "Hash",
+                "Commit Msg",
+                "Filename",
+                "Removed Test Case",
+                "Confidence",
                 "Manual Validation",
                 "Final Results",
                 "Ajay Manual Validation",
