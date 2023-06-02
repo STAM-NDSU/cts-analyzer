@@ -28,12 +28,16 @@ def analyze_test_cases_addition_in_commit_file(
     all_added_test_cases_in_commit += added_test_functions
     return all_added_test_cases_in_commit
 
+
 def analyze_true_test_cases_deletion_in_commit_file(
     file: ModifiedFile, all_false_removed_test_cases_in_file: List
 ) -> List:
-    true_removed_test_functions_javaparser = get_true_removed_test_functions_javaparser(file)
+    true_removed_test_functions_javaparser = get_true_removed_test_functions_javaparser(
+        file
+    )
     all_false_removed_test_cases_in_file += true_removed_test_functions_javaparser
     return all_false_removed_test_cases_in_file
+
 
 #  Get list of removed test functions from file changes
 def get_removed_test_functions(file) -> List:
@@ -62,10 +66,57 @@ def get_removed_test_functions(file) -> List:
     #     return  []
 
 
+def get_removed_test_functions_regex_only(file) -> List:
+    removed_testcases1 = get_removed_test_functions1(file.diff)
+    removed_testcases2 = get_removed_test_functions2(file.diff)
+    all_removed_testcases = list({*removed_testcases1, *removed_testcases2})
+    return all_removed_testcases
+
+
+#  Get list of removed test functions from file changes
+def get_removed_test_functions1(file_changes: str) -> List:
+    removed_testcases = []
+    matched_grp = re.finditer(
+        Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE.value, file_changes
+    )
+    if matched_grp:
+        raw_removed_testcases = [x.group() for x in matched_grp]
+
+        for each in raw_removed_testcases:
+            # print(each, file.filename, "removed 2")
+            function_prototype = cleanup_function_prototype(each)
+            function_name = get_function_name_from_prototype(function_prototype)
+            removed_testcases.append(function_name)
+            # print(function_name, file.filename, "removed 2")
+
+        return removed_testcases
+    else:
+        return []
+
+
+#  Get list of removed test functions from file changes
+def get_removed_test_functions2(file_changes: str) -> List:
+    removed_testcases = []
+    matched_grp = re.finditer(
+        Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE2.value, file_changes
+    )
+    if matched_grp:
+        raw_removed_testcases = [x.group() for x in matched_grp]
+
+        for each in raw_removed_testcases:
+            # print(each, file.filename, "removed 2")
+            function_prototype = cleanup_function_prototype(each)
+            function_name = get_function_name_from_prototype(function_prototype)
+            removed_testcases.append(function_name)
+            # print(function_name, file.filename, "removed 2")
+
+        return removed_testcases
+    else:
+        return []
+
+
 #  Get list of removed test functions from file changes using lizard
-def get_removed_test_functions_lizard(
-    file
-) -> List:
+def get_removed_test_functions_lizard(file) -> List:
     methods = []
     removed_methods = []
     for x in file.methods:
@@ -82,25 +133,6 @@ def get_removed_test_functions_lizard(
                 print(function_name, "removed lizard", "check_annot")
                 removed_methods.append({"name": function_name, "check_annot": "check"})
     return removed_methods
-
-
-# #  Get list of removed test functions from file changes
-# def get_removed_test_functions2(file_changes: str, file) -> List:
-#     removed_testcases = []
-#     matched_grp = re.finditer(Pattern.REMOVED_TEST_FUNCTION_PROTOTYPE2.value, file_changes)
-#     if matched_grp:
-#         raw_removed_testcases = [x.group() for x in matched_grp]
-
-#         for each in raw_removed_testcases:
-#             # print(each, file.filename, "removed 2")
-#             function_prototype = cleanup_function_prototype(each)
-#             function_name = get_function_name_from_prototype(function_prototype)
-#             removed_testcases.append(function_name)
-#             # print(function_name, file.filename, "removed 2")
-
-#         return removed_testcases
-#     else:
-#         return []
 
 
 # #  Get refactored test functions from file changes
@@ -169,9 +201,7 @@ def get_added_test_functions(file) -> List:
     #     return []
 
 
-def get_added_test_functions_lizard(
-    file
-) -> List:
+def get_added_test_functions_lizard(file) -> List:
     methods_before = []
     added_methods = []
     for x in file.methods_before:
@@ -179,20 +209,22 @@ def get_added_test_functions_lizard(
     for x in file.methods:
         match_found = list(filter(lambda each: each["name"] == x.name, methods_before))
         if not match_found:
-            function_name = get_function_name_from_prototype_lizard(x.long_name)
+            function_name = get_function_name_from_prototype(x.long_name)
             if function_name:
                 added_methods.append(function_name)
     return added_methods
 
+
 #  Get false removed test functions from file changes
 def get_true_removed_test_functions_javaparser(file) -> List:
-    true_removed_test_functions_javaparser = get_true_removed_test_functions_javaparser(file)
+    true_removed_test_functions_javaparser = get_true_removed_test_functions_javaparser(
+        file
+    )
     return true_removed_test_functions_javaparser
 
+
 #  Get list of removed test functions from file changes using lizard
-def get_true_removed_test_functions_javaparser(
-    file
-) -> List:
+def get_true_removed_test_functions_javaparser(file) -> List:
     methods = []
     removed_methods = []
     if file.testcases:

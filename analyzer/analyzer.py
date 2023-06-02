@@ -7,6 +7,7 @@ from .core import (
     analyze_test_cases_removal_in_commit_file,
     analyze_test_cases_addition_in_commit_file,
     analyze_true_test_cases_deletion_in_commit_file,
+    get_removed_test_functions_regex_only
 )
 from .utils import (
     is_candidate_file,
@@ -84,7 +85,7 @@ def get_removed_test_functions_details(
             since=since,
             to=to,
             only_no_merge=True,
-            # single="4621d27dfede6b7c5741cba211042a40375a198f",  # use it only for debugging
+            #single="3e5b0bd6a09fc0234b1e5a59d2ad4a5527b272fc",  # use it only for debugging
         ).traverse_commits()
         analyzer_global.commits = commits
 
@@ -98,9 +99,9 @@ def get_removed_test_functions_details(
             print("Initial Dataframe: ", analyzer_global.cloned_step1_hydrated_df.shape)
             
             
-            if previous_step_df is not None:
-                commits_to_look = previous_step_df[
-                    previous_step_df["Check Annot"] == "check"
+            if step1_hydrated_df is not None:
+                commits_to_look = step1_hydrated_df[
+                    step1_hydrated_df["Check Annot"] == "check"
                 ].to_dict("list")["Hash"]
                 commits_to_look = list(
                     set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
@@ -111,8 +112,8 @@ def get_removed_test_functions_details(
             analyzer_global.cloned_step2_hydrated_df = step2_hydrated_df.copy(deep=True)
             print("Initial Dataframe: ", analyzer_global.cloned_step2_hydrated_df.shape)
 
-            if previous_step_df is not None:
-                commits_to_look = previous_step_df.to_dict("list")["Hash"]
+            if step2_hydrated_df is not None:
+                commits_to_look = step2_hydrated_df.to_dict("list")["Hash"]
                 commits_to_look = list(
                     set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
                 )
@@ -156,7 +157,7 @@ def get_removed_test_functions_details(
                             all_removed_test_cases_file_data
                         )
 
-                    # Fully hydrate test cases ecords
+                    # Fully hydrate test cases records
                     for (
                         removed_test_cases_in_file_data
                     ) in all_removed_test_cases_in_commit:
@@ -194,7 +195,6 @@ def get_removed_test_functions_details(
 
                     for file_idx, file in enumerate(commit.modified_files):
                         filename = file.filename
-                        print(filename, "helllo")
                         # NOTE: Ignore filepath for now [causes issue for moved test file]
                         # filepath = (
                         #     file.new_path
@@ -207,13 +207,12 @@ def get_removed_test_functions_details(
                         if filename not in filenames_to_look:
                             continue
                         
-                        # Store all false testcases deletion in a commit
+                        # Store all true testcases deletion in a commit [suggested by Javalang]
                         all_true_test_cases_deletion_in_commit_file = []
                         analyze_true_test_cases_deletion_in_commit_file(
                             file, all_true_test_cases_deletion_in_commit_file
                         )
 
-                        # print(all_true_test_cases_deletion_in_commit_file)
                         data = analyzer_global.cloned_step1_hydrated_df[
                             (
                                 analyzer_global.cloned_step1_hydrated_df["Hash"]
@@ -225,12 +224,24 @@ def get_removed_test_functions_details(
                             )
                         ]
 
+                        # Filter out false positives if Javalang detects true testcases deletion [i.e file is successfully parsed]
                         if len(all_true_test_cases_deletion_in_commit_file):
                             data = data[
                                 ~data["Removed Test Case"].isin(
                                     all_true_test_cases_deletion_in_commit_file
                                 )
                             ]
+                        else:
+                            # Implement RegEx logic here
+                            print("Voila, potential javalang parser failure detected")
+                            all_testcases_deletion_in_commit_file_regex = get_removed_test_functions_regex_only(file)
+                            # Filter out false positives using removed testcases detected by RegEx 
+                            if len(all_testcases_deletion_in_commit_file_regex):
+                                data = data[
+                                    ~data["Removed Test Case"].isin(
+                                        all_testcases_deletion_in_commit_file_regex
+                                    )
+                                ]
 
                         data = pd.concat(
                             [analyzer_global.cloned_step1_hydrated_df, data]
@@ -266,11 +277,7 @@ def get_removed_test_functions_details(
                         data = analyzer_global.cloned_step2_hydrated_df[
                             (
                                 analyzer_global.cloned_step2_hydrated_df["Hash"]
-                                == commit.hash
-                            )
-                            & (
-                                analyzer_global.cloned_step2_hydrated_df["Filepath"]
-                                == filename
+                                == commit_hash
                             )
                             & (
                                 analyzer_global.cloned_step2_hydrated_df[
@@ -279,6 +286,7 @@ def get_removed_test_functions_details(
                                 == added_testcase_name
                             )
                         ]
+                        
                         data = pd.concat(
                             [analyzer_global.cloned_step2_hydrated_df, data]
                         ).drop_duplicates(keep=False)

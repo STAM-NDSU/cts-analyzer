@@ -8,7 +8,7 @@ import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 IO_DIR = "io/validationFiles4"
-PROJECT = "commons-math"
+PROJECT = "gson"
 OUTPUT_FILE = "validation_diff_done"
 files = [
     {
