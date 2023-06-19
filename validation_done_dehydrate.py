@@ -8,11 +8,11 @@ import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 IO_DIR = "io/validationFiles4"
-PROJECT = "cts"
-OUTPUT_FILE = "validation_hydrated2-d"
+PROJECT = "pmd"
+OUTPUT_FILE = "validation_diff_done"
 files = [
     {
-        "filename": "validation_hydrated2"
+        "filename": "validation_diff_done_hydrated"
     }
 ]
 
@@ -32,7 +32,6 @@ for file_index, filepath in enumerate(parse_files(files)):
             "Commit Msg": None,
             "Filename": None,
             "Removed Test Case": None,
-            # "Confidence": None,
             "Manual Validation": None,
             "Final Results": None,
             "Ajay Manual Validation": None,
@@ -49,7 +48,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Hash": row["Hash"],
                     "Filename": row["Filename"],
                     "Removed Test Case": row["Removed Test Case"],
-                    # "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
                     "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
@@ -70,7 +68,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                         row["Confidence"] = ''
                     else:
                         prev["Filename"] = row["Filename"]
-                        # prev["Confidence"] = row["Confidence"]
                     
                 else:
                     prev["Hash"] = row["Hash"]
@@ -78,7 +75,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                     prev["Commit Msg"] = prev["Commit Msg"]
                     
                     prev["Filename"] = row["Filename"]
-                    # prev["Confidence"] = row["Confidence"]
              
                 
                 # if pd.isna(row["Manual Validation"]) or pd.isnull(row["Manual Validation"]):
@@ -107,4 +103,5 @@ for file_index, filepath in enumerate(parse_files(files)):
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
                     
         df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
+        print(f"Generated {IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv")
 

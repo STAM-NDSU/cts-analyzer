@@ -140,3 +140,4 @@ for file_index, filepath in enumerate(parse_files(files)):
             ],
         )
         new_df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
+        print(f"Generated {IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv")

@@ -6,11 +6,11 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles4/cts"
+IO_DIR = "io/validationFiles4/pmd"
 OUTPUT_FILE = "validation_diff"
 
-step3_file = "io/outputRevisedLatest4/cts/hydrated_cts-step3.csv"
-validated_file = "io/validationFiles4/cts/validation_hydrated.csv"
+step3_file = "io/outputRevisedLatest4/pmd/hydrated_pmd-step3.csv"
+validated_file = "io/validationFiles4/pmd/validation_hydrated.csv"
 
 base_columns = [
     "Datetime",
@@ -22,7 +22,6 @@ base_columns = [
 
 columns = [
     *base_columns,
-    # "Confidence",
     "Manual Validation",
     "Final Results",
     "Ajay Manual Validation",
@@ -88,9 +87,10 @@ with open(step3_file, "r") as a, open(validated_file, "r") as b:
     )
     # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
     alter_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv", index=False)
-
+    print(f"Generated {IO_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv")
+    
     matched_df = pd.DataFrame(matched, columns=columns)
     # matched_df.to_excel(writer, sheet_name="done", index=False)
     matched_df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}_done_hydrated.csv", index=False)
-
+    print(f"Generated {IO_DIR}/{OUTPUT_FILE}_done_hydrated.csv")
 # writer.close()

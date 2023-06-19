@@ -7,7 +7,7 @@ from .core import (
     analyze_test_cases_removal_in_commit_file,
     analyze_test_cases_addition_in_commit_file,
     analyze_true_test_cases_deletion_in_commit_file_javaparser,
-    get_removed_test_functions_regex_only
+    get_removed_test_functions_regex_only,
 )
 from .utils import (
     is_candidate_file,
@@ -85,7 +85,7 @@ def get_removed_test_functions_details(
             since=since,
             to=to,
             only_no_merge=True,
-            # single="829d5e4e7304464c4722555c3529fc6210df262f",  # use it only for debugging
+            # single="14ec8c603243beccb580cfd12bb9d4dd4248e351",  # use it only for debugging
         ).traverse_commits()
         analyzer_global.commits = commits
 
@@ -97,21 +97,20 @@ def get_removed_test_functions_details(
             step1_hydrated_df = previous_step_df
             analyzer_global.cloned_step1_hydrated_df = step1_hydrated_df.copy(deep=True)
             print("Initial Dataframe: ", analyzer_global.cloned_step1_hydrated_df.shape)
-            
-            
+
             if step1_hydrated_df is not None:
-                # WARNING: Previously, used to check for only commits with testcases not beginning with 'test'; 
+                # WARNING: Previously, used to check for only commits with testcases not beginning with 'test';
                 # cause of issue for showing private testcases
                 # commits_to_look = step1_hydrated_df[
                 #     step1_hydrated_df["Check Annot"] == "check"
                 # ].to_dict("list")["Hash"]
-                
+
                 # Check for all the commits regardless of annotation check in step1
                 commits_to_look = step1_hydrated_df.to_dict("list")["Hash"]
                 commits_to_look = list(
                     set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
                 )
-                print("Total commits to scan: ", len(commits_to_look) )
+                print("Total commits to scan: ", len(commits_to_look))
         elif step == 3:
             step2_hydrated_df = previous_step_df
             analyzer_global.cloned_step2_hydrated_df = step2_hydrated_df.copy(deep=True)
@@ -123,7 +122,6 @@ def get_removed_test_functions_details(
                     set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
                 )
                 print("Total commits to scan: ", len(commits_to_look))
-
 
         is_completed = False
         while not is_completed:
@@ -183,7 +181,6 @@ def get_removed_test_functions_details(
 
                 # Handles step 11
                 elif step == 11:
-                    print(commit.hash, commit.hash not in commits_to_look)
                     if commit.hash not in commits_to_look:
                         continue
 
@@ -194,12 +191,11 @@ def get_removed_test_functions_details(
                     # filepaths_to_look = previous_step_df[
                     #     previous_step_df["Hash"] == commit_hash
                     # ].to_dict("list")["Filepath"]
-                    
+
                     filenames_to_look = previous_step_df[
                         previous_step_df["Hash"] == commit_hash
                     ].to_dict("list")["Filename"]
 
-                    print(commit.modified_files)
                     for file_idx, file in enumerate(commit.modified_files):
                         filename = file.filename
                         # NOTE: Ignore filepath for now [causes issue for moved test file]
@@ -213,14 +209,8 @@ def get_removed_test_functions_details(
 
                         if filename not in filenames_to_look:
                             continue
-                        
-                        # Store all true testcases deletion in a commit [suggested by Javalang]
-                        all_true_test_cases_deletion_in_commit_file = []
-                        analyze_true_test_cases_deletion_in_commit_file_javaparser(
-                            file, all_true_test_cases_deletion_in_commit_file
-                        )
-                        print(len(all_true_test_cases_deletion_in_commit_file))
 
+                        # Testcases belonging to a file in a commit hash
                         data = analyzer_global.cloned_step1_hydrated_df[
                             (
                                 analyzer_global.cloned_step1_hydrated_df["Hash"]
@@ -232,31 +222,56 @@ def get_removed_test_functions_details(
                             )
                         ]
 
-                        # Filter out false positives if Javalang detects true testcases deletion [i.e file is successfully parsed]
-                        if len(all_true_test_cases_deletion_in_commit_file):
-                            data = data[
-                                ~data["Removed Test Case"].isin(
-                                    all_true_test_cases_deletion_in_commit_file
-                                )
-                            ]
-                        else:
-                            #TODO: Improve further to reduce unnecessary load [implement clear separation of parser failure]
-                            # Implement RegEx logic here
+                        # Store all true testcases deletion in a commit [suggested by Javalang]
+                        all_true_test_cases_deletion_in_commit_file = (
+                            analyze_true_test_cases_deletion_in_commit_file_javaparser(
+                                file
+                            )
+                        )
+
+                        """
+                        Filter out false positives using true positive detected by Javaparser or RegEx
+                        """
+
+                        # Javaparser does not detect true testcases deletion [i.e file cannot be parsed]
+                        if all_true_test_cases_deletion_in_commit_file is None:
                             print("Voila, potential javalang parser failure detected")
-                            all_testcases_deletion_in_commit_file_regex = get_removed_test_functions_regex_only(file)
-                            # Filter out false positives using removed testcases detected by RegEx 
+                            all_testcases_deletion_in_commit_file_regex = (
+                                get_removed_test_functions_regex_only(file)
+                            )
+                            print(
+                                len(all_testcases_deletion_in_commit_file_regex),
+                                "deleted testcases in file Regex",
+                            )
+                            
+                            # Filter out using removed testcases detected by RegEx
                             if len(all_testcases_deletion_in_commit_file_regex):
                                 data = data[
                                     ~data["Removed Test Case"].isin(
                                         all_testcases_deletion_in_commit_file_regex
                                     )
                                 ]
+                        # Javaparser detects true testcases deletion [i.e file is successfully parsed]
+                        elif len(all_true_test_cases_deletion_in_commit_file):
+                            print(
+                                len(all_true_test_cases_deletion_in_commit_file),
+                                "deleted testcases in file Javaparser",
+                            )
+                            data = data[
+                                ~data["Removed Test Case"].isin(
+                                    all_true_test_cases_deletion_in_commit_file
+                                )
+                            ]
 
+                        # NOTE: If no true testcases are detected by javaparser or regex, we assume all of them are false
                         data = pd.concat(
                             [analyzer_global.cloned_step1_hydrated_df, data]
                         ).drop_duplicates(keep=False)
                         analyzer_global.cloned_step1_hydrated_df = data
-                    print("Current Dataframe: ", analyzer_global.cloned_step1_hydrated_df.shape)
+                    print(
+                        "Current Dataframe: ",
+                        analyzer_global.cloned_step1_hydrated_df.shape,
+                    )
 
                 # Handles step 3
                 elif step == 3:
@@ -278,9 +293,10 @@ def get_removed_test_functions_details(
                             file, all_added_test_cases_in_commit
                         )
 
-                    all_added_test_cases_in_commit = list(
-                        set(all_added_test_cases_in_commit)
-                    )
+                    # Previously used to elimate all removed testcases with name matching with one added testcase
+                    # all_added_test_cases_in_commit = list(
+                    #     set(all_added_test_cases_in_commit)
+                    # )
 
                     for added_testcase_name in all_added_test_cases_in_commit:
                         data = analyzer_global.cloned_step2_hydrated_df[
@@ -296,12 +312,20 @@ def get_removed_test_functions_details(
                             )
                         ]
                         
+                        if not data.empty:
+                            # Remove only the first matching record
+                            data = data.iloc[[0]]
+                            
+
                         data = pd.concat(
                             [analyzer_global.cloned_step2_hydrated_df, data]
                         ).drop_duplicates(keep=False)
                         analyzer_global.cloned_step2_hydrated_df = data
-                    print("Current Dataframe: ", analyzer_global.cloned_step2_hydrated_df.shape)
-                    
+                    print(
+                        "Current Dataframe: ",
+                        analyzer_global.cloned_step2_hydrated_df.shape,
+                    )
+
                 print(
                     get_repo_name(repo_url)
                     + "......... Analyzing commit .........."

@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 IO_DIR = "io/validationFiles4"
-PROJECT = "cts"
+PROJECT = "pmd"
 OUTPUT_FILE = "validation_diff_leftovers"
 files = [{"filename": "validation_diff_leftovers_hydrated"}]
 
@@ -56,3 +56,4 @@ for file_index, filepath in enumerate(parse_files(files)):
                     prev["Filename"] = row["Filename"]
 
         df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
+        print(f"Generated {IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv")

@@ -9,9 +9,9 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles4/cts"
-OUTPUT_FILE = "validation_hydrated2"
-files = [{"filename": "manual-validation-cts[CONFLICT RESOLVE] - part2"}]
+IO_DIR = "io/validationFiles4/pmd"
+OUTPUT_FILE = "validation_hydrated"
+files = [{"filename": "validated"}]
 
 
 def parse_files(files):
@@ -31,7 +31,6 @@ for file_index, filepath in enumerate(parse_files(files)):
             "Commit Msg": None,
             "Filename": None,
             "Removed Test Case": None,
-            # "Confidence": None,
             "Manual Validation": None,
             "Final Results": None,
             "Ajay Manual Validation": None,
@@ -47,7 +46,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Commit Msg": row["Commit Msg"],
                     "Filename": row["Filename"],
                     "Removed Test Case": row["Removed Test Case"],
-                    # "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
                     "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
@@ -90,11 +88,6 @@ for file_index, filepath in enumerate(parse_files(files)):
                 else:
                     prev["Removed Test Case"] = row["Removed Test Case"]
 
-                # if pd.isna(row["Confidence"]) or pd.isnull(row["Confidence"]):
-                #     row["Confidence"] = prev["Confidence"]
-                # else:
-                #     prev["Confidence"] = row["Confidence"]
-
                 # if pd.isna(row["Manual Validation"]) or pd.isnull(row["Manual Validation"]):
                 #     row["Manual Validation"] = prev["Manual Validation"]
                 # else:
@@ -121,3 +114,4 @@ for file_index, filepath in enumerate(parse_files(files)):
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
 
         df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}.csv", index=False)
+        print(f"Generated {IO_DIR}/{OUTPUT_FILE}.csv")
