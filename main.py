@@ -36,11 +36,11 @@ else:
             with open(full_file_path, "r") as a:
                 step1_hydrated_df = pd.read_csv(f"{full_file_path}")
                 step1_hydrated_df = step1_hydrated_df.iloc[:, 0:7]
-                new_df = pd.DataFrame()
 
                 step11_df = get_removed_test_functions_details(
                     repo_path, target_branch, 11, step1_hydrated_df
                 )
+                
                 if conf.HANDLE_EXPORT == "true":
                     step11_df.to_csv(
                         f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step11.csv",

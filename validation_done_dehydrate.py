@@ -8,11 +8,11 @@ import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 IO_DIR = "io/validationFiles4"
-PROJECT = "gson"
-OUTPUT_FILE = "validation_diff_done"
+PROJECT = "cts"
+OUTPUT_FILE = "validation_hydrated2-d"
 files = [
     {
-        "filename": "validation_diff_done_hydrated"
+        "filename": "validation_hydrated2"
     }
 ]
 
@@ -25,14 +25,14 @@ for file_index, filepath in enumerate(parse_files(files)):
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
         
-        df = df.iloc[:, 0:12]
+        df = df.iloc[:, 0:11]
         prev = {
             "Datetime": None,
             "Hash": None,
             "Commit Msg": None,
             "Filename": None,
             "Removed Test Case": None,
-            "Confidence": None,
+            # "Confidence": None,
             "Manual Validation": None,
             "Final Results": None,
             "Ajay Manual Validation": None,
@@ -49,7 +49,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Hash": row["Hash"],
                     "Filename": row["Filename"],
                     "Removed Test Case": row["Removed Test Case"],
-                    "Confidence": row["Confidence"],
+                    # "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
                     "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
@@ -70,7 +70,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                         row["Confidence"] = ''
                     else:
                         prev["Filename"] = row["Filename"]
-                        prev["Confidence"] = row["Confidence"]
+                        # prev["Confidence"] = row["Confidence"]
                     
                 else:
                     prev["Hash"] = row["Hash"]
@@ -78,7 +78,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                     prev["Commit Msg"] = prev["Commit Msg"]
                     
                     prev["Filename"] = row["Filename"]
-                    prev["Confidence"] = row["Confidence"]
+                    # prev["Confidence"] = row["Confidence"]
              
                 
                 # if pd.isna(row["Manual Validation"]) or pd.isnull(row["Manual Validation"]):

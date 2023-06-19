@@ -6,11 +6,11 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/validationFiles4/commons-lang"
+IO_DIR = "io/validationFiles4/cts"
 OUTPUT_FILE = "validation_diff"
 
-step3_file = "io/outputRevisedLatest4/commons-lang/hydrated_commons-lang-step3.csv"
-validated_file = "io/validationFiles4/commons-lang/validation_hydrated.csv"
+step3_file = "io/outputRevisedLatest4/cts/hydrated_cts-step3.csv"
+validated_file = "io/validationFiles4/cts/validation_hydrated.csv"
 
 base_columns = [
     "Datetime",
@@ -22,7 +22,7 @@ base_columns = [
 
 columns = [
     *base_columns,
-    "Confidence",
+    # "Confidence",
     "Manual Validation",
     "Final Results",
     "Ajay Manual Validation",

@@ -7,7 +7,7 @@ projects=(
         #   "io/projects/gson__master__https://github.com/google/gson/commit/__io/outputRevisedLatest4/gson__gson__step1__gson.json__true"
         #   "io/projects/commons-math__master__https://github.com/apache/commons-math/commit/__io/outputRevisedLatest4/commons-math__commons-math__step1_commons-math.json__true"
         #   "io/projects/jfreechart__master__https://github.com/jfree/jfreechart/commit/__io/outputRevisedLatest4/jfreechart__jfreechart__step1__jfreechart.json__true"
-        #  "io/projects/cts__master__https://android.googlesource.com/platform/cts/+/__io/outputRevisedLatest4/cts__cts__step1__cts.json__true"
+        #   "io/projects/cts__master__https://android.googlesource.com/platform/cts/+/__io/outputRevisedLatest4/cts__cts__step1__cts.json__true"
        
         #  "io/projects/commons-lang__master__https://github.com/apache/commons-lang/commit/__io/outputRevisedLatest4/commons-lang__commons-lang__step11__commons-lang.json__true"
         #  "io/projects/joda-time__main__https://github.com/JodaOrg/joda-time/commit/__io/outputRevisedLatest4/joda-time__joda-time__step11__joda-time.json__true"
@@ -31,7 +31,7 @@ projects=(
          "io/projects/gson__master__https://github.com/google/gson/commit/__io/outputRevisedLatest4/gson__gson__step3__gson.json__true"
          "io/projects/commons-math__master__https://github.com/apache/commons-math/commit/__io/outputRevisedLatest4/commons-math__commons-math__step3__commons-math.json__true"
          "io/projects/jfreechart__master__https://github.com/jfree/jfreechart/commit/__io/outputRevisedLatest4/jfreechart__jfreechart__step3__jfreechart.json__true"
-        #  "io/projects/cts__master__https://android.googlesource.com/platform/cts/+/__io/outputRevisedLatest4/cts__cts__step3__cts.json__true"
+        # #  "io/projects/cts__master__https://android.googlesource.com/platform/cts/+/__io/outputRevisedLatest4/cts__cts__step3__cts.json__true"
              )
 
 for project_data in "${projects[@]}"
