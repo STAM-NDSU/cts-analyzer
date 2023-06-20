@@ -9,8 +9,8 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles4/joda-time"
-OUTPUT_FILE = "validation_hydrated"
+IO_DIR = "io/validationFiles4/commons-math"
+OUTPUT_FILE = "validation_hydrated_sorted"
 files = [{"filename": "validated"}]
 
 
@@ -23,7 +23,9 @@ for file_index, filepath in enumerate(parse_files(files)):
 
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
-
+        df['Datetime'] = pd.to_datetime(df['Datetime'], format=conf.Datetime_FORMAT)
+        print(df.dtypes)
+        
         df = df.iloc[:, 0:11]
         
         prev = {
@@ -39,6 +41,7 @@ for file_index, filepath in enumerate(parse_files(files)):
             "Ajay Comments": None,
             "Suraj Comments": None,
         }
+
 
         for index, row in df.iterrows():
             if index == 0:
@@ -114,5 +117,7 @@ for file_index, filepath in enumerate(parse_files(files)):
                 # else:
                 #     prev["Suraj Comments"] = row["Suraj Comments"]
 
+        df.sort_values(by=['Datetime', 'Filename'], inplace=True)
+        df['Datetime'] = df['Datetime'].dt.strftime(conf.Datetime_FORMAT)
         df.to_csv(f"{IO_DIR}/{OUTPUT_FILE}.csv", index=False)
         print(f"Generated {IO_DIR}/{OUTPUT_FILE}.csv")
