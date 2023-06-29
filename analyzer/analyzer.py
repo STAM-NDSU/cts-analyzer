@@ -132,7 +132,8 @@ def get_removed_test_functions_details(
                     label=commit.hash, url=get_full_commit_url(commit.hash)
                 )
                 commit_msg = commit.msg
-
+                
+                
                 # Handles step 1
                 if step == 1:
                     analyzer_global.total_commits += 1

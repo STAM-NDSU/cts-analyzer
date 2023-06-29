@@ -2,58 +2,74 @@ import os.path
 from pathlib import Path
 import pandas as pd
 
-IO_DIR = "io/validationFiles4"
-PROJECT = "pmd"
-OUTPUT_FILE = "validation_diff_leftovers"
-files = [{"filename": "validation_diff_leftovers_hydrated"}]
 
+projects_list = [
+    "commons-lang",
+    # "commons-math",
+    # "pmd",
+    # "jfreechart",
+    # "gson",
+    # "joda-time",
+    # "cts",
+]
 
-def parse_files(files):
-    return map(lambda file_data: file_data["filename"] + ".csv", files)
+for project in projects_list:
 
+    def main(project):
+        IO_DIR = "io/validationFiles4"
+        PROJECT = project
+        OUTPUT_FILE = "validation_diff_leftovers"
+        files = [{"filename": "validation_diff_leftovers_hydrated"}]
 
-for file_index, filepath in enumerate(parse_files(files)):
-    full_file_path = Path(f"{IO_DIR}/{PROJECT}/{filepath}")
+        def parse_files(files):
+            return map(lambda file_data: file_data["filename"] + ".csv", files)
 
-    if os.path.exists(f"{full_file_path}"):
-        df = pd.read_csv(f"{full_file_path}")
+        for file_index, filepath in enumerate(parse_files(files)):
+            full_file_path = Path(f"{IO_DIR}/{PROJECT}/{filepath}")
 
-        df = df.iloc[:, 0:6]
-        prev = {
-            "Datetime": None,
-            "Hash": None,
-            "Commit Msg": None,
-            "Filename": None,
-            "Removed Test Case": None,
-        }
+            if os.path.exists(f"{full_file_path}"):
+                df = pd.read_csv(f"{full_file_path}")
 
-        for index, row in df.iterrows():
-            if index == 0:
+                df = df.iloc[:, 0:6]
                 prev = {
-                    "Datetime": row["Datetime"],
-                    "Commit Msg": row["Commit Msg"],
-                    "Hash": row["Hash"],
-                    "Filename": row["Filename"],
-                    "Removed Test Case": row["Removed Test Case"],
+                    "Datetime": None,
+                    "Hash": None,
+                    "Commit Msg": None,
+                    "Filename": None,
+                    "Removed Test Case": None,
                 }
 
-            else:
-                if row["Hash"] == prev["Hash"]:
-                    row["Hash"] = ""
-                    row["Commit Msg"] = ""
-                    row["Datetime"] = ""
+                for index, row in df.iterrows():
+                    if index == 0:
+                        prev = {
+                            "Datetime": row["Datetime"],
+                            "Commit Msg": row["Commit Msg"],
+                            "Hash": row["Hash"],
+                            "Filename": row["Filename"],
+                            "Removed Test Case": row["Removed Test Case"],
+                        }
 
-                    if row["Filename"] == prev["Filename"]:
-                        row["Filename"] = ""
                     else:
-                        prev["Filename"] = row["Filename"]
+                        if row["Hash"] == prev["Hash"]:
+                            row["Hash"] = ""
+                            row["Commit Msg"] = ""
+                            row["Datetime"] = ""
 
-                else:
-                    prev["Hash"] = row["Hash"]
-                    prev["Datetime"] = row["Datetime"]
-                    prev["Commit Msg"] = prev["Commit Msg"]
+                            if row["Filename"] == prev["Filename"]:
+                                row["Filename"] = ""
+                            else:
+                                prev["Filename"] = row["Filename"]
 
-                    prev["Filename"] = row["Filename"]
+                        else:
+                            prev["Hash"] = row["Hash"]
+                            prev["Datetime"] = row["Datetime"]
+                            prev["Commit Msg"] = prev["Commit Msg"]
 
-        df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
-        print(f"Generated {IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv")
+                            prev["Filename"] = row["Filename"]
+
+                df.to_csv(f"{IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv", index=False)
+                print(f"Generated {IO_DIR}/{PROJECT}/{OUTPUT_FILE}.csv")
+            else:
+                print("ERROR: Files does not exist for project " + project)
+
+    main(project)

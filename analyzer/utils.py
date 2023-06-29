@@ -46,6 +46,7 @@ def get_function_name_from_prototype(function_prototype):
     return func_name
 
 
+
 # Return name of function from function prototype
 def get_function_name_from_prototype_with_space_before(function_prototype):
     func_name_search = re.search(
@@ -103,3 +104,19 @@ def strip_commit_url(repo_url):
         )
     else:
         return None
+
+
+def get_change_id_from_commit_msg(commit_msg):
+    func_name_search = re.search(Pattern.CHANGE_ID.value, commit_msg)
+    func_name = ""
+    if func_name_search:
+        return func_name_search.group()
+    return func_name
+
+
+def get_bug_id_from_commit_msg(commit_msg):
+    func_name_search = re.search(Pattern.BUG_ID.value, commit_msg, re.IGNORECASE)
+    func_name = ""
+    if func_name_search:
+        return func_name_search.group()
+    return func_name

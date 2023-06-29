@@ -42,3 +42,5 @@ class Pattern(str, Enum):
     FUNCTION_NAME = "([a-zA-Z0-9_]+)([ \t]*)\\("
     # FUNCTION_NAME = "(?<!@)([a-zA-Z0-9_]+)([ \t]*)\\("
     FUNCTION_ARGUMENTS = "\\(.*\\)"
+    CHANGE_ID = "Change-Id: ([a-zA-Z0-9]{41})"
+    BUG_ID = "bug(: )*([0-9]{5,15})"

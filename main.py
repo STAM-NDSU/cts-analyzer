@@ -18,7 +18,10 @@ else:
     try:
         # Get potential deleted testcases
         if conf.STEP == "step1":
-            results = get_removed_test_functions_details(repo_path, target_branch, 1, None)
+            results = get_removed_test_functions_details(
+                repo_path, target_branch, 1, None
+            )
+            print(results)
             if conf.HANDLE_EXPORT == "true":
                 headers = conf.CSV_HEADERS
                 export_to_csv(
@@ -27,7 +30,7 @@ else:
                     dir=OUTPUT_DIRECTORY,
                     filename="hydrated_" + OUTPUT_Filename,
                 )
-        elif conf.STEP == 'step11':
+        elif conf.STEP == "step11":
             print("Start step 11-------")
 
             full_file_path = Path(
@@ -40,14 +43,14 @@ else:
                 step11_df = get_removed_test_functions_details(
                     repo_path, target_branch, 11, step1_hydrated_df
                 )
-                
+
                 if conf.HANDLE_EXPORT == "true":
                     step11_df.to_csv(
                         f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step11.csv",
                         index=False,
                     )
                 print("------- END step 11")
-            
+
         # Filter our refactored test cases [ suggested by RefMiner]
         elif conf.STEP == "step2":
             print("Start step 2-------")
@@ -112,7 +115,7 @@ else:
         # Filter our moved test cases [HYPOTHESIS]
         elif conf.STEP == "step3":
             print("Start step 3-------")
-
+            print(f'{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv')
             full_file_path = Path(
                 f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv"
             )
