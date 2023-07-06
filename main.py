@@ -115,7 +115,7 @@ else:
         # Filter our moved test cases [HYPOTHESIS]
         elif conf.STEP == "step3":
             print("Start step 3-------")
-            print(f'{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv')
+            print(f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv")
             full_file_path = Path(
                 f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv"
             )

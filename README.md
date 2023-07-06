@@ -87,22 +87,19 @@ e65d6bebdba9df211b258fae996fe34b6eadb787
 ssss
 ```
 
-    public void testLANG_831(final TriFunction<String, TimeZone, Locale, DateParser> dpProvider) throws Exception {
-        testSdfAndFdp(dpProvider, "M E", "3  Tue", true);
+## Install forked pydriller
+pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller
 
-public void testAddElementRolling() {
-ra = new FixedDoubleArray(6);
 
-    	super.testAddElementRolling();
+# Git cmd to get repository stats [total commits, first and recent commit info]
+To get a commit count for a revision (HEAD, master, a commit hash):
 
-    	assertEquals( "FixedDoubleArray should have 6 size internal storage",
-    							6, ((FixedDoubleArray) ra).internalArray.length);
-    }
+git rev-list --count <revision>
 
-    public void testAddElementRolling() {
-    	super.testAddElementRolling();
-    	assertTrue( "Even though there are only 6 element, internal storage should be less than 2.5 times the number of elements",
-    		((ExpandableDoubleArray) da).getInternalLength() < ((int) 6 * 2.5) );
-    }
+git rev-list --count master --until="2023-01-01"
+git log --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01" 
+git log --reverse --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01" 
 
-    pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller
+To get the commit count across all branches:
+
+git rev-list --all --count

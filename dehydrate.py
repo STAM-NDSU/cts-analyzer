@@ -138,3 +138,4 @@ for project in projects:
 
         file_wo = file.replace("hydrated_", "")
         df.to_csv(f"{IO_DIR}/{project['project']}/{file_wo}.csv", index=False)
+        print(f"Generated {IO_DIR}/{project['project']}/{file_wo}.csv")

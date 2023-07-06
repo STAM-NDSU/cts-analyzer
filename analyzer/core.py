@@ -5,7 +5,7 @@ from .utils import (
     cleanup_function_prototype,
     get_function_name_from_prototype,
     get_test_function_name_from_prototype,
-    get_function_name_from_prototype_lizard,
+    get_function_name_from_prototype_with_space_before
 )
 from .pattern import Pattern
 from . import config
@@ -35,7 +35,6 @@ def analyze_true_test_cases_deletion_in_commit_file_javaparser(
     true_removed_test_functions_javaparser = get_true_removed_test_functions_javaparser(
         file
     )
-    print(true_removed_test_functions_javaparser, "javaparser")
     # Check for javaparser failure
     if true_removed_test_functions_javaparser is None:
         all_true_test_cases_deletion_in_commit_file = None
@@ -93,7 +92,7 @@ def get_removed_test_functions2(file_changes: str) -> List:
         for each in raw_removed_testcases:
             # print(each, file.filename, "removed 2")
             function_prototype = cleanup_function_prototype(each)
-            function_name = get_function_name_from_prototype(function_prototype)
+            function_name = get_function_name_from_prototype_with_space_before(function_prototype)
             removed_testcases.append(function_name)
             # print(function_name, file.filename, "removed 2")
 
@@ -117,8 +116,9 @@ def get_removed_test_functions_lizard(file) -> List:
                 removed_methods.append({"name": function_name, "check_annot": "no"})
             else:
                 function_name = get_function_name_from_prototype(x.long_name)
-                # print(function_name, "removed lizard", "check_annot")
-                removed_methods.append({"name": function_name, "check_annot": "check"})
+                if function_name:
+                    # print(function_name, "removed lizard", "check_annot")
+                    removed_methods.append({"name": function_name, "check_annot": "check"})
     return removed_methods
 
 

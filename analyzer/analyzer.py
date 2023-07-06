@@ -69,7 +69,7 @@ def get_removed_test_functions_details(
             fill_columns = MIN_COLUMNS
             filled_rows = [[" "] * fill_columns for _ in range(0, fill_rows)]
             results = results + filled_rows
-        results[0].insert(8, "Total Commits")
+        results[0].insert(8, "Total Traversed Commits")
         results[0].insert(9, analyzer_global.total_commits)
         results[1].insert(8, "Total Testcases")
         results[1].insert(9, analyzer_global.total_testcases)
@@ -85,7 +85,7 @@ def get_removed_test_functions_details(
             since=since,
             to=to,
             only_no_merge=True,
-            # single="14ec8c603243beccb580cfd12bb9d4dd4248e351",  # use it only for debugging
+            #single="b9998e511f3a3c19d52c104d66d78037eaff88ec",  # use it only for debugging
         ).traverse_commits()
         analyzer_global.commits = commits
 

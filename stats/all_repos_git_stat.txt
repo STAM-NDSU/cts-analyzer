@@ -1,0 +1,234 @@
+commons-lang
+total commits: 7080
+first commit: 750a21e86441b247d85c95e59bf17e596a69d626 - Fri Jul 19 03:35:56 2002 +0000
+last commit: 78b4f09d0b7e2b209badcc05fdeb1844a469ea68 - Fri Dec 30 10:06:38 2022 -0500
+
+From and including: Friday, July 19, 2002
+To and including: Friday, December 30, 2022
+
+Result: 7470 days
+It is 7470 days from the start date to the end date, end date included.
+
+Or 20 years, 5 months, 12 days including the end date.
+
+Or 245 months, 12 days including the end date.
+
+
+This calculator ignores DST clock changes. To include them, use our World Time and Date Calculator and enter your location as the start and end location.
+
+Alternative time units
+7470 days can be converted to one of these units:
+
+645,408,000 seconds
+10,756,800 minutes
+179,280 hours
+7470 days
+1067 weeks and 1 day
+2046.58% of a common year (365 days)
+
+========================================================================================================================================
+gson
+total commits: 1771
+first commit: 57d1f32de5bf3a7dd54613384cc7e979fba2660b - Mon Sep 1 03:13:32 2008 +0000
+last commit: 1a2170b99c9d293e825bf8f511b191196326ea03 - Thu Dec 22 15:04:16 2022 +0100
+
+From and including: Monday, September 1, 2008
+To and including: Thursday, December 22, 2022
+
+Result: 5226 days
+It is 5226 days from the start date to the end date, end date included.
+
+Or 14 years, 3 months, 22 days including the end date.
+
+Or 171 months, 22 days including the end date.
+
+
+This calculator ignores DST clock changes. To include them, use our World Time and Date Calculator and enter your location as the start and end location.
+
+Alternative time units
+5226 days can be converted to one of these units:
+
+451,526,400 seconds
+7,525,440 minutes
+125,424 hours
+5226 days
+746 weeks and 4 days
+1431.78% of a common year (365 days)
+
+========================================================================================================================================
+
+
+commons-math
+total commits: 7116
+first commit: 4a8cbc286781f1ecff6b8e0f8e20e30eb9f5a709 - Mon May 12 15:07:54 2003 +0000
+last commit: 585b04c22edee12b193fc3e5099537af4127080b - Mon Dec 26 03:09:37 2022 +0100
+
+From and including: Monday, May 12, 2003
+To and including: Monday, December 26, 2022
+
+Result: 7169 days
+It is 7169 days from the start date to the end date, end date included.
+
+Or 19 years, 7 months, 15 days including the end date.
+
+Or 235 months, 15 days including the end date.
+
+
+This calculator ignores DST clock changes. To include them, use our World Time and Date Calculator and enter your location as the start and end location.
+
+Alternative time units
+7169 days can be converted to one of these units:
+
+619,401,600 seconds
+10,323,360 minutes
+172,056 hours
+7169 days
+1024 weeks and 1 day
+1964.11% of a common year (365 days)
+
+========================================================================================================================================
+
+jfreechart
+total commits: 4219
+first commit: 6f8f85d378dbb27da3855892a1cee294e7154a3d - Fri Jun 29 13:35:09 2007 +0000
+last commit: c77fcecffd05d011ff3295494e82ea3b9cf1afa5 - Tue Jul 26 12:07:53 2022 +0200
+
+From and including: Friday, June 29, 2007
+To and including: Tuesday, July 26, 2022
+
+Result: 5507 days
+It is 5507 days from the start date to the end date, end date included.
+
+Or 15 years, 28 days including the end date.
+
+Or 180 months, 28 days including the end date.
+
+Alternative time units
+5507 days can be converted to one of these units:
+
+475,804,800 seconds
+7,930,080 minutes
+132,168 hours
+5507 days
+786 weeks and 5 days
+1508.77% of a common year (365 days)
+
+========================================================================================================================================
+
+
+joda-time
+total commits: 2252
+first commit: b596f23e517e1fe0ab883554b42b0166f708721a - Tue Dec 16 19:12:24 2003 +0000
+last commit: 50b0897629bef8026a7778117d63ed4b0acbdf35 - Sat Dec 17 23:14:38 2022 +0000
+
+From and including: Tuesday, December 16, 2003
+To and including: Saturday, December 17, 2022
+
+Result: 6942 days
+It is 6942 days from the start date to the end date, end date included.
+
+Or 19 years, 2 days including the end date.
+
+Or 228 months, 2 days including the end date.
+
+Alternative time units
+6942 days can be converted to one of these units:
+
+599,788,800 seconds
+9,996,480 minutes
+166,608 hours
+6942 days
+991 weeks and 5 days
+1901.92% of a common year (365 days)
+
+========================================================================================================================================
+
+
+pmd
+total commits: 25422
+first commit: f2138120f1d199906541da8948e4303c00ccf1ef - Fri Jun 21 20:12:46 2002 +0000
+last commit: a01f1a35742578aca09914329bde24eb6a5a186a - Wed Sep 2 07:10:25 2020 +0200
+
+From and including: Friday, June 21, 2002
+To and including: Wednesday, September 2, 2020
+
+Result: 6649 days
+It is 6649 days from the start date to the end date, end date included.
+
+Or 18 years, 2 months, 13 days including the end date.
+
+Or 218 months, 13 days including the end date.
+
+Alternative time units
+6649 days can be converted to one of these units:
+
+574,473,600 seconds
+9,574,560 minutes
+159,576 hours
+6649 days
+949 weeks and 6 days
+1821.64% of a common year (365 days)
+
+========================================================================================================================================
+
+cts
+total commits: 401732
+first commit: f8057104af9cae031b544e971a52adafa7c0d9e1 - Sun Mar 15 16:47:16 2009 -0700
+last commit: a0d9ca67e9c57181b137f6788ca10dc15e79adfa - Sat Dec 31 21:43:52 2022 +0530
+
+
+From and including: Sunday, March 15, 2009
+To and including: Saturday, December 31, 2022
+
+Result: 5040 days
+It is 5040 days from the start date to the end date, end date included.
+
+Or 13 years, 9 months, 17 days including the end date.
+
+Or 165 months, 17 days including the end date.
+
+
+This calculator ignores DST clock changes. To include them, use our World Time and Date Calculator and enter your location as the start and end location.
+
+Alternative time units
+5040 days can be converted to one of these units:
+
+435,456,000 seconds
+7,257,600 minutes
+120,960 hours
+5040 days
+720 weeks
+1380.82% of a common year (365 days)
+
+
+Hello everyone,
+We hope you had a good 4th July.
+
+As posted, NSA- Chautaree will be organizing hike on 8th July, 2023 at Fort Ransom.
+
+The weather is expected to be good. The high temperature could reach upto 76 degrees. 
+You are encouraged to bring hats, sunscreen, or other items as per your need.
+NSA will provide water, soft drinks, and dry food. 
+And, please feel free to bring your own lunch.
+
+
+
+Please share the news with your friends and try to bring them on the adventurous hike.
+
+
+
+Hello everyone,
+
+Hope you're still recovering from the fireworks extravaganza on the 4th of July! 
+As posted, NSA- Chautaree is organizing a hike at Fort Ransom State Park at 8th July, 2023. 
+
+The hike will be around 6 miles and might take us 2-3 hours to complete.
+The weather is expected to be good. The high temperature could reach upto 76 degrees. 
+You are encouraged to bring your hats, sunscreen, or other items as per your need.
+NSA will provide water, soft drinks, and dry food. And, please feel free to bring your own lunch.
+
+We will gather at the the west side parking area. The address is 5981 Walt Hjelle Pkwy, Fort Ransom, ND 58033. 
+Please share the news with your friends and encourage them to join us on this adrenaline-pumping hike. 
+The more, the merrier! 
+
+See you on the 8th of July! Let's make this hike an unforgettable adventure!

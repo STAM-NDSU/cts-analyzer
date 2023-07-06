@@ -47,7 +47,7 @@ def get_function_name_from_prototype(function_prototype):
 
 
 
-# Return name of function from function prototype
+# Return name of function from function prototype [ QUICK FIX: multiple annotation issue; checks for extra space]
 def get_function_name_from_prototype_with_space_before(function_prototype):
     func_name_search = re.search(
         Pattern.FUNCTION_NAME_WITH_SPACE_BEFORE.value, function_prototype
