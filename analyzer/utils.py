@@ -107,6 +107,10 @@ def get_full_commit_url_by_project(project: str, hash: str) -> str:
             project_url = COMMIT_BASE_URL
     return project_url + hash
 
+# Parse commit hash by project
+def parse_commit_hash_by_project(project: str, hash: str) -> str:
+    return f'=HYPERLINK("{get_full_commit_url_by_project(project, hash)}", "{hash}")'
+
 
 # Get name of repository from full url
 def get_repo_name(repo_url):

@@ -9,27 +9,27 @@ from analyzer.utils import (
     get_full_commit_url,
     parse_commit_as_hyperlink,
     get_change_id_from_commit_msg,
-    get_bug_id_from_commit_msg
+    get_bug_id_from_commit_msg,
 )
 
-IO_DIR = "io/validationFiles"
+IO_DIR = "io/artifacts"
 PROJECT = "cts"
 
 def handle_print(df, filename):
     df = df.copy(deep=True)
     prev = {
-                "Datetime": None,
-                "Hash": None,
-                "Commit Msg": None,
-                "Filename": None,
-                "Removed Test Case": None,
-                "Manual Validation": None,
-                "Final Results": None,
-                "Ajay Manual Validation": None,
-                "Suraj Manual Validation": None,
-                "Ajay Comments": None,
-                "Suraj Comments": None,
-            }
+        "Datetime": None,
+        "Hash": None,
+        "Commit Msg": None,
+        "Filename": None,
+        "Removed Test Case": None,
+        "Manual Validation": None,
+        "Final Results": None,
+        "Ajay Manual Validation": None,
+        "Suraj Manual Validation": None,
+        "Ajay Comments": None,
+        "Suraj Comments": None,
+    }
 
     for index, row in df.iterrows():
         if index == 0:
@@ -93,8 +93,8 @@ def handle_print(df, filename):
 
     df.to_csv(f"{IO_DIR}/{PROJECT}/{filename}", index=False)
     print(f"Generated {IO_DIR}/{PROJECT}/{filename}")
-    
-            
+
+
 def main():
     VALIDATION_FILE = "validation_hydrated.csv"
     OUTPUT_FILE = "validation_hydrated_cleaned"
@@ -103,13 +103,12 @@ def main():
 
     if not os.path.exists(f"{full_file_path}"):
         return
-    
+
     df = pd.read_csv(f"{full_file_path}")
     print("Start Size:", df.shape)
     df = df.iloc[:, 0:11]
 
-
-    # Step 1
+    # Step 1 [Check for duplicated change id]
     print("Step: 1")
     unique_changeid = []
     unique_changeid_hash = []
@@ -119,20 +118,19 @@ def main():
             change_id = get_change_id_from_commit_msg(row["Commit Msg"])
             # print(change_id)
             if change_id in unique_changeid:
-                if row['Hash'] in unique_changeid_hash:
+                if row["Hash"] in unique_changeid_hash:
                     pass
                 else:
                     if row["Hash"] not in to_be_dropped_commit_hash:
                         to_be_dropped_commit_hash.append(row["Hash"])
             else:
                 unique_changeid.append(change_id)
-                
-                if row['Hash'] not in unique_changeid_hash:
+
+                if row["Hash"] not in unique_changeid_hash:
                     unique_changeid_hash.append(row["Hash"])
 
     print("Commits to be dropped: ", len(to_be_dropped_commit_hash))
-    
-    
+
     for hash in to_be_dropped_commit_hash:
         to_be_dropped_index = df[(df["Hash"] == hash)].index
         df.drop(to_be_dropped_index, inplace=True)
@@ -140,9 +138,8 @@ def main():
     print("Step 1 Size:", df.shape)
     filename = OUTPUT_FILE + "1.csv"
     handle_print(df, filename)
-    
-    
-    # # Step 2
+
+    # # Step 2 [Check for duplicated bug id]
     # print("Step 2")
     # df['Commit Msg'] = df['Commit Msg'].apply(str.lower)
     # unique_bugid = []
@@ -159,34 +156,30 @@ def main():
     #                     to_be_dropped_commit_hash.append(row["Hash"])
     #         else:
     #             unique_bugid.append(bug_id)
-                
+
     #             if row['Hash'] not in unique_bugid_hash:
     #                 unique_bugid_hash.append(row["Hash"])
 
     # print("Commits to be dropped: ", len(to_be_dropped_commit_hash))
-    
-    
+
     # for hash in to_be_dropped_commit_hash:
     #     to_be_dropped_index = df[(df["Hash"] == hash)].index
     #     df.drop(to_be_dropped_index, inplace=True)
-    
+
     # print("Step 2 Size:", df.shape)
     # filename = OUTPUT_FILE + "2.csv"
     # handle_print(df, filename)
 
-
-    # Step 3
+    # Step 3 [Check for merged from]
     print("Step: 3")
     to_be_dropped_commit_hash = []
     for index, row in df.iterrows():
         if "merged from:" in row["Commit Msg"]:
             if row["Hash"] not in to_be_dropped_commit_hash:
                 to_be_dropped_commit_hash.append(row["Hash"])
-        
 
     print("Commits to be dropped: ", len(to_be_dropped_commit_hash))
-    
-    
+
     for hash in to_be_dropped_commit_hash:
         to_be_dropped_index = df[(df["Hash"] == hash)].index
         df.drop(to_be_dropped_index, inplace=True)

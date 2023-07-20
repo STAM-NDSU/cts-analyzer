@@ -16,7 +16,7 @@ if not repo_path:
 else:
     print(f"Repository Path: {repo_path}")
     try:
-        # Get potential deleted testcases
+        # Get candidate test deletion commits
         if conf.STEP == "step1":
             results = get_removed_test_functions_details(
                 repo_path, target_branch, 1, None
@@ -30,12 +30,20 @@ else:
                     dir=OUTPUT_DIRECTORY,
                     filename="hydrated_" + OUTPUT_Filename,
                 )
+        # Get candidate deleted tests and refine candidate test deletion commits
         elif conf.STEP == "step11":
             print("Start step 11-------")
-
             full_file_path = Path(
                 f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step1.csv"
             )
+            full_refined_file_path = Path(
+                f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step1_refined.csv"
+            )
+            
+            # Check if step 1 file is refined for the project [Use refined file if available]
+            if os.path.exists(f"{full_refined_file_path}"):
+                full_file_path = full_refined_file_path
+                
             with open(full_file_path, "r") as a:
                 step1_hydrated_df = pd.read_csv(f"{full_file_path}")
                 step1_hydrated_df = step1_hydrated_df.iloc[:, 0:7]
