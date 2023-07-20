@@ -12,7 +12,7 @@ from analyzer.utils import (
     get_bug_id_from_commit_msg
 )
 
-IO_DIR = "io/validationFiles4"
+IO_DIR = "io/validationFiles"
 PROJECT = "cts"
 
 def handle_print(df, filename):
@@ -142,37 +142,37 @@ def main():
     handle_print(df, filename)
     
     
-    # Step 2
-    print("Step 2")
-    df['Commit Msg'] = df['Commit Msg'].apply(str.lower)
-    unique_bugid = []
-    unique_bugid_hash = []
-    to_be_dropped_commit_hash = []
-    for index, row in df.iterrows():
-        bug_id = get_bug_id_from_commit_msg(row["Commit Msg"])
-        if bug_id:
-            if bug_id in unique_bugid:
-                if row['Hash'] in unique_bugid_hash:
-                    pass
-                else:
-                    if row["Hash"] not in to_be_dropped_commit_hash:
-                        to_be_dropped_commit_hash.append(row["Hash"])
-            else:
-                unique_bugid.append(bug_id)
+    # # Step 2
+    # print("Step 2")
+    # df['Commit Msg'] = df['Commit Msg'].apply(str.lower)
+    # unique_bugid = []
+    # unique_bugid_hash = []
+    # to_be_dropped_commit_hash = []
+    # for index, row in df.iterrows():
+    #     bug_id = get_bug_id_from_commit_msg(row["Commit Msg"])
+    #     if bug_id:
+    #         if bug_id in unique_bugid:
+    #             if row['Hash'] in unique_bugid_hash:
+    #                 pass
+    #             else:
+    #                 if row["Hash"] not in to_be_dropped_commit_hash:
+    #                     to_be_dropped_commit_hash.append(row["Hash"])
+    #         else:
+    #             unique_bugid.append(bug_id)
                 
-                if row['Hash'] not in unique_bugid_hash:
-                    unique_bugid_hash.append(row["Hash"])
+    #             if row['Hash'] not in unique_bugid_hash:
+    #                 unique_bugid_hash.append(row["Hash"])
 
-    print("Commits to be dropped: ", len(to_be_dropped_commit_hash))
+    # print("Commits to be dropped: ", len(to_be_dropped_commit_hash))
     
     
-    for hash in to_be_dropped_commit_hash:
-        to_be_dropped_index = df[(df["Hash"] == hash)].index
-        df.drop(to_be_dropped_index, inplace=True)
+    # for hash in to_be_dropped_commit_hash:
+    #     to_be_dropped_index = df[(df["Hash"] == hash)].index
+    #     df.drop(to_be_dropped_index, inplace=True)
     
-    print("Step 2 Size:", df.shape)
-    filename = OUTPUT_FILE + "2.csv"
-    handle_print(df, filename)
+    # print("Step 2 Size:", df.shape)
+    # filename = OUTPUT_FILE + "2.csv"
+    # handle_print(df, filename)
 
 
     # Step 3

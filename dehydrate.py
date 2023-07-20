@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 
-IO_DIR = "io/outputRevisedLatest4"
+IO_DIR = "io/artifacts"
 projects = [
     {
         "project": "pmd",
@@ -136,6 +136,6 @@ for project in projects:
                     prev["Filepath"] = row["Filepath"]
                     prev["Filename"] = row["Filename"]
 
-        file_wo = file.replace("hydrated_", "")
+        file_wo = file.replace("hydrated_", "") + "dehydrated"
         df.to_csv(f"{IO_DIR}/{project['project']}/{file_wo}.csv", index=False)
         print(f"Generated {IO_DIR}/{project['project']}/{file_wo}.csv")

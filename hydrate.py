@@ -6,7 +6,7 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-IO_DIR = "io/outputRevisedLatest4"
+IO_DIR = "io/artifacts"
 projects = [
     {
         "project": "pmd",

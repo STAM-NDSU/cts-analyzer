@@ -3,7 +3,7 @@ from analyzer.helpers import export_to_csv
 from pathlib import Path
 import os
 
-DIR = "io/outputRevisedLatest4"
+DIR = "io/artifacts"
 projects = [
     {
         "project": "pmd",

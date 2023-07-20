@@ -9,7 +9,7 @@ from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
-IO_DIR = "io/validationFiles4"
+IO_DIR = "io/validationFiles"
 PROJECT = "joda-time"
 OUTPUT_FILE = "validation_diff_done"
 files = [{"Filename": "validation_diff_done_hydrated"}]

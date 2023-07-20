@@ -58,7 +58,7 @@ for project in projects_list:
         global all_total_observations
         
         print("Project: ", project)
-        IO_DIR = "io/validationFiles4"
+        IO_DIR = "io/validationFiles"
         PROJECT = project
         validation_file = "validation_hydrated.csv"
         full_file_path = Path(f"{IO_DIR}/{PROJECT}/{validation_file}")

@@ -46,7 +46,6 @@ def get_function_name_from_prototype(function_prototype):
     return func_name
 
 
-
 # Return name of function from function prototype [ QUICK FIX: multiple annotation issue; checks for extra space]
 def get_function_name_from_prototype_with_space_before(function_prototype):
     func_name_search = re.search(
@@ -88,6 +87,27 @@ def get_full_commit_url(tail: str) -> str:
     return COMMIT_BASE_URL + tail
 
 
+def get_full_commit_url_by_project(project: str, hash: str) -> str:
+    match project:
+        case "commons-lang":
+            project_url = "https://github.com/apache/commons-lang/commit/"
+        case "joda-time":
+            project_url = "https://github.com/JodaOrg/joda-time/commit/"
+        case "pmd":
+            project_url = "https://github.com/pmd/pmd/commit/"
+        case "gson":
+            project_url = "https://github.com/google/gson/commit/"
+        case "commons-math":
+            project_url = "https://github.com/apache/commons-math/commit/"
+        case "jfreechart":
+            project_url = "https://github.com/jfree/jfreechart/commit/"
+        case "cts":
+            project_url = "https://android.googlesource.com/platform/cts/+/"
+        case _:
+            project_url = COMMIT_BASE_URL
+    return project_url + hash
+
+
 # Get name of repository from full url
 def get_repo_name(repo_url):
     if repo_url:
@@ -102,6 +122,13 @@ def strip_commit_url(repo_url):
         return (
             repo_url.split(",")[-1].replace('"', "").replace(")", "").replace(" ", "")
         )
+    else:
+        return None
+
+
+def strip_filepath(filepath):
+    if filepath:
+        return filepath.split("/")[-1]
     else:
         return None
 

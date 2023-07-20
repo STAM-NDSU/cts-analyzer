@@ -67,6 +67,7 @@ else:
 
                 for index, row in df.iterrows():
                     is_refactor = False
+                    testcase_filename = row['Filename']
                     testcase_hash = strip_commit_url(row["Hash"])
                     testcase_name = str(
                         row["Removed Test Case"]
@@ -90,6 +91,7 @@ else:
                         else []
                     )
 
+                    # Check if testcase is refactored [e.g Rename Method - method is refactored]
                     for refactor in refactors_commit:
                         for each in refactor["leftSideLocations"]:
                             if (
@@ -97,9 +99,23 @@ else:
                                 and (testcase_name in each["codeElement"])
                                 and (testcase_filepath == each["filePath"])
                             ):
+                                
                                 is_refactor = True
                                 break
-
+                            
+                    # Check if test class is renamed [e.g Rename Class- all methods are refactored]
+                    if not is_refactor:
+                        for refactor in refactors_commit:
+                            if refactor['type'] == "Rename Class":
+                                for each in refactor["leftSideLocations"]:
+                                    if (
+                                        each["codeElement"]
+                                        and (testcase_filepath == each["filePath"])
+                                    ):
+                                        is_refactor = True
+                                        break      
+                    
+                    # Append only not refactored testcase                        
                     if not is_refactor:
                         new_df = new_df.append(row, ignore_index=True)
 
@@ -131,6 +147,7 @@ else:
                         f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv",
                         index=False,
                     )
+                    print(f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv")
                 print("------- END step 3")
     except Exception as e:
         print(f"Error occurred: {type(e).__name__}")

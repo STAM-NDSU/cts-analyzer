@@ -1,56 +1,82 @@
-total_conflicts_before_resolution:  21
-total_yes_before_resolution:  859
-total_no_before_resolution:  44
-total_others_before_resolution:  1485
-total_conflicts_after_resolution:  0
-total_yes_after_resolution:  866
-total_no_after_resolution:  58
-total_others_after_resolution:  1485
-total_conflicts_before_resolution:  19
-total_yes_before_resolution:  3281
-total_no_before_resolution:  71
-total_others_before_resolution:  0
-total_conflicts_after_resolution:  12
-total_yes_after_resolution:  3286
-total_no_after_resolution:  73
-total_others_after_resolution:  0
-total_conflicts_before_resolution:  91
-total_yes_before_resolution:  1796
-total_no_before_resolution:  436
-total_others_before_resolution:  0
-total_conflicts_after_resolution:  0
-total_yes_after_resolution:  1826
-total_no_after_resolution:  497
-total_others_after_resolution:  0
-total_conflicts_before_resolution:  0
-total_yes_before_resolution:  151
-total_no_before_resolution:  1
-total_others_before_resolution:  0
-total_conflicts_after_resolution:  0
-total_yes_after_resolution:  151
-total_no_after_resolution:  1
-total_others_after_resolution:  0
-total_conflicts_before_resolution:  5
-total_yes_before_resolution:  258
-total_no_before_resolution:  11
-total_others_before_resolution:  0
-total_conflicts_after_resolution:  0
-total_yes_after_resolution:  260
-total_no_after_resolution:  14
-total_others_after_resolution:  0
-total_conflicts_before_resolution:  12
-total_yes_before_resolution:  656
-total_no_before_resolution:  22
-total_others_before_resolution:  6825
-total_conflicts_after_resolution:  1
-total_yes_after_resolution:  662
-total_no_after_resolution:  22
-total_others_after_resolution:  6830
-total_conflicts_before_resolution:  519
-total_yes_before_resolution:  17691
-total_no_before_resolution:  1890
-total_others_before_resolution:  359
-total_conflicts_after_resolution:  0
-total_yes_after_resolution:  17734
-total_no_after_resolution:  2366
-total_others_after_resolution:  359
+Project:  commons-lang
+./io/projects/commons-lang
+Total Test Files:  200
+Total Test Files Parsed::  200
+Total Test Files Not Parsed::  0
+Total Parsed Testcases:  3867
+Total Regex Testcases:  0
+Total Testcases:  3867
+=========================
+Project:  gson
+./io/projects/gson
+Total Test Files:  124
+Total Test Files Parsed::  123
+Total Test Files Not Parsed::  1
+./io/projects/gson/gson/src/test/java/com/google/gson/functional/Java17RecordTest.java
+Total Parsed Testcases:  1285
+Total Regex Testcases:  25
+Total Testcases:  1310
+=========================
+Project:  commons-math
+./io/projects/commons-math
+Total Test Files:  406
+Total Test Files Parsed::  406
+Total Test Files Not Parsed::  0
+Total Parsed Testcases:  3173
+Total Regex Testcases:  0
+Total Testcases:  3173
+=========================
+Project:  jfreechart
+./io/projects/jfreechart
+Total Test Files:  353
+Total Test Files Parsed::  353
+Total Test Files Not Parsed::  0
+Total Parsed Testcases:  2276
+Total Regex Testcases:  0
+Total Testcases:  2276
+=========================
+Project:  joda-time
+./io/projects/joda-time
+Total Test Files:  151
+Total Test Files Parsed::  151
+Total Test Files Not Parsed::  0
+Total Parsed Testcases:  4240
+Total Regex Testcases:  0
+Total Testcases:  4240
+=========================
+Project:  pmd
+./io/projects/pmd
+Total Test Files:  747
+Total Test Files Parsed::  747
+Total Test Files Not Parsed::  0
+Total Parsed Testcases:  1577
+Total Regex Testcases:  0
+Total Testcases:  1577
+=========================
+Project:  cts
+./io/projects/cts
+Total Test Files:  4542
+Total Test Files Parsed::  4524
+Total Test Files Not Parsed::  18
+./io/projects/cts/tests/framework/base/windowmanager/backgroundactivity/src/android/server/wm/BackgroundActivityLaunchTest.java
+./io/projects/cts/tests/tests/batterysaving/src/android/os/cts/batterysaving/BatterySaverLocationTest.java
+./io/projects/cts/tests/tests/keystore/src/android/keystore/cts/AttestKeyTest.java
+./io/projects/cts/tests/tests/appenumeration/lib/src/android/appenumeration/cts/TestActivity.java
+./io/projects/cts/tests/tests/animation/src/android/animation/cts/EvaluatorTest.java
+./io/projects/cts/tests/tests/content/src/android/content/pm/cts/PackageManagerShellCommandIncrementalTest.java
+./io/projects/cts/tests/tests/content/src/android/content/pm/cts/ChecksumsTest.java
+./io/projects/cts/tests/tests/content/src/android/content/pm/cts/PackageManagerShellCommandTest.java
+./io/projects/cts/tests/tests/content/src/android/content/pm/cts/ResourcesHardeningTest.java
+./io/projects/cts/tests/tests/speech/src/android/speech/tts/cts/TextToSpeechConnectionTest.java
+./io/projects/cts/tests/tests/os/src/android/os/cts/ParcelTest.java
+./io/projects/cts/hostsidetests/security/src/android/security/cts/SeamendcHostTest.java
+./io/projects/cts/hostsidetests/inputmethodservice/deviceside/devicetest/src/android/inputmethodservice/cts/devicetest/InputMethodServiceDeviceTest.java
+./io/projects/cts/hostsidetests/mediaparser/src/android/media/mediaparser/cts/MediaParserHostSideTest.java
+./io/projects/cts/hostsidetests/appsecurity/test-apps/V3SigningSchemeRotation/src/android/appsecurity/cts/v3rotationtests/V3RotationTest.java
+./io/projects/cts/hostsidetests/incident/src/com/android/server/cts/SettingsIncidentTest.java
+./io/projects/cts/apps/CtsVerifier/src/com/android/cts/verifier/TestResultsProvider.java
+./io/projects/cts/apps/CtsVerifier/src/com/android/cts/verifier/TestListActivity.java
+Total Parsed Testcases:  34004
+Total Regex Testcases:  351
+Total Testcases:  34355
+=========================
