@@ -103,3 +103,6 @@ git log --reverse --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01"
 To get the commit count across all branches:
 
 git rev-list --all --count
+
+# To get first commit
+git cherry master -v | head -n 1

@@ -29,7 +29,8 @@ Alternative time units
 ========================================================================================================================================
 gson
 total commits: 1771
-first commit: 57d1f32de5bf3a7dd54613384cc7e979fba2660b - Mon Sep 1 03:13:32 2008 +0000
+#first commit: 57d1f32de5bf3a7dd54613384cc7e979fba2660b - Mon Sep 1 03:13:32 2008 +0000
+first commit: 3764044de62a129b2750e786d246149efa79abee - 2008-04-24 01:05:41 +0000
 last commit: 1a2170b99c9d293e825bf8f511b191196326ea03 - Thu Dec 22 15:04:16 2022 +0100
 
 From and including: Monday, September 1, 2008
