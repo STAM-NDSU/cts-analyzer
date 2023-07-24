@@ -13,6 +13,8 @@ projects_list = [
 ]
 
 for project in projects_list:
+    print(project)
+    print('------------')
     # First dump tags info into tags.txt file
     cmd = "git ls-remote --tags origin"
     current_state = os.getcwd()
@@ -39,3 +41,4 @@ for project in projects_list:
     results_json = json.dumps(results, indent=4)
     file1.write(results_json)
     os.chdir(current_state)
+    print("==============================================")

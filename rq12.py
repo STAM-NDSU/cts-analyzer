@@ -12,12 +12,12 @@ import json
 
 
 projects_list = [
-    # "commons-lang",
-    # "commons-math",
-    # "pmd",
-    # "jfreechart",
+    "commons-lang",
+    "commons-math",
+    "pmd",
+    "jfreechart",
     "gson",
-    # "joda-time",
+    "joda-time",
     # "cts",
 ]
 
@@ -36,6 +36,8 @@ def change_dateformat(date):
 for project in projects_list:
 
     def main(project):
+        print(project)
+        print('-----------------')
         VALIDATION_FILES_DIR = "io/validationFiles"
         PROJECTS_DIR = "io/projects"
         PROJECT = project
@@ -137,5 +139,6 @@ for project in projects_list:
                 stat_version_test_deletions_file_path, index=False
             )
             print(f"Generated {stat_version_test_deletions_file_path}")
+            print("======================================================")
 
     main(project)
