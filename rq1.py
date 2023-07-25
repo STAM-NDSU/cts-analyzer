@@ -31,7 +31,7 @@ for project in projects_list:
 
     def main(project):
         print(project)
-        print('---------------')
+        print("---------------")
         IO_DIR = "io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(
@@ -45,6 +45,9 @@ for project in projects_list:
         )
         stat_test_deletion_commits_file_path = Path(
             f"{IO_DIR}/{PROJECT}/stat_test_deletion_commits.csv"
+        )
+        stat_deletion_commits_grouped_year_file_path = Path(
+            f"{IO_DIR}/{PROJECT}/stat_test_deletion_commits_grouped_year.csv"
         )
         test_deletion_datetime_inbetweencommits_range_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_datetime_inbetweencommits_range.csv"
@@ -62,9 +65,37 @@ for project in projects_list:
             df = df.iloc[:, 0:11]
             deleted_tc_df = df[df["Final Results"] == "yes"]
             deleted_tc_df.to_csv(deleted_tc_output_file_path, index=False)
-            deleted_tc_df = deleted_tc_df.reset_index(drop=True) #Reset index of deleted testcase dataframe
+            deleted_tc_df = deleted_tc_df.reset_index(
+                drop=True
+            )  # Reset index of deleted testcase dataframe
             print(f"Generated {deleted_tc_output_file_path}")
-  
+
+            # Group test deletion commits by  year
+            deleted_tc_df_clone = deleted_tc_df.copy(deep=True)
+            deleted_tc_df_clone["Datetime"] = pd.to_datetime(
+                deleted_tc_df_clone["Datetime"], format="%m/%d/%Y %H:%M:%S"
+            )
+            # no. of testcases by year
+            grouped_deleted_tc_df = deleted_tc_df_clone.groupby(
+                deleted_tc_df_clone.Datetime.dt.year
+            )["Hash"].count()
+            grouped_deleted_tc_df = grouped_deleted_tc_df.reset_index()
+            # no. of test deletion commits by year
+            deleted_tc_df_clone2 =  deleted_tc_df_clone.drop_duplicates(subset='Hash', keep="first")
+            grouped_deleted_tc_commit_df = deleted_tc_df_clone2.groupby(
+                deleted_tc_df_clone.Datetime.dt.year
+            )["Hash"].count()
+            grouped_deleted_tc_commit_df= grouped_deleted_tc_commit_df.reset_index()
+            new_df = pd.DataFrame()
+            new_df["Datetime"] = grouped_deleted_tc_df['Datetime']
+            new_df["Commit"] = grouped_deleted_tc_commit_df['Hash']
+            new_df["Testcase"] = grouped_deleted_tc_df['Hash']
+            stat_deletion_commits_grouped_year_df = new_df.reset_index()
+            stat_deletion_commits_grouped_year_df.to_csv(
+                stat_deletion_commits_grouped_year_file_path, index=False
+            )
+            print(f"Generated {stat_deletion_commits_grouped_year_file_path}")
+
             # Find total number of test cases deleted by commit
             test_deletion_commits_df = deleted_tc_df["Hash"].value_counts().to_frame()
             test_deletion_commits_df = test_deletion_commits_df.reset_index()
