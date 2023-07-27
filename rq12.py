@@ -1,3 +1,7 @@
+
+"""
+Computes test-deletion stat across projects version
+"""
 import os.path
 from pathlib import Path
 import pandas as pd

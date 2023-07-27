@@ -1,3 +1,6 @@
+"""
+Prettify results from rq12.py to export in latex
+"""
 import os.path
 from pathlib import Path
 import pandas as pd

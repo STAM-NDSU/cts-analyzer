@@ -1,3 +1,6 @@
+"""
+Reads all tags in the repository and generates tags file
+"""
 import os.path
 import os
 import json
