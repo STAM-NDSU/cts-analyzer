@@ -39,11 +39,11 @@ else:
             full_refined_file_path = Path(
                 f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step1_refined.csv"
             )
-            
+
             # Check if step 1 file is refined for the project [Use refined file if available]
             if os.path.exists(f"{full_refined_file_path}"):
                 full_file_path = full_refined_file_path
-                
+
             with open(full_file_path, "r") as a:
                 step1_hydrated_df = pd.read_csv(f"{full_file_path}")
                 step1_hydrated_df = step1_hydrated_df.iloc[:, 0:7]
@@ -75,7 +75,7 @@ else:
 
                 for index, row in df.iterrows():
                     is_refactor = False
-                    testcase_filename = row['Filename']
+                    testcase_filename = row["Filename"]
                     testcase_hash = strip_commit_url(row["Hash"])
                     testcase_name = str(
                         row["Removed Test Case"]
@@ -107,23 +107,21 @@ else:
                                 and (testcase_name in each["codeElement"])
                                 and (testcase_filepath == each["filePath"])
                             ):
-                                
                                 is_refactor = True
                                 break
-                            
+
                     # Check if test class is renamed [e.g Rename Class- all methods are refactored]
                     if not is_refactor:
                         for refactor in refactors_commit:
-                            if refactor['type'] == "Rename Class":
+                            if refactor["type"] == "Rename Class":
                                 for each in refactor["leftSideLocations"]:
-                                    if (
-                                        each["codeElement"]
-                                        and (testcase_filepath == each["filePath"])
+                                    if each["codeElement"] and (
+                                        testcase_filepath == each["filePath"]
                                     ):
                                         is_refactor = True
-                                        break      
-                    
-                    # Append only not refactored testcase                        
+                                        break
+
+                    # Append only not refactored testcase
                     if not is_refactor:
                         new_df = new_df.append(row, ignore_index=True)
 
@@ -155,7 +153,9 @@ else:
                         f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv",
                         index=False,
                     )
-                    print(f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv")
+                    print(
+                        f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv"
+                    )
                 print("------- END step 3")
     except Exception as e:
         print(f"Error occurred: {type(e).__name__}")

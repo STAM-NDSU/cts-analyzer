@@ -15,15 +15,20 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 
-# plt.rcParams["figure.figsize"] = [4,3]
-# plt.rcParams["figure.autolayout"] = True
+import matplotlib.dates as mdates
+
+
+OUT_DIR = 'io/rq1/figures/'
+# Set the figure size
+plt.rcParams["figure.figsize"] = [7.00, 3.50]
+plt.rcParams["figure.autolayout"] = True
 # Set colors
 colors = [
-    "pink",
-    "lightblue",
-    "lightgreen",
-    "red",
+    "magenta",
     "blue",
+    "green",
+    "red",
+    "cyan",
     "brown",
     # 'violet'
 ]
@@ -38,7 +43,7 @@ projects_list = [
 ]
 
 fig, ax = plt.subplots(
-    figsize=(10, 6),
+     figsize=(20,8),
 )
 for index, project in enumerate(projects_list):
 
@@ -53,12 +58,25 @@ for index, project in enumerate(projects_list):
 
         if os.path.exists(f"{stat_test_deletion_commits_grouped_year_file_path}"):
             df = pd.read_csv(f"{stat_test_deletion_commits_grouped_year_file_path}")
-            ax.plot(df["Datetime"].values.tolist(), df["Testcase"].values.tolist(), color=colors[index] )
+            df["Datetime"] = pd.to_datetime(df["Datetime"], format="%Y")
+            print(df["Datetime"])
+            ax.plot(df["Datetime"], df["Testcase"], color=colors[index], label=project )
 
     main(project)
 
 
 plt.xlabel("Year")
 plt.ylabel("No. of tests deleted")
-fig.savefig("tests-deleted-per-year.png", dpi=800)
+
+half_year_locator = mdates.MonthLocator(interval=24)
+year_month_formatter = mdates.DateFormatter("%Y") # four digits for year, two for month
+
+ax.xaxis.set_major_locator(half_year_locator)
+ax.xaxis.set_major_formatter(year_month_formatter) # formatter for major axis only
+ax.set_ylim(ymin=0)
+# ax.xaxis.set_major_locator(plt.dates.YearLocator())
+# ax.xaxis.set_major_formatter(plt.dates.DateFormatter('%Y'))
+plt.legend()
+# ax.xaxis.set_major_formatter(plt.dates.DateFormatter("%Y"))
+fig.savefig(OUT_DIR + "tests-deleted-per-year.png", dpi=800)
 # plt.show()

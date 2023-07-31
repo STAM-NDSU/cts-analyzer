@@ -136,6 +136,6 @@ for project in projects:
                     prev["Filepath"] = row["Filepath"]
                     prev["Filename"] = row["Filename"]
 
-        file_wo = file.replace("hydrated_", "") + "dehydrated"
+        file_wo = file.replace("hydrated_", "")
         df.to_csv(f"{IO_DIR}/{project['project']}/{file_wo}.csv", index=False)
         print(f"Generated {IO_DIR}/{project['project']}/{file_wo}.csv")

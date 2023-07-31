@@ -15,6 +15,8 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 
+OUT_DIR = 'io/rq1/figures/'
+
 # plt.rcParams["figure.figsize"] = [4,3]
 # plt.rcParams["figure.autolayout"] = True
 projects_list = [
@@ -122,6 +124,6 @@ ax.set_yticklabels(list(test_deletion_commits_timerange.keys()))
 #         #  weight=weights[k], color=box_colors[k]
 #     )
 fig.tight_layout()
-fig.savefig("time-interval-between-test-deletion-commits.png",
+fig.savefig(OUT_DIR + "time-interval-between-test-deletion-commits.png",
             dpi=800)
 # plt.show()

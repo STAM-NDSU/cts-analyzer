@@ -15,7 +15,7 @@ import json
 import matplotlib.pyplot as plt
 import seaborn
 import numpy as np
-
+OUT_DIR = 'io/rq1/figures/'
 # plt.rcParams["figure.figsize"] = [4,3]
 # plt.rcParams["figure.autolayout"] = True
 projects_list = [
@@ -141,6 +141,6 @@ plt.show()
 # #         #  weight=weights[k], color=box_colors[k]
 # #     )
 # fig.tight_layout()
-# fig.savefig("no-of-deleted-tests.png",
+# fig.savefig(OUT_DIR = 'io/rq1/figures/' + "no-of-deleted-tests.png",
 #             dpi=800)
 # # plt.show()
