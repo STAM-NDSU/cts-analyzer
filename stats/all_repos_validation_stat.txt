@@ -1,56 +1,56 @@
 Project:  commons-lang
-Total obervations:  2409
-Total Valid Tests Deletion Commits:  107
-total_conflicts_before_resolution:  21
-total_yes_before_resolution:  859
-total_no_before_resolution:  44
-total_others_before_resolution:  1485
+Total obervations:  940
+Total Valid Tests Deletion Commits:  108
+total_conflicts_before_resolution:  31
+total_yes_before_resolution:  862
+total_no_before_resolution:  47
+total_others_before_resolution:  0
 total_conflicts_after_resolution:  0
-total_yes_after_resolution:  866
-total_no_after_resolution:  58
-total_others_after_resolution:  1485
+total_yes_after_resolution:  869
+total_no_after_resolution:  71
+total_others_after_resolution:  0
 -----Kappa's score
-total_suraj_yes_before_resolution : 861
-total_suraj_no_before_resolution : 55
-total_ajay_yes_before_resolution : 875
-total_ajay_no_before_resolution : 49
-Kappa's score:  0.9899768406749787
+total_suraj_yes_before_resolution : 864
+total_suraj_no_before_resolution : 68
+total_ajay_yes_before_resolution : 888
+total_ajay_no_before_resolution : 52
+Kappa's score:  0.7417399319342028
 ================================================================
 Project:  gson
-Total obervations:  274
-Total Valid Tests Deletion Commits:  39
+Total obervations:  276
+Total Valid Tests Deletion Commits:  37
 total_conflicts_before_resolution:  5
-total_yes_before_resolution:  258
-total_no_before_resolution:  11
+total_yes_before_resolution:  256
+total_no_before_resolution:  15
 total_others_before_resolution:  0
 total_conflicts_after_resolution:  0
-total_yes_after_resolution:  260
-total_no_after_resolution:  14
+total_yes_after_resolution:  258
+total_no_after_resolution:  18
 total_others_after_resolution:  0
 -----Kappa's score
-total_suraj_yes_before_resolution : 263
-total_suraj_no_before_resolution : 11
-total_ajay_yes_before_resolution : 258
-total_ajay_no_before_resolution : 16
-Kappa's score:  0.8055634402497868
+total_suraj_yes_before_resolution : 261
+total_suraj_no_before_resolution : 15
+total_ajay_yes_before_resolution : 256
+total_ajay_no_before_resolution : 20
+Kappa's score:  0.8476821192052982
 ================================================================
 Project:  commons-math
-Total obervations:  3371
-Total Valid Tests Deletion Commits:  231
+Total obervations:  3363
+Total Valid Tests Deletion Commits:  230
 total_conflicts_before_resolution:  19
-total_yes_before_resolution:  3281
+total_yes_before_resolution:  3273
 total_no_before_resolution:  71
 total_others_before_resolution:  0
-total_conflicts_after_resolution:  12
-total_yes_after_resolution:  3286
-total_no_after_resolution:  73
+total_conflicts_after_resolution:  0
+total_yes_after_resolution:  3279
+total_no_after_resolution:  84
 total_others_after_resolution:  0
 -----Kappa's score
-total_suraj_yes_before_resolution : 3289
+total_suraj_yes_before_resolution : 3281
 total_suraj_no_before_resolution : 82
-total_ajay_yes_before_resolution : 3292
+total_ajay_yes_before_resolution : 3284
 total_ajay_no_before_resolution : 79
-Kappa's score:  0.8791015053560473
+Kappa's score:  0.8790944715764073
 ================================================================
 Project:  jfreechart
 Total obervations:  152
@@ -71,74 +71,74 @@ total_ajay_no_before_resolution : 1
 Kappa's score:  1.0
 ================================================================
 Project:  joda-time
-Total obervations:  7515
+Total obervations:  683
+=HYPERLINK("https://github.com/JodaOrg/joda-time/commit/73c467922eaf2579fa5c24e5aa2c8e5ffdc50aeb", "73c467922eaf2579fa5c24e5aa2c8e5ffdc50aeb")
 Total Valid Tests Deletion Commits:  31
-total_conflicts_before_resolution:  12
-total_yes_before_resolution:  656
-total_no_before_resolution:  22
-total_others_before_resolution:  6825
-total_conflicts_after_resolution:  1
-total_yes_after_resolution:  662
-total_no_after_resolution:  22
-total_others_after_resolution:  6830
------Kappa's score
-total_suraj_yes_before_resolution : 658
-total_suraj_no_before_resolution : 32
-total_ajay_yes_before_resolution : 667
-total_ajay_no_before_resolution : 23
-Kappa's score:  0.9983906660199587
-================================================================
-Project:  pmd
-Total obervations:  2323
-Total Valid Tests Deletion Commits:  314
-total_conflicts_before_resolution:  91
-total_yes_before_resolution:  1796
-total_no_before_resolution:  436
+total_conflicts_before_resolution:  11
+total_yes_before_resolution:  654
+total_no_before_resolution:  18
 total_others_before_resolution:  0
 total_conflicts_after_resolution:  0
-total_yes_after_resolution:  1826
-total_no_after_resolution:  497
+total_yes_after_resolution:  660
+total_no_after_resolution:  22
+total_others_after_resolution:  1
+-----Kappa's score
+total_suraj_yes_before_resolution : 656
+total_suraj_no_before_resolution : 27
+total_ajay_yes_before_resolution : 664
+total_ajay_no_before_resolution : 19
+Kappa's score:  0.7527967886285866
+================================================================
+Project:  pmd
+Total obervations:  2513
+Total Valid Tests Deletion Commits:  315
+total_conflicts_before_resolution:  274
+total_yes_before_resolution:  1804
+total_no_before_resolution:  435
+total_others_before_resolution:  0
+total_conflicts_after_resolution:  0
+total_yes_after_resolution:  2017
+total_no_after_resolution:  496
 total_others_after_resolution:  0
 -----Kappa's score
-total_suraj_yes_before_resolution : 1840
-total_suraj_no_before_resolution : 483
-total_ajay_yes_before_resolution : 1843
-total_ajay_no_before_resolution : 480
-Kappa's score:  0.8807958185803405
+total_suraj_yes_before_resolution : 1848
+total_suraj_no_before_resolution : 665
+total_ajay_yes_before_resolution : 2034
+total_ajay_no_before_resolution : 479
+Kappa's score:  0.6923043236175499
 ================================================================
 Project:  cts
-Total obervations:  20459
-Total Valid Tests Deletion Commits:  1571
-total_conflicts_before_resolution:  519
-total_yes_before_resolution:  17691
-total_no_before_resolution:  1890
-total_others_before_resolution:  359
+Total obervations:  19303
+Total Valid Tests Deletion Commits:  1387
+total_conflicts_before_resolution:  413
+total_yes_before_resolution:  17063
+total_no_before_resolution:  1827
+total_others_before_resolution:  0
 total_conflicts_after_resolution:  0
-total_yes_after_resolution:  17734
-total_no_after_resolution:  2366
-total_others_after_resolution:  359
+total_yes_after_resolution:  17103
+total_no_after_resolution:  2200
+total_others_after_resolution:  0
 -----Kappa's score
-total_suraj_yes_before_resolution : 17739
-total_suraj_no_before_resolution : 2361
-total_ajay_yes_before_resolution : 18161
-total_ajay_no_before_resolution : 1939
-Kappa's score:  0.8843768385951356
+total_suraj_yes_before_resolution : 17112
+total_suraj_no_before_resolution : 2191
+total_ajay_yes_before_resolution : 17426
+total_ajay_no_before_resolution : 1877
+Kappa's score:  0.8865976458753172
 ================================================================
 Final Results
-Total observations:  36503
-all_total_conflicts_before_resolution:  667
-all_total_yes_before_resolution:  24692
-all_total_no_before_resolution:  2475
-all_total_others_before_resolution:  8669
-all_total_conflicts_after_resolution:  13
-all_total_yes_after_resolution:  24785
-all_total_no_after_resolution:  3031
-all_total_others_after_resolution:  8674
+Total observations:  27230
+all_total_conflicts_before_resolution:  753
+all_total_yes_before_resolution:  24063
+all_total_no_before_resolution:  2414
+all_total_others_before_resolution:  0
+all_total_conflicts_after_resolution:  0
+all_total_yes_after_resolution:  24337
+all_total_no_after_resolution:  2892
+all_total_others_after_resolution:  1
 ----- Final Kappa's score
-all_total_suraj_yes_before_resolution : 24801
-all_total_suraj_yes_before_resolution : 24801
-all_total_suraj_no_before_resolution : 3025
-all_total_ajay_yes_before_resolution : 25247
-all_total_ajay_no_before_resolution : 2587
-Final Kappa's score:  0.965142787570169
+all_total_suraj_yes_before_resolution : 24173
+all_total_suraj_no_before_resolution : 3049
+all_total_ajay_yes_before_resolution : 24703
+all_total_ajay_no_before_resolution : 2527
+Final Kappa's score:  0.8499207941347389
 ================================================================

@@ -22,7 +22,7 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 
 
@@ -67,6 +67,9 @@ for project in projects_list:
             # Opening JSON file
             tags_selected_json = open(f"{PROJECTS_DIR}/{project}/tags-selected.json")
             tags_selected = json.load(tags_selected_json)
+            
+            tags_selected = list(filter(lambda each: "Include" not in each.keys() or each["Include"] == True, tags_selected))
+            print(tags_selected)
             # Iterating through the json
             for index, tag_info in enumerate(tags_selected):
                 tag_info["Datetime"] = change_dateformat(tag_info["Datetime"])

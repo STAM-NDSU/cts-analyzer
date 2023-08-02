@@ -9,12 +9,12 @@ from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 
 projects_list = [
-    "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
+    # "commons-lang",
+    # "commons-math",
+    # "pmd",
+    # "jfreechart",
     "gson",
-    "joda-time",
+    # "joda-time",
     # "cts",
 ]
 
@@ -23,16 +23,17 @@ for project in projects_list:
     def main(project):
         IO_DIR = "io/validationFiles"
         PROJECT = project
-        full_input_file_path = Path(f"{IO_DIR}/{PROJECT}/validation_diff_done_hydrated.csv")
+        full_input_file_path = Path(
+            f"{IO_DIR}/{PROJECT}/validation_diff_done_hydrated.csv"
+        )
         full_output_file_path = Path(f"{IO_DIR}/{PROJECT}/validation_diff_done.csv")
 
         if os.path.exists(f"{full_input_file_path}"):
             df = pd.read_csv(f"{full_input_file_path}")
-
-            df = df.iloc[:, 0:11]
             prev = {
                 "Datetime": None,
                 "Hash": None,
+                "Author": None,
                 "Commit Msg": None,
                 "Filename": None,
                 "Removed Test Case": None,
@@ -50,6 +51,7 @@ for project in projects_list:
                         "Datetime": row["Datetime"],
                         "Commit Msg": row["Commit Msg"],
                         "Hash": row["Hash"],
+                        "Author": row["Author"],
                         "Filename": row["Filename"],
                         "Removed Test Case": row["Removed Test Case"],
                         "Manual Validation": row["Manual Validation"],
@@ -64,6 +66,7 @@ for project in projects_list:
                     if row["Hash"] == prev["Hash"]:
                         row["Hash"] = ""
                         row["Commit Msg"] = ""
+                        row["Author"] = ""
                         row["Datetime"] = ""
 
                         if row["Filename"] == prev["Filename"]:
@@ -74,6 +77,7 @@ for project in projects_list:
 
                     else:
                         prev["Hash"] = row["Hash"]
+                        prev["Author"] = row["Author"]
                         prev["Datetime"] = row["Datetime"]
                         prev["Commit Msg"] = prev["Commit Msg"]
 

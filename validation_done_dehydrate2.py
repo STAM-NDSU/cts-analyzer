@@ -25,14 +25,14 @@ for file_index, filepath in enumerate(parse_files(files)):
     if os.path.exists(f"{full_file_path}"):
         df = pd.read_csv(f"{full_file_path}")
         all_data = []
-        df = df.iloc[:, 0:12]
+
         prev = {
             "Datetime": None,
             "Hash": None,
+            "Author": None,
             "Commit Msg": None,
             "Filename": None,
             "Removed Test Case": None,
-            "Confidence": None,
             "Manual Validation": None,
             "Final Results": None,
             "Ajay Manual Validation": None,
@@ -47,9 +47,9 @@ for file_index, filepath in enumerate(parse_files(files)):
                     "Datetime": row["Datetime"],
                     "Commit Msg": row["Commit Msg"],
                     "Hash": row["Hash"],
+                    "Author": row["Author"],
                     "Filename": row["Filename"],
                     "Removed Test Case": row["Removed Test Case"],
-                    "Confidence": row["Confidence"],
                     "Manual Validation": row["Manual Validation"],
                     "Final Results": row["Final Results"],
                     "Ajay Manual Validation": row["Ajay Manual Validation"],
@@ -62,22 +62,21 @@ for file_index, filepath in enumerate(parse_files(files)):
                 if row["Hash"] == prev["Hash"]:
                     row["Hash"] = ""
                     row["Commit Msg"] = ""
+                    row["Author"] = ""
                     row["Datetime"] = ""
 
                     if row["Filename"] == prev["Filename"]:
                         row["Filename"] = ""
-                        row["Confidence"] = ""
                     else:
                         prev["Filename"] = row["Filename"]
-                        prev["Confidence"] = row["Confidence"]
 
                 else:
                     prev["Hash"] = row["Hash"]
+                    prev["Author"] = row["Author"]
                     prev["Datetime"] = row["Datetime"]
                     prev["Commit Msg"] = prev["Commit Msg"]
 
                     prev["Filename"] = row["Filename"]
-                    prev["Confidence"] = row["Confidence"]
 
                 # if pd.isna(row["Manual Validation"]) or pd.isnull(row["Manual Validation"]):
                 #     row["Manual Validation"] = prev["Manual Validation"]
@@ -106,10 +105,10 @@ for file_index, filepath in enumerate(parse_files(files)):
             data = [
                 row["Datetime"],
                 row["Hash"],
+                row["Author"],
                 row["Commit Msg"],
                 row["Filename"],
                 row["Removed Test Case"],
-                row["Confidence"],
                 row["Manual Validation"],
                 row["Final Results"],
                 row["Ajay Manual Validation"],
@@ -127,10 +126,10 @@ for file_index, filepath in enumerate(parse_files(files)):
             columns=[
                 "Datetime",
                 "Hash",
+                "Author",
                 "Commit Msg",
                 "Filename",
                 "Removed Test Case",
-                "Confidence",
                 "Manual Validation",
                 "Final Results",
                 "Ajay Manual Validation",

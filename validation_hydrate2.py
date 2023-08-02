@@ -75,7 +75,7 @@ for project in projects_list:
                         row["Hash"] = prev["Hash"]
                     else:
                         prev["Hash"] = parse_commit_as_hyperlink(
-                            label=row["Hash"], url=get_full_commit_url(row["Hash"])
+                            label=row["Hash"], url=get_full_commit_url_by_project(PROJECT, row["Hash"])
                         )
                         row["Hash"] = prev["Hash"]
 

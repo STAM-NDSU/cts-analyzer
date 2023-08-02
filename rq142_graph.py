@@ -26,7 +26,7 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 medians = []
 test_deletion_commits_timerange = {}
@@ -81,7 +81,7 @@ colors = [
     "red",
     "blue",
     "brown",
-    # 'violet'
+    'violet'
 ]
 for patch, color in zip(bp["boxes"], colors):
     patch.set_facecolor(color)

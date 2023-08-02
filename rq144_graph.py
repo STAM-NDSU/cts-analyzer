@@ -1,5 +1,5 @@
 """
-Generate box plot for no. of deleted tests in commit [rq1]
+Generate graph for no. of deleted tests per year [rq1]
 """
 import os.path
 from pathlib import Path
@@ -30,7 +30,7 @@ colors = [
     "red",
     "cyan",
     "brown",
-    # 'violet'
+    'violet'
 ]
 projects_list = [
     "commons-lang",
@@ -39,7 +39,7 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 
 fig, ax = plt.subplots(

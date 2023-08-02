@@ -9,12 +9,12 @@ import os
 
 
 projects_list = [
-    "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
+    # "commons-lang",
+    # "commons-math",
+    # "pmd",
+    # "jfreechart",
     "gson",
-    "joda-time",
+    # "joda-time",
     # "cts",
 ]
 
@@ -23,15 +23,21 @@ for project in projects_list:
     def main(project):
         IO_DIR = "io/validationFiles"
         OUTPUT_FILE = "validation_diff"
-        base_columns = [
+        v_columns = [
             "Datetime",
             "Hash",
             "Commit Msg",
             "Filename",
             "Removed Test Case",
         ]
-        columns = [
-            *base_columns,
+        b_columns = [
+            "Datetime",
+            "Hash",
+            "Author",
+            "Commit Msg",
+            "Filepath",
+            "Filename",
+            "Removed Test Case",
             "Manual Validation",
             "Final Results",
             "Ajay Manual Validation",
@@ -40,10 +46,8 @@ for project in projects_list:
             "Suraj Comments",
         ]
 
-        step3_file = (
-            "io/artifacts/" + project + "/hydrated_" + project +"-step3.csv"
-        )
-        validated_file = IO_DIR + '/' + project + "/validation_hydrated.csv"
+        step3_file = "io/artifacts/" + project + "/hydrated_" + project + "-step3.csv"
+        validated_file = IO_DIR + "/" + project + "/validation_hydrated.csv"
 
         if os.path.exists(step3_file) and os.path.exists(validated_file):
             # writer = pd.ExcelWriter(f"{IO_DIR}/{project}/{OUTPUT_FILE}", engine="xlsxwriter")
@@ -58,52 +62,64 @@ for project in projects_list:
                 matched = []
                 for step3_record in step3_file:
                     # Ignore Filepath and Check Annot
-                    format_step3_record = [
-                        step3_record[0],
-                        step3_record[1],
-                        step3_record[2],
-                        step3_record[4],
-                        step3_record[5],
-                    ]
+                    [
+                        datetime,
+                        hash,
+                        author,
+                        commit_msg,
+                        filepath,
+                        filename,
+                        testcase,
+                    ] = step3_record
 
                     match_found = False
-                    all_validated_and_related = list(
+                    all_validated_and_hash_matched = list(
                         filter(
-                            lambda each: each[1] == format_step3_record[1],
+                            lambda each: each[1] == hash,
                             validated_file,
                         )
                     )
-                    
-                    for validated_record in all_validated_and_related:
-                        format_step3_record = [
-                            step3_record[0],
-                            step3_record[1],
-                            step3_record[2],
-                            step3_record[4],
-                            step3_record[5],
-                        ]
+
+                    for validated_record in all_validated_and_hash_matched:
+                        [
+                            v_datetime,
+                            v_hash,
+                            v_commit_msg,
+                            v_filename,
+                            v_testcase,
+                            manual_validation,
+                            *extra_info,
+                        ] = validated_record
 
                         if (
-                            format_step3_record[3] == validated_record[3]
-                            and format_step3_record[4] == validated_record[4]
+                            filename == v_filename
+                            and v_testcase == testcase
+                            and len(manual_validation)
                         ):
                             match_found = True
-                            matched.append([*validated_record])
+                            matched.append(
+                                [
+                                    *step3_record,
+                                    manual_validation,
+                                    *extra_info,
+                                ]
+                            )
                             break
                     if not match_found:
-                        alter.append([*format_step3_record])
+                        alter.append([datetime, hash, commit_msg, filename, testcase])
 
                 alter_df = pd.DataFrame(
                     alter,
-                    columns=base_columns,
+                    columns=v_columns,
                 )
                 # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
                 alter_df.to_csv(
-                    f"{IO_DIR}/{project}/{OUTPUT_FILE}_leftovers_hydrated.csv", index=False
+                    f"{IO_DIR}/{project}/{OUTPUT_FILE}_leftovers_hydrated.csv",
+                    index=False,
                 )
                 print(f"Generated {IO_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv")
 
-                matched_df = pd.DataFrame(matched, columns=columns)
+                matched_df = pd.DataFrame(matched, columns=b_columns)
                 # matched_df.to_excel(writer, sheet_name="done", index=False)
                 matched_df.to_csv(
                     f"{IO_DIR}/{project}/{OUTPUT_FILE}_done_hydrated.csv", index=False
@@ -116,5 +132,5 @@ for project in projects_list:
                 print("ERROR: Step 3 does not exist for project " + project)
             else:
                 print("ERROR: Validation file does not exist for project " + project)
-           
+
     main(project)

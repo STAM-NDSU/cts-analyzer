@@ -13,10 +13,9 @@ from datetime import datetime
 import os
 import json
 import matplotlib.pyplot as plt
+import seaborn
 import numpy as np
-
 OUT_DIR = 'io/rq1/figures/'
-
 # plt.rcParams["figure.figsize"] = [4,3]
 # plt.rcParams["figure.autolayout"] = True
 projects_list = [
@@ -29,7 +28,7 @@ projects_list = [
     "cts",
 ]
 medians = []
-test_deletion_commits_timerange = {}
+test_deletion_commits = {"project": [], "deleted tests in commit": []}
 for index, project in enumerate(projects_list):
 
     def main(project):
@@ -44,15 +43,37 @@ for index, project in enumerate(projects_list):
 
         if os.path.exists(f"{test_deletion_commits_file_path}"):
             df = pd.read_csv(f"{test_deletion_commits_file_path}")
-            df.dropna(inplace=True)
-            test_deletion_commits_timerange[project] = df["Total Test Cases"].values.tolist()
-            medians.append(np.median(test_deletion_commits_timerange[project]))
+           
+            # df = df.dropna(inplace=True)
+           
+            values = df["Total Test Cases"].values.tolist()
+            print(values)
+            for value in values:
+                if value:
+                    test_deletion_commits["project"].append(project)
+                    test_deletion_commits["deleted tests in commit"].append(value)
 
     main(project)
 
-# test_deletion_commits_df = pd.DataFrame(test_deletion_commits)
-# print(test_deletion_commits_df)
 
+
+# new_df = pd.DataFrame(test_deletion_commits, columns=['project', 'deleted tests in commit'])
+# fig, ax = plt.subplots(
+#      figsize=(10,6),
+# )
+# # fig = plt.figure( figsize=(10,6))
+# seaborn.violinplot(x="project", y="deleted tests in commit", data=new_df,  showfliers=False, xlabel="da", vert=True, )
+# ax.set_ylim(ymin=0)
+# plt.show()
+# seaborn.set(style='whitegrid')
+# # tip = seaborn.load_dataset('tips')
+ 
+# seaborn.boxplot(x='h', y='h', data=list(test_deletion_commits.values()))
+# plt.show()
+# # test_deletion_commits_df = pd.DataFrame(test_deletion_commits)
+# # print(test_deletion_commits_df)
+
+# ===================
 # Generate box plot for total tests deleted
 # fig = plt.figure()
 # ax = fig.add_axes([0, 0, 1, 1])
@@ -60,7 +81,7 @@ fig, ax = plt.subplots(
     figsize=(5,3),
 )
 bp = ax.boxplot(
-    list(test_deletion_commits_timerange.values()),
+    list(test_deletion_commits.values()),
     showfliers=False,
     # notch=True,  # notch shape
     vert=False,  # vertical box alignment
@@ -94,7 +115,7 @@ ax.set(
     axisbelow=True,  # Hide the grid behind plot objects
     # title='No. of deleted tests per commit',
     # ylabel="Projects",
-       xlabel="No. of tests deleted",
+    xlabel="No. of tests deleted",
 )
 
 # # Set the axes ranges and axes labels
@@ -102,7 +123,7 @@ ax.set(
 # top = 40
 # bottom = -5
 # ax.set_ylim(bottom, top)
-ax.set_yticklabels(list(test_deletion_commits_timerange.keys()))
+ax.set_yticklabels(list(test_deletion_commits.keys()))
 
 
 # Due to the Y-axis scale being different across samples, it can be
@@ -124,6 +145,6 @@ ax.set_yticklabels(list(test_deletion_commits_timerange.keys()))
 #         #  weight=weights[k], color=box_colors[k]
 #     )
 fig.tight_layout()
-fig.savefig(OUT_DIR + "no-of-deleted-tests-per-commit.png",
+fig.savefig(OUT_DIR = 'io/rq1/figures/' + "no-of-deleted-tests.png",
             dpi=800)
-# plt.show()
+# # plt.show()

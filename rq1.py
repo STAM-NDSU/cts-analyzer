@@ -20,7 +20,7 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 
 
@@ -65,7 +65,6 @@ for project in projects_list:
         if os.path.exists(f"{full_input_file_path}"):
             df = pd.read_csv(f"{full_input_file_path}")
 
-            df = df.iloc[:, 0:11]
             deleted_tc_df = df[df["Final Results"] == "yes"]
             deleted_tc_df.to_csv(deleted_tc_output_file_path, index=False)
             deleted_tc_df = deleted_tc_df.reset_index(

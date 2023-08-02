@@ -1,5 +1,5 @@
 """
-Generate box plot for no. of deleted tests in commit [rq1]
+Generate box plot for no. of commits between consequtive test deletion commits [rq1]
 """
 import os.path
 from pathlib import Path
@@ -26,7 +26,7 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 medians = []
 test_deletion_commits_timerange = {}
@@ -56,11 +56,28 @@ for index, project in enumerate(projects_list):
 # Generate box plot for total tests deleted
 # fig = plt.figure()
 # ax = fig.add_axes([0, 0, 1, 1])
-fig, ax = plt.subplots(
+
+
+
+fig,  (ax1, ax2) = plt.subplots(1,2,
     figsize=(5,3),
+    # sharey=True
 )
-bp = ax.boxplot(
-    list(test_deletion_commits_timerange.values()),
+# # Share a X axis with each column of subplots
+# plt.subplots(2, 2, sharex='col')
+
+
+bp1 = ax1.boxplot(
+    list(test_deletion_commits_timerange.values())[:6],
+    showfliers=False,
+    # notch=True,  # notch shape
+    vert=False,  # vertical box alignment
+    patch_artist=True,  # fill with color
+    #  labels=[]  # will be used to label x-ticks
+)
+
+bp2 = ax2.boxplot(
+    list(test_deletion_commits_timerange.values())[6],
     showfliers=False,
     # notch=True,  # notch shape
     vert=False,  # vertical box alignment
@@ -69,41 +86,55 @@ bp = ax.boxplot(
 )
 
 # Set boxes, whiskers and fliers config
-plt.setp(bp["boxes"], color="black")
-plt.setp(bp["whiskers"], color="black")
+plt.setp(bp1["boxes"], color="black")
+plt.setp(bp2["boxes"], color="black")
+plt.setp(bp1["whiskers"], color="black")
+plt.setp(bp2["whiskers"], color="black")
 # plt.setp(bp['fliers'], color='red', marker='+')
 
 # Set colors
-colors = [
+colors1 = [
     "pink",
     "lightblue",
     "lightgreen",
     "red",
     "blue",
     "brown",
-    # 'violet'
 ]
-for patch, color in zip(bp["boxes"], colors):
+colors2=['violet']
+for patch, color in zip(bp1["boxes"], colors1):
     patch.set_facecolor(color)
 
+for patch, color in zip(bp2["boxes"], colors2):
+    patch.set_facecolor(color)
 # Add a vertical grid to the plot, but make it very light in color
 # so we can use it for reading data values but not be distracting
-ax.xaxis.grid(True, linestyle="-", which="major", color="lightgrey", alpha=0.5)
+ax1.xaxis.grid(True, linestyle="-", which="major", color="lightgrey", alpha=0.5)
+ax2.xaxis.grid(True, linestyle="-", which="major", color="lightgrey", alpha=0.5)
+# ax1.set(
+#     axisbelow=True,  # Hide the grid behind plot objects
+#     # title='No. of deleted tests per commit',
+#     # ylabel="Projects",
+#     xlabel="No. of commits",
+# )
+# ax2.set(
+#     axisbelow=True,  # Hide the grid behind plot objects
+#     # title='No. of deleted tests per commit',
+#     # ylabel="Projects",
+#     xlabel="No. of commits",
+# )
 
-ax.set(
-    axisbelow=True,  # Hide the grid behind plot objects
-    # title='No. of deleted tests per commit',
-    # ylabel="Projects",
-    xlabel="No. of days",
-)
+# Set common labels
+fig.text(0.56, 0.02, 'No. of commits', ha='center', va='center')
 
 # # Set the axes ranges and axes labels
 # ax.set_xlim(0.5, 100)
 # top = 40
 # bottom = -5
 # ax.set_ylim(bottom, top)
-ax.set_yticklabels(list(test_deletion_commits_timerange.keys()))
-
+print(list(test_deletion_commits_timerange.keys()))
+ax1.set_yticklabels(['commons-lang', 'commons-math', 'pmd', 'jfreechart', 'gson', 'joda-time'])
+ax2.set_yticklabels(['cts'])
 
 # Due to the Y-axis scale being different across samples, it can be
 # hard to compare differences in medians across the samples. Add upper

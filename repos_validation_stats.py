@@ -60,14 +60,13 @@ for project in projects_list:
         print("Project: ", project)
         IO_DIR = "io/validationFiles"
         PROJECT = project
-        validation_file = "validation_hydrated.csv"
+        validation_file = "validation_diff_done_hydrated.csv"
         full_file_path = Path(f"{IO_DIR}/{PROJECT}/{validation_file}")
         valid_tests_deletion_commits = []
         
         if os.path.exists(f"{full_file_path}"):
             df = pd.read_csv(f"{full_file_path}")
 
-            df = df.iloc[:, 0:11]
             total_conflicts_before_resolution = 0
             total_yes_before_resolution = 0
             total_no_before_resolution = 0
@@ -127,6 +126,7 @@ for project in projects_list:
                     total_no_after_resolution += 1
                     all_total_no_after_resolution += 1
                 else:
+                    print(row['Hash'])
                     total_others_after_resolution += 1
                     all_total_others_after_resolution += 1
 
@@ -187,7 +187,6 @@ print("all_total_no_after_resolution: ", all_total_no_after_resolution)
 print("all_total_others_after_resolution: ", all_total_others_after_resolution)
 
 print("----- Final Kappa's score")
-print("all_total_suraj_yes_before_resolution :", all_total_suraj_yes_before_resolution)
 print("all_total_suraj_yes_before_resolution :", all_total_suraj_yes_before_resolution)
 print("all_total_suraj_no_before_resolution :", all_total_suraj_no_before_resolution)
 print("all_total_ajay_yes_before_resolution :", all_total_ajay_yes_before_resolution)

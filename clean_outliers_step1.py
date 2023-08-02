@@ -26,7 +26,7 @@ commits_to_ignore = {
 for project in ["commons-lang", "joda-time", "cts"]:
     full_input_file_path = Path(f"{IO_DIR}/{project}/hydrated_{project}-step1.csv")
     full_output_file_path = Path(
-        f"{IO_DIR}/{project}/hydrated_{project}_step1_refined.csv"
+        f"{IO_DIR}/{project}/hydrated_{project}-step1_refined.csv"
     )
 
     if not os.path.exists(f"{full_input_file_path}"):

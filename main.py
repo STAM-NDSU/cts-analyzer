@@ -2,7 +2,7 @@ import analyzer.config as conf
 from analyzer.helpers import export_to_csv
 from analyzer.analyzer import get_removed_test_functions_details
 from analyzer.utils import *
-from analyzer.config import OUTPUT_DIRECTORY, OUTPUT_Filename
+from analyzer.config import OUTPUT_DIRECTORY, OUTPUT_FILENAME
 import json
 import traceback
 from pathlib import Path
@@ -21,18 +21,18 @@ else:
             results = get_removed_test_functions_details(
                 repo_path, target_branch, 1, None
             )
-            print(results)
+            
             if conf.HANDLE_EXPORT == "true":
                 headers = conf.CSV_HEADERS
                 export_to_csv(
                     headers=conf.CSV_HEADERS,
                     records=results,
                     dir=OUTPUT_DIRECTORY,
-                    filename="hydrated_" + OUTPUT_Filename,
+                    filename="hydrated_" + OUTPUT_FILENAME,
                 )
         # Get candidate deleted tests and refine candidate test deletion commits
-        elif conf.STEP == "step11":
-            print("Start step 11-------")
+        elif conf.STEP == "step2":
+            print("Start step 2-------")
             full_file_path = Path(
                 f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step1.csv"
             )
@@ -46,31 +46,32 @@ else:
 
             with open(full_file_path, "r") as a:
                 step1_hydrated_df = pd.read_csv(f"{full_file_path}")
-                step1_hydrated_df = step1_hydrated_df.iloc[:, 0:7]
-
-                step11_df = get_removed_test_functions_details(
-                    repo_path, target_branch, 11, step1_hydrated_df
+                step2_df = get_removed_test_functions_details(
+                    repo_path, target_branch, 2, step1_hydrated_df
                 )
 
                 if conf.HANDLE_EXPORT == "true":
-                    step11_df.to_csv(
-                        f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step11.csv",
+                    step2_df.to_csv(
+                        f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv",
                         index=False,
                     )
-                print("------- END step 11")
+                    print(
+                        f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv"
+                    )
+                print("------- END step 2")
 
         # Filter our refactored test cases [ suggested by RefMiner]
-        elif conf.STEP == "step2":
-            print("Start step 2-------")
+        elif conf.STEP == "step3":
+            print("Start step 3-------")
             refactoring_file = open(conf.REFACTOR_FILE)
             refactorings_data = json.load(refactoring_file)["commits"]
 
             full_file_path = Path(
-                f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step11.csv"
+                f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv"
             )
             with open(full_file_path, "r") as a:
                 df = pd.read_csv(f"{full_file_path}")
-                df = df.iloc[:, 0:7]
+                # df = df.iloc[:, 0:7]
                 new_df = pd.DataFrame()
 
                 for index, row in df.iterrows():
@@ -127,36 +128,16 @@ else:
 
                 if conf.HANDLE_EXPORT == "true":
                     new_df.to_csv(
-                        f"{conf.OUTPUT_DIR}/hydrated_{conf.OUTPUT_Filename}",
-                        index=False,
-                    )
-
-            refactoring_file.close()
-            print("------- End step 2")
-
-        # Filter our moved test cases [HYPOTHESIS]
-        elif conf.STEP == "step3":
-            print("Start step 3-------")
-            print(f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv")
-            full_file_path = Path(
-                f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step2.csv"
-            )
-            with open(full_file_path, "r") as a:
-                step2_hydrated_df = pd.read_csv(f"{full_file_path}")
-                step2_hydrated_df = step2_hydrated_df.iloc[:, 0:7]
-
-                step3_df = get_removed_test_functions_details(
-                    repo_path, target_branch, 3, step2_hydrated_df
-                )
-                if conf.HANDLE_EXPORT == "true":
-                    step3_df.to_csv(
-                        f"{conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv",
+                        f"{conf.OUTPUT_DIR}/hydrated_{conf.OUTPUT_FILENAME}",
                         index=False,
                     )
                     print(
-                        f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.PROJECT}-step3.csv"
+                        f"Successfully generated {conf.OUTPUT_DIR}/hydrated_{conf.OUTPUT_FILENAME}"
                     )
-                print("------- END step 3")
+
+            refactoring_file.close()
+            print("------- End step 3")
+
     except Exception as e:
         print(f"Error occurred: {type(e).__name__}")
         # print(e)
