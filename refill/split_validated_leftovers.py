@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("../")
+
 import os.path
 from pathlib import Path
 import pandas as pd
@@ -9,19 +13,23 @@ import os
 
 
 projects_list = [
-    # "commons-lang",
-    # "commons-math",
-    # "pmd",
-    # "jfreechart",
+    "commons-lang",
+    "commons-math",
+    "pmd",
+    "jfreechart",
     "gson",
-    # "joda-time",
-    # "cts",
+    "joda-time",
+    "cts",
 ]
+
 
 for project in projects_list:
 
     def main(project):
-        IO_DIR = "io/validationFiles"
+        # full_path = os.path.realpath(".")
+        full_path = "../"
+        VALIDATION_DIR = full_path + "/io/validationFiles/" + project 
+        ARTIFACTS_DIR = full_path + "/io/artifacts/" + project 
         OUTPUT_FILE = "validation_diff"
         v_columns = [
             "Datetime",
@@ -46,11 +54,16 @@ for project in projects_list:
             "Suraj Comments",
         ]
 
-        step3_file = "io/artifacts/" + project + "/hydrated_" + project + "-step3.csv"
-        validated_file = IO_DIR + "/" + project + "/validation_hydrated.csv"
+        step3_file = (
+            ARTIFACTS_DIR
+            + "/hydrated_"
+            + project
+            + "-step3.csv"
+        )
+        validated_file = VALIDATION_DIR + "/validation_hydrated.csv"
 
         if os.path.exists(step3_file) and os.path.exists(validated_file):
-            # writer = pd.ExcelWriter(f"{IO_DIR}/{project}/{OUTPUT_FILE}", engine="xlsxwriter")
+            # writer = pd.ExcelWriter(f"{VALIDATION_DIR}/{project}/{OUTPUT_FILE}", engine="xlsxwriter")
             with open(step3_file, "r") as a, open(validated_file, "r") as b:
                 step3_file = list(csv.reader(a, delimiter=","))
                 validated_file = list(csv.reader(b, delimiter=","))
@@ -114,17 +127,17 @@ for project in projects_list:
                 )
                 # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
                 alter_df.to_csv(
-                    f"{IO_DIR}/{project}/{OUTPUT_FILE}_leftovers_hydrated.csv",
+                    f"{VALIDATION_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv",
                     index=False,
                 )
-                print(f"Generated {IO_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv")
+                print(f"Generated {VALIDATION_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv")
 
                 matched_df = pd.DataFrame(matched, columns=b_columns)
                 # matched_df.to_excel(writer, sheet_name="done", index=False)
                 matched_df.to_csv(
-                    f"{IO_DIR}/{project}/{OUTPUT_FILE}_done_hydrated.csv", index=False
+                    f"{VALIDATION_DIR}/{OUTPUT_FILE}_done_hydrated.csv", index=False
                 )
-                print(f"Generated {IO_DIR}/{project}/{OUTPUT_FILE}_done_hydrated.csv")
+                print(f"Generated {VALIDATION_DIR}/{OUTPUT_FILE}_done_hydrated.csv")
             # writer.close()
 
         else:

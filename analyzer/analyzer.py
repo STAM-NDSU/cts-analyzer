@@ -2,7 +2,7 @@ from copy import deepcopy
 from datetime import timedelta
 from pydriller import Repository
 import pandas as pd
-from . import config
+from . import config # explicit import vs implict(import config[deprecated v3])
 from .core import (
     analyze_test_cases_removal_in_commit_file,
     analyze_test_cases_addition_in_commit_file,

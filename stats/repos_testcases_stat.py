@@ -1,3 +1,8 @@
+import sys
+sys.path.append('../')
+# Redirect console ouput to a file
+sys.stdout = open('../stats/all_repos_testcases_stat.txt', 'w')
+
 import os
 import javalang
 from typing import Optional, List
@@ -12,9 +17,7 @@ from analyzer.utils import (
     get_test_function_name_from_prototype,
 )
 
-import sys
-# Redirect console ouput to a file
-sys.stdout = open('./stats/all_repos_testcases_stat.txt', 'w')
+
 
 # Customized
 def compute_testcases_javaparser(code) -> Optional[List[str]]:
@@ -100,7 +103,7 @@ def get_test_functions2(content: str) -> List:
         return []
 
 
-target_dir = "./io/projects/"
+target_dir = "../io/projects/"
 projects_list = [
     "commons-lang",
     "gson",

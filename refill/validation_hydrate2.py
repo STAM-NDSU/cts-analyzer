@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 # WARNING: Make sure .env is correct set to desired Project
 # NOTE: Customized for jodatime
 
@@ -20,7 +23,7 @@ projects_list = [
 for project in projects_list:
 
     def main(project):
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(f"{IO_DIR}/{PROJECT}/validated.csv")
         full_output_file_path = Path(f"{IO_DIR}/{PROJECT}/validation_hydrated.csv")

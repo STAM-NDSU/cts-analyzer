@@ -1,3 +1,7 @@
+
+import sys
+sys.path.append('../')
+
 import analyzer.config as conf
 from analyzer.rq2 import get_removed_testcase_and_referenced_functions_details
 from analyzer.utils import *

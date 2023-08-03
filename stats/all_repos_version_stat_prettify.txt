@@ -8,13 +8,13 @@ commons-math
 -----------------
 Total versions:  14
 Total versions with deleted tests 13
-1.0(1538) \textrightarrow 619(37),1.2(210) \textrightarrow 7(2),2.0(720) \textrightarrow 140(21),2.1(45) \textrightarrow 211(2),2.2(354) \textrightarrow 255(28),3.0(458) \textrightarrow 76(18),3.1(186) \textrightarrow 22(8),3.2(103) \textrightarrow 2(2),3.3(403) \textrightarrow 33(10),3.4(222) \textrightarrow 6(2),3.5(112) \textrightarrow 374(12),3.6(263) \textrightarrow 12(5),4.0-beta1-RC1(2536) \textrightarrow 1522(83)
+1.0(1538) \textrightarrow 655(38),1.2(210) \textrightarrow 7(2),2.0(720) \textrightarrow 140(21),2.1(45) \textrightarrow 211(2),2.2(354) \textrightarrow 255(28),3.0(458) \textrightarrow 77(18),3.1(186) \textrightarrow 22(8),3.2(103) \textrightarrow 2(2),3.3(403) \textrightarrow 33(10),3.4(222) \textrightarrow 6(2),3.5(112) \textrightarrow 374(12),3.6(263) \textrightarrow 12(5),4.0-beta1-RC1(2536) \textrightarrow 1522(83)
 =====================================
 pmd
 -----------------
 Total versions:  64
 Total versions with deleted tests 40
-4.3(3428) \textrightarrow 611(137),5.0.0(172) \textrightarrow 21(2),5.1.0(651) \textrightarrow 24(4),5.2.0(247) \textrightarrow 281(3),5.3.0(165) \textrightarrow 1(1),5.4.0(185) \textrightarrow 5(1),5.5.0(265) \textrightarrow 115(2),5.6.0(300) \textrightarrow 59(13),5.8.0(34) \textrightarrow 2(2),6.0.0(173) \textrightarrow 14(7),6.2.0(28) \textrightarrow 1(1),6.10.0(41) \textrightarrow 7(4),6.11.0(49) \textrightarrow 4(3),6.13.0(35) \textrightarrow 1(1),6.15.0(28) \textrightarrow 21(4),6.16.0(34) \textrightarrow 4(1),6.18.0(48) \textrightarrow 95(5),6.19.0(46) \textrightarrow 6(4),6.20.0(29) \textrightarrow 3(1),6.21.0(55) \textrightarrow 64(11),6.22.0(47) \textrightarrow 64(5),6.23.0(42) \textrightarrow 51(5),6.24.0(30) \textrightarrow 7(5),6.25.0(33) \textrightarrow 33(19),6.27.0(37) \textrightarrow 196(16),6.28.0(25) \textrightarrow 60(10),6.29.0(27) \textrightarrow 9(5),6.30.0(48) \textrightarrow 27(6),6.31.0(49) \textrightarrow 31(8),6.32.0(27) \textrightarrow 11(2),6.37.0(35) \textrightarrow 16(1),6.42.0(62) \textrightarrow 2(1),6.43.0(28) \textrightarrow 10(4),6.44.0(29) \textrightarrow 108(3),6.45.0(33) \textrightarrow 27(8),6.46.0(28) \textrightarrow 2(1),6.48.0(35) \textrightarrow 10(3),6.50.0(29) \textrightarrow 3(1),6.52.0(28) \textrightarrow 8(2),6.53.0(35) \textrightarrow 3(3)
+4.3(3428) \textrightarrow 637(138),5.0.0(172) \textrightarrow 21(2),5.1.0(651) \textrightarrow 24(4),5.2.0(247) \textrightarrow 281(3),5.3.0(165) \textrightarrow 1(1),5.4.0(185) \textrightarrow 5(1),5.5.0(265) \textrightarrow 115(2),5.6.0(300) \textrightarrow 59(13),5.8.0(34) \textrightarrow 2(2),6.0.0(173) \textrightarrow 19(7),6.2.0(28) \textrightarrow 1(1),6.10.0(41) \textrightarrow 7(4),6.11.0(49) \textrightarrow 4(3),6.13.0(35) \textrightarrow 1(1),6.15.0(28) \textrightarrow 21(4),6.16.0(34) \textrightarrow 4(1),6.18.0(48) \textrightarrow 95(5),6.19.0(46) \textrightarrow 6(4),6.20.0(29) \textrightarrow 3(1),6.21.0(55) \textrightarrow 64(11),6.22.0(47) \textrightarrow 64(5),6.23.0(42) \textrightarrow 51(5),6.24.0(30) \textrightarrow 7(5),6.25.0(33) \textrightarrow 33(19),6.27.0(37) \textrightarrow 196(16),6.28.0(25) \textrightarrow 60(10),6.29.0(27) \textrightarrow 9(5),6.30.0(48) \textrightarrow 27(6),6.31.0(49) \textrightarrow 31(8),6.32.0(27) \textrightarrow 11(2),6.37.0(35) \textrightarrow 16(1),6.42.0(62) \textrightarrow 2(1),6.43.0(28) \textrightarrow 10(4),6.44.0(29) \textrightarrow 108(3),6.45.0(33) \textrightarrow 27(8),6.46.0(28) \textrightarrow 2(1),6.48.0(35) \textrightarrow 10(3),6.50.0(29) \textrightarrow 3(1),6.52.0(28) \textrightarrow 8(2),6.53.0(35) \textrightarrow 3(3)
 =====================================
 jfreechart
 -----------------
@@ -26,7 +26,7 @@ gson
 -----------------
 Total versions:  19
 Total versions with deleted tests 10
-1.3(214) \textrightarrow 12(4),1.4-beta(190) \textrightarrow 9(1),1.6(96) \textrightarrow 27(3),1.7(138) \textrightarrow 66(4),2.0(214) \textrightarrow 45(9),2.1(47) \textrightarrow 53(5),2.2(126) \textrightarrow 1(1),2.3(827) \textrightarrow 16(4),2.9.0(1933) \textrightarrow 26(3),2.10(255) \textrightarrow 3(3)
+1.3(214) \textrightarrow 14(4),1.4-beta(190) \textrightarrow 9(1),1.6(96) \textrightarrow 27(3),1.7(138) \textrightarrow 66(4),2.0(214) \textrightarrow 45(9),2.1(47) \textrightarrow 53(5),2.2(126) \textrightarrow 1(1),2.3(827) \textrightarrow 16(4),2.9.0(1933) \textrightarrow 26(3),2.10(255) \textrightarrow 3(3)
 =====================================
 joda-time
 -----------------
@@ -36,7 +36,7 @@ Total versions with deleted tests 6
 =====================================
 cts
 -----------------
-Total versions:  22
-Total versions with deleted tests 22
-2.1(277) \textrightarrow 56(18),2.2.2(206) \textrightarrow 42(18),2.3(127) \textrightarrow 39(17),4.0.3(393) \textrightarrow 2312(62),4.1.1(200) \textrightarrow 5243(31),4.2(128) \textrightarrow 729(19),4.3(217) \textrightarrow 76(16),4.4(124) \textrightarrow 28(13),5.0.0(375) \textrightarrow 738(49),5.1.0(107) \textrightarrow 21(10),6.0.0(204) \textrightarrow 635(45),7.0.0(298) \textrightarrow 344(99),7.1.0(64) \textrightarrow 105(23),8.0.0(301) \textrightarrow 616(134),8.1.0(125) \textrightarrow 100(26),9.0.0(257) \textrightarrow 840(119),10.0.0(379) \textrightarrow 1217(156),11.0.0(363) \textrightarrow 599(178),12.0.0(393) \textrightarrow 2671(191),platform-12.1.0(182) \textrightarrow 366(87),13.0.0(134) \textrightarrow 130(48),13.0.0.r31(128) \textrightarrow 138(25)
+Total versions:  21
+Total versions with deleted tests 21
+2.1(277) \textrightarrow 57(18),2.2.2(206) \textrightarrow 42(18),2.3(127) \textrightarrow 39(17),4.0.3(393) \textrightarrow 2312(62),4.1.1(200) \textrightarrow 5243(31),4.2(128) \textrightarrow 729(19),4.3(217) \textrightarrow 76(16),4.4(124) \textrightarrow 28(13),5.0.0(375) \textrightarrow 738(49),5.1.0(107) \textrightarrow 21(10),6.0.0(204) \textrightarrow 635(45),7.0.0(298) \textrightarrow 344(99),7.1.0(64) \textrightarrow 105(23),8.0.0(301) \textrightarrow 616(134),8.1.0(125) \textrightarrow 100(26),9.0.0(257) \textrightarrow 840(119),10.0.0(379) \textrightarrow 1217(156),11.0.0(363) \textrightarrow 599(178),12.0.0(393) \textrightarrow 2672(192),platform-12.1.0(182) \textrightarrow 366(87),13.0.0(134) \textrightarrow 130(48)
 =====================================

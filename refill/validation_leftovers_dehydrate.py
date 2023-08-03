@@ -10,13 +10,13 @@ projects_list = [
     "jfreechart",
     "gson",
     "joda-time",
-    # "cts",
+    "cts",
 ]
 
 for project in projects_list:
 
     def main(project):
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(f"{IO_DIR}/{PROJECT}/validation_diff_leftovers_hydrated.csv")
         full_output_file_path = Path(f"{IO_DIR}/{PROJECT}/validation_diff_leftovers.csv")

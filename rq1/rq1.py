@@ -1,11 +1,17 @@
 """
 Computes test-deletion stat across projects
 """
+
+
 import os.path
 from pathlib import Path
 import pandas as pd
 import random
 import csv
+
+import sys
+sys.path.append('../')
+
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import strip_commit_url
@@ -35,7 +41,7 @@ for project in projects_list:
     def main(project):
         print(project)
         print("---------------")
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(
             f"{IO_DIR}/{PROJECT}/validation_diff_done_hydrated.csv"
@@ -143,7 +149,7 @@ for project in projects_list:
                         # Compute no of in-between commits
                         cmd = f'git log {strip_commit_url(prev["Hash"])}...{strip_commit_url(row["Hash"])} --pretty=oneline | wc -l'
                         current_state = os.getcwd()
-                        os.chdir(f"./io/projects/{project}")
+                        os.chdir(f"../io/projects/{project}")
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")

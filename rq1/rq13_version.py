@@ -1,6 +1,11 @@
 """
 Prettify results from rq12.py to export in latex
 """
+import sys
+sys.path.append('../')
+# Redirect console ouput to a file
+sys.stdout = open("../stats/all_repos_version_stat_prettify.txt", "w")
+
 import os.path
 from pathlib import Path
 import pandas as pd
@@ -13,10 +18,6 @@ from datetime import datetime
 import os
 import json
 
-import sys
-
-# Redirect console ouput to a file
-sys.stdout = open("./stats/all_repos_version_stat_prettify.txt", "w")
 
 projects_list = [
     "commons-lang",
@@ -34,8 +35,8 @@ for project in projects_list:
     def main(project):
         print(project)
         print("-----------------")
-        VALIDATION_FILES_DIR = "io/validationFiles"
-        PROJECTS_DIR = "io/projects"
+        VALIDATION_FILES_DIR = "../io/validationFiles"
+        PROJECTS_DIR = "../io/projects"
         PROJECT = project
         stat_version_test_deletions_file_path = Path(
             f"{VALIDATION_FILES_DIR}/{PROJECT}/stat_version_test_deletion.csv"

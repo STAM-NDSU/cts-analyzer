@@ -1,9 +1,12 @@
+import sys
+sys.path.append('../')
+
 import os.path
 from pathlib import Path
 import pandas as pd
 
 
-IO_DIR = "io/artifacts"
+IO_DIR = "../io/artifacts"
 projects = [
     # {
     #     "project": "pmd",
@@ -51,7 +54,6 @@ projects = [
     #     "project": "jfreechart",
     #     "filename": [
     #         "hydrated_jfreechart-step1",
-    #         "hydrated_jfreechart-step2",
     #         "hydrated_jfreechart-step2",
     #         "hydrated_jfreechart-step3",
     #     ],

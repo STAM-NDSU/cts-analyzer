@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 import os.path
 from pathlib import Path
 import pandas as pd
@@ -9,19 +12,19 @@ from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 
 projects_list = [
-    # "commons-lang",
-    # "commons-math",
-    # "pmd",
-    # "jfreechart",
+    "commons-lang",
+    "commons-math",
+    "pmd",
+    "jfreechart",
     "gson",
-    # "joda-time",
-    # "cts",
+    "joda-time",
+    "cts",
 ]
 
 for project in projects_list:
 
     def main(project):
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(
             f"{IO_DIR}/{PROJECT}/validation_diff_done_hydrated.csv"

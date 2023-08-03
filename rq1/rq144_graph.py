@@ -4,21 +4,14 @@ Generate graph for no. of deleted tests per year [rq1]
 import os.path
 from pathlib import Path
 import pandas as pd
-import random
-import csv
-from analyzer.helpers import export_to_csv
-import analyzer.config as conf
-from analyzer.utils import strip_commit_url
-from datetime import datetime
 import os
-import json
 import matplotlib.pyplot as plt
 import numpy as np
 
 import matplotlib.dates as mdates
 
 
-OUT_DIR = 'io/rq1/figures/'
+OUT_DIR = '../io/rq1/figures/'
 # Set the figure size
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
 plt.rcParams["figure.autolayout"] = True
@@ -50,7 +43,7 @@ for index, project in enumerate(projects_list):
     def main(project):
         print(project)
         print("-----------------")
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         stat_test_deletion_commits_grouped_year_file_path = Path(
             f"{IO_DIR}/{PROJECT}/stat_test_deletion_commits_grouped_year.csv"

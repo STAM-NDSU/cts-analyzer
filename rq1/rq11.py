@@ -1,6 +1,7 @@
 """
 Reads all tags in the repository and generates tags file
 """
+
 import os.path
 import os
 import json
@@ -21,7 +22,7 @@ for project in projects_list:
     # First dump tags info into tags.txt file
     cmd = "git ls-remote --tags origin"
     current_state = os.getcwd()
-    os.chdir(f"./io/projects/{project}")
+    os.chdir(f"../io/projects/{project}")
     os.system(cmd + " > tags.txt")
     commit_tag_info_Lines = open("tags.txt", "r").readlines()
 

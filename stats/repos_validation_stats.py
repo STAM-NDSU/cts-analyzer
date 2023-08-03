@@ -1,14 +1,13 @@
+import sys
+sys.path.append('../')
+# Redirect console ouput to a file
+sys.stdout = open("../stats/all_repos_validation_stat.txt", "w")
+
 import os.path
 from pathlib import Path
 import pandas as pd
 import random
 import csv
-
-import sys
-
-# Redirect console ouput to a file
-sys.stdout = open("./stats/all_repos_validation_stat.txt", "w")
-
 
 projects_list = [
     "commons-lang",
@@ -58,7 +57,7 @@ for project in projects_list:
         global all_total_observations
         
         print("Project: ", project)
-        IO_DIR = "io/validationFiles"
+        IO_DIR = "../io/validationFiles"
         PROJECT = project
         validation_file = "validation_diff_done_hydrated.csv"
         full_file_path = Path(f"{IO_DIR}/{PROJECT}/{validation_file}")
