@@ -8,13 +8,14 @@ from .racore import (
     analyze_functions_referenced_in_removed_testcase,
 )
 from .utils import (
-    is_candidate_file,
+    is_candidate_test_file,
     format_commit_datetime,
-    get_full_commit_url,
-    parse_commit_as_hyperlink,
+    parse_commit_as_hyperlink_by_project,
     get_repo_name,
     strip_commit_url,
 )
+from operator import itemgetter
+
 
 """
   Analyze the target branch of the repository to identify functions referenced by removed testcase and
@@ -29,13 +30,12 @@ class AnalyzerGlobal:
         return cls.instance
 
     def __init__(self):
-        self.since = config.COMMIT_START_Datetime
-        self.to = config.COMMIT_END_Datetime
+        self.since = config.COMMIT_START_DATETIME
+        self.to = config.COMMIT_END_DATETIME
         self.commits = None
         self.current_commit = None
         self.results = []
-        self.validated_hydrated_df = None
-        self.cloned_validated_hydrated_df = None
+        self.test_deletion_hydrated_df = None
 
     @property
     def total_results(self):
@@ -46,12 +46,11 @@ class AnalyzerGlobal:
 
 
 def get_removed_testcase_and_referenced_functions_details(
-    repo_url, branch, previous_step_df=None
+    project, repo_url, branch, test_deletion_hydrated_df=None
 ):
     def traverse_commits(analyzer_global):
         since = analyzer_global.since
         to = analyzer_global.to
-        results = analyzer_global.results
         commits = Repository(
             repo_url,
             only_in_branch=branch,
@@ -66,41 +65,33 @@ def get_removed_testcase_and_referenced_functions_details(
         if not commits:
             print("No Commits---- Oopss")
 
-        commits_to_look = []
-        previous_step_df["Referenced Functions"] = None
-        previous_step_df["Deleted With Source Code"] = None
-        previous_step_df["Deleted With Whole File"] = None
-        analyzer_global.validated_hydrated_df = previous_step_df
-        analyzer_global.cloned_validated_hydrated_df = (
-            analyzer_global.validated_hydrated_df.copy(deep=True)
-        )
-        print("Initial Dataframe: ", analyzer_global.validated_hydrated_df.shape)
+        test_deletion_hydrated_df["Referenced Functions"] = None
+        test_deletion_hydrated_df["Deleted With Source Code"] = None
+        test_deletion_hydrated_df["Deleted With Whole File"] = None
+        analyzer_global.test_deletion_hydrated_df = test_deletion_hydrated_df
+        print("Initial Dataframe: ", test_deletion_hydrated_df.shape)
 
-        if analyzer_global.validated_hydrated_df is not None:
+        if test_deletion_hydrated_df is not None:
             # Check for all the validation commits
-            commits_to_look_df = analyzer_global.validated_hydrated_df[
-                (analyzer_global.validated_hydrated_df["Final Results"] == "yes")
-            ]
-            commits_to_look = commits_to_look_df.to_dict("list")["Hash"]
-            commits_to_look = list(
+            commits_to_look = test_deletion_hydrated_df.to_dict("list")["Hash"]
+            commits_hash_to_look = list(
                 set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
             )
             print("Total commits to scan: ", len(commits_to_look))
 
         is_completed = False
+        all_data = []
         while not is_completed:
             commit = next(commits, None)
             if commit:
                 commit_datetime = format_commit_datetime(commit.committer_date)
-                commit_hash = parse_commit_as_hyperlink(
-                    label=commit.hash, url=get_full_commit_url(commit.hash)
-                )
+                commit_hash = parse_commit_as_hyperlink_by_project(project, commit.hash)
                 # Update current_commit pointer; to skip the corrupted ones
                 analyzer_global.current_commit = commit
                 analyzer_global.since = commit.committer_date
 
                 # Check if commit hash is valid test deletion commit hash
-                if commit.hash not in commits_to_look:
+                if commit.hash not in commits_hash_to_look:
                     continue
 
                 # Compute all removed functions across modified files;
@@ -108,55 +99,54 @@ def get_removed_testcase_and_referenced_functions_details(
                 for file_idx, file in enumerate(commit.modified_files):
                     filename = file.filename
                     # Check if file is a candidate test file (statifies test file pattern); ignore it
-                    if is_candidate_file(filename):
+                    if is_candidate_test_file(filename):
                         continue
 
                     all_removed_functions_in_file = (
                         analyze_functions_removal_in_commit_file(file)
                     )
-                    all_removed_functions_in_commit.append(
-                        all_removed_functions_in_file
-                    )
 
-                print("removed methods",  len(all_removed_functions_in_commit))
-                
-                
-                filenames_to_look = previous_step_df[
-                    previous_step_df["Hash"] == commit_hash
+                    all_removed_functions_in_commit = [
+                        *all_removed_functions_in_commit,
+                        *all_removed_functions_in_file,
+                    ]
+                print("removed methods", len(all_removed_functions_in_commit))
+
+                test_deletion_filenames = test_deletion_hydrated_df[
+                    test_deletion_hydrated_df["Hash"] == commit_hash
                 ].to_dict("list")["Filename"]
-                filenames_to_look = list(set(filenames_to_look))
-                
+                test_deletion_filenames = list(set(test_deletion_filenames))
+                print("filenames to look", test_deletion_filenames)
+
                 for file_idx, file in enumerate(commit.modified_files):
                     filename = file.filename
 
-                    if filename not in filenames_to_look:
+                    # Check if file matches test deletion containing file; ignore if does not matches
+                    if filename not in test_deletion_filenames:
                         continue
 
                     # Deleted testcases belonging to a file in a commit hash
                     deleted_testcase_in_file_df = (
-                        analyzer_global.cloned_validated_hydrated_df[
+                        analyzer_global.test_deletion_hydrated_df[
                             (
-                                analyzer_global.validated_hydrated_df["Hash"]
+                                analyzer_global.test_deletion_hydrated_df["Hash"]
                                 == commit_hash
                             )
                             & (
-                                analyzer_global.validated_hydrated_df["Filename"]
+                                analyzer_global.test_deletion_hydrated_df["Filename"]
                                 == filename
-                            )
-                            & (
-                                analyzer_global.validated_hydrated_df[
-                                    "Final Results"
-                                ]
-                                == "yes"
                             )
                         ]
                     )
-                    print("deleted testcase",  len(deleted_testcase_in_file_df))
+                    print("deleted testcase", len(deleted_testcase_in_file_df), filename)
 
+                    all_data = []
                     for index, row in deleted_testcase_in_file_df.iterrows():
+                        removed_test_case = row["Removed Test Case"]
+                        print("removed testcase", filename, removed_test_case)
                         functions_referenced = (
                             analyze_functions_referenced_in_removed_testcase(
-                                file, row["Removed Test Case"]
+                                file, removed_test_case
                             )
                         )
                         # Check if javaparser successfully parses
@@ -166,38 +156,39 @@ def get_removed_testcase_and_referenced_functions_details(
                         else:
                             print("Functions reference", functions_referenced)
 
-                        row[
-                            "Referenced Functions"
-                        ] = functions_referenced
+                        row["Referenced Functions"] = ",".join(functions_referenced)
 
                         # Check if whole file is deleted
                         if file.new_path is None:
-                            row[
-                                "Deleted With Whole File"
-                            ] = "yes"
+                            row["Deleted With Whole File"] = "yes"
                         else:
-                            row[
-                                "Deleted With Whole File"
-                            ] = "no"
+                            row["Deleted With Whole File"] = "no"
 
                         # Check if source code is removed along with deleted testcase
                         match_found = False
                         for function_referenced in functions_referenced:
-                            if (
-                                function_referenced
-                                in all_removed_functions_in_commit
-                            ):
+                            if function_referenced in all_removed_functions_in_commit:
                                 match_found = True
-                                
+                                break
 
                         if match_found:
-                            row[
-                                "Deleted With Source Code"
-                            ] = "yes"
+                            row["Deleted With Source Code"] = "yes"
                         else:
-                            row[
-                                "Deleted With Source Code"
-                            ] = "no"
+                            row["Deleted With Source Code"] = "no"
+
+                        data = [
+                            row["Datetime"],
+                            row["Hash"],
+                            row["Author"],
+                            row["Commit Msg"],
+                            row["Filepath"],
+                            row["Filename"],
+                            row["Removed Test Case"],
+                            row["Referenced Functions"],
+                            row["Deleted With Source Code"],
+                            row["Deleted With Whole File"],
+                        ]
+                        all_data.append(data)
 
                 print(
                     get_repo_name(repo_url)
@@ -208,7 +199,22 @@ def get_removed_testcase_and_referenced_functions_details(
                 )
             else:
                 # Set dataframe computed as results
-                analyzer_global.results = analyzer_global.cloned_validated_hydrated_df
+                new_df = pd.DataFrame(
+                    data=all_data,
+                    columns=[
+                        "Datetime",
+                        "Hash",
+                        "Author",
+                        "Commit Msg",
+                        "Filepath",
+                        "Filename",
+                        "Removed Test Case",
+                        "Referenced Functions",
+                        "Deleted With Source Code",
+                        "Deleted With Whole File",
+                    ],
+                )
+                analyzer_global.results = new_df
 
                 is_completed = True
 

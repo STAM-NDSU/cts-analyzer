@@ -1,13 +1,14 @@
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 # Redirect console ouput to a file
-sys.stdout = open('../stats/all_repos_testcases_stat.txt', 'w')
+sys.stdout = open("../stats/all_repos_testcases_stat.txt", "w")
 
 import os
 import javalang
 from typing import Optional, List
 from analyzer.utils import (
-    is_candidate_file,
+    is_candidate_test_file,
 )
 from analyzer.pattern import Pattern
 import re
@@ -16,7 +17,6 @@ from analyzer.utils import (
     get_function_name_from_prototype_with_space_before,
     get_test_function_name_from_prototype,
 )
-
 
 
 # Customized
@@ -119,14 +119,14 @@ for each in projects_list:
     repo_path = target_dir + each
     print(repo_path)
     files_not_parsed = []
-    total_files_not_parsed=0
+    total_files_not_parsed = 0
     total_test_files = 0
     total_parsed_test_cases = 0
     total_regex_test_cases = 0
 
     for root, dirs, files in os.walk(repo_path, topdown=False):
         for name in files:
-            if is_candidate_file(name):
+            if is_candidate_test_file(name):
                 total_test_files += 1
 
                 with open(os.path.join(root, name), "r") as f:
@@ -154,7 +154,6 @@ for each in projects_list:
     # Handle for directories
     # for name in dirs:
     #     print(os.path.join(root, name))
-    
 
 
 sys.stdout.close()

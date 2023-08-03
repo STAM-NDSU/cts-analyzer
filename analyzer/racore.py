@@ -5,6 +5,8 @@ from .utils import (
     get_function_name_from_prototype_lizard
 )
 
+# import sys
+# sys.stdout = open('../temp.txt', 'w')
 
 #  Analyze commit files to detect functions removed
 def analyze_functions_removal_in_commit_file(
@@ -51,6 +53,9 @@ def get_removed_functions_javaparser(file) -> List:
 
 #  Get list of functions referenced by removed testcase from file changes using javaparser
 def analyze_functions_referenced_in_removed_testcase(file, removed_test_case) -> List:
-    return file.compute_referenced_functions_in_testcase(file, removed_test_case)
+    results=  file.compute_referenced_functions_in_testcase(file, removed_test_case)
+    results = [x for x in results if not x.startswith('assert')]
+    return results
+    
 
 

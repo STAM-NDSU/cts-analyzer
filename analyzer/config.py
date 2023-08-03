@@ -52,12 +52,12 @@ COMMIT_END_DATE = os.getenv("COMMIT_END_DATE")
 now = datetime.now()
 # Define interval in no of days to compute relative time diff
 interval = int(os.getenv("CTS_COMMIT_INTERVAL", DEFAULT_COMMIT_RANGE_DAYS_INTERVAL))
-COMMIT_START_Datetime = (
+COMMIT_START_DATETIME = (
     datetime.strptime(COMMIT_START_DATE, DATE_FORMAT)
     if COMMIT_START_DATE
     else (now - timedelta(days=interval))
 )
-COMMIT_END_Datetime = (
+COMMIT_END_DATETIME = (
     datetime.strptime(COMMIT_END_DATE, DATE_FORMAT) if COMMIT_START_DATE else now
 )
 
@@ -68,8 +68,8 @@ OUTPUT_DIR = os.getenv("OUTPUT_DIR", "io/cts")
 PROJECT = os.getenv("PROJECT", "cts")
 STEP = os.getenv("STEP", "step-1")
 # date_format = "%m-%d-%Y"
-# parsed_COMMIT_START_DATE = COMMIT_START_Datetime.strftime(date_format)
-# parsed_COMMIT_END_DATE = COMMIT_END_Datetime.strftime(date_format)
+# parsed_COMMIT_START_DATE = COMMIT_START_DATETIME.strftime(date_format)
+# parsed_COMMIT_END_DATE = COMMIT_END_DATETIME.strftime(date_format)
 # OUTPUT_FILENAME = BASE_Filename + '.csv'
 BASE_Filename = PROJECT + "-" + STEP
 OUTPUT_FILENAME = BASE_Filename + ".csv"

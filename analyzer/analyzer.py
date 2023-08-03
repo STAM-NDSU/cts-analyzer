@@ -2,7 +2,7 @@ from copy import deepcopy
 from datetime import timedelta
 from pydriller import Repository
 import pandas as pd
-from . import config # explicit import vs implict(import config[deprecated v3])
+from . import config  # explicit import vs implict(import config[deprecated v3])
 from .core import (
     analyze_test_cases_removal_in_commit_file,
     analyze_test_cases_addition_in_commit_file,
@@ -10,7 +10,7 @@ from .core import (
     get_removed_test_functions_regex_only,
 )
 from .utils import (
-    is_candidate_file,
+    is_candidate_test_file,
     format_commit_datetime,
     get_full_commit_url,
     parse_commit_as_hyperlink,
@@ -32,8 +32,8 @@ class AnalyzerGlobal:
         return cls.instance
 
     def __init__(self):
-        self.since = config.COMMIT_START_Datetime
-        self.to = config.COMMIT_END_Datetime
+        self.since = config.COMMIT_START_DATETIME
+        self.to = config.COMMIT_END_DATETIME
         self.commits = None
         self.current_commit = None
         self.results = []
@@ -120,7 +120,7 @@ def get_removed_test_functions_details(
                     for file_idx, file in enumerate(commit.modified_files):
                         filename = file.filename
                         # Check if file is a candidate file
-                        if not is_candidate_file(filename):
+                        if not is_candidate_test_file(filename):
                             continue
 
                         all_removed_test_cases_file_data = (
@@ -260,7 +260,6 @@ def get_removed_test_functions_details(
                     )
 
                 is_completed = True
-
 
     def main():
         try:
