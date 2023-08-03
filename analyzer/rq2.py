@@ -142,6 +142,12 @@ def get_removed_testcase_and_referenced_functions_details(
 
                     all_data = []
                     for index, row in deleted_testcase_in_file_df.iterrows():
+                        # Check if whole file is deleted
+                        if file.new_path is None:
+                            row["Deleted With Whole File"] = "yes"
+                        else:
+                            row["Deleted With Whole File"] = "no"
+                            
                         removed_test_case = row["Removed Test Case"]
                         print("removed testcase", filename, removed_test_case)
                         functions_referenced = (
@@ -149,32 +155,25 @@ def get_removed_testcase_and_referenced_functions_details(
                                 file, removed_test_case
                             )
                         )
-                        # Check if javaparser successfully parses
+                        # Check if testcase is deleted along with source code[Test if javaparser successfully parses]
                         if functions_referenced is None:
+                            row["Deleted With Source Code"] = "undecided"
                             print("Javaparser failed for :", commit.hash, filename)
-                            continue
                         else:
                             print("Functions reference", functions_referenced)
+                            row["Referenced Functions"] = ",".join(functions_referenced)
+                            # Check if 
+                            match_found = False
+                            for function_referenced in functions_referenced:
+                                if function_referenced in all_removed_functions_in_commit:
+                                    match_found = True
+                                    break
 
-                        row["Referenced Functions"] = ",".join(functions_referenced)
-
-                        # Check if whole file is deleted
-                        if file.new_path is None:
-                            row["Deleted With Whole File"] = "yes"
-                        else:
-                            row["Deleted With Whole File"] = "no"
-
-                        # Check if source code is removed along with deleted testcase
-                        match_found = False
-                        for function_referenced in functions_referenced:
-                            if function_referenced in all_removed_functions_in_commit:
-                                match_found = True
-                                break
-
-                        if match_found:
-                            row["Deleted With Source Code"] = "yes"
-                        else:
-                            row["Deleted With Source Code"] = "no"
+                            if match_found:
+                                row["Deleted With Source Code"] = "yes"
+                            else:
+                                row["Deleted With Source Code"] = "no"
+                        
 
                         data = [
                             row["Datetime"],
