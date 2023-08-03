@@ -98,6 +98,7 @@ def get_removed_testcase_and_referenced_functions_details(
                 all_removed_functions_in_commit = []
                 for file_idx, file in enumerate(commit.modified_files):
                     filename = file.filename
+                    
                     # Check if file is a candidate test file (statifies test file pattern); ignore it
                     if is_candidate_test_file(filename):
                         continue
@@ -106,10 +107,11 @@ def get_removed_testcase_and_referenced_functions_details(
                         analyze_functions_removal_in_commit_file(file)
                     )
 
-                    all_removed_functions_in_commit = [
-                        *all_removed_functions_in_commit,
-                        *all_removed_functions_in_file,
-                    ]
+                    if all_removed_functions_in_file:
+                        all_removed_functions_in_commit = [
+                            *all_removed_functions_in_commit,
+                            *all_removed_functions_in_file,
+                        ]
                 print("removed methods", len(all_removed_functions_in_commit))
 
                 test_deletion_filenames = test_deletion_hydrated_df[
@@ -140,7 +142,6 @@ def get_removed_testcase_and_referenced_functions_details(
                     )
                     print("deleted testcase", len(deleted_testcase_in_file_df), filename)
 
-                    all_data = []
                     for index, row in deleted_testcase_in_file_df.iterrows():
                         # Check if whole file is deleted
                         if file.new_path is None:

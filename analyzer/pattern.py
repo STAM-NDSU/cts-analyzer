@@ -3,8 +3,9 @@ from enum import Enum
 
 class Pattern(str, Enum):
     # Define useful regular patterns
-    # TEST_Filename = "^(.*)Test(.*).java$" # contains Test in the filename
-    TEST_Filename = "^Test(.*).java$|(.*)Test.java"  # contains Test at the beginning or at the end in the filename
+    JAVA_FILENAME = "*.java" 
+    # TEST_FILENAME = "^(.*)Test(.*).java$" # contains Test in the filename
+    TEST_FILENAME = "^Test(.*).java$|(.*)Test.java"  # contains Test at the beginning or at the end in the filename
     TEST_FUNCTION_PROTOTYPE = (
         "([ \t]*)(public)([ \t\n\r]*)([a-zA-Z0-9<>._?, ]+)([ \t\n\r]*)test([a-zA-Z0-9_]+)"
         "([ \t\n\r]*)\\("

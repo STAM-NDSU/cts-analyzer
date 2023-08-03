@@ -8,7 +8,15 @@ from .config import Datetime_FORMAT, COMMIT_BASE_URL
 
 # Checks if file is a candidate file
 def is_candidate_test_file(filename: str) -> bool:
-    if filename and re.search(Pattern.TEST_Filename.value, filename):
+    if filename and re.search(Pattern.TEST_FILENAME.value, filename):
+        return True
+    else:
+        return False
+
+
+# Checks if file is a candidate file
+def is_candidate_java_file(filename: str) -> bool:
+    if filename and re.search(Pattern.JAVA_FILENAME.value, filename):
         return True
     else:
         return False
@@ -107,8 +115,12 @@ def get_full_commit_url_by_project(project: str, hash: str) -> str:
             project_url = COMMIT_BASE_URL
     return project_url + hash
 
+
 def parse_commit_as_hyperlink_by_project(project: str, hash: str):
-    return parse_commit_as_hyperlink(get_full_commit_url_by_project(project, hash), hash)
+    return parse_commit_as_hyperlink(
+        get_full_commit_url_by_project(project, hash), hash
+    )
+
 
 # Parse commit hash by project
 def parse_commit_hash_by_project(project: str, hash: str) -> str:

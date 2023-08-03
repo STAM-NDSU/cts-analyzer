@@ -27,20 +27,21 @@ def get_removed_functions_lizard(file) -> List:
         if not match_found:
             function_name = get_function_name_from_prototype_lizard(x.long_name)
             if function_name:
+                print(function_name)
                 removed_methods.append(function_name)
             else:
                 print("WARNING")                
     return removed_methods
 
-#  Get list of removed test functions from file changes using javaparser
+#  Get list of removed functions from file changes using javaparser
 def get_removed_functions_javaparser(file) -> List:
-    if file.testcases_before is None:
+    if file.jp_methods_before is None:
         return None
     
     methods = []
     removed_methods = []
     if file.jp_methods:
-        for x in file.testcases:
+        for x in file.jp_methods:
             methods.append(x)
     
     for x in file.jp_methods_before:
@@ -54,7 +55,9 @@ def get_removed_functions_javaparser(file) -> List:
 #  Get list of functions referenced by removed testcase from file changes using javaparser
 def analyze_functions_referenced_in_removed_testcase(file, removed_test_case) -> List:
     results=  file.compute_referenced_functions_in_testcase(file, removed_test_case)
-    results = [x for x in results if not x.startswith('assert')]
+    if results is not None:
+        results = [x for x in results if not x.startswith('assert')]
+        results = [x for x in results if not x == "fail"]
     return results
     
 
