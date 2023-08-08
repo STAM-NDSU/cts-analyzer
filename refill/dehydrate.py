@@ -8,40 +8,40 @@ import pandas as pd
 
 IO_DIR = "../io/artifacts"
 projects = [
-    # {
-    #     "project": "pmd",
-    #     "filename": [
-    #         "hydrated_pmd-step1",
-    #         "hydrated_pmd-step2",
-    #         "hydrated_pmd-step3",
-    #     ],
-    # },
-    # {
-    #     "project": "commons-math",
-    #     "filename": [
-    #         "hydrated_commons-math-step1",
-    #         "hydrated_commons-math-step2",
-    #         "hydrated_commons-math-step3",
-    #     ],
-    # },
-    # {
-    #     "project": "commons-lang",
-    #     "filename": [
-    #         "hydrated_commons-lang-step1",
-    #         "hydrated_commons-lang-step1_refined",
-    #         "hydrated_commons-lang-step2",
-    #         "hydrated_commons-lang-step3",
-    #     ],
-    # },
-    # {
-    #     "project": "joda-time",
-    #     "filename": [
-    #         "hydrated_joda-time-step1",
-    #         "hydrated_joda-time-step1_refined",
-    #         "hydrated_joda-time-step2",
-    #         "hydrated_joda-time-step3",
-    #     ],
-    # },
+    {
+        "project": "pmd",
+        "filename": [
+            "hydrated_pmd-step1",
+            "hydrated_pmd-step2",
+            "hydrated_pmd-step3",
+        ],
+    },
+    {
+        "project": "commons-math",
+        "filename": [
+            "hydrated_commons-math-step1",
+            "hydrated_commons-math-step2",
+            "hydrated_commons-math-step3",
+        ],
+    },
+    {
+        "project": "commons-lang",
+        "filename": [
+            "hydrated_commons-lang-step1",
+            "hydrated_commons-lang-step1_refined",
+            "hydrated_commons-lang-step2",
+            "hydrated_commons-lang-step3",
+        ],
+    },
+    {
+        "project": "joda-time",
+        "filename": [
+            "hydrated_joda-time-step1",
+            "hydrated_joda-time-step1_refined",
+            "hydrated_joda-time-step2",
+            "hydrated_joda-time-step3",
+        ],
+    },
      {
         "project": "gson",
         "filename": [
@@ -50,23 +50,23 @@ projects = [
             "hydrated_gson-step3",
         ],
     },
-    # {
-    #     "project": "jfreechart",
-    #     "filename": [
-    #         "hydrated_jfreechart-step1",
-    #         "hydrated_jfreechart-step2",
-    #         "hydrated_jfreechart-step3",
-    #     ],
-    # },
-    # {
-    #     "project": "cts",
-    #     "filename": [
-    #         "hydrated_cts-step1",
-    #         "hydrated_cts-step1_refined",
-    #         "hydrated_cts-step2",
-    #         "hydrated_cts-step3",
-    #     ],
-    # },
+    {
+        "project": "jfreechart",
+        "filename": [
+            "hydrated_jfreechart-step1",
+            "hydrated_jfreechart-step2",
+            "hydrated_jfreechart-step3",
+        ],
+    },
+    {
+        "project": "cts",
+        "filename": [
+            "hydrated_cts-step1",
+            "hydrated_cts-step1_refined",
+            "hydrated_cts-step2",
+            "hydrated_cts-step3",
+        ],
+    },
 ]
 
 

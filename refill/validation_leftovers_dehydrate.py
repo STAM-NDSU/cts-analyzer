@@ -61,8 +61,8 @@ for project in projects_list:
 
                         prev["Filename"] = row["Filename"]
 
-            df.to_csv(f"{full_output_file_path}.csv", index=False)
-            print(f"Generated {full_output_file_path}.csv")
+            df.to_csv(f"{full_output_file_path}", index=False)
+            print(f"Generated {full_output_file_path}")
         else:
             print("ERROR: Files does not exist for project " + project)
 

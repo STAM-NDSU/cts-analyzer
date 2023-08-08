@@ -68,15 +68,14 @@ def get_removed_testcase_and_referenced_functions_details(
         test_deletion_hydrated_df["Referenced Functions"] = None
         test_deletion_hydrated_df["Deleted With Source Code"] = None
         test_deletion_hydrated_df["Deleted With Whole File"] = None
-        analyzer_global.test_deletion_hydrated_df = test_deletion_hydrated_df
+        # analyzer_global.test_deletion_hydrated_df = test_deletion_hydrated_df
         print("Initial Dataframe: ", test_deletion_hydrated_df.shape)
-
+        print("Total commits",  len(list(test_deletion_hydrated_df["Hash"].dropna().unique())))
         if test_deletion_hydrated_df is not None:
             # Check for all the validation commits
-            commits_to_look = test_deletion_hydrated_df.to_dict("list")["Hash"]
-            commits_hash_to_look = list(
-                set(list(map(lambda each: strip_commit_url(each), commits_to_look)))
-            )
+            commits_to_look = list(test_deletion_hydrated_df["Hash"].dropna().unique())
+            commits_hash_to_look = list(map(lambda each: strip_commit_url(each), commits_to_look))
+            
             print("Total commits to scan: ", len(commits_to_look))
 
         is_completed = False

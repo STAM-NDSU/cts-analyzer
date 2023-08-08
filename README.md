@@ -108,3 +108,6 @@ git rev-list --all --count
 # To get first commit
 
 git cherry master -v | head -n 1
+
+
+$(($(git rev-list --count A..B) - 1))

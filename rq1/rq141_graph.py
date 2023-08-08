@@ -44,6 +44,11 @@ for index, project in enumerate(projects_list):
 
     main(project)
 
+# # fig = plt.figure( figsize=(10,6))
+# seaborn.violinplot(x="project", y="deleted tests in commit", data=new_df,  showfliers=False, xlabel="da", vert=True, )
+# ax.set_ylim(ymin=0)
+# plt.show()
+
 # test_deletion_commits_df = pd.DataFrame(test_deletion_commits)
 # print(test_deletion_commits_df)
 

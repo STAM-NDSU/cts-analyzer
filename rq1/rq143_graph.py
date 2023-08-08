@@ -23,7 +23,7 @@ projects_list = [
     "cts",
 ]
 medians = []
-test_deletion_commits_timerange = {}
+test_deletion_commits_range = {}
 for index, project in enumerate(projects_list):
 
     def main(project):
@@ -39,8 +39,8 @@ for index, project in enumerate(projects_list):
         if os.path.exists(f"{test_deletion_datetime_inbetweencommits_range_file_path}"):
             df = pd.read_csv(f"{test_deletion_datetime_inbetweencommits_range_file_path}")
             df.dropna(inplace=True)
-            test_deletion_commits_timerange[project] = df["Commits"].values.tolist()
-            medians.append(np.median(test_deletion_commits_timerange[project]))
+            test_deletion_commits_range[project] = df["Commits"].values.tolist()
+            medians.append(np.median(test_deletion_commits_range[project]))
 
     main(project)
 
@@ -62,7 +62,7 @@ fig,  (ax1, ax2) = plt.subplots(1,2,
 
 
 bp1 = ax1.boxplot(
-    list(test_deletion_commits_timerange.values())[:6],
+    list(test_deletion_commits_range.values())[:6],
     showfliers=False,
     # notch=True,  # notch shape
     vert=False,  # vertical box alignment
@@ -71,7 +71,7 @@ bp1 = ax1.boxplot(
 )
 
 bp2 = ax2.boxplot(
-    list(test_deletion_commits_timerange.values())[6],
+    list(test_deletion_commits_range.values())[6],
     showfliers=False,
     # notch=True,  # notch shape
     vert=False,  # vertical box alignment
@@ -126,7 +126,7 @@ fig.text(0.56, 0.02, 'No. of commits', ha='center', va='center')
 # top = 40
 # bottom = -5
 # ax.set_ylim(bottom, top)
-print(list(test_deletion_commits_timerange.keys()))
+print(list(test_deletion_commits_range.keys()))
 ax1.set_yticklabels(['commons-lang', 'commons-math', 'pmd', 'jfreechart', 'gson', 'joda-time'])
 ax2.set_yticklabels(['cts'])
 

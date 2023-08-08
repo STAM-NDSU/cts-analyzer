@@ -147,12 +147,14 @@ for project in projects_list:
                         # Compute the difference in days
                         range = days_between(prev["Datetime"], row["Datetime"])
                         # Compute no of in-between commits
-                        cmd = f'git log {strip_commit_url(prev["Hash"])}...{strip_commit_url(row["Hash"])} --pretty=oneline | wc -l'
+                        # ($(git rev-list --count A..B) - 1) # Git cmd; excludes both end point
+                        cmd = f'git rev-list --count {strip_commit_url(prev["Hash"])}..{strip_commit_url(row["Hash"])}'
                         current_state = os.getcwd()
                         os.chdir(f"../io/projects/{project}")
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")
+                        no_of_commits = int(no_of_commits) -1
                         os.chdir(current_state)
                         test_deletion_datetime_inbetweencommits_range.append(
                             [row["Hash"], range, no_of_commits]

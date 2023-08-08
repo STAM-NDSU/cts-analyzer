@@ -26,10 +26,9 @@ projects_list = [
 for project in projects_list:
 
     def main(project):
-        # full_path = os.path.realpath(".")
-        full_path = "../"
-        VALIDATION_DIR = full_path + "/io/validationFiles/" + project 
-        ARTIFACTS_DIR = full_path + "/io/artifacts/" + project 
+        ARTIFACTS_DIR = "../io/artifacts/" + project 
+        VALIDATION_DIR = "../io/validationFiles/" + project 
+        
         OUTPUT_FILE = "validation_diff"
         v_columns = [
             "Datetime",
@@ -107,7 +106,7 @@ for project in projects_list:
                         if (
                             filename == v_filename
                             and v_testcase == testcase
-                            and len(manual_validation)
+                            and (manual_validation == "yes" or manual_validation == "no" or manual_validation == "conflict")
                         ):
                             match_found = True
                             matched.append(
@@ -119,7 +118,7 @@ for project in projects_list:
                             )
                             break
                     if not match_found:
-                        alter.append([datetime, hash, commit_msg, filename, testcase])
+                        alter.append([datetime, hash, commit_msg,  filename, testcase])
 
                 alter_df = pd.DataFrame(
                     alter,

@@ -4,7 +4,7 @@ import pandas as pd
 
 # Customize for required projects
 
-root_dir = "io/artifacts/"
+root_dir = "./io/artifacts/"
 
 
 projects = [
@@ -150,6 +150,14 @@ for project_info in projects:
             df = pd.read_csv(f"{input_dir}/{filename}")
             sheet_name = files[index]["excel_filename"]
             print(input_dir, sheet_name)
+            print("Total commits",  len(list(df["Hash"].dropna().unique())))
+            # print(list(df["Hash"].unique())[1])
+            print("Total testcases",  df.shape[0])
+            print('------------')
             df.to_excel(writer, sheet_name=sheet_name, index=False)
+        else:
+            print("Error: ")
 
     writer.close()
+    print(f"Generated {root_dir}/{output_file}")
+    print('----xxxxxxxxxxx----')
