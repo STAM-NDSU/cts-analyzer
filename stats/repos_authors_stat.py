@@ -11,11 +11,11 @@ import json
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 
@@ -47,20 +47,30 @@ for project in projects_list:
                 columns={"index": "Author", "Author": "Total Test Cases"},
                 errors="raise",
             )
-            
+
             # no. of test deletion commits
-            deleted_tc_df_clone2 = deleted_tc_df.drop_duplicates(
-                subset="Hash", keep="first"
-            )
-            grouped_deleted_tc_commit_df = deleted_tc_df_clone2.groupby("Author")[
-                "Hash"
-            ].count()
-            grouped_deleted_tc_commit_df = grouped_deleted_tc_commit_df.reset_index()
-            
-            new_df = pd.DataFrame()
-            new_df["Author"] = test_deletion_commits_df["Author"]
-            new_df["Commit"] = grouped_deleted_tc_commit_df["Hash"]
-            new_df["Total Test Cases"] = test_deletion_commits_df["Total Test Cases"]
+            # call groupby method.
+            grouped_deleted_tc_commit_df = deleted_tc_df.groupby("Author")
+            # call agg method
+            grouped_deleted_tc_commit_df = grouped_deleted_tc_commit_df.agg(
+                {"Hash": "nunique"}
+            ).reset_index()
+            print(grouped_deleted_tc_commit_df)
+
+            print("total commits", grouped_deleted_tc_commit_df["Hash"].sum())
+            print("total testcases", test_deletion_commits_df["Total Test Cases"].sum())
+            new_df = pd.DataFrame(columns=['Authors', "Commits", 'Deleted Tests'])
+
+            for index, row in test_deletion_commits_df.iterrows():
+                filter_df = grouped_deleted_tc_commit_df[
+                    grouped_deleted_tc_commit_df["Author"] == row["Author"]
+                ]
+
+                new_df.loc[len(new_df.index)] = [
+                    row["Author"],
+                    filter_df.iloc[0]["Hash"],
+                    row["Total Test Cases"],
+                ]
 
             new_df.to_csv(stat_authors_test_deletions_file_path, index=False)
             print(f"Generated {stat_authors_test_deletions_file_path}")
