@@ -22,11 +22,11 @@ import os
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 output_path = "../io/validationFiles/rq22_stat.csv"
@@ -82,18 +82,19 @@ for project in projects_list:
                 deleted_with_whole_file_df = matching_hash_df[
                     matching_hash_df["Deleted With Whole File"] == "yes"
                 ]
-
-                filepaths = list(deleted_with_whole_file_df["Filepath"].unique())
-                if len(filepaths) > 1:
-                    commits_deleting_mul_testclass += 1
-                elif len(filepaths) == 1:
-                    commits_deleting_single_testclass += 1
-
                 not_deleted_with_whole_file_df = matching_hash_df[
                     matching_hash_df["Deleted With Whole File"] == "no"
                 ]
-                if not_deleted_with_whole_file_df.shape[0] > 0:
-                    commits_deleting_only_testcases += 1
+
+                del_with_whole_filepaths = list(deleted_with_whole_file_df["Filepath"].unique())
+                not_del_with_whole_filepaths = list(not_deleted_with_whole_file_df["Filepath"].unique())
+                if len(del_with_whole_filepaths) > 1:
+                    commits_deleting_mul_testclass += 1
+                elif len(del_with_whole_filepaths) == 1:
+                    commits_deleting_single_testclass += 1
+                else:
+                    if len(not_del_with_whole_filepaths) > 0:
+                        commits_deleting_only_testcases += 1
 
             new_df.loc[len(new_df.index)] = [
                 project,

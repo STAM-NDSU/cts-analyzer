@@ -1,18 +1,22 @@
+import sys
+
+sys.path.append("../")
+
 import os.path
 from pathlib import Path
 import pandas as pd
 
 
-root_dir = "./io/validationFiles/"
+root_dir = "../io/validationFiles/"
 output_file = "leftovers.xlsx"
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 

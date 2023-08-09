@@ -14,11 +14,11 @@ from analyzer.utils import get_full_commit_url, parse_commit_as_hyperlink
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 

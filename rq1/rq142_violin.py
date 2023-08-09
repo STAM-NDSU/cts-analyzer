@@ -14,11 +14,11 @@ OUT_DIR = "../io/rq1/figures/"
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 medians = []

@@ -21,11 +21,11 @@ import os
 
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
 
@@ -70,7 +70,6 @@ for project in projects_list:
 
         if os.path.exists(f"{full_input_file_path}"):
             df = pd.read_csv(f"{full_input_file_path}")
-
             deleted_tc_df = df[df["Final Results"] == "yes"]
             deleted_tc_df.to_csv(deleted_tc_output_file_path, index=False)
             deleted_tc_df = deleted_tc_df.reset_index(

@@ -27,14 +27,13 @@ colors = [
 ]
 projects_list = [
     "commons-lang",
-    "commons-math",
-    "pmd",
-    "jfreechart",
     "gson",
+    "commons-math",
+    "jfreechart",
     "joda-time",
+    "pmd",
     "cts",
 ]
-
 fig, ax = plt.subplots(
      figsize=(20,8),
 )
@@ -66,7 +65,7 @@ year_month_formatter = mdates.DateFormatter("%Y") # four digits for year, two fo
 
 ax.xaxis.set_major_locator(half_year_locator)
 ax.xaxis.set_major_formatter(year_month_formatter) # formatter for major axis only
-ax.set_ylim(ymin=0)
+# ax.set_ylim(ymin=0)
 # ax.xaxis.set_major_locator(plt.dates.YearLocator())
 # ax.xaxis.set_major_formatter(plt.dates.DateFormatter('%Y'))
 plt.legend()

@@ -2,17 +2,19 @@ import csv
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 
-old_file = "io/outputRevisedLatest4/cts/hydrated_cts-step2.csv"
-new_file = "io/outputRevisedLatest4/cts/hydrated_cts-step3.csv"
+old_file = "io/validationFiles/cts/validation_diff_done_hydrated.csv"
+new_file = "io/validationFiles/cts/hydrated_rq_2.csv"
 
 CSV_HEADERS = [
     "Datetime",
     "Hash",
+    "Author",
     "Commit Msg",
     "Filepath",
     "Filename",
     "Removed Test Case",
-    "Check Annot",
+    "Manual Validation",
+    "Final Results",
 ]
 
 # Get testcases missing in new file and contained in old file
@@ -22,26 +24,33 @@ with open(old_file, "r") as a, open(new_file, "r") as b:
 
     alter = []
     for old_testcase_data in old_file:
-        if old_testcase_data[1] == "":
+        if old_testcase_data[1] == "":  # check for hash
+            continue
+
+        if old_testcase_data[8] == "no":  # check only for truly removed one
             continue
 
         match_found = False
+        match_found_no = 0
         for new_testcase_data in new_file:
             # if old_testcase_data[1] == new_testcase_data[1]:
             if (
                 old_testcase_data[1] == new_testcase_data[1]
-                and old_testcase_data[5] == new_testcase_data[5]
+                and old_testcase_data[4] == new_testcase_data[4]
+                and old_testcase_data[6] == new_testcase_data[6]
             ):
+                
                 match_found = True
-                break
-        if not match_found:
-            alter.append([*old_testcase_data])
+                match_found_no += 1
+                
+        if not match_found or match_found_no > 1:
+            alter.append([*old_testcase_data[: len(CSV_HEADERS)]])
 
     export_to_csv(
         headers=CSV_HEADERS,
         records=alter,
-        filename="clean2_vs_3_diff",
-        dir="io/outputRevisedLatest4/cts",
+        filename="diff",
+        dir="io/validationFiles/cts",
     )
 
 
