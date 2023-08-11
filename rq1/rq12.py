@@ -20,12 +20,12 @@ import json
 
 projects_list = [
     "commons-lang",
-    "gson",
-    "commons-math",
-    "jfreechart",
-    "joda-time",
-    "pmd",
-    "cts",
+    # "gson",
+    # "commons-math",
+    # "jfreechart",
+    # "joda-time",
+    # "pmd",
+    # "cts",
 ]
 
 
@@ -57,7 +57,6 @@ def prettify_tag(project, tag):
         tag.replace("platform-", "")
         .replace("android-platform-", "")
         .replace(".r1", "")
-        .replace("0.0", "0")
     )
     if project == "cts":
         tag = tag.replace("1.0", "1")  # cts

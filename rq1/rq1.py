@@ -10,7 +10,8 @@ import random
 import csv
 
 import sys
-sys.path.append('../')
+
+sys.path.append("../")
 
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
@@ -28,6 +29,15 @@ projects_list = [
     "pmd",
     "cts",
 ]
+projects_main_brances = [
+    "master",
+    "master",
+    "master",
+    "master",
+    "main",
+    "master",
+    "master",
+]
 
 
 def days_between(d1, d2):
@@ -36,7 +46,7 @@ def days_between(d1, d2):
     return abs((d2 - d1).days)
 
 
-for project in projects_list:
+for p_index, project in enumerate(projects_list):
 
     def main(project):
         print(project)
@@ -88,15 +98,17 @@ for project in projects_list:
             )["Hash"].count()
             grouped_deleted_tc_df = grouped_deleted_tc_df.reset_index()
             # no. of test deletion commits by year
-            deleted_tc_df_clone2 =  deleted_tc_df_clone.drop_duplicates(subset='Hash', keep="first")
+            deleted_tc_df_clone2 = deleted_tc_df_clone.drop_duplicates(
+                subset="Hash", keep="first"
+            )
             grouped_deleted_tc_commit_df = deleted_tc_df_clone2.groupby(
                 deleted_tc_df_clone.Datetime.dt.year
             )["Hash"].count()
-            grouped_deleted_tc_commit_df= grouped_deleted_tc_commit_df.reset_index()
+            grouped_deleted_tc_commit_df = grouped_deleted_tc_commit_df.reset_index()
             new_df = pd.DataFrame()
-            new_df["Datetime"] = grouped_deleted_tc_df['Datetime']
-            new_df["Commit"] = grouped_deleted_tc_commit_df['Hash']
-            new_df["Testcase"] = grouped_deleted_tc_df['Hash']
+            new_df["Datetime"] = grouped_deleted_tc_df["Datetime"]
+            new_df["Commit"] = grouped_deleted_tc_commit_df["Hash"]
+            new_df["Testcase"] = grouped_deleted_tc_df["Hash"]
             stat_deletion_commits_grouped_year_df = new_df.reset_index()
             stat_deletion_commits_grouped_year_df.to_csv(
                 stat_deletion_commits_grouped_year_file_path, index=False
@@ -145,20 +157,24 @@ for project in projects_list:
                     else:
                         # Compute the difference in days
                         range = days_between(prev["Datetime"], row["Datetime"])
+                        # git rev-list --count master --since="03/07/2017 11:39:11" --until="03/09/2017 10:28:04"
                         # Compute no of in-between commits
                         # ($(git rev-list --count A..B) - 1) # Git cmd; excludes both end point
-                        cmd = f'git rev-list --count {strip_commit_url(prev["Hash"])}..{strip_commit_url(row["Hash"])}'
+                        # cmd = f'git rev-list --count {strip_commit_url(prev["Hash"])}..{strip_commit_url(row["Hash"])}'
+                        since = prev["Datetime"]
+                        until = row["Datetime"]
+                        cmd = f'git rev-list --count {projects_main_brances[p_index]}  --since="{since}" --until="{until}"'
                         current_state = os.getcwd()
                         os.chdir(f"../io/projects/{project}")
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")
-                        no_of_commits = int(no_of_commits) -1
+                        # no_of_commits = int(no_of_commits) -1
                         os.chdir(current_state)
                         test_deletion_datetime_inbetweencommits_range.append(
                             [row["Hash"], range, no_of_commits]
                         )
-
+                        print(prev["Datetime"])
                         # Update the previous unique hash record
                         prev["Datetime"] = row["Datetime"]
                         prev["Hash"] = row["Hash"]
