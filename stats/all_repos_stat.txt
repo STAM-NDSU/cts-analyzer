@@ -1,0 +1,56 @@
+commons-lang
+------------
+last Hash: 750a21e
+last Date: 2002-07-19 03:35:56
+last Hash: 78b4f09
+last Date: 2022-12-30 10:06:38
+Diff: 20 years 5 months 11 days
+=========================
+gson
+------------
+last Hash: 57d1f32
+last Date: 2008-09-01 03:13:32
+last Hash: 1a2170b
+last Date: 2022-12-22 15:04:16
+Diff: 14 years 3 months 21 days
+=========================
+commons-math
+------------
+last Hash: 4a8cbc2
+last Date: 2003-05-12 15:07:54
+last Hash: 585b04c
+last Date: 2022-12-26 03:09:37
+Diff: 19 years 7 months 13 days
+=========================
+jfreechart
+------------
+last Hash: 6f8f85d
+last Date: 2007-06-29 13:35:09
+last Hash: c77fcec
+last Date: 2022-07-26 12:07:53
+Diff: 15 years 0 months 26 days
+=========================
+joda-time
+------------
+last Hash: b596f23
+last Date: 2003-12-16 19:12:24
+last Hash: 50b0897
+last Date: 2022-12-17 23:14:38
+Diff: 19 years 0 months 1 days
+=========================
+pmd
+------------
+last Hash: f213812
+last Date: 2002-06-21 20:12:46
+last Hash: a653fb4
+last Date: 2022-12-31 18:47:39
+Diff: 20 years 6 months 9 days
+=========================
+cts
+------------
+last Hash: f805710
+last Date: 2009-03-15 16:47:16
+last Hash: a0d9ca6
+last Date: 2022-12-31 21:43:52
+Diff: 13 years 9 months 16 days
+=========================

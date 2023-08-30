@@ -13,6 +13,9 @@ import sys
 
 sys.path.append("../")
 
+# Redirect console ouput to a file
+sys.stdout = open("../temp.txt", "w")
+
 from analyzer.helpers import export_to_csv
 import analyzer.config as conf
 from analyzer.utils import strip_commit_url
@@ -43,6 +46,7 @@ projects_main_brances = [
 def days_between(d1, d2):
     d1 = datetime.strptime(d1, "%m/%d/%Y %H:%M:%S")
     d2 = datetime.strptime(d2, "%m/%d/%Y %H:%M:%S")
+    # print(d1, d2, (d2 - d1).days, abs((d2 - d1).days))
     return abs((d2 - d1).days)
 
 
@@ -161,11 +165,7 @@ for p_index, project in enumerate(projects_list):
                         # Compute no of in-between commits
                         # ($(git rev-list --count A..B) - 1) # Git cmd; excludes both end point
                         # cmd = f'git rev-list --count {strip_commit_url(prev["Hash"])}..{strip_commit_url(row["Hash"])}'
-                        since = prev["Datetime"]
-                        until = row["Datetime"]
-                        cmd = f'git rev-list --count {projects_main_brances[p_index]}  --since="{since}" --until="{until}"'
-                        current_state = os.getcwd()
-                        os.chdir(f"../io/projects/{project}")
+                        q
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")

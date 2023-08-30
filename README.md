@@ -98,8 +98,17 @@ To get a commit count for a revision (HEAD, master, a commit hash):
 git rev-list --count <revision>
 
 git rev-list --count master --until="2023-01-01"
-git log --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01"
-git log --reverse --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01"
+git log master --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01 00:00:000"
+git log master --reverse --pretty=format:"%H - %ad - %an: %s" --until="2023-01-01 00:00:000"
+
+#first and last commit
+git log master  --pretty=format:"%H" --until="2023-01-01 00:00:000" | head  -1
+git log master  --pretty=format:"%H" --until="2023-01-01 00:00:000" | tail  -1
+
+
+git log master --reverse  --until="2023-01-01 00:00:000" --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:"%H _ %ad"
+
+--date=format:'%Y-%m-%d %H:%M:%S'
 
 To get the commit count across all branches:
 

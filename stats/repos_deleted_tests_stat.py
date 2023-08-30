@@ -28,11 +28,12 @@ total_commits = [7080, 1771, 7116, 4219, 2252, 25422, 401732] # As per projects_
 
 
 all_data_del_test_per_commit = []
+all_del_tests = []
 total_del_commits = 0
 for index, project in enumerate(projects_list):
     
     def main(project):
-        global all_data_del_test_per_commit, total_del_commits
+        global all_data_del_test_per_commit, total_del_commits, all_del_tests
         print(project)
         print("-----------------")
         VALIDATION_FILES_DIR = "../io/validationFiles"
@@ -46,6 +47,9 @@ for index, project in enumerate(projects_list):
 
             # Parse only deleted tests dataframe; Should select all rows
             deleted_tc_df = df[df["Final Results"] == "yes"]
+            print("Total del tests: ", deleted_tc_df.shape[0])
+            deleted_tests = list(deleted_tc_df["Removed Test Case"])
+            all_del_tests = [*all_del_tests, *deleted_tests]
 
             # no. of deleted tests
             test_deletion_commits_df = deleted_tc_df["Hash"].value_counts().to_frame()
@@ -67,6 +71,7 @@ for index, project in enumerate(projects_list):
             print("Median: ", np.median(test_deletion_commits_df["Deleted Tests"]))
             print("Q1: ", np.percentile(test_deletion_commits_df["Deleted Tests"], 25))
             print("Q3: ", np.percentile(test_deletion_commits_df["Deleted Tests"], 75))
+            print("Max: ", np.max(test_deletion_commits_df["Deleted Tests"]))
         print("================================")
 
     main(project)
@@ -75,9 +80,11 @@ for index, project in enumerate(projects_list):
 print("--********-----")
 print("All Projects")
 print("----------")
+print("Total del tests: ", len(all_del_tests))
 print("Total del commits: ", total_del_commits)
-print("% of deleted tests", (total_del_commits/np.sum(total_commits)*100))
+print("% of del commits", (total_del_commits/np.sum(total_commits)*100))
 print("Mean: ", np.mean(all_data_del_test_per_commit))
 print("Median: ", np.median(all_data_del_test_per_commit))
 print("Q1: ", np.percentile(all_data_del_test_per_commit, 25))
 print("Q3: ", np.percentile(all_data_del_test_per_commit, 75))
+print("Max: ", np.max(all_data_del_test_per_commit))

@@ -1,5 +1,5 @@
 """
-Generate box plot for days and commits between test deletion commit [rq1]
+Generate box plot for num. of deleted tests and test deletion commits in year [rq1]
 """
 import os.path
 from pathlib import Path
@@ -13,7 +13,7 @@ from collections import defaultdict
 import seaborn as sns
 
 plt.rcParams["figure.autolayout"] = True
-OUT_DIR = "../io/rq1/figures/days_commits/"
+OUT_DIR = "../io/rq1/figures/version_year/"
 
 projects_list = [
     "commons-lang",
@@ -36,16 +36,14 @@ for p_index, project in enumerate(projects_list):
     def main(project):
         print(project)
         print("-----------------")
-        test_deletion_datetime_inbetweencommits_range_file_path = Path(
-            f"{IO_DIR}/{project}/test_deletion_datetime_inbetweencommits_range.csv"
+        test_deletion_grouped_year_file_path = Path(
+            f"{IO_DIR}/{project}/stat_test_deletion_commits_grouped_year.csv"
         )
 
-        if not os.path.exists(
-            f"{test_deletion_datetime_inbetweencommits_range_file_path}"
-        ):
+        if not os.path.exists(f"{test_deletion_grouped_year_file_path}"):
             print(
                 "Error: path does not exit -> ",
-                test_deletion_datetime_inbetweencommits_range_file_path,
+                test_deletion_grouped_year_file_path,
             )
 
         # In [23]: df[[0, 1, 2, 3]].plot(kind='box', ax=ax)
@@ -59,20 +57,24 @@ for p_index, project in enumerate(projects_list):
         ax1.tick_params(axis="x")
 
         # Handle axis 1
-        df = pd.read_csv(test_deletion_datetime_inbetweencommits_range_file_path)
+        df = pd.read_csv(test_deletion_grouped_year_file_path)
         df = df.loc[1:, :]
-        types_dict = {"Range": int, "Commits": int}
+        types_dict = {"Testcase": int, "Commit": int}
         for col, col_type in types_dict.items():
             df[col] = df[col].astype(col_type)
         print(df.dtypes)
 
-        # df["Commits"].plot(kind='box', ax=ax1)
+        # df["Commit"].plot(kind='box', ax=ax1)
         bp1 = ax1.violinplot(
-            df["Commits"], positions=[0.5], showmeans=False, showmedians=False, showextrema=False
+            df["Commit"],
+            positions=[0.5],
+            showmeans=False,
+            showmedians=False,
+            showextrema=False,
         )
         ax1.set_ylabel("Commits", color=COMMIT_COLOR, fontsize=10)
         ax1.tick_params(axis="y", labelcolor=COMMIT_COLOR)
-        ax1.boxplot(df["Commits"], positions=[0.5], showfliers=False)
+        ax1.boxplot(df["Commit"], positions=[0.5], showfliers=False)
         # ax1.yaxis.grid(True)
         ax1.set_xlim(0, 2)
         # ax1.set_ylim(0)
@@ -81,7 +83,10 @@ for p_index, project in enumerate(projects_list):
         # ax1.set(xlabel=None)
 
         print(bp1.keys())
-        plt.setp(bp1["bodies"], color=COMMIT_COLOR,)
+        plt.setp(
+            bp1["bodies"],
+            color=COMMIT_COLOR,
+        )
         # plt.setp(bp1["whiskers"], color=COMMIT_COLOR,)
         # plt.setp(bp1["caps"], color=COMMIT_COLOR,)
         # plt.setp(bp1["fliers"], color=COMMIT_COLOR,)
@@ -89,20 +94,27 @@ for p_index, project in enumerate(projects_list):
         # Handle axis 2
         ax2 = ax1.twinx()
         bp2 = ax2.violinplot(
-            df["Range"], positions=[1.5], showmeans=False, showmedians=False, showextrema=False
+            df["Testcase"],
+            positions=[1.5],
+            showmeans=False,
+            showmedians=False,
+            showextrema=False,
         )
-        ax2.boxplot(df["Range"], positions=[1.5], showfliers=False)
-        ax2.set_ylabel("Days", color=DAYS_COLOR, fontsize=10)
+        ax2.boxplot(df["Testcase"], positions=[1.5], showfliers=False)
+        ax2.set_ylabel("Testcase", color=DAYS_COLOR, fontsize=10)
         ax2.tick_params(axis="y", labelcolor=DAYS_COLOR)
         # ax2.set_ylim(0)
-        plt.setp(bp2["bodies"], color=DAYS_COLOR,)
+        plt.setp(
+            bp2["bodies"],
+            color=DAYS_COLOR,
+        )
         # plt.setp(bp2["whiskers"], color=DAYS_COLOR,)
         # plt.setp(bp2["fliers"], color=COMMIT_COLOR,)
         # fig.tight_layout()
-        
+
         plt.title("(" + alphabets[p_index] + ") " + project, y=-0.19, fontsize=10)
         fig.savefig(
-            OUT_DIR + project + "_days_commits.png",
+            OUT_DIR + project + "_boxplot_year.png",
         )
         # plt.show()
 

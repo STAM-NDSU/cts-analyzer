@@ -1,5 +1,5 @@
 """
-Generate box plot for no. of deleted tests in commit [rq1]
+Generate box plot for num. of deleted tests by version and year [rq1]
 """
 import os.path
 from pathlib import Path
@@ -48,10 +48,10 @@ for p_index, project in enumerate(projects_list):
             print("Error: path does not exit -> ", test_deletion_version_file_path)
 
         figsize = (6, 8)
-        titlepos = -0.12
+        titlepos = -0.1
         if project == "jfreechart":
-            figsize = (6, 3)
-            titlepos = -0.28
+            figsize = (6, 4)
+            titlepos = -0.26
         elif project == "gson":
             figsize = (6, 5)
             titlepos = -0.19
@@ -99,10 +99,10 @@ for p_index, project in enumerate(projects_list):
             label="commits",
             marker=marker,
         )
-        ax1.set_ylabel("Version", color=VERSION_COLOR, fontsize=12)
+        ax1.set_ylabel("Version", color=VERSION_COLOR, fontsize=10)
         ax1.legend(loc="upper left")
         ax1.tick_params(axis="y", labelcolor=VERSION_COLOR)
-        ax1.set_xlabel("No. of commits and tests", fontsize=12)
+        ax1.set_xlabel("Num. of commits and tests", fontsize=10)
         # Handle axis 2
         year_df = pd.read_csv(test_deletion_grouped_year_file_path, dtype=str)
         types_dict = {"Testcase": int, "Commit": int}
@@ -126,7 +126,7 @@ for p_index, project in enumerate(projects_list):
             linestyle="solid",
             label="commits",
         )
-        ax2.set_ylabel("Year", color=YEAR_COLOR, fontsize=12)
+        ax2.set_ylabel("Year", color=YEAR_COLOR, fontsize=10)
         ax2.legend(loc="upper right")
         ax2.tick_params(axis="y", labelcolor=YEAR_COLOR)
 
@@ -135,8 +135,18 @@ for p_index, project in enumerate(projects_list):
         # ax2.yaxis.set_major_locator(two_year_locator)
         # ax2.yaxis.set_major_formatter(year_month_formatter) # formatter for major axis only
 
-        # plt.text(120, -2.25, "(" + alphabets[p_index] + ") " + project, fontsize=12)
-        # plt.title("(" + alphabets[p_index] + ") " + project, y=titlepos)
+        # plt.text(120, -2.25, "(" + alphabets[p_index] + ") " + project, fontsize=10)
+        # plt.text(
+        #     0.5,
+        #     -0.1,
+        #     "(" + alphabets[p_index] + ") " + project,
+        #     horizontalalignment="center",
+        #     verticalalignment="center",
+        #     transform=ax1.transAxes,
+        #     pad=10
+        # )
+      
+        plt.title("(" + alphabets[p_index] + ") " + project, y=titlepos, fontsize=10)
         # fig.autofmt_xdate()
 
         fig.tight_layout()

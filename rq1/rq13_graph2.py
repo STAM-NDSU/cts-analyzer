@@ -1,5 +1,5 @@
 """
-Generate box plot for no. of deleted tests in commit [rq1]
+Generate box plot for Num. of deleted tests in commit [rq1]
 """
 import os.path
 from pathlib import Path
@@ -131,7 +131,7 @@ for p_index, project in enumerate(projects_list):
         ax1.set_ylabel("Version", color=VERSION_COLOR, fontsize=12)
         ax1.legend(loc="upper left")
         ax1.tick_params(axis="y", labelcolor=VERSION_COLOR)
-        ax1.set_xlabel("No. of commits and tests", fontsize=12)
+        ax1.set_xlabel("Num. of commits and tests", fontsize=12)
         # Handle axis 2
         year_df = pd.read_csv(test_deletion_grouped_year_file_path, dtype=str)
         types_dict = {"Testcase": int, "Commit": int}

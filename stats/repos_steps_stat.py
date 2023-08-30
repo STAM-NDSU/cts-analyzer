@@ -1,3 +1,5 @@
+# Print all the numbers for steps including validation
+
 import os.path
 from pathlib import Path
 import pandas as pd

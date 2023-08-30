@@ -54,9 +54,7 @@ def prettify_tag(project, tag):
     )  # gson
     tag = tag.replace("MATH.", "").replace("commons-math-", "")  # commons-math
     tag = (
-        tag.replace("platform-", "")
-        .replace("android-platform-", "")
-        .replace(".r1", "")
+        tag.replace("platform-", "").replace("android-platform-", "").replace(".r1", "")
     )
     if project == "cts":
         tag = tag.replace("1.0", "1")  # cts
@@ -76,8 +74,9 @@ def prettify_tag(project, tag):
         tag = tag + ".0"
     return tag
 
+
 def hello():
-    global projects_list 
+    global projects_list
     for project in projects_list:
 
         def main(project):
@@ -105,7 +104,9 @@ def hello():
 
                 results = []
                 # Opening JSON file
-                tags_selected_json = open(f"{PROJECTS_DIR}/{project}/tags-selected.json")
+                tags_selected_json = open(
+                    f"{PROJECTS_DIR}/{project}/tags-selected.json"
+                )
                 tags_selected = json.load(tags_selected_json)
 
                 tags_selected = list(
@@ -143,9 +144,9 @@ def hello():
                             cloned_deleted_tc_df["Datetime"]
                         )
                         # greater than the start date and smaller than the end date
-                        mask = (cloned_deleted_tc_df["Datetime"] >= prev["Datetime"]) & (
-                            cloned_deleted_tc_df["Datetime"] <= tag_info["Datetime"]
-                        )
+                        mask = (
+                            cloned_deleted_tc_df["Datetime"] >= prev["Datetime"]
+                        ) & (cloned_deleted_tc_df["Datetime"] <= tag_info["Datetime"])
                         cloned_deleted_tc_df = cloned_deleted_tc_df[mask]
 
                         print(cloned_deleted_tc_df)
@@ -202,5 +203,6 @@ def hello():
 
         main(project)
 
-if __name__ == 'main':
+
+if __name__ == "main":
     hello()

@@ -1,0 +1,129 @@
+commons-lang
+-----------------
+Total Deleted Tests
+----
+Mean:  54.3125
+Median:  11.5
+Q1:  6.0
+Q3:  32.25
+xxxxx
+Test deletion commits
+----
+Mean:  6.75
+Median:  3.5
+Q1:  1.0
+Q3:  5.5
+================================
+gson
+-----------------
+Total Deleted Tests
+----
+Mean:  26.0
+Median:  21.0
+Q1:  10.25
+Q3:  40.5
+xxxxx
+Test deletion commits
+----
+Mean:  3.7
+Median:  3.5
+Q1:  3.0
+Q3:  4.0
+================================
+commons-math
+-----------------
+Total Deleted Tests
+----
+Mean:  255.07692307692307
+Median:  77.0
+Q1:  12.0
+Q3:  255.0
+xxxxx
+Test deletion commits
+----
+Mean:  17.76923076923077
+Median:  10.0
+Q1:  2.0
+Q3:  21.0
+================================
+jfreechart
+-----------------
+Total Deleted Tests
+----
+Mean:  126.0
+Median:  126.0
+Q1:  126.0
+Q3:  126.0
+xxxxx
+Test deletion commits
+----
+Mean:  8.0
+Median:  8.0
+Q1:  8.0
+Q3:  8.0
+================================
+joda-time
+-----------------
+Total Deleted Tests
+----
+Mean:  110.0
+Median:  10.0
+Q1:  1.25
+Q3:  159.75
+xxxxx
+Test deletion commits
+----
+Mean:  5.166666666666667
+Median:  1.5
+Q1:  1.0
+Q3:  4.25
+================================
+pmd
+-----------------
+Total Deleted Tests
+----
+Mean:  51.75
+Median:  13.5
+Q1:  4.0
+Q3:  53.0
+xxxxx
+Test deletion commits
+----
+Mean:  7.9
+Median:  3.5
+Q1:  1.75
+Q3:  5.25
+================================
+cts
+-----------------
+Total Deleted Tests
+----
+Mean:  805.1904761904761
+Median:  366.0
+Q1:  76.0
+Q3:  738.0
+xxxxx
+Test deletion commits
+----
+Mean:  64.76190476190476
+Median:  45.0
+Q1:  18.0
+Q3:  99.0
+================================
+--********-----
+All Projects
+xxxxx
+Total Deleted Tests
+----
+Mean:  226.26168224299064
+Median:  27.0
+Q1:  7.0
+Q3:  120.5
+xxxxx
+Total Deletion Commits
+-----
+Mean:  19.542056074766354
+Median:  5.0
+Q1:  2.0
+Q3:  17.5
+xxxxx
