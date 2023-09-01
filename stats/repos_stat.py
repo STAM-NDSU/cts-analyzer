@@ -42,7 +42,7 @@ for project in projects_list:
         last_commit_cmd = last_commit_cmd.replace("master", "main")
         first_commit_cmd = first_commit_cmd.replace("master", "main")
     current_state = os.getcwd()
-    os.chdir(f"../io/projects/{project}")
+    os.chdir(f"./../os-java-projects/{project}")
     os.system(last_commit_cmd + " > tmp")
     last_hash_datetime = open("tmp", "r").read().replace("\n", "")
     [last_hash, last_date] = last_hash_datetime.split("_")
@@ -57,5 +57,13 @@ for project in projects_list:
     print("last Hash:", last_hash[:7])
     print("last Date:", last_date)
     time_diff = days_between(first_date, last_date)
-    print("Diff:", time_diff.years, "years", time_diff.months, "months", time_diff.days, "days",)
+    print(
+        "Diff:",
+        time_diff.years,
+        "years",
+        time_diff.months,
+        "months",
+        time_diff.days,
+        "days",
+    )
     print("=========================")

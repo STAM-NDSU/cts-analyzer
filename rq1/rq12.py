@@ -83,7 +83,7 @@ def hello():
             print(project)
             print("-----------------")
             VALIDATION_FILES_DIR = "../io/validationFiles"
-            PROJECTS_DIR = "../io/projects"
+            PROJECTS_DIR = "../../os-java-projects"
             PROJECT = project
             full_input_file_path = Path(
                 f"{VALIDATION_FILES_DIR}/{PROJECT}/validation_diff_done_hydrated.csv"
@@ -162,7 +162,7 @@ def hello():
                         # Compute no of in-between commits
                         cmd = f'git log {prev["Hash"]}...{tag_info["Hash"]} --pretty=oneline | wc -l'
                         current_state = os.getcwd()
-                        os.chdir(f"../io/projects/{project}")
+                        os.chdir(f"./../os-java-projects/{project}")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")
                         os.chdir(current_state)

@@ -1,0 +1,48 @@
+[
+    {
+        "Hash": "6f8f85d378dbb27da3855892a1cee294e7154a3d",
+        "Tag": "initial Commit",
+        "Datetime": "2007-06-29 13:35:09 +0000"
+    },
+    {
+        "Hash": "ed6c657bd0f8d9e48557c401e276909c38009f28",
+        "Tag": "\trefs/Tags/v1.0.18^{}",
+        "Datetime": "2014-07-03 20:37:18 +0000"
+    },
+    {
+        "Hash": "b3f5f21ba0fe32a8f7eccb6760a79df30628be3e",
+        "Tag": "\trefs/tags/v1.0.19^{}",
+        "Datetime": "2014-07-31 12:32:18 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "fd72df7cc159ada0f5865389a55969507ed3a123",
+        "Tag": "\trefs/tags/v1.5.0",
+        "Datetime": "2017-11-05 12:55:24 +0100"
+     
+    },
+    {
+        "Hash": "0e8ca74b12db0960f9d2a6a8f9154d39d0f9e92a",
+        "Tag": "\trefs/tags/v1.5.1",
+        "Datetime": "2020-10-29 19:12:36 +0100",
+        "Include": false
+    },
+    {
+        "Hash": "f37e0fcfb551e97b5f085d5f61be5ca5b5741bbc",
+        "Tag": "\trefs/tags/v1.5.2",
+        "Datetime": "2020-12-31 16:10:38 +0100",
+        "Include": false
+    },
+    {
+        "Hash": "09e374f617c3a5c2e68d260f17a03f1e3f584121",
+        "Tag": "\trefs/tags/v1.5.3",
+        "Datetime": "2021-02-21 21:03:35 +0100",
+        "Include": false
+    },
+    {
+        "Hash": "c77fcecffd05d011ff3295494e82ea3b9cf1afa5",
+        "Tag": "vL",
+        "Datetime": "2022-07-26 12:07:53 +0200",
+        "Include": false
+    }
+]

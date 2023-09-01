@@ -9,7 +9,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 
-OUT_DIR = '../io/rq1/figures/'
+OUT_DIR = "../io/rq1/figures/"
 
 # plt.rcParams["figure.figsize"] = [4,3]
 # plt.rcParams["figure.autolayout"] = True
@@ -30,14 +30,16 @@ for index, project in enumerate(projects_list):
         print(project)
         print("-----------------")
         IO_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
+        PROJECTS_DIR = "./../os-java-projects"
         PROJECT = project
         test_deletion_datetime_inbetweencommits_range_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_datetime_inbetweencommits_range.csv"
         )
 
         if os.path.exists(f"{test_deletion_datetime_inbetweencommits_range_file_path}"):
-            df = pd.read_csv(f"{test_deletion_datetime_inbetweencommits_range_file_path}")
+            df = pd.read_csv(
+                f"{test_deletion_datetime_inbetweencommits_range_file_path}"
+            )
             df.dropna(inplace=True)
             test_deletion_commits_timerange[project] = df["Range"].values.tolist()
             medians.append(np.median(test_deletion_commits_timerange[project]))
@@ -51,7 +53,7 @@ for index, project in enumerate(projects_list):
 # fig = plt.figure()
 # ax = fig.add_axes([0, 0, 1, 1])
 fig, ax = plt.subplots(
-    figsize=(5,3),
+    figsize=(5, 3),
 )
 bp = ax.boxplot(
     list(test_deletion_commits_timerange.values()),
@@ -68,15 +70,7 @@ plt.setp(bp["whiskers"], color="black")
 # plt.setp(bp['fliers'], color='red', marker='+')
 
 # Set colors
-colors = [
-    "pink",
-    "lightblue",
-    "lightgreen",
-    "red",
-    "blue",
-    "brown",
-    'violet'
-]
+colors = ["pink", "lightblue", "lightgreen", "red", "blue", "brown", "violet"]
 for patch, color in zip(bp["boxes"], colors):
     patch.set_facecolor(color)
 
@@ -118,6 +112,5 @@ ax.set_yticklabels(list(test_deletion_commits_timerange.keys()))
 #         #  weight=weights[k], color=box_colors[k]
 #     )
 fig.tight_layout()
-fig.savefig(OUT_DIR + "time-interval-between-test-deletion-commits.png",
-            dpi=800)
+fig.savefig(OUT_DIR + "time-interval-between-test-deletion-commits.png", dpi=800)
 # plt.show()

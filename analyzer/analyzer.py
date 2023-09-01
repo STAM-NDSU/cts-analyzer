@@ -101,6 +101,12 @@ def get_removed_test_functions_details(
                 )
                 commit_author = commit.committer.email
                 commit_msg = commit.msg
+                if len(commit.parents):
+                    commit_parent = parse_commit_as_hyperlink(
+                       label=commit.parents[0], url=get_full_commit_url(commit.parents[0])
+                    )
+                else:
+                    commit_parent = ""
 
                 # Handles step 1
                 if step == 1:
@@ -110,6 +116,7 @@ def get_removed_test_functions_details(
                     commit_master_data = [
                         commit_datetime,
                         commit_hash,
+                        commit_parent,
                         commit_author,
                         commit_msg,
                     ]

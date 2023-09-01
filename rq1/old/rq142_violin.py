@@ -29,7 +29,7 @@ for index, project in enumerate(projects_list):
         print(project)
         print("-----------------")
         IO_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
+        PROJECTS_DIR = "./../os-java-projects"
         PROJECT = project
         test_deletion_commits_timerange_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_datetime_inbetweencommits_range.csv"
@@ -45,14 +45,13 @@ for index, project in enumerate(projects_list):
                 if value:
                     test_deletion_commits_timerange["project"].append(project)
                     test_deletion_commits_timerange["days"].append(value)
-        else: 
+        else:
             print("path does not exits: ", test_deletion_commits_timerange_file_path)
+
     main(project)
 
 print(test_deletion_commits_timerange)
-new_df = pd.DataFrame(
-    test_deletion_commits_timerange, columns=["project", "days"]
-)
+new_df = pd.DataFrame(test_deletion_commits_timerange, columns=["project", "days"])
 fig, ax = plt.subplots(
     figsize=(10, 6),
 )
@@ -74,9 +73,7 @@ ax.set(
     xlabel="No. of days",
 )
 fig.tight_layout()
-fig.savefig("../io/rq1/figures/time-interval-between-test-deletion-commits-violin.png", dpi=800)
+fig.savefig(
+    "../io/rq1/figures/time-interval-between-test-deletion-commits-violin.png", dpi=800
+)
 # plt.show()
-
-
-
-

@@ -15,30 +15,30 @@ projects = [
         "project": "pmd",
         "filename": ["pmd-step1", "pmd-step3"],
     },
-    # {
-    #     "project": "commons-math",
-    #     "filename": ["commons-math-step3"],
-    # },
-    # {
-    #     "project": "commons-lang",
-    #     "filename": ["commons-lang-step1"],
-    # },
-    # {
-    #     "project": "jodatime",
-    #     "filename": ["jodatime-step3"],
-    # },
-    # {
-    #     "project": "gson",
-    #     "filename": ["gson-step3"],
-    # },
-    # {
-    #     "project": "jfreechart",
-    #     "filename": ["jfreechart-step3"],
-    # },
-    # {
-    #     "project": "joda-time",
-    #     "filename": ["joda-time-step3"],
-    # },
+    {
+        "project": "commons-math",
+        "filename": ["commons-math-step3"],
+    },
+    {
+        "project": "commons-lang",
+        "filename": ["commons-lang-step1"],
+    },
+    {
+        "project": "jodatime",
+        "filename": ["jodatime-step3"],
+    },
+    {
+        "project": "gson",
+        "filename": ["gson-step3"],
+    },
+    {
+        "project": "jfreechart",
+        "filename": ["jfreechart-step3"],
+    },
+    {
+        "project": "joda-time",
+        "filename": ["joda-time-step3"],
+    },
 ]
 
 

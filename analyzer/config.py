@@ -33,6 +33,7 @@ JAVA_FILE_EXT = [".java"]
 CSV_HEADERS = [
     "Datetime",
     "Hash",
+    "Parent",
     "Author",
     "Commit Msg",
     "Filepath",
@@ -70,6 +71,6 @@ STEP = os.getenv("STEP", "step-1")
 # date_format = "%m-%d-%Y"
 # parsed_COMMIT_START_DATE = COMMIT_START_DATETIME.strftime(date_format)
 # parsed_COMMIT_END_DATE = COMMIT_END_DATETIME.strftime(date_format)
-# OUTPUT_FILENAME = BASE_Filename + '.csv'
-BASE_Filename = PROJECT + "-" + STEP
-OUTPUT_FILENAME = BASE_Filename + ".csv"
+# OUTPUT_FILENAME = BASE_FILENAME + '.csv'
+BASE_FILENAME = PROJECT + "-" + STEP
+OUTPUT_FILENAME = BASE_FILENAME + ".csv"

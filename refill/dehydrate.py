@@ -80,49 +80,53 @@ for project in projects:
 
         with open(full_file_path, "r") as a:
             df = pd.read_csv(f"{full_file_path}")
-        prev = {
-            "Datetime": None,
-            "Hash": None,
-            "Author": None,
-            "Commit Msg": None,
-            "Filepath": None,
-            "Filename": None,
-            "Removed Test Case": None,
-        }
+            prev = {
+                "Datetime": None,
+                "Hash": None,
+                "Parent": None,
+                "Author": None,
+                "Commit Msg": None,
+                "Filepath": None,
+                "Filename": None,
+                "Removed Test Case": None,
+            }
 
-        for index, row in df.iterrows():
-            if index == 0:
-                prev = {
-                    "Datetime": row["Datetime"],
-                    "Commit Msg": row["Commit Msg"],
-                    "Hash": row["Hash"],
-                      "Author": row["Author"],
-                    "Filepath": row["Filepath"],
-                    "Filename": row["Filename"],
-                    "Removed Test Case": row["Removed Test Case"],
-                }
+            for index, row in df.iterrows():
+                if index == 0:
+                    prev = {
+                        "Datetime": row["Datetime"],
+                        "Commit Msg": row["Commit Msg"],
+                        "Hash": row["Hash"],
+                        "Parent": row["Parent"],
+                        "Author": row["Author"],
+                        "Filepath": row["Filepath"],
+                        "Filename": row["Filename"],
+                        "Removed Test Case": row["Removed Test Case"],
+                    }
 
-            else:
-                if row["Hash"] == prev["Hash"]:
-                    row["Hash"] = ""
-                    row["Author"] = ""
-                    row["Commit Msg"] = ""
-                    row["Datetime"] = ""
+                else:
+                    if row["Hash"] == prev["Hash"]:
+                        row["Hash"] = ""
+                        row["Parent"] = ""
+                        row["Author"] = ""
+                        row["Commit Msg"] = ""
+                        row["Datetime"] = ""
 
-                    if row["Filepath"] == prev["Filepath"]:
-                        row["Filepath"] = ""
-                        row["Filename"] = ""
+                        if row["Filepath"] == prev["Filepath"]:
+                            row["Filepath"] = ""
+                            row["Filename"] = ""
+                        else:
+                            prev["Filepath"] = row["Filepath"]
+                            prev["Filename"] = row["Filename"]
+
                     else:
+                        prev["Hash"] = row["Hash"]
+                        prev["Parent"] = row["Parent"]
+                        prev["Datetime"] = row["Datetime"]
+                        prev["Commit Msg"] = prev["Commit Msg"]
                         prev["Filepath"] = row["Filepath"]
                         prev["Filename"] = row["Filename"]
 
-                else:
-                    prev["Hash"] = row["Hash"]
-                    prev["Datetime"] = row["Datetime"]
-                    prev["Commit Msg"] = prev["Commit Msg"]
-                    prev["Filepath"] = row["Filepath"]
-                    prev["Filename"] = row["Filename"]
-
-        file_wo = file.replace("hydrated_", "")
-        df.to_csv(f"{IO_DIR}/{project['project']}/{file_wo}.csv", index=False)
-        print(f"Generated {IO_DIR}/{project['project']}/{file_wo}.csv")
+            file_wo = file.replace("hydrated_", "")
+            df.to_csv(f"{IO_DIR}/{project['project']}/{file_wo}.csv", index=False)
+            print(f"Generated {IO_DIR}/{project['project']}/{file_wo}.csv")

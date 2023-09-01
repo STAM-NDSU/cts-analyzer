@@ -166,3 +166,5 @@ def get_bug_id_from_commit_msg(commit_msg):
     if func_name_search:
         return func_name_search.group()
     return func_name
+
+

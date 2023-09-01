@@ -1,0 +1,8 @@
+Project,Deleting Single Testcase,Deleting Multiple Testcase,Deleting Testcase Only,Deleting Single Testclass,Deleting Multiple Testclass
+commons-lang,41,67,70,25,13
+gson,11,26,14,17,6
+commons-math,68,163,126,76,29
+jfreechart,3,11,5,3,6
+joda-time,5,26,24,3,4
+pmd,153,163,179,100,37
+cts,840,762,1112,374,116

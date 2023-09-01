@@ -30,16 +30,20 @@ for project in projects_list:
         VALIDATION_DIR = "../io/validationFiles/" + project 
         
         OUTPUT_FILE = "validation_diff"
-        v_columns = [
+        stepfile_columns = [
             "Datetime",
             "Hash",
+            "Parent",
+            "Author",
             "Commit Msg",
+            "Filepath",
             "Filename",
             "Removed Test Case",
         ]
-        b_columns = [
+        validated_columns = [
             "Datetime",
             "Hash",
+            "Parent",
             "Author",
             "Commit Msg",
             "Filepath",
@@ -77,6 +81,7 @@ for project in projects_list:
                     [
                         datetime,
                         hash,
+                        parent,
                         author,
                         commit_msg,
                         filepath,
@@ -118,11 +123,11 @@ for project in projects_list:
                             )
                             break
                     if not match_found:
-                        alter.append([datetime, hash, commit_msg,  filename, testcase])
+                        alter.append([datetime, hash, parent, author, commit_msg, filepath, filename, testcase])
 
                 alter_df = pd.DataFrame(
                     alter,
-                    columns=v_columns,
+                    columns=stepfile_columns,
                 )
                 # alter_df.to_excel(writer, sheet_name="leftovers", index=False)
                 alter_df.to_csv(
@@ -131,7 +136,7 @@ for project in projects_list:
                 )
                 print(f"Generated {VALIDATION_DIR}/{OUTPUT_FILE}_leftovers_hydrated.csv")
 
-                matched_df = pd.DataFrame(matched, columns=b_columns)
+                matched_df = pd.DataFrame(matched, columns=validated_columns)
                 # matched_df.to_excel(writer, sheet_name="done", index=False)
                 matched_df.to_csv(
                     f"{VALIDATION_DIR}/{OUTPUT_FILE}_done_hydrated.csv", index=False

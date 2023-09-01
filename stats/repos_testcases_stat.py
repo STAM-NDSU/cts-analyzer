@@ -103,7 +103,7 @@ def get_test_functions2(content: str) -> List:
         return []
 
 
-target_dir = "../io/projects/"
+target_dir = "./../os-java-projects/"
 projects_list = [
     "commons-lang",
     "gson",

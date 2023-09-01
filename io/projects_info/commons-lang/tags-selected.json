@@ -1,0 +1,118 @@
+[
+    {
+        "Hash": "750a21e86441b247d85c95e59bf17e596a69d626",
+        "Tag": "initial commit",
+        "Datetime": "2002-07-19 03:35:56 +0000"
+    },
+    {
+        "Hash": "2d274d7cedc148ee3fa8cf4f48904dfd82172bda",
+        "Tag": "\trefs/Tags/LANG_1_0^{}",
+        "Datetime": "2007-07-29 03:42:34 +0000"
+    },
+    {
+        "Hash": "da5d64110a8b7182d04359958f40fadfbe1ed6ff",
+        "Tag": "\trefs/tags/LANG_2_0^{}",
+        "Datetime": "2007-07-29 03:42:34 +0000"
+    },
+    {
+        "Hash": "81f1077a922523a1f6a76376215a1b3de1e49b67",
+        "Tag": "\trefs/tags/LANG_2_1^{}",
+        "Datetime": "2007-07-29 03:42:34 +0000"
+    },
+    {
+        "Hash": "bdf2ede50ed073d91389be55ec3a9cff565c58a5",
+        "Tag": "\trefs/tags/LANG_2_2^{}",
+        "Datetime": "2007-07-29 03:42:34 +0000"
+    },
+    {
+        "Hash": "4e55808486a0227a72c70350a76d33660cc94af8",
+        "Tag": "\trefs/tags/LANG_2_3^{}",
+        "Datetime": "2007-07-29 03:42:34 +0000"
+    },
+    {
+        "Hash": "aa9727e15966bac899aa18733ef85c4aded19f0c",
+        "Tag": "\trefs/tags/LANG_2_4^{}",
+        "Datetime": "2008-03-19 05:39:36 +0000"
+    },
+    {
+        "Hash": "7c4386cb877d99d733b531f4fba2a328a3951767",
+        "Tag": "\trefs/tags/LANG_2_5^{}",
+        "Datetime": "2010-04-07 16:03:21 +0000"
+    },
+    {
+        "Hash": "0fe6a434f20b45c027badd89bd393dd4085cf1f2",
+        "Tag": "\trefs/tags/LANG_2_6^{}",
+        "Datetime": "2011-01-16 22:39:06 +0000"
+    },
+    {
+        "Hash": "c21484b730221bc87ca26553155350292aa30f0d",
+        "Tag": "\trefs/Tags/LANG_3_0^{}",
+        "Datetime": "2011-07-19 03:28:54 +0000"
+    },
+    {
+        "Hash": "915946c9dcc80a6a16745b86540b82b2ddba1720",
+        "Tag": "\trefs/tags/LANG_3_1^{}",
+        "Datetime": "2011-11-15 07:20:23 +0000"
+    },
+    {
+        "Hash": "0c14a39be2b8a8e9461921994033310fd567e8cb",
+        "Tag": "\trefs/tags/LANG_3_2^{}",
+        "Datetime": "2014-01-01 16:43:50 +0000"
+    },
+    {
+        "Hash": "37f8fe84d934a92fe784c62e706b7aacf6fa4f97",
+        "Tag": "\trefs/tags/LANG_3_3^{}",
+        "Datetime": "2014-03-04 17:07:14 +0000"
+    },
+    {
+        "Hash": "4777c3a5e4291af2420db57d008152c70c4a8f24",
+        "Tag": "\trefs/tags/LANG_3_4^{}",
+        "Datetime": "2015-04-06 16:14:40 +0000"
+    },
+    {
+        "Hash": "36f98d87b24c2f542b02abbf6ec1ee742f1b158b",
+        "Tag": "\trefs/tags/LANG_3_5^{}",
+        "Datetime": "2016-10-02 16:10:18 +0200"
+    },
+    {
+        "Hash": "09043bfa6f1f9ebb946c7b159735c83259e3a89f",
+        "Tag": "\trefs/tags/LANG_3_6^{}",
+        "Datetime": "2017-04-17 14:17:38 +0200"
+    },
+    {
+        "Hash": "425d8085cfcaab5a78bf0632f9ae77b7e9127cf8",
+        "Tag": "\trefs/tags/LANG_3_7^{}",
+        "Datetime": "2017-11-04 12:09:44 -0600"
+    },
+    {
+        "Hash": "9801e2fb9fcbf7ddd19221e9342608940d778f8c",
+        "Tag": "\trefs/tags/LANG_3_8^{}",
+        "Datetime": "2018-08-15 21:32:37 -0400"
+    },
+    {
+        "Hash": "abb39c22c0e538fff03ea4e53d78ee60c6c08092",
+        "Tag": "\trefs/tags/commons-lang-3.9^{}",
+        "Datetime": "2019-04-10 21:25:46 -0400"
+    },
+    {
+        "Hash": "e0b474c0d015f89a52c4cf8866fa157dd89e7d1c",
+        "Tag": "\trefs/tags/rel/commons-lang-3.10^{}",
+        "Datetime": "2020-03-23 09:14:11 -0400"
+    },
+    {
+        "Hash": "f62f0f59a33d2c42bd4236ea7122735de30d91fc",
+        "Tag": "\trefs/tags/rel/commons-lang-3.11^{}",
+        "Datetime": "2020-07-12 09:19:13 -0400"
+    },
+    {
+        "Hash": "105a350b154eac7c3f3a6bac94ec2cfb0fbe232b",
+        "Tag": "\trefs/tags/rel/commons-lang-3.12.0^{}",
+        "Datetime": "2021-02-26 14:15:40 -0500"
+    },
+    {
+        "Hash": "78b4f09d0b7e2b209badcc05fdeb1844a469ea68",
+        "Tag": "vL",
+        "Datetime": "2022-12-30 10:06:38 -0500",
+        "Include": false
+    }
+]

@@ -124,7 +124,9 @@ else:
 
                     # Append only not refactored testcase
                     if not is_refactor:
-                        new_df = new_df.append(row, ignore_index=True)
+                        new_df = pd.concat([new_df, pd.DataFrame([row])], ignore_index=True)
+                        # new_df.loc[len(new_df)] = row
+                        # new_df = new_df.append(row, ignore_index=True) # old before pandas v2.0
 
                 if conf.HANDLE_EXPORT == "true":
                     new_df.to_csv(

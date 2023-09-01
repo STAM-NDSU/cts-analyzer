@@ -37,7 +37,6 @@ for project in projects_list:
         print(project)
         print("-----------------")
         VALIDATION_FILES_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
         PROJECT = project
         stat_version_test_deletions_file_path = Path(
             f"{VALIDATION_FILES_DIR}/{PROJECT}/stat_version_test_deletion.csv"

@@ -192,6 +192,7 @@ def get_removed_testcase_and_referenced_functions_details(
                         data = [
                             row["Datetime"],
                             row["Hash"],
+                            row["Parent"],
                             row["Author"],
                             row["Commit Msg"],
                             row["Filepath"],
@@ -219,6 +220,7 @@ def get_removed_testcase_and_referenced_functions_details(
                     columns=[
                         "Datetime",
                         "Hash",
+                        "Parent",
                         "Author",
                         "Commit Msg",
                         "Filepath",

@@ -31,7 +31,7 @@ for index, project in enumerate(projects_list):
         print(project)
         print("-----------------")
         IO_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
+        PROJECTS_DIR = "./../os-java-projects"
         PROJECT = project
         test_deletion_commits_range_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_datetime_inbetweencommits_range.csv"
@@ -129,7 +129,10 @@ ax1.set(
     xlabel="No. of commits",
 )
 fig.tight_layout()
-fig.savefig("../io/rq1/figures/commits-interval-between-test-deletion-commits-violin-2.png", dpi=800)
+fig.savefig(
+    "../io/rq1/figures/commits-interval-between-test-deletion-commits-violin-2.png",
+    dpi=800,
+)
 # plt.show()
 
 

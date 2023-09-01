@@ -11,7 +11,6 @@ import seaborn
 import numpy as np
 
 
-
 projects_list = [
     "commons-lang",
     "gson",
@@ -29,7 +28,7 @@ for index, project in enumerate(projects_list):
         print(project)
         print("-----------------")
         IO_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
+        PROJECTS_DIR = "./../os-java-projects"
         PROJECT = project
         test_deletion_commits_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_commits.csv"
@@ -50,9 +49,7 @@ for index, project in enumerate(projects_list):
     main(project)
 
 
-new_df = pd.DataFrame(
-    test_deletion_commits, columns=["project", "tests"]
-)
+new_df = pd.DataFrame(test_deletion_commits, columns=["project", "tests"])
 fig, ax = plt.subplots(
     figsize=(10, 6),
 )

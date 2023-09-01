@@ -9,7 +9,7 @@ import json
 import matplotlib.pyplot as plt
 import numpy as np
 
-OUT_DIR = '../io/rq1/figures/'
+OUT_DIR = "../io/rq1/figures/"
 
 # plt.rcParams["figure.figsize"] = [4,3]
 # plt.rcParams["figure.autolayout"] = True
@@ -30,14 +30,16 @@ for index, project in enumerate(projects_list):
         print(project)
         print("-----------------")
         IO_DIR = "../io/validationFiles"
-        PROJECTS_DIR = "../io/projects"
+        PROJECTS_DIR = "./../os-java-projects"
         PROJECT = project
         test_deletion_datetime_inbetweencommits_range_file_path = Path(
             f"{IO_DIR}/{PROJECT}/test_deletion_datetime_inbetweencommits_range.csv"
         )
 
         if os.path.exists(f"{test_deletion_datetime_inbetweencommits_range_file_path}"):
-            df = pd.read_csv(f"{test_deletion_datetime_inbetweencommits_range_file_path}")
+            df = pd.read_csv(
+                f"{test_deletion_datetime_inbetweencommits_range_file_path}"
+            )
             df.dropna(inplace=True)
             test_deletion_commits_range[project] = df["Commits"].values.tolist()
             medians.append(np.median(test_deletion_commits_range[project]))
@@ -52,9 +54,10 @@ for index, project in enumerate(projects_list):
 # ax = fig.add_axes([0, 0, 1, 1])
 
 
-
-fig,  (ax1, ax2) = plt.subplots(1,2,
-    figsize=(5,3),
+fig, (ax1, ax2) = plt.subplots(
+    1,
+    2,
+    figsize=(5, 3),
     # sharey=True
 )
 # # Share a X axis with each column of subplots
@@ -95,7 +98,7 @@ colors1 = [
     "blue",
     "brown",
 ]
-colors2=['violet']
+colors2 = ["violet"]
 for patch, color in zip(bp1["boxes"], colors1):
     patch.set_facecolor(color)
 
@@ -119,7 +122,7 @@ ax2.xaxis.grid(True, linestyle="-", which="major", color="lightgrey", alpha=0.5)
 # )
 
 # Set common labels
-fig.text(0.56, 0.02, 'No. of commits', ha='center', va='center')
+fig.text(0.56, 0.02, "No. of commits", ha="center", va="center")
 
 # # Set the axes ranges and axes labels
 # ax.set_xlim(0.5, 100)
@@ -127,8 +130,10 @@ fig.text(0.56, 0.02, 'No. of commits', ha='center', va='center')
 # bottom = -5
 # ax.set_ylim(bottom, top)
 print(list(test_deletion_commits_range.keys()))
-ax1.set_yticklabels(['commons-lang', 'commons-math', 'pmd', 'jfreechart', 'gson', 'joda-time'])
-ax2.set_yticklabels(['cts'])
+ax1.set_yticklabels(
+    ["commons-lang", "commons-math", "pmd", "jfreechart", "gson", "joda-time"]
+)
+ax2.set_yticklabels(["cts"])
 
 # Due to the Y-axis scale being different across samples, it can be
 # hard to compare differences in medians across the samples. Add upper
@@ -149,6 +154,5 @@ ax2.set_yticklabels(['cts'])
 #         #  weight=weights[k], color=box_colors[k]
 #     )
 fig.tight_layout()
-fig.savefig(OUT_DIR + "commits-interval-between-test-deletion-commits.png",
-            dpi=800)
+fig.savefig(OUT_DIR + "commits-interval-between-test-deletion-commits.png", dpi=800)
 # plt.show()

@@ -40,9 +40,10 @@ for project in projects_list:
             if index == 0:
                 prev = {
                     "Datetime": row["Datetime"],
-                    "Commit Msg": row["Commit Msg"],
                     "Hash": row["Hash"],
+                    "Parent": row["Parent"],
                     "Author": row["Author"],
+                    "Commit Msg": row["Commit Msg"],
                     "Filepath": row["Filepath"],
                     "Filename": row["Filename"],
                     "Removed Test Case": row["Removed Test Case"],
@@ -56,10 +57,11 @@ for project in projects_list:
 
             else:
                 if row["Hash"] == prev["Hash"]:
-                    row["Hash"] = ""
-                    row["Commit Msg"] = ""
-                    row["Author"] = ""
                     row["Datetime"] = ""
+                    row["Hash"] = ""
+                    row["Parent"] = ""
+                    row["Author"] = ""
+                    row["Commit Msg"] = ""
 
                     if row["Filepath"] == prev["Filepath"]:
                         row["Filename"] = ""
@@ -69,9 +71,10 @@ for project in projects_list:
                         prev["Filename"] = row["Filename"]
 
                 else:
-                    prev["Hash"] = row["Hash"]
-                    prev["Author"] = row["Author"]
                     prev["Datetime"] = row["Datetime"]
+                    prev["Hash"] = row["Hash"]
+                    row["Parent"] = row["Parent"]
+                    prev["Author"] = row["Author"]
                     prev["Commit Msg"] = row["Commit Msg"]
                     prev["Filepath"] = row["Filepath"]
                     prev["Filename"] = row["Filename"]
@@ -79,6 +82,7 @@ for project in projects_list:
             data = [
                 row["Datetime"],
                 row["Hash"],
+                row["Parent"],
                 row["Author"],
                 row["Commit Msg"],
                 row["Filepath"],
@@ -102,6 +106,7 @@ for project in projects_list:
             columns=[
                 "Datetime",
                 "Hash",
+                "Parent",
                 "Author",
                 "Commit Msg",
                 "Filepath",

@@ -1,5 +1,5 @@
 """
-Computes test-deletion stat across projects
+Computes test-deletion commits stat across projects
 """
 
 

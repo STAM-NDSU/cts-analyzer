@@ -1,0 +1,240 @@
+[
+    {
+        "Hash": "3764044de62a129b2750e786d246149efa79abee",
+        "Tag": "initial commit",
+        "Datetime": "2008-04-24 01:05:41 +0000"
+    },
+    {
+        "Hash": "59fc4f707f58e9217af155dd8bd9f75d7e907483",
+        "Tag": "\trefs/tags/1.0",
+        "Datetime": "2008-05-22 22:20:23 +0000"
+    },
+    {
+        "Hash": "1cf2a97feff367ec541ddae838f315755bdd2805",
+        "Tag": "\trefs/tags/1.1",
+        "Datetime": "2008-07-01 20:01:31 +0000"
+    },
+    {
+        "Hash": "d370fee313626b663ac080cc157277f058c962b4",
+        "Tag": "\trefs/tags/1.1.1",
+        "Datetime": "2008-07-19 01:23:13 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "c31cabf7ad210723828dd1a2794ab5b068a84ec9",
+        "Tag": "\trefs/tags/1.2",
+        "Datetime": "2008-08-31 00:02:42 +0000"
+    },
+    {
+        "Hash": "99fccfb78685f6cf0756c251d0cefb1eae50f560",
+        "Tag": "\trefs/tags/1.2.2",
+        "Datetime": "2008-10-15 01:33:44 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "046630daf4b8d124d8529a66e72ec659ed4c9d3d",
+        "Tag": "\trefs/tags/1.2.3",
+        "Datetime": "2008-11-15 17:51:00 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "4ca0dc0998acea1480a1f7aa53e8d2794940dc88",
+        "Tag": "\trefs/tags/1.3",
+        "Datetime": "2009-04-02 01:57:59 +0000"
+    },
+    {
+        "Hash": "15ae13311ed17df65cfe2ac359ddb248c3eb2cc7",
+        "Tag": "\trefs/tags/1.4-beta",
+        "Datetime": "2009-10-10 00:00:45 +0000"
+    },
+    {
+        "Hash": "aa403bd2d37de046003c977901b7a0de5c7e19f2",
+        "Tag": "\trefs/tags/1.5",
+        "Datetime": "2010-08-20 01:27:46 +0000"
+    },
+    {
+        "Hash": "a33f40b99b9195a31ab69426385475eb87fbfe3f",
+        "Tag": "\trefs/tags/1.6",
+        "Datetime": "2010-11-24 23:54:53 +0000"
+    },
+    {
+        "Hash": "7bc308cb61e91443ccd875f3ade126f72ff16248",
+        "Tag": "\trefs/tags/1.7",
+        "Datetime": "2011-04-12 23:10:49 +0000"
+    },
+    {
+        "Hash": "01c9b2057377d2021e23f8f9b11ee0a3d56932de",
+        "Tag": "\trefs/tags/gson-1.7.1",
+        "Datetime": "2011-04-13 19:51:42 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "e8dd1bbf54d32c97698dcccb71e83ce047102d2c",
+        "Tag": "\trefs/tags/gson-1.7.2",
+        "Datetime": "2011-08-05 22:38:01 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "22ee5630f4cd6b34e4af8c6186c005df50088c76",
+        "Tag": "\trefs/tags/gson-2.0",
+        "Datetime": "2011-11-13 21:10:13 +0000"
+    },
+    {
+        "Hash": "30245b8cc43fbb90f64cb6b42d926ce40f22515d",
+        "Tag": "\trefs/tags/gson-2.1",
+        "Datetime": "2011-12-31 07:14:26 +0000"
+    },
+    {
+        "Hash": "8eaf0c271e54fa93410242cd67a430e939c79bf9",
+        "Tag": "\trefs/tags/gson-2.2",
+        "Datetime": "2012-05-06 00:31:20 +0000"
+    },
+    {
+        "Hash": "08bbb9c30bead60820e24eb5a69d814ee217380e",
+        "Tag": "\trefs/tags/gson-2.2.1",
+        "Datetime": "2012-05-11 18:41:17 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "c506fa79aab2b0710558c481e5af0e2c0ab0f09b",
+        "Tag": "\trefs/tags/gson-2.2.2",
+        "Datetime": "2012-07-03 00:44:52 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "d260faffee51cb3b5d04a2a6fc09f079e2ae990f",
+        "Tag": "\trefs/tags/gson-2.2.3",
+        "Datetime": "2013-04-12 21:31:06 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "ca40a338de56871027f6c31b62f47f810f092bef",
+        "Tag": "\trefs/tags/gson-2.2.4",
+        "Datetime": "2013-05-13 21:36:43 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "0eaa8d198cb756bce72cb9f15819193eea64df4a",
+        "Tag": "\trefs/tags/gson-2.3",
+        "Datetime": "2014-08-11 23:35:32 +0000"
+    },
+    {
+        "Hash": "2b1c614e3ee2688a904337a23b893b3f48c8a082",
+        "Tag": "\trefs/tags/gson-2.3.1",
+        "Datetime": "2014-11-20 09:09:26 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "5d414d68ea79cc01bdd574656099a08228b82aa2",
+        "Tag": "\trefs/tags/gson-2.4^{}",
+        "Datetime": "2015-10-03 17:13:56 -0700"
+    },
+    {
+        "Hash": "d7d064feb8d53b426c77035f3cb659d797402b98",
+        "Tag": "\trefs/tags/gson-parent-2.5^{}",
+        "Datetime": "2015-11-23 19:32:26 -0800"
+    },
+    {
+        "Hash": "b8220eb19513fa908908b467b97ff8f823b34e1c",
+        "Tag": "\trefs/tags/gson-parent-2.6^{}",
+        "Datetime": "2016-02-11 13:03:10 -0500"
+    },
+    {
+        "Hash": "3c9b9af0a1f2f5b40bec947bf216fa627697445f",
+        "Tag": "\trefs/tags/gson-parent-2.6.1^{}",
+        "Datetime": "2016-02-11 22:52:59 -0500",
+        "Include": false
+    },
+    {
+        "Hash": "fe62b04148a0fe09cb38dcb667a5053b89e6c76d",
+        "Tag": "\trefs/tags/gson-parent-2.6.2^{}",
+        "Datetime": "2016-02-26 18:22:26 -0800",
+        "Include": false
+    },
+    {
+        "Hash": "9722b00372672214794edea844a236d83e72b273",
+        "Tag": "\trefs/tags/gson-parent-2.7^{}",
+        "Datetime": "2016-06-14 16:52:28 -0700"
+    },
+    {
+        "Hash": "e9ead40302b3466f557a82f924907de59462deb9",
+        "Tag": "\trefs/tags/gson-parent-2.8.0^{}",
+        "Datetime": "2016-10-26 23:01:37 -0700"
+    },
+    {
+        "Hash": "3e74bb47d1a72f72873109e8f0407a34d25fe7e6",
+        "Tag": "\trefs/tags/gson-parent-2.8.1^{}",
+        "Datetime": "2017-05-30 18:37:51 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "d90f63dc88ac08971cf088a3537e1b1108603574",
+        "Tag": "\trefs/tags/gson-parent-2.8.2^{}",
+        "Datetime": "2017-09-19 18:41:34 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "4ed639e88291228b384201ea60b9a0b433e8bfa8",
+        "Tag": "\trefs/tags/gson-parent-2.8.3^{}",
+        "Datetime": "2018-04-27 15:34:15 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "9fbebdf990ef40d3f59b02b5b5fccb2f447f8759",
+        "Tag": "\trefs/tags/gson-parent-2.8.4^{}",
+        "Datetime": "2018-05-01 11:06:25 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "f649e051411e092f0123878e16c5132500a2d01e",
+        "Tag": "\trefs/tags/gson-parent-2.8.5^{}",
+        "Datetime": "2018-05-21 20:08:09 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "29c93895bbcaed02178abc9e3d47b73878aaca73",
+        "Tag": "\trefs/tags/gson-parent-2.8.6^{}",
+        "Datetime": "2019-10-04 11:54:03 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "4520489c29e770c64b11ca35e0a0fdf17a1874ab",
+        "Tag": "\trefs/tags/gson-parent-2.8.7^{}",
+        "Datetime": "2021-05-24 16:22:41 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "b41030d3dc965eca1b0a0f1c35ce185dd8e80e99",
+        "Tag": "\trefs/tags/gson-parent-2.8.8^{}",
+        "Datetime": "2021-08-20 09:07:19 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "6a368d89da37917be7714c3072b8378f4120110a",
+        "Tag": "\trefs/tags/gson-parent-2.8.9^{}",
+        "Datetime": "2021-10-29 12:58:54 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "b6acf1178a1e9279a77235abe55d6895dd5c09f3",
+        "Tag": "\trefs/tags/gson-parent-2.9.0^{}",
+        "Datetime": "2022-02-11 11:13:22 -0800"
+    },
+    {
+        "Hash": "bb9a1f255aa7e7a07bf42f5bffe04f9204a59eb1",
+        "Tag": "\trefs/tags/gson-parent-2.9.1^{}",
+        "Datetime": "2022-07-31 14:25:32 -0700",
+        "Include": false
+    },
+    {
+        "Hash": "dd92e49b279f335006433148e673fdfb2c387074",
+        "Tag": "\trefs/tags/gson-parent-2.10^{}",
+        "Datetime": "2022-10-24 18:06:55 -0700"
+    },
+    {
+        "Hash": "1a2170b99c9d293e825bf8f511b191196326ea03",
+        "Tag": "vL",
+        "Datetime": "2022-12-22 15:04:16 +0100",
+        "Include": false
+    }
+]

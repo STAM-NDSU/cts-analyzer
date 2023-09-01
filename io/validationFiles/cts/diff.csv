@@ -1,0 +1,211 @@
+Datetime,Hash,Author,Commit Msg,Filepath,Filename,Removed Test Case,Manual Validation,Final Results
+09/28/2021 07:37:04,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/06a952a180e17fd5688b845566dbecb6411aa2a9"", ""06a952a180e17fd5688b845566dbecb6411aa2a9"")",scottjonathan@google.com,"Make TestApis static.
+
+Currently we create a TestApis in every test class but we don't actually
+make use of the state so it's wasteful and makes our APIs more complex.
+
+This is a big change but it should have no functional change.
+
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest HarrierTest
+Test: atest RemoteDpcTest
+Test: atest CtsDevicePolicyTestCases
+Fixes: 200779840
+Change-Id: I8f839d411e1bcd1b18fdd61c650a65fc37fc47fd",common/device-side/bedstead/nene/src/test/java/com/android/bedstead/nene/packages/PackagesTest.java,PackagesTest.java,construct_nullTestApis_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/nene/src/test/java/com/android/bedstead/nene/devicepolicy/DevicePolicyTest.java,DevicePolicyTest.java,setDeviceOwner_nullUser_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/nene/src/test/java/com/android/bedstead/nene/devicepolicy/DevicePolicyTest.java,DevicePolicyTest.java,setDeviceOwner_userDoesNotExist_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/remotedpc/src/test/java/com/android/bedstead/remotedpc/RemoteDpcTest.java,RemoteDpcTest.java,setAsDeviceOwner_userHandle_null_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/remotedpc/src/test/java/com/android/bedstead/remotedpc/RemoteDpcTest.java,RemoteDpcTest.java,setAsDeviceOwner_userHandle_nonExistingUser_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/remotedpc/src/test/java/com/android/bedstead/remotedpc/RemoteDpcTest.java,RemoteDpcTest.java,setAsDeviceOwner_userReference_null_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/remotedpc/src/test/java/com/android/bedstead/remotedpc/RemoteDpcTest.java,RemoteDpcTest.java,setAsDeviceOwner_userReference_nonExistingUser_throwsException,yes,yes
+09/29/2021 06:20:12,"=HYPERLINK(""https://android.googlesource.com/platform/cts/+/1390ca540e3cc916e4a877207b7cc1c7928aa801"", ""1390ca540e3cc916e4a877207b7cc1c7928aa801"")",scottjonathan@google.com,"Fix Bedstead infra tests for Auto
+
+This actually makes a number of changes at once as I had to keep fixing
+things to get these to pass:
+* Simplify setDeviceOwner to always refer to user 0 (it does in practice
+anyway)
+* Update a bunch of tests of the infra to use the infra themselves (it
+wasn't ready when they were written) - this takes advantage of the infra
+managing the users
+* Sort annotations in a deterministic (but mostly arbitrary) way - this
+avoids situations where we e.g. manage a profile owner and later try to
+set a device owner which breaks
+* Add support for stopBgUsersOnSwitch
+* Add support for an ""initial"" user
+* Deal with complexities around setting a po at the same time as a do
+(cleaning up - removing existing pos first, additional permissions,
+etc.)
+* Hard-code the system user in some tests which previously assumed it
+* Mark a bunch of tests which create work profiles so they'll be skipped
+
+Test: atest EventLibTest
+Test: atest HarrierTest
+Test: atest NeneTest
+Test: atest TestAppTest
+Test: atest RemoteDpcTest
+Bug: 193814739
+
+Change-Id: I164ec7c6d4671c2a9d57da5e250f4d0cb7d7837e",common/device-side/bedstead/remotedpc/src/test/java/com/android/bedstead/remotedpc/RemoteDpcTest.java,RemoteDpcTest.java,setAsDeviceOwner_userReference_alreadySet_doesNothing,yes,yes

@@ -123,7 +123,7 @@ for p_index, project in enumerate(projects_list):
             test_deletion_commits_df = deleted_tc_df["Hash"].value_counts().to_frame()
             test_deletion_commits_df = test_deletion_commits_df.reset_index()
             test_deletion_commits_df = test_deletion_commits_df.rename(
-                columns={"index": "Commit Hash", "Hash": "Total Test Cases"},
+                columns={"Hash": "Commit Hash", "count": "Total Test Cases"},
                 errors="raise",
             )
             test_deletion_commits_df.to_csv(
@@ -165,7 +165,11 @@ for p_index, project in enumerate(projects_list):
                         # Compute no of in-between commits
                         # ($(git rev-list --count A..B) - 1) # Git cmd; excludes both end point
                         # cmd = f'git rev-list --count {strip_commit_url(prev["Hash"])}..{strip_commit_url(row["Hash"])}'
-                        q
+                        since = prev["Datetime"]
+                        until = row["Datetime"]
+                        cmd = f'git rev-list --count {projects_main_brances[p_index]}  --since="{since}" --until="{until}"'
+                        current_state = os.getcwd()
+                        os.chdir(f"./../os-java-projects/{project}")
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")
@@ -174,7 +178,6 @@ for p_index, project in enumerate(projects_list):
                         test_deletion_datetime_inbetweencommits_range.append(
                             [row["Hash"], range, no_of_commits]
                         )
-                        print(prev["Datetime"])
                         # Update the previous unique hash record
                         prev["Datetime"] = row["Datetime"]
                         prev["Hash"] = row["Hash"]

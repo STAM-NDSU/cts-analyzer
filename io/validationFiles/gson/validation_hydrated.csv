@@ -1,0 +1,1593 @@
+Datetime,Hash,Commit Msg,Filename,Removed Test Case,Manual Validation,Final Results,Ajay Manual Validation,Suraj Manual Validation,Ajay Comments,Suraj Comments
+11/13/2008 20:17:19,"=HYPERLINK(""https://github.com/google/gson/commit/bc2c25f235808c7e90d9bde6b2795997405af0cf"", ""bc2c25f235808c7e90d9bde6b2795997405af0cf"")","Removed ExceptionWrapper from serializers. 
+This is done since it is improper to throw a parse exception from serializers. Moreover, the serializers dont deal with external input, they deal with classes, so they need not guard against spurious input.",JsonSerializerExceptionWrapperTest.java,testRethrowJsonParseException,yes,yes,yes,yes,,
+11/13/2008 20:17:19,"=HYPERLINK(""https://github.com/google/gson/commit/bc2c25f235808c7e90d9bde6b2795997405af0cf"", ""bc2c25f235808c7e90d9bde6b2795997405af0cf"")","Removed ExceptionWrapper from serializers. 
+This is done since it is improper to throw a parse exception from serializers. Moreover, the serializers dont deal with external input, they deal with classes, so they need not guard against spurious input.",JsonSerializerExceptionWrapperTest.java,testWrappedExceptionPropagation,yes,yes,yes,yes,,
+11/13/2008 20:17:19,"=HYPERLINK(""https://github.com/google/gson/commit/bc2c25f235808c7e90d9bde6b2795997405af0cf"", ""bc2c25f235808c7e90d9bde6b2795997405af0cf"")","Removed ExceptionWrapper from serializers. 
+This is done since it is improper to throw a parse exception from serializers. Moreover, the serializers dont deal with external input, they deal with classes, so they need not guard against spurious input.",JsonSerializerExceptionWrapperTest.java,testProperSerialization,yes,yes,yes,yes,,
+11/14/2008 23:11:28,"=HYPERLINK(""https://github.com/google/gson/commit/cf2a457af7b0422e7728e0d55a4e794048af5a6b"", ""cf2a457af7b0422e7728e0d55a4e794048af5a6b"")",Removed the TypeAdapter object from GSON now that the primitive objects and fields are created by a custom Type Adapter.,PrimitiveTypeAdapterTest.java,testImproperConversion,yes,yes,yes,yes,,
+11/14/2008 23:11:28,"=HYPERLINK(""https://github.com/google/gson/commit/cf2a457af7b0422e7728e0d55a4e794048af5a6b"", ""cf2a457af7b0422e7728e0d55a4e794048af5a6b"")",Removed the TypeAdapter object from GSON now that the primitive objects and fields are created by a custom Type Adapter.,PrimitiveTypeAdapterTest.java,testImproperCharacterConversion,yes,yes,yes,yes,,
+11/14/2008 23:11:28,"=HYPERLINK(""https://github.com/google/gson/commit/cf2a457af7b0422e7728e0d55a4e794048af5a6b"", ""cf2a457af7b0422e7728e0d55a4e794048af5a6b"")",Removed the TypeAdapter object from GSON now that the primitive objects and fields are created by a custom Type Adapter.,PrimitiveTypeAdapterTest.java,testProperPrimitiveConversions,yes,yes,yes,yes,,
+11/14/2008 23:11:28,"=HYPERLINK(""https://github.com/google/gson/commit/cf2a457af7b0422e7728e0d55a4e794048af5a6b"", ""cf2a457af7b0422e7728e0d55a4e794048af5a6b"")",Removed the TypeAdapter object from GSON now that the primitive objects and fields are created by a custom Type Adapter.,PrimitiveTypeAdapterTest.java,testProperEnumConversions,yes,yes,yes,yes,,
+12/19/2008 11:46:24,"=HYPERLINK(""https://github.com/google/gson/commit/53f7d26b6d442467d54f0e61fdf030cd395011f7"", ""53f7d26b6d442467d54f0e61fdf030cd395011f7"")","removed tests for serialization of BigDecimal NaN, positive and negative infinity since BigDecimal can not be created with these values.",PrimitiveTest.java,testBigDecimalNaNSerializationNotSupported,yes,yes,yes,yes,,
+12/19/2008 11:46:24,"=HYPERLINK(""https://github.com/google/gson/commit/53f7d26b6d442467d54f0e61fdf030cd395011f7"", ""53f7d26b6d442467d54f0e61fdf030cd395011f7"")","removed tests for serialization of BigDecimal NaN, positive and negative infinity since BigDecimal can not be created with these values.",PrimitiveTest.java,testBigDecimalInfinitySerializationNotSupported,yes,yes,yes,yes,,
+12/19/2008 11:46:24,"=HYPERLINK(""https://github.com/google/gson/commit/53f7d26b6d442467d54f0e61fdf030cd395011f7"", ""53f7d26b6d442467d54f0e61fdf030cd395011f7"")","removed tests for serialization of BigDecimal NaN, positive and negative infinity since BigDecimal can not be created with these values.",PrimitiveTest.java,testNegativeInfinityBigDecimalSerializationNotSupported,yes,yes,yes,yes,,
+03/30/2009 13:36:55,"=HYPERLINK(""https://github.com/google/gson/commit/e340801d258e18f733620b0fd03d65fffb8df6c3"", ""e340801d258e18f733620b0fd03d65fffb8df6c3"")",Moved enum-related tests under EnumTest class.,EnumTest.java,testEnumFieldSerialization,conflict,yes,no,yes,,looks modified but is deleted
+03/30/2009 13:36:55,"=HYPERLINK(""https://github.com/google/gson/commit/e340801d258e18f733620b0fd03d65fffb8df6c3"", ""e340801d258e18f733620b0fd03d65fffb8df6c3"")",Moved enum-related tests under EnumTest class.,EnumTest.java,testEnumFieldDeserialization,conflict,yes,no,yes,,looks modified but is deleted
+05/19/2009 12:59:32,"=HYPERLINK(""https://github.com/google/gson/commit/cd9bd710927b7c2a2f01b75430a42e58b18fb456"", ""cd9bd710927b7c2a2f01b75430a42e58b18fb456"")",Allow JS Keywords as field name.  These names are quoted anyways (and are valid according to the JSON spec) so it should not cause any issues.,JsonFieldNameValidatorTest.java,testKeywordAsFieldName,no,no,no,no,,renamed and refactored
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testNonStringPrimitiveVisitation,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringPrimitiveVisitationNoEscapingRequired,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringPrimitiveVisitationEscapingRequired,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testNonStringArrayVisitation,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringArrayVisitationNoEscaping,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringArrayVisitationEscapingRequired,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testNonStringFieldVisitation,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringFieldVisitationNoEscaping,yes,yes,yes,yes,,
+09/23/2009 13:28:03,"=HYPERLINK(""https://github.com/google/gson/commit/50eb582657b5a07aa4aec22f11c9f3071eb631a8"", ""50eb582657b5a07aa4aec22f11c9f3071eb631a8"")",Ensure that the JsonElement.toString() will always generate valid JSON (even when  control characters/whitespace characters are used).,JsonEscapingVisitorTest.java,testStringFieldVisitationEscapingRequired,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testCtrlN,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testCtrlR,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testCtrlT,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testBackSpace,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testFormFeed,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testSingleQuote,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testSingleQuoteEscaped,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testDoubleQuote,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testDoubleQuoteEscaped,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testBackslash,yes,yes,yes,yes,,
+11/01/2010 17:57:39,"=HYPERLINK(""https://github.com/google/gson/commit/43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"", ""43f2a0012b5fb9c94a5e1bb926034e136a3a8dfb"")",Removed JavaCC parser definition and its generated classes.,StringUnmarshallerTest.java,testUnicodeString,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,IdTest.java,testRawTypeNotEqualToParameterizedOfConcreteType,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,IdTest.java,testRawTypeEqualToParameterizedOfWildcardType,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,IdTest.java,testStaticEquals,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,IdTypeAdapterTest.java,testSerializeId,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,IdTypeAdapterTest.java,testDeserializeId,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testVersionIsSkipped,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testVersionNotPresent,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testResourceIdPresent,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testResourceIdWithEndSlashPresent,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testVersionAndResourceIdPresent,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testNullPath,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testEmptyPath,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,CallPathTest.java,testWhiteSpacePath,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,TypedKeyTest.java,testEqualsForSameName,yes,yes,yes,yes,,
+11/12/2010 11:12:46,"=HYPERLINK(""https://github.com/google/gson/commit/822d1bc75e70538f01638955bf766316e416499c"", ""822d1bc75e70538f01638955bf766316e416499c"")",moved contents of wsdef to greaze-definition.,TypedKeyTest.java,testEqualsFailsForDifferentClasses,yes,yes,yes,yes,,
+11/16/2010 16:18:28,"=HYPERLINK(""https://github.com/google/gson/commit/56344cf06786bf8cd031933a5fc39eeacde7d942"", ""56344cf06786bf8cd031933a5fc39eeacde7d942"")",Remove duplicate test.,JsonParserTest.java,testParseSingleWordFails,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testArray,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testArrayOfArrays,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testParameterizedArray,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testParameterizedArrayOfArrays,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testNestedParameterizedArray,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testPrimitiveArray,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testStringArray,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testPrimitiveArrayType,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testStringArrayType,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoArrayTest.java,testArrayAsParameterizedTypes,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testSimpleField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testEnumField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testParameterizedTypeField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testNestedParameterizedTypeField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testGenericArrayTypeField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testTypeVariableField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testTypeVariableArrayField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testMutliDimensionalTypeVariableArrayField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testParameterizedTypeVariableField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testNestedParameterizedTypeVariableField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testParameterizedTypeVariableArrayField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testArrayOfWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testListStringWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testArrayOfListStringWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testListTypeVariableWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoFactoryTest.java,testArrayOfListTypeVariableWildcardField,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoMapTest.java,testInvalidConstruction,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoMapTest.java,testNonMapConstruction,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoMapTest.java,testBasicGetters,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoMapTest.java,testMapImplementations,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testPrimitive,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testPrimitiveWrapper,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testString,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testObject,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testPrimitiveType,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testObjectType,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testParameterizedTypes,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testGenericizedGenericType,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeInfoTest.java,testStrangeTypeParameters,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeUtilsTest.java,testGetActualTypeForFirstTypeVariable,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeUtilsTest.java,testIsArrayForNonArrayClasses,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeUtilsTest.java,testIsArrayForArrayClasses,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeUtilsTest.java,testToRawClassForNonGenericClasses,yes,yes,yes,yes,,
+12/03/2010 2:07:13,"=HYPERLINK(""https://github.com/google/gson/commit/d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"", ""d1ddab2e6ffcd938ac0d133fd46caf5fb2417009"")","Swap out GSON's type mechanics with the Type resolution code from Guice.
+
+The most significant impact of this change is that fields whose types are type parameters should now GSONify just fine. For example, consider the class below.
+
+abstract class Foo<A, B> {
+   A a;
+   B b;
+   List<A> list;
+   Map<A, List<B>> map;
+}
+class RealFoo extends Foo<String, Integer> {...}
+
+This is a reasonable checkpoint but some work still needs to be done for this. In particular, the level of visibility of methods in TypeToken and Type should be reconsidered; we're exposing more than we need to!",TypeUtilsTest.java,testToRawClassForGenericClasses,yes,yes,yes,yes,,
+01/10/2011 16:47:36,"=HYPERLINK(""https://github.com/google/gson/commit/0e5f6704cd5f438c55efe1fcf70c857f95f8190b"", ""0e5f6704cd5f438c55efe1fcf70c857f95f8190b"")",Added sonatype oss as parent for the pom. Diabled repository management with-in POM per instructions at: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide,TypeTokenTest.java,testIsAssignableFromRawTypes,yes,yes,yes,yes,,
+01/10/2011 16:47:36,"=HYPERLINK(""https://github.com/google/gson/commit/0e5f6704cd5f438c55efe1fcf70c857f95f8190b"", ""0e5f6704cd5f438c55efe1fcf70c857f95f8190b"")",Added sonatype oss as parent for the pom. Diabled repository management with-in POM per instructions at: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide,TypeTokenTest.java,testIsAssignableFromWithTypeParameters,yes,yes,yes,yes,,
+01/10/2011 16:47:36,"=HYPERLINK(""https://github.com/google/gson/commit/0e5f6704cd5f438c55efe1fcf70c857f95f8190b"", ""0e5f6704cd5f438c55efe1fcf70c857f95f8190b"")",Added sonatype oss as parent for the pom. Diabled repository management with-in POM per instructions at: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide,TypeTokenTest.java,testIsAssignableFromWithBasicWildcards,yes,yes,yes,yes,,
+01/10/2011 16:47:36,"=HYPERLINK(""https://github.com/google/gson/commit/0e5f6704cd5f438c55efe1fcf70c857f95f8190b"", ""0e5f6704cd5f438c55efe1fcf70c857f95f8190b"")",Added sonatype oss as parent for the pom. Diabled repository management with-in POM per instructions at: https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide,TypeTokenTest.java,testIsAssignableFromWithNestedWildcards,yes,yes,yes,yes,,
+02/03/2011 21:09:41,"=HYPERLINK(""https://github.com/google/gson/commit/114633fbf933c3085a189d20c62fadae0398fb39"", ""114633fbf933c3085a189d20c62fadae0398fb39"")",Provide a means to add serialization or deserialization specific exclusion strategies.,ExclusionStrategy2AdapterTest.java,testConstruction,yes,yes,yes,yes,,
+02/03/2011 21:09:41,"=HYPERLINK(""https://github.com/google/gson/commit/114633fbf933c3085a189d20c62fadae0398fb39"", ""114633fbf933c3085a189d20c62fadae0398fb39"")",Provide a means to add serialization or deserialization specific exclusion strategies.,ExclusionStrategy2AdapterTest.java,testAdapterDoesSameForBothModes,yes,yes,yes,yes,,
+02/03/2011 21:09:41,"=HYPERLINK(""https://github.com/google/gson/commit/114633fbf933c3085a189d20c62fadae0398fb39"", ""114633fbf933c3085a189d20c62fadae0398fb39"")",Provide a means to add serialization or deserialization specific exclusion strategies.,FunctionWithInternalDependenciesTest.java,testUserDefinedExclusionPolicies,yes,yes,yes,yes,,
+02/03/2011 21:09:41,"=HYPERLINK(""https://github.com/google/gson/commit/114633fbf933c3085a189d20c62fadae0398fb39"", ""114633fbf933c3085a189d20c62fadae0398fb39"")",Provide a means to add serialization or deserialization specific exclusion strategies.,ExclusionStrategyFunctionalTest.java,testExclusionStrategy2Serialization,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testValidFieldBeginsWithDollarSign,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testValidFieldBeginsWithUnderscore,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testValidFieldBeginsWithLetter,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testValidFieldMixingLetter,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testInvalidFieldStartingWithNumbers,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testInvalidFieldStartingTwoDollarSigns,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testInvalidFieldStartingTwoUnderscores,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testInvalidFieldStartingDollarUnderscore,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testJavaAndJsKeywordAsFieldName,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testInvalidCharacters,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testDashesInFieldName,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testSpacesInFieldName,yes,yes,yes,yes,,
+04/12/2011 12:29:19,"=HYPERLINK(""https://github.com/google/gson/commit/4917fc7f7628518ade0dfa11464192a17af1c7d1"", ""4917fc7f7628518ade0dfa11464192a17af1c7d1"")","Lift restriction on naming when using the ""@SerializedNamed"" annotation.
+
+Fix for Issue 290.",JsonFieldNameValidatorTest.java,testSpacesInBeginningOfName,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testNoSpecialCharacters,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testNewlineEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testCarrageReturnEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testTabEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testDoubleQuoteEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testSingleQuoteEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testLineSeparatorEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testParagraphSeparatorEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testControlCharBlockEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testEqualsEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testGreaterThanAndLessThanEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testAmpersandEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testSlashEscaping,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testSingleQuoteNotEscaped,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testRequiredEscapingUnicodeCharacter,yes,yes,yes,yes,,
+07/12/2011 18:50:00,"=HYPERLINK(""https://github.com/google/gson/commit/9cf579ef01e66dad2ffe907350d2d088497138a8"", ""9cf579ef01e66dad2ffe907350d2d088497138a8"")","Use Streams instead of Escaper.
+
+Fixes issue 345.",EscaperTest.java,testUnicodeCharacterStringNoEscaping,yes,yes,yes,yes,,
+09/08/2011 23:20:25,"=HYPERLINK(""https://github.com/google/gson/commit/f67940cb638fcf4d3443b057176bb1b84d054ac0"", ""f67940cb638fcf4d3443b057176bb1b84d054ac0"")","Retire two old bad features
+ - overriding primitive type adapters
+ - auto unwrapping of single element arrays",ArrayTest.java,testArrayOfPrimitivesWithCustomTypeAdapter,yes,yes,yes,yes,,
+09/08/2011 23:20:25,"=HYPERLINK(""https://github.com/google/gson/commit/f67940cb638fcf4d3443b057176bb1b84d054ac0"", ""f67940cb638fcf4d3443b057176bb1b84d054ac0"")","Retire two old bad features
+ - overriding primitive type adapters
+ - auto unwrapping of single element arrays",ArrayTest.java,testArrayOfObjectsWithoutTypeInfoDeserialization,yes,yes,yes,yes,,
+09/08/2011 23:20:25,"=HYPERLINK(""https://github.com/google/gson/commit/f67940cb638fcf4d3443b057176bb1b84d054ac0"", ""f67940cb638fcf4d3443b057176bb1b84d054ac0"")","Retire two old bad features
+ - overriding primitive type adapters
+ - auto unwrapping of single element arrays",ArrayTest.java,testArrayWithoutTypeInfoDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testPrimitiveIntegerAutoboxedInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testPrimitiveLongAutoboxedInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testPrimitiveBooleanAutoboxedInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testPrimitiveDoubleAutoboxedInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testBigDecimalInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testBigIntegerInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testOverridingDefaultPrimitiveSerialization,yes,yes,yes,yes,,
+09/09/2011 0:23:01,"=HYPERLINK(""https://github.com/google/gson/commit/da67003eeff2c506a2c84ac0ee4191a9e11c25df"", ""da67003eeff2c506a2c84ac0ee4191a9e11c25df"")","GSON 1.x uses arbitrary precision for primitive type conversion (so -122.08e-2132 != 0)
+GSON 2.x uses double precision (so -122.08e-2132 == 0)",PrimitiveTest.java,testDeserializingBigDecimalAsLongFails,conflict,no,no,yes,,
+09/09/2011 0:41:35,"=HYPERLINK(""https://github.com/google/gson/commit/9424949245bb46bd63f3fed83e67daa9fdbdbff9"", ""9424949245bb46bd63f3fed83e67daa9fdbdbff9"")",Don't unwrap single-element String arrays,StringTest.java,testStringValueAsSingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/09/2011 1:26:21,"=HYPERLINK(""https://github.com/google/gson/commit/e7566085683827ae9278880c38e21a80ccd573d9"", ""e7566085683827ae9278880c38e21a80ccd573d9"")",Forbid custom serializers for primitive types (so we can avoid boxing in the reflective and array adapters),CustomDeserializerTest.java,testCustomDeserializerReturnsNullForTopLevelPrimitives,yes,yes,yes,yes,,
+09/09/2011 1:26:21,"=HYPERLINK(""https://github.com/google/gson/commit/e7566085683827ae9278880c38e21a80ccd573d9"", ""e7566085683827ae9278880c38e21a80ccd573d9"")",Forbid custom serializers for primitive types (so we can avoid boxing in the reflective and array adapters),CustomDeserializerTest.java,testCustomDeserializerReturnsNullForPrimitiveFields,yes,yes,yes,yes,,
+09/09/2011 1:26:21,"=HYPERLINK(""https://github.com/google/gson/commit/e7566085683827ae9278880c38e21a80ccd573d9"", ""e7566085683827ae9278880c38e21a80ccd573d9"")",Forbid custom serializers for primitive types (so we can avoid boxing in the reflective and array adapters),CustomTypeAdaptersTest.java,testCustomSerializerForLong,no,no,no,no,,"refactored- and tested feature 
+is not available"
+09/09/2011 1:26:21,"=HYPERLINK(""https://github.com/google/gson/commit/e7566085683827ae9278880c38e21a80ccd573d9"", ""e7566085683827ae9278880c38e21a80ccd573d9"")",Forbid custom serializers for primitive types (so we can avoid boxing in the reflective and array adapters),CustomTypeAdaptersTest.java,testCustomDeserializerForLong,no,no,no,no,,"refactored- and tested feature 
+is not available"
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",DefaultConstructorAllocatorTest.java,testObjectConstructor,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",DefaultConstructorAllocatorTest.java,testMissingDefaultConstructor,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MappedObjectConstructorTest.java,testInstanceCreatorTakesTopPrecedence,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MappedObjectConstructorTest.java,testNoInstanceCreatorInvokesDefaultConstructor,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MappedObjectConstructorTest.java,testNoDefaultConstructor,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MemoryRefStackTest.java,testPeekEmptyStack,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MemoryRefStackTest.java,testPushPeekAndPop,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MemoryRefStackTest.java,testPopTooMany,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",MemoryRefStackTest.java,testContains,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",NullExclusionStrategyTest.java,testNeverSkipsClass,yes,yes,yes,yes,,
+09/11/2011 2:04:56,"=HYPERLINK(""https://github.com/google/gson/commit/25c6ae177b1ca56db7f3c29eb574bdd032a06165"", ""25c6ae177b1ca56db7f3c29eb574bdd032a06165"")","Down to 22 failing tests.
+
+Consolidated all of the different code paths that we use to construct instances. We now have an ObjectConstructor class that knows what type it constructs; this means that we don't need to ever do reflection to lookup a constructor at construction time.
+
+Cleaned up some buggy type adapters, particularly around handling of null.
+
+Removed dead code for object graph navigation.
+
+Moved some classes into 'internal' so they are visible to the 'bind' subpackage.
+
+Turned some TypeAdapterFactory/TypeAdapter pairs inside out so that the TypeAdapter is now the inner class. This is necessary so that the factories can take parameters.
+
+Added an API to request the 'next' type adapter for a type. This allows type adapters to compose other type adapters. We're using this in two places:
+ - where the user has excluded a type from serialization but not deserialization, we need to use the ""default"" deserialization but interpose null on serialization. We create a type adapter that delegates for one and returns null for the other.
+ - similarly when a DOM type serializer is registered but no deserializer, or vice versa.
+This is the biggest change to the MiniGson core.
+
+For backwards compatibility, return null for the empty string.
+
+Simplify JsonSerializationContext/JsonDeserializationContext to simply call through to GSON. SerializeDefault is currently unsupported.
+
+More useful error messages when calling getAsBoolean on a JsonNull.
+
+Remove currently unused MemoryRefStack. We might need this back again, though wiring it back in will be much more difficult because we don't interject ourselves between the users' various type adapters.",NullExclusionStrategyTest.java,testNeverSkipsField,yes,yes,yes,yes,,
+09/16/2011 0:40:05,"=HYPERLINK(""https://github.com/google/gson/commit/c71e61cf4830ee950b8fbc601ccadfe4d7ab6d1a"", ""c71e61cf4830ee950b8fbc601ccadfe4d7ab6d1a"")","Converted EnumTypeAdapter to new style.
+Got rid of default Hierarchy Serializer/Deserializers from DefaultTypeAdapters.
+Got rid of methods for gettting default serializers/deserializers/instance creators. Instead we reuse the static final instances.
+Fixed warnings in TypeAdapters where a parameterized type T was hiding the parameterized T in methods.
+Removed support to unwrap single element array of enums into enum values. Also removed the test that verifies this behavior.",EnumTest.java,testTopLevelEnumInASingleElementArrayDeserialization,yes,yes,yes,yes,,
+09/28/2011 13:00:34,"=HYPERLINK(""https://github.com/google/gson/commit/2236c95c37e4ac882c20ac080e4ebc68b85b296c"", ""2236c95c37e4ac882c20ac080e4ebc68b85b296c"")",Death to serializeDefault and deserializeDefault,SystemOnlyTypeAdaptersTest.java,testSerializeDefault,yes,yes,yes,yes,,
+09/28/2011 13:00:34,"=HYPERLINK(""https://github.com/google/gson/commit/2236c95c37e4ac882c20ac080e4ebc68b85b296c"", ""2236c95c37e4ac882c20ac080e4ebc68b85b296c"")",Death to serializeDefault and deserializeDefault,SystemOnlyTypeAdaptersTest.java,testDeserializeDefault,yes,yes,yes,yes,,
+11/12/2011 17:32:44,"=HYPERLINK(""https://github.com/google/gson/commit/172143df7c37482f8c1d43ac4bff769d40ee5ac9"", ""172143df7c37482f8c1d43ac4bff769d40ee5ac9"")",Removing JsonObject.deepCopy() and JsonArray.deepCopy(),JsonArrayTest.java,testDeepCopy,yes,yes,yes,yes,,
+11/12/2011 17:32:44,"=HYPERLINK(""https://github.com/google/gson/commit/172143df7c37482f8c1d43ac4bff769d40ee5ac9"", ""172143df7c37482f8c1d43ac4bff769d40ee5ac9"")",Removing JsonObject.deepCopy() and JsonArray.deepCopy(),JsonObjectTest.java,testDeepCopy,yes,yes,yes,yes,,
+11/20/2011 13:55:01,"=HYPERLINK(""https://github.com/google/gson/commit/d391584d48ce87a36c88e804711a5f187e0b9086"", ""d391584d48ce87a36c88e804711a5f187e0b9086"")","Register Gson 1.x tree-style adapters in the TypeAdapter.Factory list rather than in the ParameterizedTypeHandlerMap.
+
+The motivation for this change is to give tree-style adapters precedence order in registration. This fixes the test I committed earlier today, where registration order was not honored.
+
+This renamed ParameterizedTypeHandlerMap to the shorter 'TypeMap'. For type adapters, this is now only used for type hierarchy. We still need non-hierarchy support in TypeMap for instance creators; I'll be looking for workarounds to see if further simplification is possible here.",TypeMapTest.java,testTypeHierarchyRegisterIfAbsent,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",CamelCaseSeparatorNamingPolicyTest.java,testInvalidInstantiation,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",CamelCaseSeparatorNamingPolicyTest.java,testUnderscoreSeparator,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",CamelCaseSeparatorNamingPolicyTest.java,testMultiCharSeparator,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",CamelCaseSeparatorNamingPolicyTest.java,testNameBeginsWithCapital,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",CamelCaseSeparatorNamingPolicyTest.java,testExceptionPossiblyIncorrectSeparation,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",FieldNamingStrategy2AdapterTest.java,testSimpleAdapter,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",JavaFieldNamingPolicyTest.java,testFieldNamingPolicy,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",JavaFieldNamingPolicyTest.java,testNullField,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCamelCaseSeparatorNamingPolicyTest.java,testNameBeginsWithLowerCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCamelCaseSeparatorNamingPolicyTest.java,testNameBeginsWithUpperCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCamelCaseSeparatorNamingPolicyTest.java,testExceptionPossiblyIncorrectSeparation,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCamelCaseSeparatorNamingPolicyTest.java,testUsingDashesInstead,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCaseNamingPolicyTest.java,testAllLowerCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCaseNamingPolicyTest.java,testAllUpperCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",LowerCaseNamingPolicyTest.java,testMixedCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testInvalidConstruction,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testLowerCaseFirstLetter,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testUpperCaseFirstLetter,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testSingleCharacterField,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testFieldStartsWithUnderscore,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testFieldStartsWithUnderscoreFollowedBySingleLetter,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testFieldHasSingleNonLetter,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",ModifyFirstLetterNamingPolicyTest.java,testFieldHasNoLetters,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",SerializedNameAnnotationInterceptingNamingPolicyTest.java,testFieldWithAnnotation,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",SerializedNameAnnotationInterceptingNamingPolicyTest.java,testFieldWithoutAnnotation,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCamelCaseSeparatorNamingPolicyTest.java,testAllLowerCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCamelCaseSeparatorNamingPolicyTest.java,testAllUpperCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCamelCaseSeparatorNamingPolicyTest.java,testAllUpperCaseExceptFirst,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCamelCaseSeparatorNamingPolicyTest.java,testAllUpperCaseStartingWithUnderscore,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCamelCaseSeparatorNamingPolicyTest.java,testMixedCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCaseNamingPolicyTest.java,testAllLowerCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCaseNamingPolicyTest.java,testAllUpperCase,yes,yes,yes,yes,,
+11/20/2011 23:08:23,"=HYPERLINK(""https://github.com/google/gson/commit/f89e92aa9fd4c705655dbc0b0584defc996d796f"", ""f89e92aa9fd4c705655dbc0b0584defc996d796f"")","Tighten up some of the fields naming policy code. The main thrust of this change is replacing classes like UpperCaseNamingPolicy with the corresponding method calls. Classes like CompositeFieldNamingPolicy are replaced by sequences of method calls. This also replaces unit tests with functional tests.
+
+One nice benefit of this is a 3%/5.7KiB reduction in the size of gson.jar to 184KiB.",UpperCaseNamingPolicyTest.java,testMixedCase,yes,yes,yes,yes,,
+11/22/2011 0:07:18,"=HYPERLINK(""https://github.com/google/gson/commit/fed332906debe74d0879c77a03825b66f7970c41"", ""fed332906debe74d0879c77a03825b66f7970c41"")","Create a single, monolithic class to manage all exclusion strategies. This gets our file size within target of 177KiB.
+
+I intend to follow this up with a builder for our new class to avoid multiple-argument constructor calls.",DisjunctionExclusionStrategyTest.java,testBadInstantiation,yes,yes,yes,yes,,
+11/22/2011 0:07:18,"=HYPERLINK(""https://github.com/google/gson/commit/fed332906debe74d0879c77a03825b66f7970c41"", ""fed332906debe74d0879c77a03825b66f7970c41"")","Create a single, monolithic class to manage all exclusion strategies. This gets our file size within target of 177KiB.
+
+I intend to follow this up with a builder for our new class to avoid multiple-argument constructor calls.",DisjunctionExclusionStrategyTest.java,testSkipFieldsWithMixedTrueAndFalse,yes,yes,yes,yes,,
+11/22/2011 0:07:18,"=HYPERLINK(""https://github.com/google/gson/commit/fed332906debe74d0879c77a03825b66f7970c41"", ""fed332906debe74d0879c77a03825b66f7970c41"")","Create a single, monolithic class to manage all exclusion strategies. This gets our file size within target of 177KiB.
+
+I intend to follow this up with a builder for our new class to avoid multiple-argument constructor calls.",DisjunctionExclusionStrategyTest.java,testSkipFieldsWithFalseOnly,yes,yes,yes,yes,,
+11/22/2011 0:07:18,"=HYPERLINK(""https://github.com/google/gson/commit/fed332906debe74d0879c77a03825b66f7970c41"", ""fed332906debe74d0879c77a03825b66f7970c41"")","Create a single, monolithic class to manage all exclusion strategies. This gets our file size within target of 177KiB.
+
+I intend to follow this up with a builder for our new class to avoid multiple-argument constructor calls.",VersionExclusionStrategyTest.java,testDisallowNegativeValuesAndFailFast,yes,yes,yes,yes,,
+11/22/2011 1:37:13,"=HYPERLINK(""https://github.com/google/gson/commit/aa2f61b7d8defddc2a78de43b8042178241daedb"", ""aa2f61b7d8defddc2a78de43b8042178241daedb"")","Rename GsonExclusionStrategy to Excluder. The new class is its own factory, which simplifies its caller in GsonBuilder. It no longer implements ExclusionStrategy, which allows the callers to pass in a boolean for serialize/deserialize. This allows us to use one excluder for both code paths. The delegate ExclusionStrategy instances might end up not being shared so it has two lists internally.",FunctionWithInternalDependenciesTest.java,testAnonymousLocalClassesSerialization,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",JsonDeserializerExceptionWrapperTest.java,testRethrowJsonParseException,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",JsonDeserializerExceptionWrapperTest.java,testWrappedExceptionPropagation,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",JsonDeserializerExceptionWrapperTest.java,testProperSerialization,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeHierarchyAdapterTest.java,testRegisterSubTypeFirstNotAllowed,no,no,no,no,,refactored- functionality was changed
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testNullMap,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testHasGenericButNotSpecific,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testHasSpecificType,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testTypeOverridding,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testMakeUnmodifiable,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testTypeHierarchy,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testTypeHierarchyMultipleHandlers,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testReplaceExistingTypeHierarchyHandler,yes,yes,yes,yes,,
+11/23/2011 0:16:55,"=HYPERLINK(""https://github.com/google/gson/commit/1794182a560588973c6ec131e9c24bd39508433d"", ""1794182a560588973c6ec131e9c24bd39508433d"")","Commit to factories as the mechanism to lookup type adapters. This uses factories for type hierarchy adapters. We keep a separate list of factories for tree-style adapters registered with registerTypeHierarchyAdapter to guarantee that these come after the non-hierarchy adapters.
+
+This drops support for type hierarchy instance creators. I don't expect this to be a problem. We'll also detect fewer errors where multiple type adapters can serialize the same type. With APIs like getNextTypeAdapter, I think this might actually be an improvement!",TypeMapTest.java,testHidingExistingTypeHierarchyHandlerIsDisallowed,yes,yes,yes,yes,,
+11/26/2011 9:30:38,"=HYPERLINK(""https://github.com/google/gson/commit/4c06b013697d06b327f3c537e23181887aeab774"", ""4c06b013697d06b327f3c537e23181887aeab774"")",Cache all computed type adapters. On one particularly violent test (issue 375) this improves performance by 77%.,LruCacheTest.java,testCacheHitAndMiss,yes,yes,yes,yes,,
+11/26/2011 9:30:38,"=HYPERLINK(""https://github.com/google/gson/commit/4c06b013697d06b327f3c537e23181887aeab774"", ""4c06b013697d06b327f3c537e23181887aeab774"")",Cache all computed type adapters. On one particularly violent test (issue 375) this improves performance by 77%.,LruCacheTest.java,testCacheKeyOverwrite,yes,yes,yes,yes,,
+11/26/2011 9:30:38,"=HYPERLINK(""https://github.com/google/gson/commit/4c06b013697d06b327f3c537e23181887aeab774"", ""4c06b013697d06b327f3c537e23181887aeab774"")",Cache all computed type adapters. On one particularly violent test (issue 375) this improves performance by 77%.,LruCacheTest.java,testCacheEviction,yes,yes,yes,yes,,
+04/12/2012 13:15:56,"=HYPERLINK(""https://github.com/google/gson/commit/7b61e784c0c55870225637de639f43fe71cc2492"", ""7b61e784c0c55870225637de639f43fe71cc2492"")",Remove testParameterizedMapSubclassDeserialization that never passed. We'll eventually add an equivalent to the extras/ package.,MapTest.java,testParameterizedMapSubclassDeserialization,yes,yes,yes,yes,,
+06/29/2012 21:37:49,"=HYPERLINK(""https://github.com/google/gson/commit/dc4e43bb237c3878d12902e562ac352cbf463333"", ""dc4e43bb237c3878d12902e562ac352cbf463333"")","Permit users to define type adapters for primitive types and strings.
+ 
+ Also expose an API to get the field naming strategy.",CustomTypeAdaptersTest.java,testCustomSerializerForbiddenForPrimitives,no,no,no,no,,refactored- previously unavailable functionality is available
+06/29/2012 21:37:49,"=HYPERLINK(""https://github.com/google/gson/commit/dc4e43bb237c3878d12902e562ac352cbf463333"", ""dc4e43bb237c3878d12902e562ac352cbf463333"")","Permit users to define type adapters for primitive types and strings.
+ 
+ Also expose an API to get the field naming strategy.",CustomTypeAdaptersTest.java,testCustomDeserializerForbiddenForPrimitives,no,no,no,no,,
+09/04/2012 16:10:12,"=HYPERLINK(""https://github.com/google/gson/commit/d1ff7bb397d10ab60136ebaedb5db9c7009cbeca"", ""d1ff7bb397d10ab60136ebaedb5db9c7009cbeca"")",Deleted spurious directory gson-codegen. The real codegen code is in trunk/codegen,CodeGenFunctionalTest.java,testGeneratedJson,yes,yes,yes,yes,,
+09/16/2012 22:30:20,"=HYPERLINK(""https://github.com/google/gson/commit/2fef83799de82f67f2124908e982c773c49a6153"", ""2fef83799de82f67f2124908e982c773c49a6153"")","Optimizations and bug fixes for LinkedHashTreeMap.
+
+The most interesting optimization is to replace ArrayDeque with a manual linked list that reuses the nodes 'parent' field. These optimizations save about 20%.",LinkedHashTreeMapTest.java,testContainsNonComparableKeyThrows,yes,yes,yes,yes,,
+10/11/2012 15:29:40,"=HYPERLINK(""https://github.com/google/gson/commit/714ac8e64399eb156abc4ce3e517185c098fb7e6"", ""714ac8e64399eb156abc4ce3e517185c098fb7e6"")",added tests for using intercept in fields and lists. These tests are currently failing.,InterceptorTest.java,testPostDeserialize,yes,yes,yes,yes,,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testPutAndGet,yes,yes,yes,yes,,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testGetAndContainsNullKey,yes,yes,yes,yes,,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testDisallowPutForNullKeys,yes,yes,yes,yes,,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testSingleElement,yes,yes,yes,yes,,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testAddAndRemove,yes,yes,yes,yes,1 test missing in the sheet,
+04/04/2013 16:31:23,"=HYPERLINK(""https://github.com/google/gson/commit/af6aa5f782dcfc38a060d2de9476337e14ffedcb"", ""af6aa5f782dcfc38a060d2de9476337e14ffedcb"")",Use the LinkedHashTreeMap instead of LinkedTreeMap and delete the LinkedTreeMap version.,LinkedTreeMapTest.java,testInsertionOrderPreserved,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testFieldAdapterInvoked,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testRegisteredAdapterOverridesFieldAdapter,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testRegisteredSerializerOverridesFieldAdapter,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testRegisteredDeserializerOverridesFieldAdapter,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testFieldAdapterNotInvokedIfNull,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testNonStaticFieldAdapterNotInvoked,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testIncorrectTypeAdapterNotInvoked,yes,yes,yes,yes,,
+03/09/2014 1:30:37,"=HYPERLINK(""https://github.com/google/gson/commit/b9998e511f3a3c19d52c104d66d78037eaff88ec"", ""b9998e511f3a3c19d52c104d66d78037eaff88ec"")",deleted support for the magic GSON_TYPE_ADAPTER field,GsonFieldTypeAdapterTest.java,testSuperclassTypeAdapterNotInvoked,yes,yes,yes,yes,,
+01/18/2016 14:07:33,"=HYPERLINK(""https://github.com/google/gson/commit/c8627c8ab831dec86eeb52fc02600b22c81ba858"", ""c8627c8ab831dec86eeb52fc02600b22c81ba858"")",Update reader and writer for RFC 7159.,JsonReaderTest.java,testNoTopLevelObject,no,no,no,no,,refactor
+01/18/2016 14:07:33,"=HYPERLINK(""https://github.com/google/gson/commit/c8627c8ab831dec86eeb52fc02600b22c81ba858"", ""c8627c8ab831dec86eeb52fc02600b22c81ba858"")",Update reader and writer for RFC 7159.,JsonReaderTest.java,testStrictTopLevelString,conflict,no,no,yes,,reader.nextString() does not appear
+01/18/2016 14:07:33,"=HYPERLINK(""https://github.com/google/gson/commit/c8627c8ab831dec86eeb52fc02600b22c81ba858"", ""c8627c8ab831dec86eeb52fc02600b22c81ba858"")",Update reader and writer for RFC 7159.,JsonReaderTest.java,testLenientTopLevelString,no,no,no,no,,refactor
+01/18/2016 14:07:33,"=HYPERLINK(""https://github.com/google/gson/commit/c8627c8ab831dec86eeb52fc02600b22c81ba858"", ""c8627c8ab831dec86eeb52fc02600b22c81ba858"")",Update reader and writer for RFC 7159.,JsonReaderTest.java,testStrictTopLevelValueType,no,no,no,no,,refactor
+02/25/2016 19:38:48,"=HYPERLINK(""https://github.com/google/gson/commit/79a00cd90695c9ab72f301ca30fe2cbbc1fe8e36"", ""79a00cd90695c9ab72f301ca30fe2cbbc1fe8e36"")","incorporated code review feedback. Simplified the code, merged Device and Control and removed unnecessary fields.",JsonAdapterNullSafeTest.java,testTypeAdapterFactoryNullSafeBug,conflict,no,no,yes,,
+09/17/2021 19:21:37,"=HYPERLINK(""https://github.com/google/gson/commit/26a1928277f7eba70609f02697509ba9258dd8ef"", ""26a1928277f7eba70609f02697509ba9258dd8ef"")","Fix `RuntimeTypeAdapterFactory` depending on internal `Streams` class (#1959)
+
+* Fix RuntimeTypeAdapterFactory depending on internal Streams class
+
+* Clean up gson-extras project, make it Maven module of gson-parent
+
+* Remove broken test from GraphAdapterBuilderTest",GraphAdapterBuilderTest.java,testSerializationDirectSelfReference,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testIterationOrder,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testRemoveRootDoesNotDoubleUnlink,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testPutNullKeyFails,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testPutNonComparableKeyFails,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testContainsNonComparableKeyReturnsFalse,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testContainsNullKeyIsAlwaysFalse,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testPutOverrides,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testEmptyStringValues,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testForceDoublingAndRehash,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testClear,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testEqualsAndHashCode,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testAvlWalker,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testAvlBuilder,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testDoubleCapacity,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testDoubleCapacityAllNodesOnLeft,yes,yes,yes,yes,,
+11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","Delete unused LinkedHashTreeMap (#1992)
+
+Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
+Gson currently only uses LinkedTreeMap.",LinkedHashTreeMapTest.java,testJavaSerialization,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",ThrowableFunctionalTest.java,testExceptionWithoutCause,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",ThrowableFunctionalTest.java,testExceptionWithCause,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",ThrowableFunctionalTest.java,testSerializedNameOnExceptionFields,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",ThrowableFunctionalTest.java,testErrorWithoutCause,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",ThrowableFunctionalTest.java,testErrornWithCause,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",RecursiveTypesResolveTest.java,testIssue603PrintStream,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",RecursiveTypesResolveTest.java,testIssue440WeakReference,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",UnsafeReflectionAccessorTest.java,testMakeAccessibleWithUnsafe,yes,yes,yes,yes,,
+11/09/2021 9:16:35,"=HYPERLINK(""https://github.com/google/gson/commit/b0595c595bd2c052cd05e0283bb37b67c02bd06f"", ""b0595c595bd2c052cd05e0283bb37b67c02bd06f"")","Fix failing to serialize Collection or Map with inaccessible constructor (#1902)
+
+* Remove UnsafeReflectionAccessor
+
+Revert #1218
+
+Usage of sun.misc.Unsafe to change internal AccessibleObject.override field
+to suppress JPMS warnings goes against the intentions of the JPMS and does not
+work anymore in newer versions, see #1540.
+Therefore remove it and instead create a descriptive exception when making a
+member accessible fails. If necessary users can also still use `java` command
+line flags to open external modules.
+
+* Fix failing to serialize Collection or Map with inaccessible constructor
+
+Also remove tests which rely on Java implementation details.
+
+* Don't keep reference to access exception of ConstructorConstructor
+
+This also avoids a confusing stack trace, since the previously caught
+exception might have had a complete unrelated stack trace.
+
+* Remove Maven toolchain requirement
+
+* Address review feedback
+
+* Add back test for Security Manager",UnsafeReflectionAccessorTest.java,testMakeAccessibleWithRestrictiveSecurityManager,yes,yes,yes,yes,,
+04/03/2022 22:00:54,"=HYPERLINK(""https://github.com/google/gson/commit/b2b1424582f973457e15f4eeba35cd3c0c0ed2b6"", ""b2b1424582f973457e15f4eeba35cd3c0c0ed2b6"")","codegen removal (#2099)
+
+* Delete CodeGenFunctionalTest.java
+
+* codegen removal
+
+* pom.xml update
+
+* email config
+
+* Remove unnecessary space change.
+
+Co-authored-by: Éamonn McManus <emcmanus@google.com>",CodeGenFunctionalTest.java,testGeneratedJson,yes,yes,yes,yes,,
+07/29/2022 12:10:54,"=HYPERLINK(""https://github.com/google/gson/commit/6d2557d5d1a8ac498f2bcee20e5053c93b33ecce"", ""6d2557d5d1a8ac498f2bcee20e5053c93b33ecce"")",Remove unused package-private FieldAttributes methods (#2162),FieldAttributesTest.java,testIsSynthetic,yes,yes,yes,yes,,
+07/31/2022 16:49:02,"=HYPERLINK(""https://github.com/google/gson/commit/a45c55739f4e5eb25e9b67a8b7e2bfad25851fb6"", ""a45c55739f4e5eb25e9b67a8b7e2bfad25851fb6"")","Improve ArrayTypeAdapter for Object[] (#1716)
+
+* Improve ArrayTypeAdapter for Object[]
+
+* Fix typo in test method names",ArrayTest.java,testMultiDimenstionalObjectArraysSerialization,no,no,no,no,,renamed
+08/07/2022 18:00:35,"=HYPERLINK(""https://github.com/google/gson/commit/9eb04414c0a7f201d039cdbf9a9ebc4144990d3f"", ""9eb04414c0a7f201d039cdbf9a9ebc4144990d3f"")","Improve InternationalizationTest (#1705)
+
+* Improve InternationalizationTest
+
+- Remove ""raw"" tests since after compiling they are the same as the one with
+  escape sequences
+- Add tests for supplementary code points (> \uFFFF)
+
+* Improve variable names, fix incorrect escape sequences",InternationalizationTest.java,testStringsWithRawChineseCharactersDeserialization,yes,yes,yes,yes,,dropped with new one testing higher level functionality
+10/22/2022 11:01:56,"=HYPERLINK(""https://github.com/google/gson/commit/66d9621ce87c04a5167ee04097694093b13b514c"", ""66d9621ce87c04a5167ee04097694093b13b514c"")","Adjust Record adapter and extend test coverage (#2224)
+
+* Adjust Record adapter and extend test coverage
+
+* Address review feedback
+
+* Make constructor string more concise
+
+* Add tests for Gson default behavior for static fields
+
+* Improve exception for deserializing static final field
+
+Previously it would report ""Unexpected IllegalAccessException occurred...""
+due to the uncaught IllegalAccessException.
+
+* Improve handling of exception thrown by accessor
+
+Such an exception is not 'unexpected' (which was claimed by the previous
+exception handling) because user code could throw it.
+
+* Improve constructor invocation exception handling and add tests",Java17RecordTest.java,testPrimitiveNullValues,no,no,no,no,,renamed and refactored
+03/14/2011 18:22:50,"=HYPERLINK(""https://github.com/google/gson/commit/0c35edab6584a01d89ec5533ee6acac8f7002a8b"", ""0c35edab6584a01d89ec5533ee6acac8f7002a8b"")","Fixed the bug where copyOf() for a ParameterizedTypeHandlerMap was failing when hierarchical type adapters for a sub class and its base class were present.
+
+Fixed previously broken tests to verify the behavior that a hierarchical type adapter for a sub-class can be registered after registering a hierarchical type adapter for the base-class. The vice-versa is not allowed as it would result in hiding the sub-class hierarchical type adapter.",TypeHierarchyAdapterTest.java,testRegisterSubtypeFirst,no,no,no,no,,
+09/09/2011 0:04:24,"=HYPERLINK(""https://github.com/google/gson/commit/e19672d0a394d552469147e12a70bf81413f0076"", ""e19672d0a394d552469147e12a70bf81413f0076"")",Throw the right exceptions when primitives fail to parse.,PrimitiveTest.java,testDeserializingDecimalPointValuesAsIntegerFails,no,no,no,no,,
+12/20/2012 1:57:17,"=HYPERLINK(""https://github.com/google/gson/commit/6d90f0d894c468bc2f5b1e138ef21174ae644a0b"", ""6d90f0d894c468bc2f5b1e138ef21174ae644a0b"")",Make JsonElement TypeAdapterFactory a type hierarchy factory.,DefaultTypeAdaptersTest.java,testNullJsonElementDeserialization,no,no,no,no,,
+01/18/2016 14:07:33,"=HYPERLINK(""https://github.com/google/gson/commit/c8627c8ab831dec86eeb52fc02600b22c81ba858"", ""c8627c8ab831dec86eeb52fc02600b22c81ba858"")",Update reader and writer for RFC 7159.,JsonReaderTest.java,testStrictTopLevelValueTypeWithSkipValue,no,no,no,no,,
+03/30/2009 13:36:55,"=HYPERLINK(""https://github.com/google/gson/commit/e340801d258e18f733620b0fd03d65fffb8df6c3"", ""e340801d258e18f733620b0fd03d65fffb8df6c3"")",Moved enum-related tests under EnumTest class.,ObjectTest.java,testClassWithEnumFieldDeserialization,conflict,no,yes,no,,
+03/30/2009 13:36:55,"=HYPERLINK(""https://github.com/google/gson/commit/e340801d258e18f733620b0fd03d65fffb8df6c3"", ""e340801d258e18f733620b0fd03d65fffb8df6c3"")",Moved enum-related tests under EnumTest class.,ObjectTest.java,testTopLevelEnumSerialization,yes,yes,yes,yes,,
+03/30/2009 13:36:55,"=HYPERLINK(""https://github.com/google/gson/commit/e340801d258e18f733620b0fd03d65fffb8df6c3"", ""e340801d258e18f733620b0fd03d65fffb8df6c3"")",Moved enum-related tests under EnumTest class.,ObjectTest.java,testTopLevelEnumDeserialization,yes,yes,yes,yes,,

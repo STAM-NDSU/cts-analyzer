@@ -1,0 +1,125 @@
+[
+    {
+        "Hash": "f8057104af9cae031b544e971a52adafa7c0d9e1",
+        "Tag": "initial commit",
+        "Datetime": "2009-03-15 16:47:16 -0700"
+    },
+    {
+        "Hash": "f872bb1ac1c0317f07406201df51a9af1b5412b8",
+        "Tag": "\trefs/tags/android-2.1_r1^{}",
+        "Datetime": "2009-12-17 17:45:02 -0800"
+    },
+    {
+        "Hash": "b503197440fdf617b436ed3c9ea3f3877ba97394",
+        "Tag": "\trefs/tags/android-2.2.2_r1^{}",
+        "Datetime": "2010-07-12 15:56:04 -0700"
+    },
+    {
+        "Hash": "1ee3f244e9e4b34b165a290dad2f22efc717111f",
+        "Tag": "\trefs/tags/android-2.3_r1^{}",
+        "Datetime": "2010-11-17 14:16:32 -0800"
+    },
+    {
+        "Hash": "0e0ff7494a35d05618923cb11586d9487cf5b62e",
+        "Tag": "\trefs/tags/android-4.0.3_r1^{}",
+        "Datetime": "2011-12-15 20:49:59 -0800"
+    },
+
+    {
+        "Hash": "20eedcdccaeb0c345d5697ee046d7781e56d5540",
+        "Tag": "\trefs/tags/android-4.1.1_r1^{}",
+        "Datetime": "2012-07-03 12:51:08 -0700"
+    },
+    {
+        "Hash": "5f330b951b7771b0dc08004b923516284fd4bfe9",
+        "Tag": "\trefs/tags/android-4.2_r1^{}",
+        "Datetime": "2012-11-08 17:53:14 -0800"
+    },
+    {
+        "Hash": "00bfeeade663ecdac365fe44d4a35fcee9dc1762",
+        "Tag": "\trefs/tags/android-4.3_r1",
+        "Datetime": "2013-06-14 12:54:05 -0700"
+    },
+    {
+        "Hash": "83569db1873479f6dae77570c365881ca83777bb",
+        "Tag": "\trefs/tags/android-4.4_r1^{}",
+        "Datetime": "2013-10-16 18:43:32 -0700"
+    },
+    {
+        "Hash": "04e1702fde3b19cc76343cc7646134da6f21e1a3",
+        "Tag": "\trefs/tags/android-5.0.0_r1^{}",
+        "Datetime": "2014-10-27 15:41:53 -0700"
+    },
+    {
+        "Hash": "991dcbd3256ab972e6f53d236523e772b5036be3",
+        "Tag": "\trefs/tags/android-5.1.0_r1^{}",
+        "Datetime": "2015-02-12 06:09:35 -0800"
+    },
+    {
+        "Hash": "c77854e727f75eadc550b6ccfd4e98c5a369021b",
+        "Tag": "\trefs/tags/android-6.0.0_r1^{}",
+        "Datetime": "2015-09-04 10:09:27 -0700"
+    },
+    {
+        "Hash": "13abfdda94f18466f0db6bf1af2fbbd98cf39b07",
+        "Tag": "\trefs/tags/android-7.0.0_r1^{}",
+        "Datetime": "2016-06-29 00:02:21 -0700"
+    },
+    {
+        "Hash": "faedf23eb7bdc26edb1a81d8a26b2a1dfccfca75",
+        "Tag": "\trefs/tags/android-7.1.0_r1^{}",
+        "Datetime": "2016-09-01 17:46:31 -0700"
+    },
+    {
+        "Hash": "275f8129e0acaf55753436cd4c86162e4154d75c",
+        "Tag": "\trefs/tags/android-8.0.0_r1^{}",
+        "Datetime": "2017-06-30 04:10:41 +0000"
+    },
+    {
+        "Hash": "6072e690e254968c85465a669a2e2cd27bd9804b",
+        "Tag": "\trefs/tags/android-8.1.0_r1^{}",
+        "Datetime": "2017-11-02 04:50:50 +0000"
+    },
+    {
+        "Hash": "56b70b5762a6e32f0af015e219c2eca533dfcb26",
+        "Tag": "\trefs/tags/android-9.0.0_r1^{}",
+        "Datetime": "2018-07-17 23:29:22 +0000"
+    },
+    {
+        "Hash": "15d6b909c40ef6a81b90687886237317c4287c23",
+        "Tag": "\trefs/tags/android-10.0.0_r1^{}",
+        "Datetime": "2019-08-01 00:59:23 +0000"
+    },
+    {
+        "Hash": "41ac7864bded41f9c042bd9e3cf9a2c083f23da9",
+        "Tag": "\trefs/tags/android-11.0.0_r1^{}",
+        "Datetime": "2020-07-29 22:47:43 +0000"
+    },
+    {
+        "Hash": "2cfead8f99c5d9082d08461f34a9352b0526fe18",
+        "Tag": "\trefs/tags/android-12.0.0_r1",
+        "Datetime": "2021-08-26 23:49:34 +0000"
+    },
+    {
+        "Hash": "58383ca90f8c3af6c7d883ed7e7b193c356cdc3e",
+        "Tag": "\trefs/tags/android-platform-12.1.0_r1^{}",
+        "Datetime": "2022-02-25 03:57:38 +0000"
+    },
+    {
+        "Hash": "03e3b62fae30ef35cc86f06253df595f0816cb9a",
+        "Tag": "\trefs/tags/android-13.0.0_r1^{}",
+        "Datetime": "2022-07-09 21:53:10 +0000"
+    },
+    {
+        "Hash": "2f315a626e742e3520bb0d3414f5adbd20f8fe26",
+        "Tag": "\trefs/tags/android-13.0.0_r31^{}",
+        "Datetime": "2022-11-15 01:51:59 +0000",
+        "Include": false
+    },
+    {
+        "Hash": "a0d9ca67e9c57181b137f6788ca10dc15e79adfa",
+        "Tag": "vL",
+        "Datetime": "2022-12-31 21:43:52 +0530",
+        "Include": false
+    }
+]
