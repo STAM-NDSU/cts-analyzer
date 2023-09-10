@@ -96,23 +96,22 @@ def get_full_commit_url(tail: str) -> str:
 
 
 def get_full_commit_url_by_project(project: str, hash: str) -> str:
-    match project:
-        case "commons-lang":
-            project_url = "https://github.com/apache/commons-lang/commit/"
-        case "joda-time":
-            project_url = "https://github.com/JodaOrg/joda-time/commit/"
-        case "pmd":
-            project_url = "https://github.com/pmd/pmd/commit/"
-        case "gson":
-            project_url = "https://github.com/google/gson/commit/"
-        case "commons-math":
-            project_url = "https://github.com/apache/commons-math/commit/"
-        case "jfreechart":
-            project_url = "https://github.com/jfree/jfreechart/commit/"
-        case "cts":
-            project_url = "https://android.googlesource.com/platform/cts/+/"
-        case _:
-            project_url = COMMIT_BASE_URL
+    if project == "commons-lang":
+        project_url = "https://github.com/apache/commons-lang/commit/"
+    elif project =="joda-time":
+        project_url = "https://github.com/JodaOrg/joda-time/commit/"
+    elif project =="pmd":
+        project_url = "https://github.com/pmd/pmd/commit/"
+    elif project =="gson":
+        project_url = "https://github.com/google/gson/commit/"
+    elif project =="commons-math":
+        project_url = "https://github.com/apache/commons-math/commit/"
+    elif project =="jfreechart":
+        project_url = "https://github.com/jfree/jfreechart/commit/"
+    elif project =="cts":
+        project_url = "https://android.googlesource.com/platform/cts/+/"
+    else:
+        project_url = COMMIT_BASE_URL
     return project_url + hash
 
 
