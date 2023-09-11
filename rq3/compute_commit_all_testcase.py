@@ -12,7 +12,6 @@ from analyzer.utils import (
 import json
 from pathlib import Path
 import pandas as pd
-from git import Repo
 
       
 PROJECT_DIR = "../../os-java-projects/"
@@ -58,7 +57,6 @@ for project in projects_list:
     print("Commits to scan:", len(commits_list))
 
     all_commits_data = {}
-    new_repo = Repo.init(repo_path)
     os.chdir(repo_path) # Change directory; You are now inside the project directory
     for commit in commits_list:
         commit = strip_commit_url(commit)
