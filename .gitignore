@@ -11,4 +11,5 @@ io/rq3/all_commits_all_testcases
 io/rq3/all_commits_all_functions
 temp*.*
 io/rq3/outputBudgetLoose
-io/rq3/qutputBudgetStrict
+io/rq3/outputBudgetStrict
+
