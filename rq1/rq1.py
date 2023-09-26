@@ -169,7 +169,7 @@ for p_index, project in enumerate(projects_list):
                         until = row["Datetime"]
                         cmd = f'git rev-list --count {projects_main_brances[p_index]}  --since="{since}" --until="{until}"'
                         current_state = os.getcwd()
-                        os.chdir(f"./../os-java-projects/{project}")
+                        os.chdir(f"../../os-java-projects/{project}")
                         # os.system("sleep 1")
                         os.system(cmd + " > tmp")
                         no_of_commits = open("tmp", "r").read().replace("\n", "")
