@@ -52,10 +52,10 @@ for project in projects_list:
     [first_hash, first_date] = first_hash_datetime.split("_")
     first_date = first_date.strip()
     os.chdir(current_state)
-    print("last Hash:", first_hash[:7])
-    print("last Date:", first_date)
-    print("last Hash:", last_hash[:7])
-    print("last Date:", last_date)
+    print("First Hash:", first_hash[:7])
+    print("First Date:", first_date)
+    print("Last Hash:", last_hash[:7])
+    print("Last Date:", last_date)
     time_diff = days_between(first_date, last_date)
     print(
         "Diff:",
