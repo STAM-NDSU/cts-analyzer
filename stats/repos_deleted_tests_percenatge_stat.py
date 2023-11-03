@@ -14,10 +14,11 @@ from analyzer.utils import (
     cleanup_function_prototype,
     get_function_name_from_prototype_with_space_before,
     get_test_function_name_from_prototype,
-    strip_commit_url
+    strip_commit_url,
 )
 import pandas as pd
 import numpy as np
+
 
 # Customized
 def compute_testcases_javaparser(code) -> Optional[List[str]]:
@@ -107,11 +108,11 @@ TESTCASE_HISTORY_DIR = "../io/rq3/all_commits_all_testcases/"
 IO_DIR = "../io/validationFiles"
 
 projects_list = [
-#    "commons-lang",
- #   "gson",
- #   "commons-math",
-  #  "jfreechart",
-   # "joda-time",
+    "commons-lang",
+    "gson",
+    "commons-math",
+    "jfreechart",
+    "joda-time",
     "pmd",
     "cts",
 ]
@@ -123,12 +124,17 @@ for project in projects_list:
     validation_file = "validation_diff_done_hydrated.csv"
     full_validation_file_path = Path(f"{IO_DIR}/{project}/{validation_file}")
     df = pd.read_csv(f"{full_validation_file_path}")
-    deleted_test_df = df[df["Manual Validation"] == "yes"]
-    grouped_deleted_test_df = deleted_test_df.groupby(by=['Hash', 'Parent'])["Removed Test Case"].count()
+    deleted_test_df = df[df["Final Results"] == "yes"]
+    grouped_deleted_test_df = deleted_test_df.groupby(by=["Hash", "Parent"])[
+        "Removed Test Case"
+    ].count()
     grouped_deleted_test_df.reset_index()
     # print(grouped_deleted_test_df)
-    
-    # Computer for statistics for each test deletion commit 
+
+    # Total test deletion commit
+    total_test_deletion_commit = len(grouped_deleted_test_df)
+
+    # Computer for statistics for each test deletion commit
     results = {}
     total_deleted_percent = []
     total_deleted_absolute = []
@@ -137,13 +143,19 @@ for project in projects_list:
         stripped_parent = strip_commit_url(parent)
 
         # Total deleted tests in commit
-        deleted_test_in_commit = deleted_test_df[deleted_test_df['Hash'] == hash]
+        deleted_test_in_commit = deleted_test_df[deleted_test_df["Hash"] == hash]
         total_deleted_tests_in_commit = len(deleted_test_in_commit)
         total_deleted_absolute.append(total_deleted_tests_in_commit)
-        
+
         # Load test deletion commit parent file path
         testcases_file_path = (
-            TESTCASE_HISTORY_DIR + project + "/" + project + "-" + stripped_parent + "-ts.txt"
+            TESTCASE_HISTORY_DIR
+            + project
+            + "/"
+            + project
+            + "-"
+            + stripped_parent
+            + "-ts.txt"
         )
 
         # Compute total testcases present in test deletion commit parent
@@ -158,33 +170,38 @@ for project in projects_list:
                     testcases = compute_testcases_regex_only(line)
                     if testcases:
                         total_testcases += len(testcases)
-         
-        # Track total tests present and deleted at commit            
-        results[stripped_hash] =  {
-            "Total tests" : total_testcases,
-            "Total Deleted" : total_deleted_tests_in_commit,
-            "Total Deleted %": round(total_deleted_tests_in_commit/total_testcases * 100)
+
+        # Track total tests present and deleted at commit
+        results[stripped_hash] = {
+            "Total tests": total_testcases,
+            "Total Deleted": total_deleted_tests_in_commit,
+            "Total Deleted %": round(
+                total_deleted_tests_in_commit / total_testcases * 100
+            ),
         }
-        total_deleted_percent.append(round(total_deleted_tests_in_commit/total_testcases * 100, 2))                 
+        total_deleted_percent.append(
+            round(total_deleted_tests_in_commit / total_testcases * 100, 2)
+        )
 
     print(results)
-    print('-------------percentage------------')
+    print("-------------percentage------------")
     # total_deleted_percent = list(map(lambda each : each["Total Deleted %"], results))
     print("Mean: ", np.mean(total_deleted_percent))
     print("Median: ", np.median(total_deleted_percent))
     print("Q1: ", np.percentile(total_deleted_percent, 25))
     print("Q3: ", np.percentile(total_deleted_percent, 75))
-    print("Max: ", np.max(total_deleted_percent)) 
-    print("Min: ", np.min(total_deleted_percent)) 
-    print('-------------absolute------------')
+    print("Max: ", np.max(total_deleted_percent))
+    print("Min: ", np.min(total_deleted_percent))
+    print("-------------absolute------------")
+    print("Total test deletion commits: ", total_test_deletion_commit)
+    print("Total deleted tests:", np.sum(total_deleted_absolute))
     print("Mean: ", np.mean(total_deleted_absolute))
     print("Median: ", np.median(total_deleted_absolute))
     print("Q1: ", np.percentile(total_deleted_absolute, 25))
     print("Q3: ", np.percentile(total_deleted_absolute, 75))
-    print("Max: ", np.max(total_deleted_absolute))  
-    print("Min: ", np.min(total_deleted_absolute))                
+    print("Max: ", np.max(total_deleted_absolute))
+    print("Min: ", np.min(total_deleted_absolute))
     print("=========================")
-
 
 
 sys.stdout.close()
