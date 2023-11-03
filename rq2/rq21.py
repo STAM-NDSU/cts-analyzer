@@ -33,10 +33,10 @@ output_path = "../io/validationFiles/rq21_stat.csv"
 new_df = pd.DataFrame(
     columns=[
         "Project",
-        "Deleted With Whole File",
-        "Not Deleted With Whole File",
         "Deleted With Source Code",
         "Not Deleted With Source Code",
+        "Deleted With Whole File",
+        "Not Deleted With Whole File",
     ]
 )
 
@@ -50,7 +50,7 @@ for project in projects_list:
         IO_DIR = "../io/validationFiles"
         PROJECT = project
         full_input_file_path = Path(f"{IO_DIR}/{PROJECT}/hydrated_rq_2.csv")
-        
+
         if os.path.exists(f"{full_input_file_path}"):
             df = pd.read_csv(f"{full_input_file_path}")
             print("Size", df.shape[0])
