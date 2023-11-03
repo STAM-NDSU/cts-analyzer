@@ -66,13 +66,13 @@ for project in projects_list:
             commits_deleting_mul_testclass = 0
 
             commits = list(deleted_tc_df_clone["Hash"].unique())
-            print(project, "total commits ", len(commits))
+            print(len(commits), project)
             for commit in commits:
                 # compute if commit deletes multiple testcases
                 matching_hash_df = deleted_tc_df_clone[
                     deleted_tc_df_clone["Hash"] == commit
                 ]
-                
+                print(matching_hash_df.shape)
                 if matching_hash_df.shape[0] > 1:
                     commits_deleting_mul_testcase += 1
                 elif matching_hash_df.shape[0] == 1:
