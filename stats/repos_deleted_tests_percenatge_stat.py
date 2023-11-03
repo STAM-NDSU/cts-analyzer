@@ -107,11 +107,11 @@ TESTCASE_HISTORY_DIR = "../io/rq3/all_commits_all_testcases/"
 IO_DIR = "../io/validationFiles"
 
 projects_list = [
-    "commons-lang",
-    "gson",
-    "commons-math",
-    "jfreechart",
-    "joda-time",
+#    "commons-lang",
+ #   "gson",
+ #   "commons-math",
+  #  "jfreechart",
+   # "joda-time",
     "pmd",
     "cts",
 ]
