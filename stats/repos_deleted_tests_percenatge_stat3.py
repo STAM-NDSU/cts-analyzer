@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("../")
 # Redirect console ouput to a file
-sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
+sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat3.txt", "w")
 
 import os
 from pathlib import Path
@@ -113,8 +113,8 @@ projects_list = [
   #  "commons-math",
  #   "jfreechart",
 #    "joda-time",
-    "pmd",
-#    "cts",
+#    "pmd",
+    "cts",
 ]
 
 for project in projects_list:
