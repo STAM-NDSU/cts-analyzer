@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("../")
 # Redirect console ouput to a file
-# sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
+ sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
 
 import os
 from pathlib import Path
