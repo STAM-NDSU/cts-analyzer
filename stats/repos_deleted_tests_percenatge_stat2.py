@@ -2,7 +2,7 @@ import sys
 
 sys.path.append("../")
 # Redirect console ouput to a file
-sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
+# sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
 
 import os
 from pathlib import Path
@@ -18,6 +18,7 @@ from analyzer.utils import (
 )
 import pandas as pd
 import numpy as np
+import json
 
 
 # Customized
@@ -108,13 +109,13 @@ TESTCASE_HISTORY_DIR = "../io/rq3/all_commits_all_testcases/"
 IO_DIR = "../io/validationFiles"
 
 projects_list = [
-    #"commons-lang",
-   # "gson",
-  #  "commons-math",
- #   "jfreechart",
-#    "joda-time",
+    # "commons-lang",
+    #    "gson",
+    #  "commons-math",
+    #   "jfreechart",
+    #    "joda-time",
     "pmd",
-#    "cts",
+    #    "cts",
 ]
 
 for project in projects_list:
@@ -141,6 +142,17 @@ for project in projects_list:
     for (hash, parent), tests_deleted in grouped_deleted_test_df.items():
         stripped_hash = strip_commit_url(hash)
         stripped_parent = strip_commit_url(parent)
+
+        # Read json file
+        try:
+            with open("pmd.json", "r") as j:
+                results = json.loads(j.read())
+        except:
+            pass
+
+        # If commit is already scanned and test case percentage history is computed
+        if stripped_hash in results:
+            continue
 
         # Total deleted tests in commit
         deleted_test_in_commit = deleted_test_df[deleted_test_df["Hash"] == hash]
@@ -182,6 +194,11 @@ for project in projects_list:
         total_deleted_percent.append(
             round(total_deleted_tests_in_commit / total_testcases * 100, 2)
         )
+
+        # Write to file and close the json file
+        json_object = json.dumps(results)
+        with open("pmd.json", "w") as j:
+            j.write(json_object)
 
     print(results)
     print("-------------percentage------------")
