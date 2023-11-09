@@ -110,7 +110,7 @@ IO_DIR = "../io/validationFiles"
 
 projects_list = [
     # "commons-lang",
-    #    "gson",
+    # "gson",
     #  "commons-math",
     #   "jfreechart",
     #    "joda-time",
@@ -147,13 +147,23 @@ for project in projects_list:
         try:
             with open("pmd.json", "r") as j:
                 results = json.loads(j.read())
-        except:
+                
+                total_deleted_absolute = list(
+                    map(lambda each: each["Total Deleted"], results.values())
+                )
+                total_deleted_percent = list(
+                    map(lambda each: each["Total Deleted %"], results.values())
+                )
+        except Exception as e:
+            print(e)
             pass
 
         # If commit is already scanned and test case percentage history is computed
         if stripped_hash in results:
+            print("skipped")
             continue
 
+        print("not skipped for ", stripped_hash)
         # Total deleted tests in commit
         deleted_test_in_commit = deleted_test_df[deleted_test_df["Hash"] == hash]
         total_deleted_tests_in_commit = len(deleted_test_in_commit)
@@ -188,7 +198,7 @@ for project in projects_list:
             "Total tests": total_testcases,
             "Total Deleted": total_deleted_tests_in_commit,
             "Total Deleted %": round(
-                total_deleted_tests_in_commit / total_testcases * 100
+                total_deleted_tests_in_commit / total_testcases * 100, 2
             ),
         }
         total_deleted_percent.append(
