@@ -176,7 +176,7 @@ for project in projects_list:
             "Total tests": total_testcases,
             "Total Deleted": total_deleted_tests_in_commit,
             "Total Deleted %": round(
-                total_deleted_tests_in_commit / total_testcases * 100
+                total_deleted_tests_in_commit / total_testcases * 100, 2
             ),
         }
         total_deleted_percent.append(
