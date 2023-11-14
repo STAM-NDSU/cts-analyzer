@@ -1,8 +1,10 @@
 import sys
 
 sys.path.append("../")
+import logging
+
 # Redirect console ouput to a file
-sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
+# sys.stdout = open("../stats/all_repos_deleted_tests_percentage_stat2.txt", "w")
 
 import os
 from pathlib import Path
@@ -19,6 +21,14 @@ from analyzer.utils import (
 import pandas as pd
 import numpy as np
 import json
+
+logging.basicConfig(
+    filename="log",
+    filemode="a",
+    format="%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s",
+    datefmt="%H:%M:%S",
+    level=logging.DEBUG,
+)
 
 
 # Customized
@@ -147,7 +157,7 @@ for project in projects_list:
         try:
             with open("pmd.json", "r") as j:
                 results = json.loads(j.read())
-                
+
                 total_deleted_absolute = list(
                     map(lambda each: each["Total Deleted"], results.values())
                 )
@@ -155,15 +165,15 @@ for project in projects_list:
                     map(lambda each: each["Total Deleted %"], results.values())
                 )
         except Exception as e:
-            print(e)
+            logging.error(e)
             pass
 
         # If commit is already scanned and test case percentage history is computed
         if stripped_hash in results:
-            print("skipped")
+            logging.info("skipped")
             continue
 
-        print("not skipped for ", stripped_hash)
+        logging.info("not skipped for ", stripped_hash)
         # Total deleted tests in commit
         deleted_test_in_commit = deleted_test_df[deleted_test_df["Hash"] == hash]
         total_deleted_tests_in_commit = len(deleted_test_in_commit)
@@ -210,25 +220,25 @@ for project in projects_list:
         with open("pmd.json", "w") as j:
             j.write(json_object)
 
-    print(results)
-    print("-------------percentage------------")
+    logging.info(results)
+    logging.info("-------------percentage------------")
     # total_deleted_percent = list(map(lambda each : each["Total Deleted %"], results))
-    print("Mean: ", np.mean(total_deleted_percent))
-    print("Median: ", np.median(total_deleted_percent))
-    print("Q1: ", np.percentile(total_deleted_percent, 25))
-    print("Q3: ", np.percentile(total_deleted_percent, 75))
-    print("Max: ", np.max(total_deleted_percent))
-    print("Min: ", np.min(total_deleted_percent))
-    print("-------------absolute------------")
-    print("Total test deletion commits: ", total_test_deletion_commit)
-    print("Total deleted tests:", np.sum(total_deleted_absolute))
-    print("Mean: ", np.mean(total_deleted_absolute))
-    print("Median: ", np.median(total_deleted_absolute))
-    print("Q1: ", np.percentile(total_deleted_absolute, 25))
-    print("Q3: ", np.percentile(total_deleted_absolute, 75))
-    print("Max: ", np.max(total_deleted_absolute))
-    print("Min: ", np.min(total_deleted_absolute))
-    print("=========================")
+    logging.info("Mean: " + str(np.mean(total_deleted_percent)))
+    logging.info("Median: " + str(np.median(total_deleted_percent)))
+    logging.info("Q1: " + str(np.percentile(total_deleted_percent, 25)))
+    logging.info("Q3: " + str(np.percentile(total_deleted_percent, 75)))
+    logging.info("Max: " + str(np.max(total_deleted_percent)))
+    logging.info("Min: " + str(np.min(total_deleted_percent)))
+    logging.info("-------------absolute------------")
+    logging.info("Total test deletion commits: " + total_test_deletion_commit)
+    logging.info("Total deleted tests:" + str(np.sum(total_deleted_absolute)))
+    logging.info("Mean: " + str(np.mean(total_deleted_absolute)))
+    logging.info("Median: " + str(np.median(total_deleted_absolute)))
+    logging.info("Q1: " + str(np.percentile(total_deleted_absolute, 25)))
+    logging.info("Q3: " + str(np.percentile(total_deleted_absolute, 75)))
+    logging.info("Max: " + str(np.max(total_deleted_absolute)))
+    logging.info("Min: " + str(np.min(total_deleted_absolute)))
+    logging.info("=========================")
 
 
-sys.stdout.close()
+# sys.stdout.close()
