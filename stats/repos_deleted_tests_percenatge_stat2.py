@@ -23,7 +23,7 @@ import numpy as np
 import json
 
 logging.basicConfig(
-    filename="log",
+    filename="pmd.log",
     filemode="a",
     format="%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s",
     datefmt="%H:%M:%S",
@@ -170,10 +170,22 @@ for project in projects_list:
 
         # If commit is already scanned and test case percentage history is computed
         if stripped_hash in results:
-            logging.info("skipped")
+            logging.info("skipped " + str(stripped_hash))
+            continue
+        elif stripped_hash in [
+            "20eb129dfed093c40e4649dcbd8c2aa2da7267ff",
+            "67240f986373c6b8034a4e5b1cf104ea7464962a",
+            "675710d0e790def5ffdb521d95ab3e3892b0f5b7",
+            "71ab585220387429c8b2c0660d9f8e0e70464aca",
+            "ba105a646c4f43c4680886002d932139f0448668",
+            "191f14e6c01771c8d0af87ec9c73ce4aa5b49bb2",
+            "d29a2b093f0afe7a3e3121c9235cdde4243fdb52"
+        ]:
+            # forceful skip
+            logging.info("forceful skipped " + str(stripped_hash))
             continue
 
-        logging.info("not skipped for ", stripped_hash)
+        logging.info("not skipped for " + str(stripped_hash))
         # Total deleted tests in commit
         deleted_test_in_commit = deleted_test_df[deleted_test_df["Hash"] == hash]
         total_deleted_tests_in_commit = len(deleted_test_in_commit)
@@ -189,6 +201,22 @@ for project in projects_list:
             + stripped_parent
             + "-ts.txt"
         )
+
+        if not (os.path.exists(testcases_file_path)):
+            logging.info(
+                "file does not exist for "
+                + str(stripped_hash)
+                + " parent "
+                + str(stripped_parent)
+            )
+            continue
+        else:
+            logging.info(
+                "file exist for "
+                + str(stripped_hash)
+                + " parent "
+                + str(stripped_parent)
+            )
 
         # Compute total testcases present in test deletion commit parent
         total_testcases = 0
@@ -230,7 +258,7 @@ for project in projects_list:
     logging.info("Max: " + str(np.max(total_deleted_percent)))
     logging.info("Min: " + str(np.min(total_deleted_percent)))
     logging.info("-------------absolute------------")
-    logging.info("Total test deletion commits: " + total_test_deletion_commit)
+    logging.info("Total test deletion commits: " + str(total_test_deletion_commit))
     logging.info("Total deleted tests:" + str(np.sum(total_deleted_absolute)))
     logging.info("Mean: " + str(np.mean(total_deleted_absolute)))
     logging.info("Median: " + str(np.median(total_deleted_absolute)))
