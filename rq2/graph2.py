@@ -40,9 +40,9 @@ df.plot(
     ax=ax
     # title="Stacked Bar Graph by dataframe"
 )
-plt.xlabel("Total Deleted Tests")
-plt.ylabel("Projects")
-ax.legend(["Deleted with Test Class", "Deleted without Test Class"])
+plt.xlabel("Number of deleted tests")
+plt.ylabel("")
+ax.legend(["With test class", "Without test class"])
 
 
 # function to add value labels
