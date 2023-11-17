@@ -104,7 +104,7 @@ df_rq21 = {
         "joda-time",
         "pmd",
     ],
-    "abc": [546, 197, 2090, 98, 191, 89],
+    "abc": [546, 197, 2090, 98, 191, 897],
     "~abc": [323, 63, 1226, 53, 469, 1173],
 }
 fig, ax = plt.subplots(figsize=(4, 2))
@@ -118,9 +118,9 @@ df_rq21.plot(
     ax=ax
     # title="Stacked Bar Graph by dataframe"
 )
-plt.xlabel("Total Deleted Tests")
-plt.ylabel("Projects")
-ax.legend(["Deleted with API methods", "Deleted Without API Methods"])
+plt.xlabel("Number of deleted tests")
+plt.ylabel("")
+ax.legend(["With production code", "Without production code"])
 
 
 # function to add value labels
