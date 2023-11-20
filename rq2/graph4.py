@@ -43,7 +43,7 @@ df.plot(
 )
 plt.xlabel("Number of test deletion commits")
 plt.ylabel("")
-ax.legend(["Multiple test classes", "Single test class"])
+ax.legend(["Test class", "Only tests"])
 
 
 # function to add value labels
@@ -59,5 +59,5 @@ def addlabels(x, y):
 plt.gcf().subplots_adjust(left=0.22, bottom=0.2)
 # plt.margins(x=0, y=0)
 # fig.tight_layout(pad=5)
-fig.savefig(OUT_DIR + "delete_multiple_test_class.png", dpi=800)
+fig.savefig(OUT_DIR + "delete_test_class.png", dpi=800)
 plt.show()

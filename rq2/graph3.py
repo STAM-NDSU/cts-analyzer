@@ -43,7 +43,7 @@ df.plot(
 )
 plt.xlabel("Number of test deletion commits")
 plt.ylabel("")
-ax.legend(["Mulitple tests", "Single test"])
+ax.legend(["Multiple tests", "Single test"])
 
 
 # function to add value labels
