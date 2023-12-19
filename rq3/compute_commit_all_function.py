@@ -1,3 +1,6 @@
+"""
+Compiles all functions present in the parent commits of test deletion commit in a single function history file
+"""
 import sys
 
 sys.path.append("../")
