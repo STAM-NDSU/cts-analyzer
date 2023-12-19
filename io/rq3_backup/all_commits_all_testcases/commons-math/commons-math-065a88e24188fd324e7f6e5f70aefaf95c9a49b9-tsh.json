@@ -1,0 +1,11 @@
+{
+    "./src/test/org/apache/commons/math/StoreUnivariateImplTest.java": 1,
+    "./src/test/org/apache/commons/math/TestStatisticTest.java": 2,
+    "./src/test/org/apache/commons/math/ListUnivariateImplTest.java": 3,
+    "./src/test/org/apache/commons/math/FreqTest.java": 4,
+    "./src/test/org/apache/commons/math/RealMatrixImplTest.java": 5,
+    "./src/test/org/apache/commons/math/UnivariateImplTest.java": 6,
+    "./src/test/org/apache/commons/math/ExpandableDoubleArrayTest.java": 7,
+    "./src/java/org/apache/commons/math/TestStatisticImpl.java": 8,
+    "./src/java/org/apache/commons/math/TestStatistic.java": 9
+}

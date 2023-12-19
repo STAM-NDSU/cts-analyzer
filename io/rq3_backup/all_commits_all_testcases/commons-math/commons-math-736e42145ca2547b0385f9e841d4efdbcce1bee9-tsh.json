@@ -1,0 +1,20 @@
+{
+    "./src/test/org/apache/commons/math/stat/BivariateRegressionTest.java": 1,
+    "./src/test/org/apache/commons/math/stat/StoreUnivariateImplTest.java": 2,
+    "./src/test/org/apache/commons/math/stat/CertifiedDataTest.java": 3,
+    "./src/test/org/apache/commons/math/stat/ListUnivariateImplTest.java": 4,
+    "./src/test/org/apache/commons/math/stat/UnivariateImplTest.java": 5,
+    "./src/test/org/apache/commons/math/stat/BeanListUnivariateImplTest.java": 6,
+    "./src/test/org/apache/commons/math/DoubleArrayAbstractTest.java": 7,
+    "./src/test/org/apache/commons/math/TestStatisticTest.java": 8,
+    "./src/test/org/apache/commons/math/ContractableDoubleArrayTest.java": 9,
+    "./src/test/org/apache/commons/math/FixedDoubleArrayTest.java": 10,
+    "./src/test/org/apache/commons/math/RandomDataTest.java": 11,
+    "./src/test/org/apache/commons/math/FreqTest.java": 12,
+    "./src/test/org/apache/commons/math/RealMatrixImplTest.java": 13,
+    "./src/test/org/apache/commons/math/ValueServerTest.java": 14,
+    "./src/test/org/apache/commons/math/ExpandableDoubleArrayTest.java": 15,
+    "./src/test/org/apache/commons/math/EmpiricalDistributionTest.java": 16,
+    "./src/java/org/apache/commons/math/TestStatisticImpl.java": 17,
+    "./src/java/org/apache/commons/math/TestStatistic.java": 18
+}
