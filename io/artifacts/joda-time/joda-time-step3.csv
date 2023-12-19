@@ -1,0 +1,792 @@
+Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetDateTimeInstance
+,,,,,,,testGetPattern
+,,,,,,,testGetChronology
+,,,,,,,testGetTimeZone
+,,,,,,,testGetLocale
+,,,,,,,testGetPrinter
+,,,,,,,testGetParser
+,,,,,,,testEstimatePrintedLength
+,,,,,,,testPrintToSLL
+,,,,,,,testPrintToWLL
+,,,,,,,testPrintToSBRI
+,,,,,,,testPrintToSBL
+,,,,,,,testPrintToWRI
+,,,,,,,testPrintToWL
+,,,,,,,testPrintRI
+,,,,,,,testPrintL
+,,,,,,,testEstimateParsedLength
+,,,,,,,testParseIntoPBSI
+,,,,,,,testParseIntoRWIS
+,,,,,,,testParseIntoRWISI
+,,,,,,,testParseS
+,,,,,,,testParseSL
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetInstanceTZ
+,,,,,,,testGetInstanceTZL
+,,,,,,,testGetInstanceC
+,,,,,,,testGetInstanceCL
+,,,,,,,testForPattern
+,,,,,,,testForStyle
+,,,,,,,testGetPatternForStyle
+,,,,,JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testToPrinter
+,,,,,,,testToParser
+,,,,,,,testToFormatter
+,,,,,,,testCanBuildPrinter
+,,,,,,,testCanBuildParser
+,,,,,,,testCanBuilderFormatter
+,,,,,,,testClear
+,,,,,,,testAppendDTF
+,,,,,,,testAppendDTPE
+,,,,,,,testAppendLiteralC
+,,,,,,,testAppendLiteralS
+,,,,,,,testAppendNumeric
+,,,,,,,testAppendSignedNumeric
+,,,,,,,testAppendFraction
+,,,,,,,testAppendFractionOfSecond
+,,,,,,,testAppendFractionOfMinute
+,,,,,,,testAppendFractionOfHour
+,,,,,,,testAppendFractionOfDay
+,,,,,,,testAppendMillisOfSecond
+,,,,,,,testAppendMillisOfDay
+,,,,,,,testAppendSecondOfMinute
+,,,,,,,testAppendSecondOfDay
+,,,,,,,testAppendMinuteOfHour
+,,,,,,,testAppendMinuteOfDay
+,,,,,,,testAppendHourOfDay
+,,,,,,,testAppendClockhourOfDay
+,,,,,,,testAppendHourOfHalfday
+,,,,,,,testAppendClockhourOfHalfday
+,,,,,,,testAppendDayOfWeek
+,,,,,,,testAppendDayOfMonth
+,,,,,,,testAppendDayOfYear
+,,,,,,,testAppendWeekOfYearWeek
+,,,,,,,testAppendWeekOfYearYear
+,,,,,,,testAppendMonthOfYear
+,,,,,,,testAppendYear
+,,,,,,,testAppendYearOfEra
+,,,,,,,testAppendYearOfCentury
+,,,,,,,testAppendCentury
+,,,,,,,testAppendCenturyOfEra
+,,,,,,,testAppendAmPmSymbol
+,,,,,,,testAppendDayOfWeekSymbol
+,,,,,,,testAppendDayOfWeekShortSymbol
+,,,,,,,testAppendMonthOfYearSymbol
+,,,,,,,testAppendMonthOfYearShortSymbol
+,,,,,,,testAppendEraSymbol
+,,,,,,,testAppendTimeZoneSymbol
+,,,,,,,testAppendTimeZoneShortSymbol
+,,,,,,,testAppendTimeZoneOffset
+,,,,,,,testAppendPattern
+,,,,,JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testSetMillis
+,,,,,,,testSaveField
+,,,,,,,testSetTimeZone
+,,,,,,,testSetTimeZoneOffset
+,,,,,,,testGetTimeZone
+,,,,,,,testGetTimeZoneOffset
+,,,,,,,testComputeMillis
+,,,,,JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testClone
+,,,,,,,testFormat
+,,,,,,,testGetMillis
+,,,,,,,testGetStartInstant
+,,,,,,,testGetEndInstant
+,,,,,,,testToTimePeriod
+,,,,,,,testGetTotalSeconds
+,,,,,,,testGetTotalMinutes
+,,,,,,,testGetTotalHours
+,,,,,,,testGetTotalDays
+,,,,,,,testGetTotalMonths
+,,,,,,,testGetTotalWeeks
+,,,,,,,testGetSeconds
+,,,,,,,testGetMinutes
+,,,,,,,testGetHours
+,,,,,,,testGetDays
+,,,,,,,testGetMonths
+,,,,,,,testGetYears
+,,,,,,,testEquals
+,,,,,,,testHashCode
+,,,,,,,testCompareTo
+,,,,,,,testIsLongerThan
+,,,,,,,testIsShorterThan
+,,,,,,,testToString
+,,,,,JodaTime/src/test/org/joda/test/time/TestTimePeriodFormat.java,TestTimePeriodFormat.java,testFormat
+,,,,,,,testParseObject
+07/27/2004 17:21:14,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d3c4efa48ca55da45286072b98aa229839d0b1ed"", ""d3c4efa48ca55da45286072b98aa229839d0b1ed"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d21736df31ca4888e76ccbdc7d31f406cf68b645"", ""d21736df31ca4888e76ccbdc7d31f406cf68b645"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@350 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestConstructors.java,TestConstructors.java,testDateOnlyConstructors
+,,,,,,,testTimeOnlyConstructors
+,,,,,,,testDateTimeConstructors
+,,,,,JodaTime/src/test/org/joda/test/time/TestInstant.java,TestInstant.java,testCurrentTimeConstructor
+,,,,,,,testMillisConstructor
+,,,,,,,testReadableInstantConstructor
+,,,,,,,testReadableInstantConstructorEx
+,,,,,,,testDateConstructor
+,,,,,,,testDateConstructorEx
+,,,,,,,testCalendarConstructor
+,,,,,,,testCalendarConstructorEx
+,,,,,,,testStringConstructor
+,,,,,,,testStringConstructorEx
+,,,,,,,testGetChronology
+,,,,,,,testToInstant
+,,,,,,,testToString
+,,,,,JodaTime/src/test/org/joda/test/time/TestMDTAdd.java,TestMDTAdd.java,testAddMillis
+,,,,,,,testLast
+,,,,,JodaTime/src/test/org/joda/test/time/TestMDTAddWrapped.java,TestMDTAddWrapped.java,testFailure
+,,,,,,,testLast
+,,,,,JodaTime/src/test/org/joda/test/time/TestMDTGet.java,TestMDTGet.java,testGetChronology
+,,,,,,,testGetMillis
+,,,,,,,testGetDayOfWeek
+,,,,,,,testGetDayOfMonth
+,,,,,,,testGetDayOfYear
+,,,,,,,testGetWeekOfWeekyear
+,,,,,,,testGetYearOfWeekyear
+,,,,,,,testGetMonthOfYear
+,,,,,,,testGetYear
+,,,,,,,testGetMillisOfSecond
+,,,,,,,testGetMillisOfDay
+,,,,,,,testGetSecondOfMinute
+,,,,,,,testGetSecondOfDay
+,,,,,,,testGetMinuteOfHour
+,,,,,,,testGetMinuteOfDay
+,,,,,,,testGetHourOfDay
+,,,,,,,testDayOfWeek
+,,,,,,,testDayOfMonth
+,,,,,,,testDayOfYear
+,,,,,,,testWeekOfWeekyear
+,,,,,,,testWeekyear
+,,,,,,,testMonthOfYear
+,,,,,,,testYear
+,,,,,,,testMillisOfSecond
+,,,,,,,testMillisOfDay
+,,,,,,,testSecondOfMinute
+,,,,,,,testSecondOfDay
+,,,,,,,testMinuteOfHour
+,,,,,,,testMinuteOfDay
+,,,,,,,testHourOfDay
+,,,,,,,testToString
+,,,,,,,testLast
+,,,,,JodaTime/src/test/org/joda/test/time/TestMDTSet.java,TestMDTSet.java,testSetMillisL
+,,,,,,,testSetMillisO
+,,,,,,,testSetDTFI
+,,,,,,,testSetDateL
+,,,,,,,testSetDateO
+,,,,,,,testSetDateIII
+,,,,,,,testSetTimeL
+,,,,,,,testSetTimeO
+,,,,,,,testSetTimeIIII
+,,,,,,,testSetDateTimeL
+,,,,,,,testSetDateTimeO
+,,,,,,,testSetDateTimeIs
+,,,,,,,testSetYear
+,,,,,,,testSetMonthOfYear
+,,,,,,,testSetDayOfMonth
+,,,,,,,testSetHourOfDay
+,,,,,,,testSetMinuteOfHour
+,,,,,,,testSetSecondOfMinute
+,,,,,,,testSetMillisOfSecond
+,,,,,,,testSetDayOfYear
+,,,,,,,testSetDayOfWeek
+,,,,,,,testSetWeekOfYear
+,,,,,,,testLast
+08/01/2004 17:10:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/7b179791d98f66990aa09a5a9fdc237d520ef1f0"", ""7b179791d98f66990aa09a5a9fdc237d520ef1f0"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/7f03615bbb526d5030926e0446ebca21ad6931e6"", ""7f03615bbb526d5030926e0446ebca21ad6931e6"")",scolebourne@joda.org,"Add MillisDuration for precise durations
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@355 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDurationType.java,TestDurationType.java,testAverageYearMonthType
+,,,,,,,testAverageYearMonthType_Chronology
+08/03/2004 18:49:32,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/226fd68cc77369f5c7cec5195e32c41229a7cac1"", ""226fd68cc77369f5c7cec5195e32c41229a7cac1"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/87acf8d63689779e7eaec3e9801046977c0dd696"", ""87acf8d63689779e7eaec3e9801046977c0dd696"")",scolebourne@joda.org,"Fix tests after TimePeriod creation
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@360 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testConstant
+,,,,,JodaTime/src/test/org/joda/time/convert/TestLongConverter.java,TestLongConverter.java,testIsPrecise_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestNullConverter.java,TestNullConverter.java,testIsPrecise_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestReadableDurationConverter.java,TestReadableDurationConverter.java,testIsPrecise_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestReadableIntervalConverter.java,TestReadableIntervalConverter.java,testIsPrecise_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestStringConverter.java,TestStringConverter.java,testIsPrecise_Object
+08/07/2004 06:55:14,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3f62b3a3ef59f954a14f09aeee97053618da1c74"", ""3f62b3a3ef59f954a14f09aeee97053618da1c74"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c19bfe0c328518cb9d9734e8e15c174c150b86c0"", ""c19bfe0c328518cb9d9734e8e15c174c150b86c0"")",scolebourne@joda.org,"Tests and fixes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@366 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testGetPeriodType
+,,,,,,,testGetIsPrecise
+,,,,,,,testAddTo1
+,,,,,,,testAddTo2
+,,,,,,,testAddTo3
+,,,,,,,testAddTo4
+,,,,,,,testAddTo5
+,,,,,,,testAddToWithChronology1
+,,,,,,,testAddToWithChronology2
+,,,,,,,testAddToWithChronology3
+,,,,,,,testAddToRI1
+,,,,,,,testAddToRI2
+,,,,,,,testAddToRI3
+,,,,,,,testAddToRI4
+,,,,,,,testAddIntoRWI1
+,,,,,,,testAddIntoRWI2
+,,,,,,,testAddIntoRWI3
+,,,,,,,testToMutableTimePeriod
+,,,,,,,testWithPeriodTypeUsingTotalMillis1
+,,,,,,,testWithPeriodTypeUsingTotalMillis2
+,,,,,,,testWithPeriodTypeUsingTotalMillis3
+,,,,,,,testWithPeriodTypeUsingTotalMillis4
+,,,,,,,testWithPeriodTypeUsingFields2
+,,,,,,,testWithPeriodTypeUsingFields3
+,,,,,,,testWithPeriodTypeUsingFields4
+,,,,,,,testWithFieldsNormalized2
+,,,,,,,testSetDuration_ints
+,,,,,,,testSetTotalMillis_1
+,,,,,,,testSetTotalMillis_2
+,,,,,,,testSetYears
+,,,,,,,testSetMonths
+,,,,,,,testSetWeeks
+,,,,,,,testSetDays
+,,,,,,,testSetHours
+,,,,,,,testSetMinutes
+,,,,,,,testSetSeconds
+,,,,,,,testNormalize
+,,,,,JodaTime/src/test/org/joda/time/TestDuration_Constructors.java,TestDuration_Constructors.java,testConstructor_long_PeriodType1
+,,,,,,,testConstructor_long_PeriodType2
+,,,,,,,testConstructor_long_PeriodType3
+,,,,,,,testConstructor_long_PeriodType4
+,,,,,,,testConstructor_4int1
+,,,,,,,testConstructor_8int1
+,,,,,,,testConstructor_8int__PeriodType1
+,,,,,,,testConstructor_8int__PeriodType2
+,,,,,,,testConstructor_8int__PeriodType3
+,,,,,,,testConstructor_long_long2
+,,,,,,,testConstructor_long_long_PeriodType1
+,,,,,,,testConstructor_long_long_PeriodType2
+,,,,,,,testConstructor_long_long_PeriodType3
+,,,,,,,testConstructor_RI_RI5
+,,,,,,,testConstructor_RI_RI_PeriodType1
+,,,,,,,testConstructor_RI_RI_PeriodType2
+,,,,,,,testConstructor_RI_RI_PeriodType3
+,,,,,,,testConstructor_RI_RI_PeriodType4
+,,,,,,,testConstructor_RI_RI_PeriodType5
+,,,,,,,testConstructor_Object_PeriodType1
+,,,,,,,testConstructor_Object_PeriodType2
+,,,,,,,testConstructor_Object_PeriodType3
+,,,,,,,testConstructor_Object_PeriodType4
+08/07/2004 08:26:53,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d9b72f091c8a157695bed7db408e36e839d95430"", ""d9b72f091c8a157695bed7db408e36e839d95430"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6613fa3057c3bac0f93de8586cd3ab08680fe078"", ""6613fa3057c3bac0f93de8586cd3ab08680fe078"")",scolebourne@joda.org,"Enhance IntervalConverter
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@368 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/convert/TestStringConverter.java,TestStringConverter.java,testSetInto_Object
+08/14/2004 13:35:42,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/12c05dd8bccbefa84472abb08c10feca97a07bb8"", ""12c05dd8bccbefa84472abb08c10feca97a07bb8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/4ac994b573b8d051a36e00ebd98f0c8dc68eec6f"", ""4ac994b573b8d051a36e00ebd98f0c8dc68eec6f"")",scolebourne@joda.org,"Refactor AbstractDuration to remove instance variable
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@389 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testImmutable
+,,,,,,,testSetDuration_RD_1
+,,,,,,,testSetDuration_RD_2
+,,,,,,,testSetMillis
+,,,,,,,testMutable
+08/16/2004 15:36:07,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/7fd2cb9ad007d3016734fc50a1ad206b6a3b1b6c"", ""7fd2cb9ad007d3016734fc50a1ad206b6a3b1b6c"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/fa25072e5fa20a16115465408051f5fb0ad817c8"", ""fa25072e5fa20a16115465408051f5fb0ad817c8"")",scolebourne@joda.org,"More tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@396 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestInterval_Basics.java,TestInterval_Basics.java,testToInterval2
+,,,,,,,testToMutableInterval2
+,,,,,JodaTime/src/test/org/joda/time/TestMutableInterval_Basics.java,TestMutableInterval_Basics.java,testToInterval2
+,,,,,,,testToMutableInterval2
+08/20/2004 16:20:42,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/99af0da006022513fbb260c2c3a8648eb3059406"", ""99af0da006022513fbb260c2c3a8648eb3059406"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1a3e1f54707620cb60a0fdb950c8c84f59f30fc2"", ""1a3e1f54707620cb60a0fdb950c8c84f59f30fc2"")",scolebourne@joda.org,"Create base subpackage
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@402 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDateMidnight_Basics.java,TestDateMidnight_Basics.java,testImmutable
+,,,,,,,testSetMillis
+,,,,,,,testSetMillisObject
+,,,,,,,testSetChronology
+,,,,,,,testSetZone
+,,,,,,,testSetZoneRetainFields
+,,,,,JodaTime/src/test/org/joda/time/TestDateTime_Basics.java,TestDateTime_Basics.java,testImmutable
+,,,,,,,testSetMillis
+,,,,,,,testSetMillisObject
+,,,,,,,testSetChronology
+,,,,,,,testSetZone
+,,,,,,,testSetZoneRetainFields
+08/21/2004 16:29:39,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/5f2aa4794e8094eb6b3018589c3a751f61bd2fa6"", ""5f2aa4794e8094eb6b3018589c3a751f61bd2fa6"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/7c064bbf222d8abec91abb9a0790014ff6f06cea"", ""7c064bbf222d8abec91abb9a0790014ff6f06cea"")",scolebourne@joda.org,"Create BasePeriod
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@415 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testImmutable
+,,,,,,,testSetPeriod_RP
+,,,,,,,testSetPeriod_RD
+,,,,,,,testSetPeriod_ints
+,,,,,,,testSetPeriod_1
+,,,,,,,testSetPeriod_2
+,,,,,,,testSetYears
+,,,,,,,testSetMonths
+,,,,,,,testSetWeeks
+,,,,,,,testSetDays
+,,,,,,,testSetHours
+,,,,,,,testSetMinutes
+,,,,,,,testSetSeconds
+,,,,,,,testSetMillis
+,,,,,,,testNormalize
+08/21/2004 17:58:21,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/becd808db463a8a568b4372ce646265a4e6b55ec"", ""becd808db463a8a568b4372ce646265a4e6b55ec"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d1adaf7d96fde1ea29e36d3d0e98d1aa7a01ca28"", ""d1adaf7d96fde1ea29e36d3d0e98d1aa7a01ca28"")",scolebourne@joda.org,"Unify method handling, removing Object parameter methods
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@420 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestMutableDateTime_Adds.java,TestMutableDateTime_Adds.java,testAdd_Object_int3
+,,,,,,,testAdd_DateTimeField_int1
+,,,,,,,testAddWrapField_DateTimeField_int1
+,,,,,JodaTime/src/test/org/joda/time/TestMutableDateTime_Sets.java,TestMutableDateTime_Sets.java,testSetDateTime_long1
+,,,,,,,testSetDateTime_Object1
+,,,,,,,testSetDateTime_Object2
+08/21/2004 18:35:35,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/dfe9eff2ee221da405405fc3e001837260c8a443"", ""dfe9eff2ee221da405405fc3e001837260c8a443"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/274097cf4c627cb5ad180a06fb5a8d5533ecbda6"", ""274097cf4c627cb5ad180a06fb5a8d5533ecbda6"")",scolebourne@joda.org,"Change toTrustedISODateTime() to toDateTimeISO()
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@422 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestMutableDateTime_Basics.java,TestMutableDateTime_Basics.java,testToTrustedISOMutableDateTime
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testEraConstant
+,,,,,,,testGetInstanceUTC
+,,,,,,,testGetInstanceNull
+,,,,,,,testGetInstanceZone
+,,,,,,,testGetInstanceZoneUTC
+,,,,,,,testMillisOfSecond
+,,,,,,,testMillisOfDay
+,,,,,,,testSecondOfMinute
+,,,,,,,testSecondOfDay
+,,,,,,,testMinuteOfHour
+,,,,,,,testMinuteOfDay
+,,,,,,,testHourOfDay
+,,,,,,,testClockhourOfDay
+,,,,,,,testHourOfHalfday
+,,,,,,,testClockhourOfHalfday
+,,,,,,,testAmPm
+,,,,,,,testDayOfWeek
+,,,,,,,testDayOfMonth
+,,,,,,,testDayOfYear
+,,,,,,,testWeekOfYearWeek
+,,,,,,,testMonthOfYear
+,,,,,,,testLeapYear
+,,,,,,,testWeekOfYearYear
+,,,,,,,testYear
+,,,,,,,testYearOfCentury
+,,,,,,,testCenturyOfEra
+,,,,,,,testEra
+,,,,,JodaTime/src/test/org/joda/test/time/buddhist/TestBuddhistEraDateTimeField.java,TestBuddhistEraDateTimeField.java,testGetAsTextLocale
+,,,,,,,testGetAsText
+,,,,,,,testGetAsShortTextLocale
+,,,,,,,testGetAsShortText
+,,,,,JodaTime/src/test/org/joda/test/time/gj/TestGJYearDateTimeField.java,TestGJYearDateTimeField.java,testIsLeapYear
+,,,,,,,testGetLeapAmount
+08/22/2004 11:52:19,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/82e420bb78bebf465f3cc54e3ee2a631f87fe7b2"", ""82e420bb78bebf465f3cc54e3ee2a631f87fe7b2"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/65e7ca2ded288178ba13fa552ae61fd226cae8d0"", ""65e7ca2ded288178ba13fa552ae61fd226cae8d0"")",scolebourne@joda.org,"Remove get chronology methods as they confuse matters when getting instance on subclass
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@437 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestChronology.java,TestChronology.java,testGetISO
+,,,,,,,testGetISOUTC
+,,,,,,,testGetISO_Zone
+,,,,,,,testGetGJ
+,,,,,,,testGetGJUTC
+,,,,,,,testGetGJ_Zone
+08/28/2004 12:18:44,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/5fd28fcd3425461dfcff1800753513f94807f652"", ""5fd28fcd3425461dfcff1800753513f94807f652"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/65a750a91860fe497c11717f102eab05f9a6910d"", ""65a750a91860fe497c11717f102eab05f9a6910d"")",scolebourne@joda.org,"Fix and simplify zero handling in period format
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@458 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/format/TestPeriodFormatterBuilder.java,TestPeriodFormatterBuilder.java,testFormatPrintZeroRarelyFavorLast
+09/04/2004 18:48:26,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/73c467922eaf2579fa5c24e5aa2c8e5ffdc50aeb"", ""73c467922eaf2579fa5c24e5aa2c8e5ffdc50aeb"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/2180a3feef563af3ae3c440f0c3b85d9db5e7b9a"", ""2180a3feef563af3ae3c440f0c3b85d9db5e7b9a"")",scolebourne@joda.org,"Refactor Periods
+- no longer have a chronology
+- period type is based around DurationFieldType
+- array structure internally
+- not convertable to durations
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@478 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testToPeriod_PeriodType2
+,,,,,JodaTime/src/test/org/joda/time/TestDuration_Constructors.java,TestDuration_Constructors.java,testConstructor_Object6
+,,,,,JodaTime/src/test/org/joda/time/TestMutablePeriod_Basics.java,TestMutablePeriod_Basics.java,testGetIsPrecise
+,,,,,,,testAddTo5
+,,,,,,,testToDurationMillis
+,,,,,,,testToDuration
+,,,,,JodaTime/src/test/org/joda/time/TestMutablePeriod_Updates.java,TestMutablePeriod_Updates.java,testSetPeriod_long_NoHours
+,,,,,,,testSetPeriod_long_NoMinutes
+,,,,,,,testSetPeriod_long_NoSeconds
+,,,,,,,testAdd_long3
+,,,,,,,testAdd_long4
+,,,,,,,testAdd_RD3
+,,,,,,,testAdd_RD4
+,,,,,,,testNormalize1
+,,,,,,,testNormalize2
+,,,,,JodaTime/src/test/org/joda/time/TestPeriodType.java,TestPeriodType.java,testMillisType
+,,,,,,,testYearDayType
+,,,,,,,testDayHourTypeUTC
+,,,,,,,testYearDayTypeUTC
+,,,,,,,testYearWeekTypeUTC
+,,,,,,,testYearMonthTypeUTC
+,,,,,,,testAllTypeUTC
+,,,,,,,testPreciseDayHourType
+,,,,,,,testPreciseYearDayType
+,,,,,,,testPreciseYearWeekType
+,,,,,,,testPreciseYearMonthType
+,,,,,,,testPreciseAllType
+,,,,,,,testMaskNullName
+,,,,,,,testAbstract
+,,,,,JodaTime/src/test/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testAddTo5
+,,,,,,,testToDurationMillis
+,,,,,,,testWithPeriodTypeRetainDuration1
+,,,,,,,testWithPeriodTypeRetainDuration2
+,,,,,,,testWithPeriodTypeRetainDuration3
+,,,,,,,testWithPeriodTypeRetainDuration4
+,,,,,,,testWithFieldsNormalized1
+,,,,,,,testWithFieldsNormalized2
+,,,,,JodaTime/src/test/org/joda/time/convert/TestLongConverter.java,TestLongConverter.java,testGetPeriodType_Object
+,,,,,,,testSetInto_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestReadablePeriodConverter.java,TestReadablePeriodConverter.java,testGetPeriodMillis_Object
+09/05/2004 09:46:52,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/35e25b7acfd8df8b38e7f6ea0a4bce880f6823ff"", ""35e25b7acfd8df8b38e7f6ea0a4bce880f6823ff"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c4712e0e30d931ebe6cd47c299bce339c39e10a2"", ""c4712e0e30d931ebe6cd47c299bce339c39e10a2"")",scolebourne@joda.org,"Simplify Period
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@482 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDateTimeUtils.java,TestDateTimeUtils.java,testGetInstantChronology_RI_long
+,,,,,JodaTime/src/test/org/joda/time/TestMutablePeriod_Basics.java,TestMutablePeriod_Basics.java,testAddTo1
+,,,,,,,testAddTo2
+,,,,,,,testAddTo3
+,,,,,,,testAddTo4
+,,,,,,,testAddToWithChronology1
+,,,,,,,testAddToWithChronology2
+,,,,,,,testAddToWithChronology3
+,,,,,,,testAddToRI1
+,,,,,,,testAddToRI2
+,,,,,,,testAddToRI3
+,,,,,,,testAddToRI4
+,,,,,,,testAddToRI5
+,,,,,,,testAddIntoRWI1
+,,,,,,,testAddIntoRWI2
+,,,,,,,testAddIntoRWI3
+,,,,,,,testToDurationMillisFrom
+,,,,,JodaTime/src/test/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testAddTo1
+,,,,,,,testAddTo2
+,,,,,,,testAddTo3
+,,,,,,,testAddTo4
+,,,,,,,testAddToWithChronology1
+,,,,,,,testAddToWithChronology2
+,,,,,,,testAddToWithChronology3
+,,,,,,,testAddToRI1
+,,,,,,,testAddToRI2
+,,,,,,,testAddToRI3
+,,,,,,,testAddToRI4
+,,,,,,,testAddToRI5
+,,,,,,,testAddIntoRWI1
+,,,,,,,testAddIntoRWI2
+,,,,,,,testAddIntoRWI3
+,,,,,,,testToDurationMillisFrom
+09/05/2004 11:48:29,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/119f68ba20f38f7b4b9d676d4a7b787e5e005b89"", ""119f68ba20f38f7b4b9d676d4a7b787e5e005b89"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/55284cec591f9fc927c99ced4c1dc991485d6a37"", ""55284cec591f9fc927c99ced4c1dc991485d6a37"")",scolebourne@joda.org,"Update duration following period changes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@485 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testToPeriod1
+,,,,,,,testToPeriod_PeriodType1
+09/05/2004 19:15:10,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/233ac67186840969dadbc86b371ad15c673ed0ca"", ""233ac67186840969dadbc86b371ad15c673ed0ca"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/ac1166080c7fd2adca30d80342600cfb8b568788"", ""ac1166080c7fd2adca30d80342600cfb8b568788"")",scolebourne@joda.org,"Add chronology to interval
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@487 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/convert/TestReadableIntervalConverter.java,TestReadableIntervalConverter.java,testGetIntervalMillis_Object
+09/09/2004 17:45:56,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8ef60672c1dd5407b0761b81408857be44562ecf"", ""8ef60672c1dd5407b0761b81408857be44562ecf"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1c5dbbb0303fe2536a54c58e5bf56d76523a2e33"", ""1c5dbbb0303fe2536a54c58e5bf56d76523a2e33"")",scolebourne@joda.org,"Update API
+- Instant now ISO UTC
+- withXxx methods added to lots of classes
+- uniform set of methods almost complete
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@498 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestInstant_Basics.java,TestInstant_Basics.java,testToCalendar_Locale
+,,,,,,,testToGregorianCalendar
+,,,,,JodaTime/src/test/org/joda/time/TestTimeOfDay.java,TestTimeOfDay.java,testResolve_long
+,,,,,,,testResolveInto_RWI
+,,,,,,,testResolveInto_nullRWI
+,,,,,JodaTime/src/test/org/joda/time/TestYearMonthDay.java,TestYearMonthDay.java,testResolve_long
+,,,,,,,testResolveInto_RWI
+,,,,,,,testResolveInto_nullRWI
+09/11/2004 04:47:35,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/ae46a513a314dc36f12346b57ccacacf7ffb303a"", ""ae46a513a314dc36f12346b57ccacacf7ffb303a"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8ef60672c1dd5407b0761b81408857be44562ecf"", ""8ef60672c1dd5407b0761b81408857be44562ecf"")",scolebourne@joda.org,"Fix interval to use chronology throughout
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@499 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestInterval_Basics.java,TestInterval_Basics.java,testToPeriod_PeriodType3
+,,,,,,,testAlways
+,,,,,JodaTime/src/test/org/joda/time/TestMutableInterval_Basics.java,TestMutableInterval_Basics.java,testToPeriod_PeriodType3
+09/12/2004 04:29:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d7ca0e33ec72b0e4557bdd9c31bb3142765a28ee"", ""d7ca0e33ec72b0e4557bdd9c31bb3142765a28ee"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/9316fce1b432caa8b56ff6056d916f0a0aaefc1a"", ""9316fce1b432caa8b56ff6056d916f0a0aaefc1a"")",scolebourne@joda.org,"Add PartialConverter
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@505 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestTimeOfDay_Constructors.java,TestTimeOfDay_Constructors.java,testConstructor_badconverterObject
+,,,,,,,testConstructor_badconverterObject_Chronology
+,,,,,JodaTime/src/test/org/joda/time/TestYearMonthDay_Constructors.java,TestYearMonthDay_Constructors.java,testConstructor_badconverterObject
+,,,,,,,testConstructor_badconverterObject_Chronology
+09/12/2004 10:45:16,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/9566157414404c5ea9b4003e4c3bdf334abcd67f"", ""9566157414404c5ea9b4003e4c3bdf334abcd67f"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f560648277f9d2287862698e865bfd41b77d1fa4"", ""f560648277f9d2287862698e865bfd41b77d1fa4"")",scolebourne@joda.org,"Rework InstantConverter to reduce number of methods
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@507 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/convert/TestCalendarConverter.java,TestCalendarConverter.java,testGetInstantMillis_Object
+,,,,,,,testGetInstantMillis_Object_Zone
+,,,,,JodaTime/src/test/org/joda/time/convert/TestDateConverter.java,TestDateConverter.java,testGetInstantMillis_Object
+,,,,,,,testGetInstantMillis_Object_Zone
+,,,,,,,testGetChronology_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestLongConverter.java,TestLongConverter.java,testGetInstantMillis_Object
+,,,,,,,testGetInstantMillis_Object_Zone
+,,,,,,,testGetChronology_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestNullConverter.java,TestNullConverter.java,testGetInstantMillis_Object
+,,,,,,,testGetInstantMillis_Object_Zone
+,,,,,,,testGetChronology_Object
+,,,,,JodaTime/src/test/org/joda/time/convert/TestReadableInstantConverter.java,TestReadableInstantConverter.java,testGetInstantMillis_Object
+,,,,,,,testGetInstantMillis_Object_Zone
+,,,,,JodaTime/src/test/org/joda/time/convert/TestStringConverter.java,TestStringConverter.java,testGetChronology_Object
+09/14/2004 17:59:21,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/b9e9ad74618b8922a061c3dcea2569891404eacd"", ""b9e9ad74618b8922a061c3dcea2569891404eacd"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6a5b8bd64e0cc18555c4cfe791f853278e3f24e7"", ""6a5b8bd64e0cc18555c4cfe791f853278e3f24e7"")",scolebourne@joda.org,"Increase test coverage
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@510 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDateTimeFieldType.java,TestDateTimeFieldType.java,testTest
+08/03/2005 17:24:28,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/df16fe1bb49ac761bed5f46e081bf2166428dd7d"", ""df16fe1bb49ac761bed5f46e081bf2166428dd7d"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/467cf820dd5af0aa6480d903c19ec8651fc22674"", ""467cf820dd5af0aa6480d903c19ec8651fc22674"")",scolebourne@joda.org,"Add int override to withPivotYear, and tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@848 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/format/TestDateTimeFormatter.java,TestDateTimeFormatter.java,testWithGetMethods
+11/02/2005 11:26:37,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/beec594614e14f83c57ca24414179de8f9b564ea"", ""beec594614e14f83c57ca24414179de8f9b564ea"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c196026b6845b678d16b5b84a2efc979391907f3"", ""c196026b6845b678d16b5b84a2efc979391907f3"")",scolebourne@joda.org,"Remove ChronologyType - it created more issues than it solved
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@927 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestChronologyType.java,TestChronologyType.java,test_forName
+,,,,,,,test_getAvailableIDs
+,,,,,,,test_iso
+,,,,,,,test_gj
+,,,,,,,test_gregorian
+,,,,,,,test_julian
+,,,,,,,test_buddhist
+,,,,,,,test_coptic
+,,,,,,,test_ethiopic
+,,,,,,,test_other
+,,,,,JodaTime/src/test/org/joda/time/TestDateMidnight_Basics.java,TestDateMidnight_Basics.java,testWithChronologyType_ChronologyType
+,,,,,JodaTime/src/test/org/joda/time/TestDateTimeUtils.java,TestDateTimeUtils.java,testGetChronologyType_ChronologyType
+,,,,,JodaTime/src/test/org/joda/time/TestDateTime_Basics.java,TestDateTime_Basics.java,testWithChronologyType_ChronologyType
+,,,,,JodaTime/src/test/org/joda/time/TestMutableDateTime_Sets.java,TestMutableDateTime_Sets.java,testSetChronologyType_ChronologyType1
+,,,,,,,testSetChronologyType_ChronologyType2
+12/04/2005 16:02:08,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8c5d6902ca81488fc8c9ffce33bfc0774afc2194"", ""8c5d6902ca81488fc8c9ffce33bfc0774afc2194"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/ee0a30f6db2d9d1b0b34294990f7f6a01e6352c1"", ""ee0a30f6db2d9d1b0b34294990f7f6a01e6352c1"")",scolebourne@joda.org,"Remove methods to handle time zone differences
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@954 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDateTimeUtils.java,TestDateTimeUtils.java,testToGregorianCalendar
+,,,,,,,testToDateTime_Calendar
+,,,,,JodaTime/src/test/org/joda/time/TestDateTimeZone.java,TestDateTimeZone.java,testGetMillisJDKKeepLocal
+07/29/2006 05:45:16,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1710dc4fb6974e6d9e37752f2572f625ce79a52d"", ""1710dc4fb6974e6d9e37752f2572f625ce79a52d"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6b0549a63ebc3da9dc133f8b9b240218e6ce5101"", ""6b0549a63ebc3da9dc133f8b9b240218e6ce5101"")",scolebourne@joda.org,"Test and fix local string parsing
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@1104 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestLocalTime_Constructors.java,TestLocalTime_Constructors.java,testConstructor_Object2_DateTimeZone
+11/07/2009 05:20:45,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1cbee321d8b98ef84af8346d7270ed726c95176c"", ""1cbee321d8b98ef84af8346d7270ed726c95176c"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/e1b20335ff8c90189a7dce4b43107edc0313eb71"", ""e1b20335ff8c90189a7dce4b43107edc0313eb71"")",scolebourne@joda.org,"Remove deprecations
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@1408 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestChronology.java,TestChronology.java,testGetISO
+,,,,,,,testGetISOUTC
+,,,,,,,testGetISO_Zone
+,,,,,,,testGetGJ
+,,,,,,,testGetGJUTC
+,,,,,,,testGetGJ_Zone
+,,,,,,,testGetGregorian
+,,,,,,,testGetGregorianUTC
+,,,,,,,testGetGregorian_Zone
+,,,,,,,testGetJulian
+,,,,,,,testGetJulianUTC
+,,,,,,,testGetJulian_Zone
+,,,,,,,testGetBuddhist
+,,,,,,,testGetBuddhistUTC
+,,,,,,,testGetBuddhist_Zone
+,,,,,,,testGetCoptic
+,,,,,,,testGetCopticUTC
+,,,,,,,testGetCoptic_Zone
+,,,,,JodaTime/src/test/org/joda/time/TestDateTimeZoneCutover.java,TestDateTimeZoneCutover.java,test_LocalDate_toDateTimeAtMidnight_Gaza
+,,,,,,,test_LocalDate_toDateTimeAtMidnight_Turk
+,,,,,JodaTime/src/test/org/joda/time/TestLocalDate_Basics.java,TestLocalDate_Basics.java,testToDateTimeAtMidnight
+,,,,,,,testToDateTimeAtMidnight_Zone
+,,,,,,,testToDateTimeAtMidnight_nullZone
+11/12/2009 04:36:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/77dde7d755f9d79c737b6d5cdf4c547664dd16be"", ""77dde7d755f9d79c737b6d5cdf4c547664dd16be"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/028e01cbba9c1c7824f6c5a576a96fcacad81b61"", ""028e01cbba9c1c7824f6c5a576a96fcacad81b61"")",rintcius@users.sourceforge.net,"Initial version of the ported testset.
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@1458 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateMidnight_Basics.java,TestDateMidnight_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTimeComparator.java,TestDateTimeComparator.java,testClass
+,,,,,,,testSerialization1
+,,,,,,,testSerialization2
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTimeConstants.java,TestDateTimeConstants.java,testConstructor
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTimeFieldType.java,TestDateTimeFieldType.java,test_other
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTimeUtils.java,TestDateTimeUtils.java,testClass
+,,,,,,,testSystemMillisSecurity
+,,,,,,,testFixedMillisSecurity
+,,,,,,,testOffsetMillisSecurity
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTimeZone.java,TestDateTimeZone.java,testDefaultSecurity
+,,,,,,,testProvider
+,,,,,,,testProviderSecurity
+,,,,,,,testNameProvider
+,,,,,,,testNameProviderSecurity
+,,,,,,,testConstructor
+,,,,,,,testSerialization1
+,,,,,,,testSerialization2
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDateTime_Basics.java,TestDateTime_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDays.java,TestDays.java,testSerialization
+,,,,,,,testToStandardWeeks
+,,,,,,,testToStandardHours
+,,,,,,,testToStandardMinutes
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDurationFieldType.java,TestDurationFieldType.java,test_other
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestHours.java,TestHours.java,testSerialization
+,,,,,,,testToStandardWeeks
+,,,,,,,testToStandardDays
+,,,,,,,testToStandardMinutes
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestInstant_Basics.java,TestInstant_Basics.java,testSerialization
+,,,,,,,testImmutable
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestInterval_Basics.java,TestInterval_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestLocalDateTime_Basics.java,TestLocalDateTime_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestLocalDate_Basics.java,TestLocalDate_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestLocalTime_Basics.java,TestLocalTime_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestMinutes.java,TestMinutes.java,testSerialization
+,,,,,,,testToStandardWeeks
+,,,,,,,testToStandardDays
+,,,,,,,testToStandardHours
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestMonths.java,TestMonths.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestMutableDateTime_Basics.java,TestMutableDateTime_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestMutableInterval_Basics.java,TestMutableInterval_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestMutablePeriod_Basics.java,TestMutablePeriod_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestPartial_Basics.java,TestPartial_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testSerialization
+,,,,,,,testToStandardWeeks
+,,,,,,,testToStandardDays
+,,,,,,,testToStandardHours
+,,,,,,,testToStandardMinutes
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestSeconds.java,TestSeconds.java,testSerialization
+,,,,,,,testToStandardWeeks
+,,,,,,,testToStandardDays
+,,,,,,,testToStandardHours
+,,,,,,,testToStandardMinutes
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestSerialization.java,TestSerialization.java,testTest
+,,,,,,,testSerializedInstant
+,,,,,,,testSerializedDateTime
+,,,,,,,testSerializedDateTimeProperty
+,,,,,,,testSerializedMutableDateTime
+,,,,,,,testSerializedMutableDateTimeProperty
+,,,,,,,testSerializedDateMidnight
+,,,,,,,testSerializedDateMidnightProperty
+,,,,,,,testSerializedYearMonthDay
+,,,,,,,testSerializedTimeOfDay
+,,,,,,,testSerializedDateTimeZoneUTC
+,,,,,,,testSerializedDateTimeZone
+,,,,,,,testSerializedCopticChronology
+,,,,,,,testSerializedISOChronology
+,,,,,,,testSerializedGJChronology
+,,,,,,,testSerializedGJChronologyChangedInternals
+,,,,,,,testSerializedGregorianChronology
+,,,,,,,testSerializedJulianChronology
+,,,,,,,testSerializedBuddhistChronology
+,,,,,,,testSerializedPeriodType
+,,,,,,,testSerializedDateTimeFieldType
+,,,,,,,testSerializedUnsupportedDateTimeField
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestTimeOfDay_Basics.java,TestTimeOfDay_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestWeeks.java,TestWeeks.java,testSerialization
+,,,,,,,testToStandardDays
+,,,,,,,testToStandardHours
+,,,,,,,testToStandardMinutes
+,,,,,,,testToStandardDuration
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestYearMonthDay_Basics.java,TestYearMonthDay_Basics.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/TestYears.java,TestYears.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestCalendarConverter.java,TestCalendarConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestConverterManager.java,TestConverterManager.java,testSingleton
+,,,,,,,testAddInstantConverterSecurity
+,,,,,,,testRemoveInstantConverterSecurity
+,,,,,,,testAddPartialConverterSecurity
+,,,,,,,testRemovePartialConverterSecurity
+,,,,,,,testAddDurationConverterSecurity
+,,,,,,,testRemoveDurationConverterSecurity
+,,,,,,,testAddPeriodConverterSecurity
+,,,,,,,testRemovePeriodConverterSecurity
+,,,,,,,testAddIntervalConverterSecurity
+,,,,,,,testRemoveIntervalConverterSecurity
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestConverterSet.java,TestConverterSet.java,testClass
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestDateConverter.java,TestDateConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestLongConverter.java,TestLongConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestNullConverter.java,TestNullConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestReadableDurationConverter.java,TestReadableDurationConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestReadableInstantConverter.java,TestReadableInstantConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestReadableIntervalConverter.java,TestReadableIntervalConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestReadablePartialConverter.java,TestReadablePartialConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestReadablePeriodConverter.java,TestReadablePeriodConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/convert/TestStringConverter.java,TestStringConverter.java,testSingleton
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/field/TestMillisDurationField.java,TestMillisDurationField.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/field/TestPreciseDurationField.java,TestPreciseDurationField.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/field/TestScaledDurationField.java,TestScaledDurationField.java,testSerialization
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/format/TestDateTimeFormatStyle.java,TestDateTimeFormatStyle.java,testForStyle_stringLengths
+,,,,,,,testForStyle_invalidStrings
+,,,,,,,testForStyle_shortDate
+,,,,,,,testForStyle_shortTime
+,,,,,,,testForStyle_shortDateTime
+,,,,,,,testForStyle_mediumDate
+,,,,,,,testForStyle_mediumTime
+,,,,,,,testForStyle_mediumDateTime
+,,,,,,,testForStyle_longDate
+,,,,,,,testForStyle_longTime
+,,,,,,,testForStyle_longDateTime
+,,,,,,,testForStyle_fullDate
+,,,,,,,testForStyle_fullTime
+,,,,,,,testForStyle_fullDateTime
+,,,,,,,testForStyle_shortMediumDateTime
+,,,,,,,testForStyle_shortLongDateTime
+,,,,,,,testForStyle_shortFullDateTime
+,,,,,,,testForStyle_mediumShortDateTime
+,,,,,,,testForStyle_mediumLongDateTime
+,,,,,,,testForStyle_mediumFullDateTime
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/tz/TestBuilder.java,TestBuilder.java,testFixed
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/tz/TestCompiler.java,TestCompiler.java,testCompile
+,,,,,JodaTimeContrib/gwt/src/test/gwt/org/joda/time/tz/TestUTCProvider.java,TestUTCProvider.java,testClass
+11/19/2009 09:24:27,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3c026b7c6af49dab12d28554dd2b55edc4fd8ced"", ""3c026b7c6af49dab12d28554dd2b55edc4fd8ced"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8fb9bae65a1ad986cec1a01a90cbbceebc4a5d6e"", ""8fb9bae65a1ad986cec1a01a90cbbceebc4a5d6e"")",rintcius@users.sourceforge.net,"Add script that generates the gwt tests from the annotated core tests. 
+Update gwt tests.
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@1469 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTimeContrib/gwt/src/test/gwt/org/joda/time/chrono/gj/MainTest.java,MainTest.java,testChronology
+11/13/2010 05:52:12,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8672850dbabfddc9f38ee899a259b1dce992794a"", ""8672850dbabfddc9f38ee899a259b1dce992794a"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/73cf859dd13b3fc550569e2dff75da8cca8ddbfa"", ""73cf859dd13b3fc550569e2dff75da8cca8ddbfa"")",scolebourne@joda.org,"MonthDay and YearMonth should have stricter default parsing
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@1588 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/java/org/joda/time/TestMonthDay_Constructors.java,TestMonthDay_Constructors.java,testConstructor_ObjectString2
+,,,,,,,testConstructor_ObjectString3
+,,,,,,,testConstructor_ObjectString4
+,,,,,JodaTime/src/test/java/org/joda/time/TestYearMonth_Constructors.java,TestYearMonth_Constructors.java,testConstructor_ObjectString2
+,,,,,,,testConstructor_ObjectString3
+,,,,,,,testConstructor_ObjectString4
+07/31/2011 17:41:30,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c5a5190e19c062405ae4825c36e2172ae64202fb"", ""c5a5190e19c062405ae4825c36e2172ae64202fb"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"", ""49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"")",scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecCompleteDate
+,,,,,,,testSpecReducedPrecisionCYM
+,,,,,,,testSpecReducedPrecisionCY
+,,,,,,,testSpecReducedPrecisionC
+,,,,,,,testSpecTruncatedYMD
+,,,,,,,testSpecTruncatedYM
+,,,,,,,testSpecTruncatedY
+,,,,,,,testSpecTruncatedMD
+,,,,,,,testSpecTruncatedM
+,,,,,,,testSpecTruncatedD
+,,,,,,,testSpecExpandedCYMD
+,,,,,,,testSpecExpandedCYM
+,,,,,,,testSpecExpandedCY
+,,,,,,,testSpecExpandedC
+,,,,,,,testSpecOrdinalComplete
+,,,,,,,testSpecOrdinalTruncatedYD
+,,,,,,,testSpecOrdinalTruncatedD
+,,,,,,,testSpecOrdinalExpandedYD
+,,,,,,,testSpecWeekComplete
+,,,,,,,testSpecWeekReducedPrecision
+,,,,,,,testSpecWeekTruncatedYWD
+,,,,,,,testSpecWeekTruncatedYW
+,,,,,,,testSpecWeekTruncatedDWD
+,,,,,,,testSpecWeekTruncatedDW
+,,,,,,,testSpecWeekTruncatedWD
+,,,,,,,testSpecWeekTruncatedW
+,,,,,,,testSpecWeekTruncatedD
+,,,,,,,testSpecWeekExpandedYWD
+,,,,,,,testSpecTimeComplete
+,,,,,,,testSpecTimeReducedPrecisionHM
+,,,,,,,testSpecTimeReducedPrecisionH
+,,,,,,,testSpecTimeFractionalHMS
+,,,,,,,testSpecTimeFractionalHM
+,,,,,,,testSpecTimeFractionalH
+,,,,,,,testSpecTimeTruncatedMS
+,,,,,,,testSpecTimeTruncatedM
+,,,,,,,testSpecTimeTruncatedS
+,,,,,,,testSpecTimeTruncatedFractionMS
+,,,,,,,testSpecTimeTruncatedFractionM
+,,,,,,,testSpecTimeTruncatedFractionS
+10/14/2015 09:34:26,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d7774f13ad2dc7cf7295bb8376c21bbf5c662fc4"", ""d7774f13ad2dc7cf7295bb8376c21bbf5c662fc4"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0a357a84750ac43ca0d1a068099390eadbfc0f8a"", ""0a357a84750ac43ca0d1a068099390eadbfc0f8a"")",scolebourne@joda.org,"Allow min/max dates
+
+Provide some form of support for date-times up to the min/max of Long
+At the margins, calculations will be slightly imperfect
+UTC is used for the min/max
+Fixes #297
+Fixes #190",src/test/java/org/joda/time/TestDateTime_Constructors.java,TestDateTime_Constructors.java,testConstructor_long_max
+,,,,,,,testConstructor_long_min
+08/01/2017 08:04:22,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/8b0c67dc82a95133639faa3fa784419271172520"", ""8b0c67dc82a95133639faa3fa784419271172520"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/a37cfecf07984e7fd88705bf85573cb71ad99632"", ""a37cfecf07984e7fd88705bf85573cb71ad99632"")",michael.hausegger@tugraz.at,add-tests Incorporated requested PR changes.,src/test/java/org/joda/time/tz/TestZoneInfoCompiler.java,TestZoneInfoCompiler.java,testWriteZoneInfoMapThrowsNullPointerException
+10/05/2022 03:49:41,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/bdcb7095e127d858b82b3cbd5325f5725b9dbb47"", ""bdcb7095e127d858b82b3cbd5325f5725b9dbb47"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0c159b431dcc3c12b25da60dfff880227887df0a"", ""0c159b431dcc3c12b25da60dfff880227887df0a"")",noreply@github.com,Updates after localization PRs (#654),src/test/java/org/joda/time/format/TestPeriodFormat.java,TestPeriodFormat.java,test_wordBased_fr_formatStandard
+,,,,,,,test_wordBased_pt_formatStandard
+,,,,,,,test_wordBased_es_formatStandard
+,,,,,,,test_wordBased_de_formatStandard
+,,,,,,,test_wordBased_nl_formatStandard
+,,,,,,,test_wordBased_pl_formatStandard
+,,,,,,,test_wordBased_bg_formatStandard
+,,,,,,,test_wordBased_cs_formatStandard
+,,,,,,,test_wordBased_ru_formatStandard

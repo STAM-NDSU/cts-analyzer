@@ -38,10 +38,10 @@ projects = [
         "project": "jfreechart",
         "branch": "master",
     },
-    {
-        "project": "cts",
-        "branch": "master",
-    },
+    # {
+    #     "project": "cts",
+    #     "branch": "master",
+    # },
 ]
 
 for project_info in projects:
@@ -59,7 +59,6 @@ for project_info in projects:
             with open(full_file_path, "r") as a:
                 df = pd.read_csv(f"{full_file_path}")
                 test_deletion_df = df[df["Final Results"] == "yes"]
-                print("hello")
 
             results_df = get_removed_testcase_and_referenced_functions_details(
                 project, repo_path, target_branch, test_deletion_df
