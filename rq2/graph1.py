@@ -107,7 +107,7 @@ df_rq21 = {
     "abc": [546, 197, 2090, 98, 191, 897],
     "~abc": [323, 63, 1226, 53, 469, 1173],
 }
-fig, ax = plt.subplots(figsize=(4, 2))
+fig, ax = plt.subplots(figsize=(3.5, 2))
 df_rq21 = pd.DataFrame(df_rq21)
 df_rq21.plot(
     x="projects",
@@ -130,6 +130,7 @@ def addlabels(x, y):
 
 
 # addlabels(df_rq21["projects"], df_rq21["abc"])
-plt.gcf().subplots_adjust(left=0.25, bottom=0.2)
-fig.savefig(OUT_DIR + "deleted_with_source_code.png", dpi=800)
-plt.show()
+plt.gcf().subplots_adjust(left=0.23, bottom=0.2,  top=1, right=1, hspace = 0, wspace = 0)
+# plt.margins(0,0)
+fig.savefig(OUT_DIR + "deleted_with_source_code.png", dpi=1200)
+# plt.show()

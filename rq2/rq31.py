@@ -72,14 +72,15 @@ for project in projects_list:
             # case 3
             commits_deleting_mul_testcase = 0
             no_of_deleted_multiple_testcase = 0
-
+            
+        
             commits = list(deleted_tc_df_clone["Hash"].unique())
-            print(len(commits), project)
+           
             for commit in commits:
                 matching_hash_df = deleted_tc_df_clone[
                     deleted_tc_df_clone["Hash"] == commit
                 ]
-
+                    
                 # CASE 1
                 # compute commits deleting test class and other stats(no. of classes, no. of tests deleted)
                 deleted_with_whole_file_df = matching_hash_df[
@@ -88,12 +89,13 @@ for project in projects_list:
                 del_with_whole_filepaths = list(
                     deleted_with_whole_file_df["Filepath"].unique()
                 )
-                no_of_deleted_testclass += len(del_with_whole_filepaths)
-                no_of_tests_deleted_with_testclass += deleted_with_whole_file_df.shape[
-                    0
-                ]
-                if len(del_with_whole_filepaths) > 1:
+                
+                if len(del_with_whole_filepaths) >= 1:
                     commits_deleting_testclass += 1
+                    no_of_deleted_testclass += len(del_with_whole_filepaths)
+                    no_of_tests_deleted_with_testclass += deleted_with_whole_file_df.shape[
+                        0
+                    ]
 
                 # CASE 2 & 3 
                 # compute commits deleting single and multiple tests and no.of tests deleted
@@ -102,6 +104,7 @@ for project in projects_list:
                 ]
                 no_of_tests_deleted = not_deleted_with_whole_file_df.shape[0]
 
+                    
                 if no_of_tests_deleted == 1:
                     commits_deleting_single_testcase += 1
                     no_of_deleted_single_testcase += 1
@@ -110,6 +113,7 @@ for project in projects_list:
                     commits_deleting_mul_testcase += 1
                 else:
                     print("Oops")
+                    pass
 
             new_df.loc[len(new_df.index)] = [
                 project,
@@ -121,10 +125,11 @@ for project in projects_list:
                 commits_deleting_mul_testcase,
                 no_of_deleted_multiple_testcase,
             ]
+            print(commits_deleting_testclass, commits_deleting_single_testcase, commits_deleting_mul_testcase)
 
     main(project)
 
-print(new_df)
+# print(new_df)
 new_df.to_csv(output_path, index=False)
 print(f"Generated {output_path}")
 print("===================================================")
