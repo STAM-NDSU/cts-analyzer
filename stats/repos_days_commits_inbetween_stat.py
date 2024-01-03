@@ -54,7 +54,7 @@ for index, project in enumerate(projects_list):
             print("Q3: ", np.percentile(df["Commits"], 75))
             
             print("xxxxx")
-            print("Testcase")
+            print("Days")
             print("----")
             days_inbetween= list(df["Range"])
             all_data_days_inbetween = [*all_data_days_inbetween, *days_inbetween]
