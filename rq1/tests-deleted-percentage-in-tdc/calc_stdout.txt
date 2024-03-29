@@ -1,0 +1,63 @@
+commons-lang
+Total test deletion commit : 108
+Mean:  0.7228703703703702
+Median:  0.125
+Q1:  0.06
+Q3:  0.4125
+Max:  20.53
+Min:  0.03
+-------------xxxxxxxxxx------------
+gson
+Total test deletion commit : 37
+Mean:  0.9021621621621623
+Median:  0.56
+Q1:  0.13
+Q3:  1.36
+Max:  5.98
+Min:  0.08
+-------------xxxxxxxxxx------------
+commons-math
+Total test deletion commit : 231
+Mean:  1.2878787878787878
+Median:  0.13
+Q1:  0.06
+Q3:  0.48
+Max:  100.0
+Min:  0.02
+-------------xxxxxxxxxx------------
+joda-time
+Total test deletion commit : 31
+Mean:  3.4283870967741934
+Median:  0.5
+Q1:  0.13
+Q3:  1.46
+Max:  62.68
+Min:  0.01
+-------------xxxxxxxxxx------------
+jfreechart
+Total test deletion commit : 14
+Mean:  0.475
+Median:  0.26
+Q1:  0.22
+Q3:  0.3825
+Max:  1.97
+Min:  0.04
+-------------xxxxxxxxxx------------
+pmd
+Total test deletion commit : 310
+Mean:  0.8378709677419355
+Median:  0.2
+Q1:  0.11
+Q3:  0.54
+Max:  23.21
+Min:  0.05
+-------------xxxxxxxxxx------------
+cts
+Total test deletion commit : 1602
+Mean:  0.05333333333333333
+Median:  0.0
+Q1:  0.0
+Q3:  0.01
+Max:  18.28
+Min:  0.0
+-------------xxxxxxxxxx------------
