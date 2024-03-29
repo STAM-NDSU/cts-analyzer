@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from dateutil import tz
 from .pattern import Pattern
-from .config import Datetime_FORMAT, COMMIT_BASE_URL
+from .config import DATETIME_FORMAT, COMMIT_BASE_URL
 
 
 # Checks if file is a candidate file
@@ -82,7 +82,7 @@ def get_test_function_name_from_prototype(function_prototype):
 # Convert datetime to local timezone
 def format_commit_datetime(commit_date: datetime) -> str:
     local_datetime = commit_date.astimezone(tz.tzlocal())
-    return local_datetime.strftime(Datetime_FORMAT)
+    return local_datetime.strftime(DATETIME_FORMAT)
 
 
 # Parse commit hash as hyperlink

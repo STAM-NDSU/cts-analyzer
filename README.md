@@ -90,7 +90,7 @@ ssss
 ## Install forked pydriller
 
 pip install -e git+https://github.com/bhattasuraj76/pydriller.git#egg=pydriller
-pip install -e git+https://github.com/bhattasuraj76/pydriller.git@temp#egg=pydriller
+pip install -e git+https://github.com/bhattasuraj76/pydriller.git@testdelbench#egg=pydriller
 # Git cmd to get repository stats [total commits, first and recent commit info]
 
 To get a commit count for a revision (HEAD, master, a commit hash):

@@ -12,7 +12,7 @@ import matplotlib.dates as mdates
 from collections import defaultdict
 import seaborn as sns
 
-plt.rcParams.update({"font.size": 6})
+plt.rcParams.update({"font.size": 10})
 
 OUT_DIR = "../io/rq2/figures/"
 
@@ -31,7 +31,7 @@ df_rq21 = {
     "all": [0, 0, 0, 0, 0, 0, 17105],
 }
 total_deleted_tests = [869, 260, 3316, 151, 660, 2070, 17105]
-fig, ax = plt.subplots(figsize=(3.5, 2))
+fig, ax = plt.subplots(figsize=(7, 4))
 df_rq21 = pd.DataFrame(df_rq21)
 df_rq21.plot(
     x="projects",
@@ -50,7 +50,7 @@ for i, value in enumerate(total_deleted_tests):
             value,  # Get the total deleted tests for ith project
             # ha="center",
             va="center",
-            fontsize=5,
+            # fontsize=5,
             color="black",
         )
     else:
@@ -60,14 +60,18 @@ for i, value in enumerate(total_deleted_tests):
             value,  # Get the total deleted tests for ith project
             ha="left",
             va="center",
-            fontsize=5,
+            # fontsize=5,
             color="black",
         )
 
 plt.xlabel("Number of deleted tests")
 plt.ylabel("")
-ax.legend(["Obsolete tests", "Redundant tests", "Obsolete and Redundant tests"], fontsize=5)
-plt.yticks(rotation=15, fontsize=5)
+ax.legend(["Obsolete tests", "Redundant tests", "Obsolete and Redundant tests"], 
+        #   fontsize=5
+          )
+plt.yticks(rotation=15, 
+        #    fontsize=5
+           )
 
 # # function to add value labels
 # def addlabels(x, y):
@@ -76,7 +80,8 @@ plt.yticks(rotation=15, fontsize=5)
 
 # addlabels(df_rq21["projects"], df_rq21["abc"])
 
-plt.gcf().subplots_adjust(left=0.2, bottom=0.2, top=1, right=1, hspace=0.2, wspace=0)
+# plt.gcf().subplots_adjust(left=0.2, bottom=0.2, top=1, right=1, hspace=0.2, wspace=0)
 # plt.margins(0,0)
-fig.savefig(OUT_DIR + "deleted_with_source_code.pdf", dpi=1200)
+fig.savefig(OUT_DIR + "deleted_with_source_code01.png", dpi=1200, bbox_inches="tight")
+fig.savefig(OUT_DIR + "deleted_with_source_code01.pdf", dpi=1200, bbox_inches="tight")
 # plt.show()

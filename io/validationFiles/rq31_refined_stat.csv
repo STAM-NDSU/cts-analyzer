@@ -1,0 +1,8 @@
+Project,No of Commits Deleting Test Class,No. of Test Class,No. of tests,No. of obsolete tests,No. of redundant tests,No of Commits Deleting Single Test,No. of tests,No of Commits Deleting Multiple Test,No. of tests
+commons-lang,38,70,688,438,250,39,39,32,142
+gson,23,43,226,194,32,9,9,8,25
+commons-math,104,295,2401,1729,672,51,51,82,527
+jfreechart,9,21,122,74,48,4,4,3,25
+joda-time,7,20,291,33,258,4,4,22,365
+pmd,137,512,1548,775,773,119,119,74,403
+cts,427,2453,14723,9851,4872,610,610,407,1772

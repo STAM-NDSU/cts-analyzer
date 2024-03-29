@@ -5,19 +5,15 @@ from datetime import datetime, timedelta
 # Load env variables
 load_dotenv()
 
-# Url to cts repo
+# Url to local repository
 REPO_PATH = os.getenv("REPO_PATH", None)
-
-# Branch of the cts repo to be analyzed
+# Branch of the repository to be analyzed
 TARGET_BRANCH = os.getenv("TARGET_BRANCH", "master")
-
-# Url to cts repo
-COMMIT_BASE_URL = os.getenv(
-    "COMMIT_BASE_URL", "https://android.googlesource.com/platform/cts/+/"
-)
-
-# Directory where generated csv file is stored
+# Url to remote repository
+COMMIT_BASE_URL = os.getenv("COMMIT_BASE_URL")
+# Should the artifacts be exported
 HANDLE_EXPORT = os.getenv("HANDLE_EXPORT", "false")
+# Directory where generated csv file is stored
 OUTPUT_DIRECTORY = os.getenv("OUTPUT_DIR", "../output")
 
 # Refactors file generated from Refactoring Minor(https://github.com/tsantalis/RefactoringMiner)
@@ -45,7 +41,7 @@ DEFAULT_COMMIT_RANGE_DAYS_INTERVAL = 365
 
 # Datetime formats
 DATE_FORMAT = "%m/%d/%Y"
-Datetime_FORMAT = "%m/%d/%Y %H:%M:%S"
+DATETIME_FORMAT = "%m/%d/%Y %H:%M:%S"
 
 # Commit daterange filters
 COMMIT_START_DATE = os.getenv("COMMIT_START_DATE")
@@ -53,6 +49,7 @@ COMMIT_END_DATE = os.getenv("COMMIT_END_DATE")
 now = datetime.now()
 # Define interval in no of days to compute relative time diff
 interval = int(os.getenv("CTS_COMMIT_INTERVAL", DEFAULT_COMMIT_RANGE_DAYS_INTERVAL))
+
 COMMIT_START_DATETIME = (
     datetime.strptime(COMMIT_START_DATE, DATE_FORMAT)
     if COMMIT_START_DATE

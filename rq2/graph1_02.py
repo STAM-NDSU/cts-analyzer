@@ -5,7 +5,7 @@ Generate stacked vertical bargraphs for obsolte(deleted with source code) and re
 import matplotlib.pyplot as plt
 import numpy as np
 
-plt.rcParams.update({"font.size": 6})
+plt.rcParams.update({"font.size": 10})
 projects = (
     "commons-lang",
     "gson",
@@ -29,7 +29,7 @@ labels = {
 colors = {"Obsolete": "orange", "Redundant": "green", "All": "grey"}
 width = 0.5
 
-fig, ax = plt.subplots(figsize=(3.5, 3))
+fig, ax = plt.subplots(figsize=(7, 4))
 
 bottom = np.zeros(7)
 
@@ -56,7 +56,7 @@ for index, (project, tests_count) in enumerate(deleted_tests.items()):
                 total_deleted_tests[i], # Get the total deleted tests for ith project
                 ha="center",
                 va="bottom",
-                fontsize=5,
+                # fontsize=5,
                 color="black",
             )
 
@@ -70,10 +70,15 @@ for index, (project, tests_count) in enumerate(deleted_tests.items()):
 
 # ax.set_title("Number of deleted tests")
 plt.ylabel("Number of deleted tests")
-ax.legend(loc="upper left", fontsize=5)
-plt.xticks(rotation=15, fontsize=5)
-plt.gcf().subplots_adjust(left=0.15, bottom=0.11, top=0.98, right=1, hspace=0, wspace=0)
+ax.legend(loc="upper left",
+        #   fontsize=5
+          )
+plt.xticks(rotation=15,
+        #    fontsize=5
+           )
+plt.gcf().subplots_adjust(left=0, bottom=0.11, top=1, right=1, hspace=0, wspace=0)
 
 # plt.show()
 OUT_DIR = "../io/rq2/figures/"
-fig.savefig(OUT_DIR + "deleted_with_source_code2.pdf", dpi=1200)
+fig.savefig(OUT_DIR + "deleted_with_source_code02.png", dpi=1200, bbox_inches="tight")
+fig.savefig(OUT_DIR + "deleted_with_source_code02.pdf", dpi=1200, bbox_inches="tight")
