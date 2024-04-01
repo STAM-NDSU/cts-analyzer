@@ -31,13 +31,21 @@ projects_map = {
     "cts": cts,
 }
 
-results = []
+all_results = []
 for project, data in projects_map.items():
+    results = []
     for commit, meta in data.items():
-        per_del = round(meta["Total Deleted"] / meta["Total tests"] * 100, 2)
-        results.append([project, per_del])
+        total_tests = meta["Total tests"]
+        total_del = meta["Total Deleted"]
+        per_del = round(total_del / total_tests * 100, 2)
+        results.append([project, total_tests, total_del, per_del])
+        all_results.append([project, total_tests, total_del, per_del])
 
 
+    # Export to csv
+    df = pd.DataFrame(results, columns=["Project", "Total Tests", "Total Tests Deleted",  "Tests Deleted in %"])
+    df.to_csv(f"{project}.csv", index=False)
+    
 # Export to csv
-df = pd.DataFrame(results, columns=["Project", "Tests Deleted %"])
+df = pd.DataFrame(all_results, columns=["Project", "Total Tests", "Total Tests Deleted",  "Tests Deleted in %"])
 df.to_csv("percentage_of_tests_deleted_in_tdc.csv", index=False)
