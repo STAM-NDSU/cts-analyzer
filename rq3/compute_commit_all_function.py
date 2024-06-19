@@ -26,13 +26,13 @@ import lizard
 
 PROJECT_DIR = "../../os-java-projects/"
 projects_list = [
-    "commons-lang",
+    # "commons-lang",
     "gson",
-    "commons-math",
-    "jfreechart",
-    "joda-time",
-    "pmd",
-    "cts",
+    # "commons-math",
+    # "jfreechart",
+    # "joda-time",
+    # "pmd",
+    # "cts",
 ]
 VALIDATION_DIR = "../io/validationFiles"
 current_state = os.getcwd()
@@ -66,6 +66,18 @@ for project in projects_list:
     os.chdir(repo_path)  # Change directory; You are now inside the project directory
     for commit in commits_list:
         commit = strip_commit_url(commit)
+        
+        dirpath = "../../cts-analyzer/io/rq3/all_commits_all_functions/"+ project
+        filename = project + "-"  + commit+ ".json"
+            
+        if(os.path.exists(dirpath)== False):
+            os.mkdir(dirpath)
+        
+        # Ignore if there is file already
+        if(os.path.exists(dirpath + "/" + filename) and os.path.isfile(dirpath + "/" + filename)):
+            print("Skip for " + commit + " project " + project)
+            continue;  
+            
         cmd = f"git checkout {commit}"
         os.system(cmd)
 
