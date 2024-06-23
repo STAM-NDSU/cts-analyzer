@@ -106,7 +106,7 @@ for project in projects_list:
                             ),
                             functions_list,
                         )
-                        functions_name_list = list(functions_name_list)
+                        functions_name_list = list(set(list(functions_name_list)))
                         all_functions_in_commits[
                             os.path.join(root, name)
                         ] = functions_name_list
