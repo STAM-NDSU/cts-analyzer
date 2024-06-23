@@ -14,30 +14,30 @@ import sys
 sys.stdout = open('../temp.txt', 'w')
 
 projects = [
-    {
-        "project": "commons-lang",
-        "branch": "master",
-    },
+    # {
+    #     "project": "commons-lang",
+    #     "branch": "master",
+    # },
     {
         "project": "gson",
         "branch": "master",
     },
-    {
-        "project": "commons-math",
-        "branch": "master",
-    },
-    {
-        "project": "joda-time",
-        "branch": "main",
-    },
-    {
-        "project": "pmd",
-        "branch": "master",
-    },
-    {
-        "project": "jfreechart",
-        "branch": "master",
-    },
+    # {
+    #     "project": "commons-math",
+    #     "branch": "master",
+    # },
+    # {
+    #     "project": "joda-time",
+    #     "branch": "main",
+    # },
+    # {
+    #     "project": "pmd",
+    #     "branch": "master",
+    # },
+    # {
+    #     "project": "jfreechart",
+    #     "branch": "master",
+    # },
     # {
     #     "project": "cts",
     #     "branch": "master",

@@ -164,9 +164,11 @@ def get_removed_testcase_and_referenced_functions_details(
                                 file, removed_test_case
                             )
                         )
+                        print(functions_referenced, commit.hash, removed_test_case)
                         # Check if testcase is deleted along with source code[Test if javaparser successfully parses]
-                        if functions_referenced is None:
+                        if functions_referenced is None or len(functions_referenced) == 0:
                             new_data["Referenced Functions"] = ""
+                            # TODO: CHANGE LOGIC HERE FOR QUICK FIX
                             new_data["Deleted With Source Code"] = "undecided"
                             print("Javaparser failed for :", commit.hash, filename)
                         else:
