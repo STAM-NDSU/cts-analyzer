@@ -69,7 +69,9 @@ def get_removed_testcase_and_referenced_functions_details(
 
         test_deletion_hydrated_df["Referenced Functions"] = None
         test_deletion_hydrated_df["Deleted With Source Code"] = None
+        test_deletion_hydrated_df["Deleted With Source Code Decision"] = "decided" # If further manual validation is required to conform deletion with source code
         test_deletion_hydrated_df["Deleted With Whole File"] = None
+        
         # analyzer_global.test_deletion_hydrated_df = test_deletion_hydrated_df
         print("Initial Dataframe: ", test_deletion_hydrated_df.shape)
         if test_deletion_hydrated_df is not None:
@@ -98,7 +100,7 @@ def get_removed_testcase_and_referenced_functions_details(
                 # Update current_commit pointer; to skip the corrupted ones
                 analyzer_global.current_commit = commit
                 analyzer_global.since = commit.committer_date
-                print("here")
+                
                 # Check if commit hash is valid test deletion commit hash
                 if commit.hash not in commits_hash_to_look:
                     continue
@@ -121,14 +123,12 @@ def get_removed_testcase_and_referenced_functions_details(
                             *all_removed_functions_in_commit,
                             *all_removed_functions_in_file,
                         ]
-                print("removed methods", len(all_removed_functions_in_commit))
                 
                 # Get all filenames containing deleted test from matching hash
                 test_deletion_filepaths = test_deletion_hydrated_df[
                     test_deletion_hydrated_df["Hash"] == commit_hash
                 ].to_dict("list")["Filepath"]
                 test_deletion_filepaths = list(set(test_deletion_filepaths))
-                print("filenames to look", test_deletion_filepaths)
                 
                 # Compute referenced methods for deleted testcases
                 for file_idx, file in enumerate(commit.modified_files):
@@ -145,9 +145,6 @@ def get_removed_testcase_and_referenced_functions_details(
                         & (test_deletion_hydrated_df["Filepath"] == filepath)
                         & (test_deletion_hydrated_df["Filename"] == filename)
                     ]
-                    print(
-                        "deleted testcase", len(deleted_testcase_in_file_df), filename
-                    )
 
                     for index, row in deleted_testcase_in_file_df.iterrows():
                         new_data = {}
@@ -158,21 +155,21 @@ def get_removed_testcase_and_referenced_functions_details(
                             new_data["Deleted With Whole File"] = "no"
 
                         removed_test_case = row["Removed Test Case"]
-                        print("removed testcase", filename, removed_test_case)
+                        
                         functions_referenced = (
                             analyze_functions_referenced_in_removed_testcase(
                                 file, removed_test_case
                             )
                         )
-                        print(functions_referenced, commit.hash, removed_test_case)
+                        
                         # Check if testcase is deleted along with source code[Test if javaparser successfully parses]
                         if functions_referenced is None or len(functions_referenced) == 0:
                             new_data["Referenced Functions"] = ""
                             # TODO: CHANGE LOGIC HERE FOR QUICK FIX
-                            new_data["Deleted With Source Code"] = "undecided"
+                            new_data["Deleted With Source Code"] = "yes"
+                            new_data["Deleted With Source Code Decision"] = "undecided"
                             print("Javaparser failed for :", commit.hash, filename)
                         else:
-                            print("Functions reference", functions_referenced)
                             new_data["Referenced Functions"] = ",".join(
                                 functions_referenced
                             )
@@ -190,7 +187,8 @@ def get_removed_testcase_and_referenced_functions_details(
                                 new_data["Deleted With Source Code"] = "yes"
                             else:
                                 new_data["Deleted With Source Code"] = "no"
-
+                            new_data["Deleted With Source Code Decision"] = "decided"
+                            
                         data = [
                             row["Datetime"],
                             row["Hash"],
@@ -202,6 +200,7 @@ def get_removed_testcase_and_referenced_functions_details(
                             row["Removed Test Case"],
                             new_data["Referenced Functions"],
                             new_data["Deleted With Source Code"],
+                            new_data["Deleted With Source Code Decision"],
                             new_data["Deleted With Whole File"],
                         ]
                         analyzer_global.results.append(data)
@@ -230,6 +229,7 @@ def get_removed_testcase_and_referenced_functions_details(
                         "Removed Test Case",
                         "Referenced Functions",
                         "Deleted With Source Code",
+                        "Deleted With Source Code Decision",
                         "Deleted With Whole File",
                     ],
                 )

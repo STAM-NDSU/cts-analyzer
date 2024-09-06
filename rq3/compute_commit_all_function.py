@@ -26,13 +26,12 @@ import lizard
 
 PROJECT_DIR = "../../os-java-projects/"
 projects_list = [
-    # "commons-lang",
+    "commons-lang",
     "gson",
-    # "commons-math",
-    # "jfreechart",
-    # "joda-time",
-    # "pmd",
-    # "cts",
+    "commons-math",
+    "jfreechart",
+    "joda-time",
+    "pmd",
 ]
 VALIDATION_DIR = "../io/validationFiles"
 current_state = os.getcwd()

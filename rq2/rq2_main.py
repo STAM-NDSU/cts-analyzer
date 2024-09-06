@@ -1,3 +1,5 @@
+# Computes referenced funcitons in all the confirmed deleted tests for all the projects
+
 import sys
 
 sys.path.append("../")
@@ -11,17 +13,17 @@ from pathlib import Path
 import pandas as pd
 import sys
 
-sys.stdout = open('../temp.txt', 'w')
+sys.stdout = open("../temp.txt", "w")
 
 projects = [
     # {
     #     "project": "commons-lang",
     #     "branch": "master",
     # },
-    {
-        "project": "gson",
-        "branch": "master",
-    },
+    # {
+    #     "project": "gson",
+    #     "branch": "master",
+    # },
     # {
     #     "project": "commons-math",
     #     "branch": "master",
@@ -30,18 +32,15 @@ projects = [
     #     "project": "joda-time",
     #     "branch": "main",
     # },
-    # {
-    #     "project": "pmd",
-    #     "branch": "master",
-    # },
-    # {
+    #   {
     #     "project": "jfreechart",
     #     "branch": "master",
     # },
-    # {
-    #     "project": "cts",
-    #     "branch": "master",
-    # },
+    {
+        "project": "pmd",
+        "branch": "master",
+    },
+  
 ]
 
 for project_info in projects:
@@ -69,7 +68,7 @@ for project_info in projects:
                     f"{validation_dir}/hydrated_rq_2.csv",
                     index=False,
                 )
-                print(f'Successfully generated {validation_dir}/hydrated_rq_2.csv')
+                print(f"Successfully generated {validation_dir}/hydrated_rq_2.csv")
 
         except Exception as e:
             print(f"Error occurred: {type(e).__name__}")

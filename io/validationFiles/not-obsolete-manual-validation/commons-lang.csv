@@ -1,0 +1,21 @@
+Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details,Frank Type,Suraj Type,Final Type,Resolved Final Type,Frank Remarks,Suraj Remarks,,,
+07/25/2002 20:40:11,e950d9b37e97f8573f0655520b88900e8acb2869,742a42dbf347f6244dd37a7edee72ec2f8ca977f,dlr@apache.org,"Removed two broken methods from StringUtils.  Since a beta has gone out,
+this is not good practice.  However, since 1.0 final has not yet been
+released, it is out-weighed by the trade off of releasing code that just
+plain doesn't work.
+
+Use str.getBytes(encoding) in place of convertUnicodeToNative().
+
+Use new String(byte[], encoding) in place of convertNativeToUnicode().
+
+
+git-svn-id: https://svn.apache.org/repos/asf/jakarta/commons/proper/lang/trunk@136945 13f79535-47bb-0310-9956-ffa450edef68",src/test/org/apache/commons/lang/StringUtilsTest.java,StringUtilsTest.java,testUnicodeFunctions,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the code within the test case was commented out,empty test,,,
+07/30/2005 20:17:01,3535bf265b3eb34df28ff2ee5c029065e569add8,be164675feda702a738a9b5fe49c9b5fc17ac018,ggregory@apache.org,"Better code coverage from Nathan Beyer [nbeyer@kc.rr.com].
+
+git-svn-id: https://svn.apache.org/repos/asf/jakarta/commons/proper/lang/trunk@226597 13f79535-47bb-0310-9956-ffa450edef68",src/test/org/apache/commons/lang/text/StrBuilderTest.java,StrBuilderTest.java,testCharArray,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,todo test case,empty test,,concurrent obsolete,0
+02/26/2015 2:13:58,61836183b1d84a18dbcc084d1f41bcecf752f9fd,4975b8903e359963eb48e2ad3d4095de0cfa8032,britter@apache.org,"Reverting changes from r1661762 (LANG-1086) for now until we have consensus about this change.
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/lang/trunk@1662379 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/lang3/concurrent/AtomicInitializerTest.java,AtomicInitializerTest.java,testGetConcurrentWithException,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,reverted back due to disagreement,,phased obsolete,0
+02/26/2015 2:13:58,61836183b1d84a18dbcc084d1f41bcecf752f9fd,4975b8903e359963eb48e2ad3d4095de0cfa8032,britter@apache.org,"Reverting changes from r1661762 (LANG-1086) for now until we have consensus about this change.
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/lang/trunk@1662379 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/lang3/concurrent/LazyInitializerTest.java,LazyInitializerTest.java,testGetConcurrentWithException,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,reverted back due to disagreement,,not obsolete,4
