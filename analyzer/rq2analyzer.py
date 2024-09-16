@@ -167,7 +167,8 @@ def get_removed_testcase_and_referenced_functions_details(
                             new_data["Referenced Functions"] = ""
                             # TODO: CHANGE LOGIC HERE FOR QUICK FIX
                             new_data["Deleted With Source Code"] = "yes"
-                            new_data["Deleted With Source Code Decision"] = "undecided"
+                            # If there are no referenced function, we make the decision undecided i.e we need further confirmation through manual validation
+                            new_data["Deleted With Source Code Decision"] = "undecided" 
                             print("Javaparser failed for :", commit.hash, filename)
                         else:
                             new_data["Referenced Functions"] = ",".join(

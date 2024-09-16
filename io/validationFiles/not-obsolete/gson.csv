@@ -1,5 +1,1 @@
-Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details
-11/01/2021 17:09:14,"=HYPERLINK(""https://github.com/google/gson/commit/e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"", ""e0de45ff69ba3daacc3b7623cc74fc69a4eaf6d0"")","=HYPERLINK(""https://github.com/google/gson/commit/b4dab86b105c85e6b7d7106c9ff11e3e923e3485"", ""b4dab86b105c85e6b7d7106c9ff11e3e923e3485"")",noreply@github.com,"Delete unused LinkedHashTreeMap (#1992)
-
-Class seems to be unused since commit f29d5bc37b52c4b8d2ad15a10bb0c7f684c1d45d.
-Gson currently only uses LinkedTreeMap.",gson/src/test/java/com/google/gson/internal/LinkedHashTreeMapTest.java,LinkedHashTreeMapTest.java,testAvlBuilder,,yes,undecided,yes,concurrent obsolete,na
+Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details,Frank Type,Suraj Type,Final Type,Resolved Final Type,Frank Remarks,Suraj Remarks,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24

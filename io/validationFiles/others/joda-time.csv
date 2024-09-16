@@ -1,0 +1,540 @@
+Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetDateTimeInstance,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetPattern,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetChronology,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetTimeZone,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetLocale,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetPrinter,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetParser,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testEstimatePrintedLength,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToSLL,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToWLL,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToSBRI,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToSBL,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToWRI,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintToWL,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintRI,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testPrintL,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testEstimateParsedLength,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testParseIntoPBSI,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testParseIntoRWIS,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testParseIntoRWISI,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testParseS,,yes,undecided,no,concurrent obsolete,na
+12/18/2003 20:07:36,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/0e07ac6b2cff63550d7df336355ca63cc05aa40b"", ""0e07ac6b2cff63550d7df336355ca63cc05aa40b"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/1ba4f9861a0cfbc32c56efced3619874a43ec5dd"", ""1ba4f9861a0cfbc32c56efced3619874a43ec5dd"")",scolebourne@joda.org,"Move from Joda CVS
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@10 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testParseSL,,yes,undecided,no,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetInstanceTZ,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetInstanceTZL,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetInstanceC,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetInstanceCL,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testForPattern,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testForStyle,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormat.java,TestDateTimeFormat.java,testGetPatternForStyle,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testToPrinter,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testToParser,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testToFormatter,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testCanBuildPrinter,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testCanBuildParser,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testCanBuilderFormatter,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testClear,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDTF,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDTPE,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendLiteralC,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendLiteralS,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendNumeric,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendSignedNumeric,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendFraction,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendFractionOfSecond,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendFractionOfMinute,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendFractionOfHour,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendFractionOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMillisOfSecond,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMillisOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendSecondOfMinute,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendSecondOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMinuteOfHour,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMinuteOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendHourOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendClockhourOfDay,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendHourOfHalfday,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendClockhourOfHalfday,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDayOfWeek,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDayOfMonth,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDayOfYear,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendWeekOfYearWeek,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendWeekOfYearYear,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMonthOfYear,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendYear,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendYearOfEra,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendYearOfCentury,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendCentury,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendCenturyOfEra,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendAmPmSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDayOfWeekSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendDayOfWeekShortSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMonthOfYearSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendMonthOfYearShortSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendEraSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendTimeZoneSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendTimeZoneShortSymbol,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendTimeZoneOffset,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeFormatterBuilder.java,TestDateTimeFormatterBuilder.java,testAppendPattern,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testSetMillis,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testSaveField,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testSetTimeZone,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testSetTimeZoneOffset,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testGetTimeZone,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testGetTimeZoneOffset,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestDateTimeParserBucket.java,TestDateTimeParserBucket.java,testComputeMillis,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testClone,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testFormat,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetMillis,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetStartInstant,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetEndInstant,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testToTimePeriod,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalSeconds,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalMinutes,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalHours,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalDays,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalMonths,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetTotalWeeks,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetSeconds,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetMinutes,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetHours,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetDays,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetMonths,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testGetYears,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testEquals,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testHashCode,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testCompareTo,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testIsLongerThan,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testIsShorterThan,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriod.java,TestTimePeriod.java,testToString,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriodFormat.java,TestTimePeriodFormat.java,testFormat,,yes,undecided,yes,concurrent obsolete,na
+12/20/2003 08:11:23,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/acc5016243117465b83621ea5ff31ae76163d3b8"", ""acc5016243117465b83621ea5ff31ae76163d3b8"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/f1a476f463c62b736e4a641aba4c59d9629814d1"", ""f1a476f463c62b736e4a641aba4c59d9629814d1"")",scolebourne@joda.org,"Remove usused tests
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@31 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestTimePeriodFormat.java,TestTimePeriodFormat.java,testParseObject,,yes,undecided,yes,concurrent obsolete,na
+07/27/2004 17:21:14,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d3c4efa48ca55da45286072b98aa229839d0b1ed"", ""d3c4efa48ca55da45286072b98aa229839d0b1ed"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d21736df31ca4888e76ccbdc7d31f406cf68b645"", ""d21736df31ca4888e76ccbdc7d31f406cf68b645"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@350 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestMDTAdd.java,TestMDTAdd.java,testAddMillis,,yes,undecided,yes,concurrent obsolete,na
+07/27/2004 17:21:14,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d3c4efa48ca55da45286072b98aa229839d0b1ed"", ""d3c4efa48ca55da45286072b98aa229839d0b1ed"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/d21736df31ca4888e76ccbdc7d31f406cf68b645"", ""d21736df31ca4888e76ccbdc7d31f406cf68b645"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@350 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestMDTAddWrapped.java,TestMDTAddWrapped.java,testFailure,,yes,undecided,yes,concurrent obsolete,na
+08/07/2004 06:55:14,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3f62b3a3ef59f954a14f09aeee97053618da1c74"", ""3f62b3a3ef59f954a14f09aeee97053618da1c74"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c19bfe0c328518cb9d9734e8e15c174c150b86c0"", ""c19bfe0c328518cb9d9734e8e15c174c150b86c0"")",scolebourne@joda.org,"Tests and fixes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@366 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testNormalize,,yes,undecided,no,concurrent obsolete,na
+08/21/2004 16:29:39,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/5f2aa4794e8094eb6b3018589c3a751f61bd2fa6"", ""5f2aa4794e8094eb6b3018589c3a751f61bd2fa6"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/7c064bbf222d8abec91abb9a0790014ff6f06cea"", ""7c064bbf222d8abec91abb9a0790014ff6f06cea"")",scolebourne@joda.org,"Create BasePeriod
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@415 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testNormalize,,yes,undecided,no,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testEraConstant,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMillisOfSecond,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMillisOfDay,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testSecondOfMinute,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testSecondOfDay,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMinuteOfHour,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMinuteOfDay,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testHourOfDay,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testClockhourOfDay,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testHourOfHalfday,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testClockhourOfHalfday,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testAmPm,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfWeek,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfMonth,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfYear,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testWeekOfYearWeek,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMonthOfYear,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testLeapYear,,yes,undecided,yes,concurrent obsolete,na
+08/22/2004 10:25:24,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/3877455129a7ee0c1c50ff3a4cf9116732a26862"", ""3877455129a7ee0c1c50ff3a4cf9116732a26862"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/6bdd176eed470329a73d7ee08498183e579cea60"", ""6bdd176eed470329a73d7ee08498183e579cea60"")",scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testWeekOfYearYear,,yes,undecided,yes,concurrent obsolete,na
+07/31/2011 17:41:30,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c5a5190e19c062405ae4825c36e2172ae64202fb"", ""c5a5190e19c062405ae4825c36e2172ae64202fb"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"", ""49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"")",scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecExpandedC,,yes,undecided,yes,concurrent obsolete,na
+07/31/2011 17:41:30,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c5a5190e19c062405ae4825c36e2172ae64202fb"", ""c5a5190e19c062405ae4825c36e2172ae64202fb"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"", ""49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"")",scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecWeekTruncatedDWD,,yes,undecided,yes,concurrent obsolete,na
+07/31/2011 17:41:30,"=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/c5a5190e19c062405ae4825c36e2172ae64202fb"", ""c5a5190e19c062405ae4825c36e2172ae64202fb"")","=HYPERLINK(""https://github.com/JodaOrg/joda-time/commit/49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"", ""49558a5286c3b7eb6c85d5f26e5ae94f11f7a892"")",scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecWeekTruncatedDW,,yes,undecided,yes,concurrent obsolete,na

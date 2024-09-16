@@ -120,3 +120,43 @@ git cherry master -v | head -n 1
 
 
 $(($(git rev-list --count A..B) - 1))
+
+
+
+# Results of script
+(venv) bash-3.2$ python3 compile_others_manual_validation_results.py 
+commons-lang
+--------
+Total `not obsolete` deleted tests: 4
+Total TDC with `not obsolete` deleted tests: 3
+Total parent commits of TDC with `not obsolete` deleted tests: 3
+----*******----
+gson
+--------
+Total `not obsolete` deleted tests: 0
+Total TDC with `not obsolete` deleted tests: 0
+Total parent commits of TDC with `not obsolete` deleted tests: 0
+----*******----
+commons-math
+--------
+Total `not obsolete` deleted tests: 18
+Total TDC with `not obsolete` deleted tests: 6
+Total parent commits of TDC with `not obsolete` deleted tests: 6
+----*******----
+jfreechart
+--------
+Total `not obsolete` deleted tests: 0
+Total TDC with `not obsolete` deleted tests: 0
+Total parent commits of TDC with `not obsolete` deleted tests: 0
+----*******----
+joda-time
+--------
+Total `not obsolete` deleted tests: 137
+Total TDC with `not obsolete` deleted tests: 7
+Total parent commits of TDC with `not obsolete` deleted tests: 7
+----*******----
+pmd
+--------
+Total `not obsolete` deleted tests: 497
+Total TDC with `not obsolete` deleted tests: 103
+Total parent commits of TDC with `not obsolete` deleted tests: 102
