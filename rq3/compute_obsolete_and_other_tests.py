@@ -1,5 +1,5 @@
 """
-Compiles all phased and concurrent obsolete tests present in test deletion commit. Rest of the deleted tests are categorized as not obsolete.
+Compiles all phased and concurrent obsolete tests present in test deletion commit. Rest of the deleted tests are categorized as `not obsolete`.
 """
 
 import sys
@@ -96,8 +96,8 @@ for project in projects_list:
             invoked_functions = list(filter(None, invoked_functions)) # Remove empty strings
             
             # Skip if there are no referenced functions
-            if(len(invoked_functions) == 0):
-                print(index)
+            # if(not invoked_functions):
+            #     break
             
             # Check if the deleted test is phased obsolete
             for func in invoked_functions:

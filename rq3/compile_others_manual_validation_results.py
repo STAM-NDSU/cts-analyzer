@@ -14,9 +14,12 @@ import os
 from pathlib import Path
 
 VALIDATION_DIR = "../io/validationFiles"
-MANUAL_VALIDATION_DIR = "../io/validationFiles/not-obsolete-manual-validation"
+MANUAL_VALIDATION_DIR = "../io/validationFiles/others-manual-validation"
 OUTPUT_MANUAL_VALIDATION_COMPILATION_DIR = (
-    "../io/validationFiles/not-obsolete-manual-validation-compilation-results"
+    "../io/validationFiles/not-obsolete-parent-commits"
+)
+NOT_OBSOLETE_DIR = (
+    "../io/validationFiles/not-obsolete"
 )
 
 projects_list = [
@@ -40,13 +43,16 @@ def get_not_obsolete_test_deletion_commits_df(project):
 
     df = pd.read_csv(manual_validation_file)
     not_obsoltete_testcase_df = df[df["Final Type"] == "not obsolete"]
-    print(
-        f"Total `not obsolete` deleted tests: {len(not_obsoltete_testcase_df)}"
-    )
+    print(f"Total `not obsolete` deleted tests: {len(not_obsoltete_testcase_df)}")
     print(
         f"Total TDC with `not obsolete` deleted tests: {len(set(list(not_obsoltete_testcase_df['Hash'])))}"
     )
-    
+
+    # Place those tests into not-obsolete folder
+    temp_df = not_obsoltete_testcase_df.copy()
+    if not os.path.exists(NOT_OBSOLETE_DIR):
+        os.mkdir(NOT_OBSOLETE_DIR)
+    temp_df.to_csv(f"{NOT_OBSOLETE_DIR}/{project}.csv", index=False)
     return not_obsoltete_testcase_df
 
 
@@ -66,8 +72,12 @@ def export(parent_commits_list, not_obsolete_deleted_tests):
         "Child Commit Recent Date": [],
         "Parent": [],
         "Hash": [],
+        "Deleted Tests Filepath": [],
         "Deleted Tests": [],
+        "Deleted Tests Location": [],
+        "Deleted Tests With Whole File": [],
         "Total Deleted Tests": [],
+        "Total Deleted Tests With Whole File": [],
     }
     for parent_commit in parent_commits_list:
         deleted_tests_df = not_obsolete_deleted_tests[
@@ -79,10 +89,39 @@ def export(parent_commits_list, not_obsolete_deleted_tests):
         # child tdcs
         child_tdcs = list(set(deleted_tests_df["Hash"].values.tolist()))
         data["Hash"].append(child_tdcs)
+        # deleted tests filepath
+        deleted_tests_filepath = list(set(deleted_tests_df["Filepath"].values.tolist()))
+        data["Deleted Tests Filepath"].append(deleted_tests_filepath)
         # deleted tests
         deleted_tests = deleted_tests_df["Removed Test Case"].values.tolist()
         data["Deleted Tests"].append(deleted_tests)
+        # deleted tests location
+        deleted_tests_location = {}
+        for filepath in deleted_tests_filepath:
+            filepath_deleted_tests_df = deleted_tests_df[
+                (deleted_tests_df["Filepath"] == filepath)
+                & (deleted_tests_df["Parent"] == parent_commit)
+            ]
+            filepath_deleted_tests = filepath_deleted_tests_df[
+                "Removed Test Case"
+            ].values.tolist()
+            deleted_tests_location[filepath] = filepath_deleted_tests
+        data["Deleted Tests Location"].append(deleted_tests_location)
+        # deleted with whole file
+        deleted_tc_with_whole_file_df = deleted_tests_df[
+            deleted_tests_df["Deleted With Whole File"] == "yes"
+        ]
+        deleted_with_whole_file = {
+            "Total File": len(list(set(deleted_tc_with_whole_file_df["Filepath"].values.tolist()))),
+            "Total Tests": len(deleted_tc_with_whole_file_df),
+            "Files": list(set(deleted_tc_with_whole_file_df["Filepath"].values.tolist())),
+        }
+        data["Deleted Tests With Whole File"].append(deleted_with_whole_file)
+        # Total deleted tests
         data["Total Deleted Tests"].append(len(deleted_tests))
+        data["Total Deleted Tests With Whole File"].append(
+            deleted_with_whole_file["Total Tests"]
+        )
 
     df = pd.DataFrame(data)
     df["Child Commit Recent Date"] = pd.to_datetime(
