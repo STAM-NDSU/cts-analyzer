@@ -1,0 +1,101 @@
+david@Surajs-MacBook-Air rq3 % python3 compute_coverage_results.py                
+______________Project: commons-lang____________
+########## Parent TDC Coverage Stats ##########
+Total Records:  3
+Total Failed: 0
+Total Passed: 3
+Total Records with Branch Coverage Change: 2
+Total Records with Line Coverage Change: 2
+Max Line Coverage Change: 0.0080%
+Max Branch Coverage Change: 0.0018%
+Mutation Total Fail: 1
+Mutation Total Passs: 2
+Total Records with Mutation Coverage Change: 2
+Max Mutation Coverage Change: 0.0064%
+########## Deleted Tests Coverage Stats ##########
+Total Records:  4
+Total Failed: 0
+Total Passed: 4
+Total Records with Branch Coverage Change: 3
+Total Records with Line Coverage Change: 3
+Max Line Coverage Change: 0.0005%
+Max Branch Coverage Change: 0.0018%
+Mutation Total Fail: 1
+Mutation Total Passs: 3
+Total Records with Mutation Coverage Change: 2
+Max Mutation Coverage Change: 0.0001%
+______________Project: commons-math____________
+########## Parent TDC Coverage Stats ##########
+Total Records:  5
+Total Failed: 0
+Total Passed: 5
+Total Records with Branch Coverage Change: 0
+Total Records with Line Coverage Change: 0
+Max Line Coverage Change: 0.0000%
+Max Branch Coverage Change: 0.0000%
+Mutation Total Fail: 1
+Mutation Total Passs: 4
+Total Records with Mutation Coverage Change: 0
+Max Mutation Coverage Change: 0.0000%
+########## Deleted Tests Coverage Stats ##########
+Total Records:  16
+Total Failed: 0
+Total Passed: 16
+Total Records with Branch Coverage Change: 0
+Total Records with Line Coverage Change: 0
+Max Line Coverage Change: 0.0000%
+Max Branch Coverage Change: 0.0000%
+Mutation Total Fail: 2
+Mutation Total Passs: 14
+Total Records with Mutation Coverage Change: 0
+Max Mutation Coverage Change: 0.0000%
+______________Project: joda-time____________
+########## Parent TDC Coverage Stats ##########
+Total Records:  7
+Total Failed: 0
+Total Passed: 7
+Total Records with Branch Coverage Change: 0
+Total Records with Line Coverage Change: 0
+Max Line Coverage Change: 0.0000%
+Max Branch Coverage Change: 0.0000%
+Mutation Total Fail: 6
+Mutation Total Passs: 1
+Total Records with Mutation Coverage Change: 0
+Max Mutation Coverage Change: 0.0000%
+########## Deleted Tests Coverage Stats ##########
+Total Records:  137
+Total Failed: 114
+Total Passed: 23
+Total Records with Branch Coverage Change: 0
+Total Records with Line Coverage Change: 0
+Max Line Coverage Change: 0.0000%
+Max Branch Coverage Change: 0.0000%
+Mutation Total Fail: 134
+Mutation Total Passs: 3
+Total Records with Mutation Coverage Change: 0
+Max Mutation Coverage Change: 0.0000%
+______________Project: pmd____________
+########## Parent TDC Coverage Stats ##########
+Total Records:  96
+Total Failed: 0
+Total Passed: 96
+Total Records with Branch Coverage Change: 15
+Total Records with Line Coverage Change: 18
+Max Line Coverage Change: 0.0115%
+Max Branch Coverage Change: 0.0077%
+Mutation Total Fail: 27
+Mutation Total Passs: 69
+Total Records with Mutation Coverage Change: 6
+Max Mutation Coverage Change: 0.0016%
+########## Deleted Tests Coverage Stats ##########
+Total Records:  475
+Total Failed: 0
+Total Passed: 475
+Total Records with Branch Coverage Change: 84
+Total Records with Line Coverage Change: 98
+Max Line Coverage Change: 0.0419%
+Max Branch Coverage Change: 0.0044%
+Mutation Total Fail: 126
+Mutation Total Passs: 349
+Total Records with Mutation Coverage Change: 64
+Max Mutation Coverage Change: 0.0008%
