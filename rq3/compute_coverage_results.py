@@ -16,7 +16,6 @@ projects_list = [
 SCALAR = 10000
 
 
-
 # Varibles for box plot
 all_projects_mutation_score = []
 all_projects_line_coverage = []
@@ -32,6 +31,7 @@ def compute_deleted_tests_coverage_stats(project):
 def _compute(file_path):
     # Process file
     original_df = pd.read_csv(file_path, thousands=",")
+    original_df = original_df[original_df["Test Run"] == "passed"]
     print("Total Records: ", original_df.shape[0])
     print("Total Unique Parent Records: ", len(set(original_df["Parent"].to_list())))
     ## DEBUG
@@ -39,23 +39,8 @@ def _compute(file_path):
 
     ##### Calculate JACOCO: Branch and Line Coverage ######
 
-    # Initialize counters and accumulators
-    total_failed = 0
-    total_passed = 0
-    total_records_with_branch_coverage_change = 0
-    total_records_with_line_coverage_change = 0
-
-    line_coverage_changes = []
-    branch_coverage_changes = []
-
     # Display 'Test Run' by group summary
     # print(df['Test Run'].value_counts().to_dict())
-
-    # Total Failed
-    total_failed = original_df[original_df["Test Run"] == "failed"].shape[0]
-
-    # Total Passed
-    total_passed = original_df.shape[0] - total_failed
 
     # Parse types for the passed df
     df = original_df[original_df["Test Run"] == "passed"]
@@ -95,85 +80,65 @@ def _compute(file_path):
         }
     )
 
-    # ## DEBUG ##
-    # branch_coverage_faulty_mask = df["LC Before Covered"] > df["LC After Covered"]
-    # df = df[branch_coverage_faulty_mask]
-    # print(set(df['Hash'].to_list()))
-    # print(line_coverage_changes)
-    # exit(0)
-
     # Branch Coverage Changes
     branch_coverage_change_mask = df["BC Before Covered"] != df["BC After Covered"]
-    total_records_with_branch_coverage_change = df[branch_coverage_change_mask].shape[0]
+    branch_coverage_change_df = df[branch_coverage_change_mask]
+
+    # Accumulate Branch Coverage Change
+    all_projects_branch_coverage.extend(df["BC Loss %"].dropna().tolist())  # Box Plot
+
+    # Print BC stats
+    print(
+        f"Total Records with Branch Coverage Change: {branch_coverage_change_df.shape[0]}"
+    )
+    print(
+        f"Total Unique Parent Records: {len(set(branch_coverage_change_df['Parent'].to_list()))}"
+    )
+    print(
+        f"Max Branch Coverage Change: {branch_coverage_change_df['BC Loss %'].max()/SCALAR:.4f}%"
+    )
+    print(
+        f"Min Branch Coverage Change: {branch_coverage_change_df['BC Loss %'].min()/SCALAR:.4f}%"
+    )
 
     # Line Coverage Changes
     line_coverage_change_mask = df["LC Before Covered"] != df["LC After Covered"]
-    total_records_with_line_coverage_change = df[line_coverage_change_mask].shape[0]
+    line_coverage_change_df = df[line_coverage_change_mask]
 
-    # Calculate Line Coverage Change
-    line_coverage_changes.extend(df["LC Loss %"].dropna().tolist())
+    # Accumulate Line Coverage Change
     all_projects_line_coverage.extend(df["LC Loss %"].dropna().tolist())  # Box Plot
 
-    # Filter zeros from list; Helpful to calculate avg change
-    # line_coverage_changes = list(filter(lambda x: x != 0, line_coverage_changes))
-    # print(line_coverage_changes)
-
-    # Calculate Branch Coverage Change
-    branch_coverage_changes.extend(df["BC Loss %"].dropna().tolist())
-    all_projects_branch_coverage.extend(df["BC Loss %"].dropna().tolist())  # Box Plot
-
-    # # Filter zeros from list; Helpful to calculate avg change
-    # branch_coverage_changes = list(filter(lambda x: x != 0, branch_coverage_changes))
-    # print(branch_coverage_changes)
-
-    # Max Line Coverage Change
-    max_line_coverage_change = max(line_coverage_changes, default=0)
-
-    # DEBUG
-    # print("Max line coverage is:")
-    # max_line_coverage_index = line_coverage_changes.index(max_line_coverage_change)
-    # print(df.loc[max_line_coverage_index, :])
-
-    # Max Branch Coverage Change
-    max_branch_coverage_change = max(branch_coverage_changes, default=0)
-
-    # DEBUG
-    # print("Max branch coverage is:")
-    # max_branch_coverage_index = branch_coverage_changes.index(
-    #     max_branch_coverage_change
-    # )
-    # print(df.loc[max_branch_coverage_index, :])
-
-    # Print results
-    print(f"Total Failed: {total_failed}")
-    print(f"Total Passed: {total_passed}")
+    # Print LC stats
     print(
-        f"Total Records with Branch Coverage Change: {total_records_with_branch_coverage_change}"
+        f"Total Records with Line Coverage Change: {line_coverage_change_df.shape[0]}"
     )
     print(
-        f"Total Records with Line Coverage Change: {total_records_with_line_coverage_change}"
+        f"Total Unique Parent Records: {len(set(line_coverage_change_df['Parent'].to_list()))}"
     )
-    print(f"Max Line Coverage Change: {max_line_coverage_change/SCALAR:.4f}%")
-    print(f"Max Branch Coverage Change: {max_branch_coverage_change/SCALAR:.4f}%")
+    print(
+        f"Max Line Coverage Change: {branch_coverage_change_df['LC Loss %'].dropna().max()/SCALAR:.4f}%"
+    )
+    print(
+        f"Min Line Coverage Change: {branch_coverage_change_df['LC Loss %'].dropna().min()/SCALAR:.4f}%"
+    )
 
-    ##### Calculate PMD: Mutation Coverage ######
+    ##### Calculate PIT: Mutation Coverage ######
+    # Failed
+    failed_df = original_df[original_df["Mutation Run"] == "failed"]
+    print(f"Mutation Total Fail: {failed_df.shape[0]}")
+    print(
+        f"Mutation Total Fail Unique Parent Records: {len(set(failed_df['Parent'].to_list()))}"
+    )
 
-    # Initialize counters and accumulators
-    total_failed = 0
-    total_passed = 0
-    total_records_with_mutation_score_change = 0
-
-    mutation_score_changes = []
-
-    # Total Failed
-    total_failed = original_df[original_df["Mutation Run"] == "failed"].shape[0]
-
-    # Total Passed
-    total_passed = original_df.shape[0] - total_failed
+    # Passed
+    passed_df = original_df[original_df["Mutation Run"] == "passed"]
+    print(f"Mutation Total Passs: {passed_df.shape[0]}")
+    print(
+        f"Mutation Total Passs Unique Parent Records: {len(set(passed_df['Parent'].to_list()))}"
+    )
 
     # Parse types for the passed df
-    df = original_df[original_df["Mutation Run"] == "passed"]
-    df = df.astype(
+    passed_df = passed_df.astype(
         {
             "MC Before Killed": int,
             "MC Before Total": int,
@@ -182,36 +147,43 @@ def _compute(file_path):
         }
     )
 
-    df["MC Before Cov %"] = round(
-        (df["MC Before Killed"] / df["MC Before Total"]) * SCALAR, 0
+    passed_df["MC Before Cov %"] = round(
+        (passed_df["MC Before Killed"] / passed_df["MC Before Total"]) * 100* SCALAR, 0
     )
-    df["MC After Cov %"] = round(
-        (df["MC After Killed"] / df["MC After Total"]) * SCALAR, 0
+    passed_df["MC After Cov %"] = round(
+        (passed_df["MC After Killed"] / passed_df["MC After Total"]) * 100* SCALAR, 0
     )
-
-    df = df.astype({"MC Before Cov %": int, "MC After Cov %": int})
+    passed_df["MC Loss %"] = passed_df["MC Before Cov %"] - passed_df["MC After Cov %"]
+    passed_df = passed_df.astype(
+        {
+            "MC Loss %": int,
+        }
+    )
 
     # Mutation Coverage Changes
-    mutation_score_change_mask = df["MC Before Killed"] != df["MC After Killed"]
-    total_records_with_mutation_score_change = df[mutation_score_change_mask].shape[0]
-
-    # Calculate Mutation Coverage Change
-    mutation_score_changes.extend(
-        (df["MC Before Cov %"] - df["MC After Cov %"]).dropna().tolist()
+    mutation_score_change_mask = (
+        passed_df["MC Before Killed"] != passed_df["MC After Killed"]
     )
+    mutation_coverage_change_df = passed_df[mutation_score_change_mask]
+
+    # Accumulate Mutation Coverage Change
     all_projects_mutation_score.extend(
-        (df["MC Before Cov %"] - df["MC After Cov %"]).dropna().tolist()
+        mutation_coverage_change_df["MC Loss %"].dropna().tolist()
     )  # Box Plot
 
-    # Max Mutation Coverage Change
-    max_mutation_score_change = max(mutation_score_changes, default=0)
-
-    print(f"Mutation Total Fail: {total_failed}")
-    print(f"Mutation Total Passs: {total_passed}")
+    # Print MC stats
     print(
-        f"Total Records with Mutation Coverage Change: {total_records_with_mutation_score_change}"
+        f"Total Records with Mutation Coverage Change: {mutation_coverage_change_df.shape[0]}"
     )
-    print(f"Max Mutation Coverage Change: {max_mutation_score_change/SCALAR:.4f}%")
+    print(
+        f"Total Unique Parent Records: {len(set(mutation_coverage_change_df['Parent'].to_list()))}"
+    )
+    print(
+        f"Max Mutation Coverage Change: {mutation_coverage_change_df['MC Loss %'].max()/SCALAR:.4f}%"
+    )
+    print(
+        f"Min Mutation Coverage Change: {mutation_coverage_change_df['MC Loss %'].min()/SCALAR:.4f}%"
+    )
 
 
 for project in projects_list:
