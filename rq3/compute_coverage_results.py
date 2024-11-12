@@ -5,6 +5,7 @@ Mutation Detection Loss computed using PIT plugin.
 
 import pandas as pd
 import math
+from statistics import median
 
 PROJECT_DIR = "../io/validationFiles/not-obsolete-coverage"
 projects_list = [
@@ -80,12 +81,23 @@ def _compute(file_path):
         }
     )
 
+    ####### Prepare data for FAST-R  #######
+    # WARNING: DO NOT MODIFY `df`
+    copy_df = df.copy()
+    # Commen out as we want to consider all the tests including coverage reducing tests
+    # copy_df = copy_df[copy_df["LC Before Covered"] == copy_df["LC After Covered"]] 
+    copy_df.to_csv("./fast-r/" + project + ".csv")
+    ####### Prepare data for FAST-R  #######
+
     # Branch Coverage Changes
     branch_coverage_change_mask = df["BC Before Covered"] != df["BC After Covered"]
     branch_coverage_change_df = df[branch_coverage_change_mask]
 
     # Accumulate Branch Coverage Change
-    all_projects_branch_coverage.extend(df["BC Loss %"].dropna().tolist())  # Box Plot
+
+    all_projects_branch_coverage.extend(
+        branch_coverage_change_df["BC Loss %"].tolist()
+    )  # Box Plot
 
     # Print BC stats
     print(
@@ -106,7 +118,9 @@ def _compute(file_path):
     line_coverage_change_df = df[line_coverage_change_mask]
 
     # Accumulate Line Coverage Change
-    all_projects_line_coverage.extend(df["LC Loss %"].dropna().tolist())  # Box Plot
+    all_projects_line_coverage.extend(
+        line_coverage_change_df["LC Loss %"].dropna().tolist()
+    )  # Box Plot
 
     # Print LC stats
     print(
@@ -148,10 +162,10 @@ def _compute(file_path):
     )
 
     passed_df["MC Before Cov %"] = round(
-        (passed_df["MC Before Killed"] / passed_df["MC Before Total"]) * 100* SCALAR, 0
+        (passed_df["MC Before Killed"] / passed_df["MC Before Total"]) * 100 * SCALAR, 0
     )
     passed_df["MC After Cov %"] = round(
-        (passed_df["MC After Killed"] / passed_df["MC After Total"]) * 100* SCALAR, 0
+        (passed_df["MC After Killed"] / passed_df["MC After Total"]) * 100 * SCALAR, 0
     )
     passed_df["MC Loss %"] = passed_df["MC Before Cov %"] - passed_df["MC After Cov %"]
     passed_df = passed_df.astype(
@@ -192,8 +206,6 @@ for project in projects_list:
 
 
 ################ Preprocess data for box plot in R ################
-
-
 def preprocess_data_for_boxplot_R():
     all_data = []
 
@@ -211,6 +223,7 @@ def preprocess_data_for_boxplot_R():
     def export_csv():
 
         all_projects_branch_coverage_data = filter_zeros(all_projects_branch_coverage)
+        bc_data = []
         for data in all_projects_branch_coverage_data:
             # Round to whole number
             data = int(math.ceil(data / SCALAR))
@@ -218,8 +231,18 @@ def preprocess_data_for_boxplot_R():
                 "BC Loss",
                 data,
             )
+            bc_data.append(data)
+
+        print(
+            "--------------------Preprocess data for box plot in R--------------------"
+        )
+        print(f"Branch Coverage:")
+        print(f"Min: {min(bc_data)}")
+        print(f"Median: {median(bc_data)}")
+        print(f"Max: {max(bc_data)}")
 
         all_projects_line_coverage_data = filter_zeros(all_projects_line_coverage)
+        lc_data = []
         for data in all_projects_line_coverage_data:
             # Round to whole number
             data = int(math.ceil(data / SCALAR))
@@ -227,12 +250,27 @@ def preprocess_data_for_boxplot_R():
                 "LC Loss",
                 data,
             )
+            lc_data.append(data)
+        print(f"Line Coverage:")
+        print(f"Min: {min(lc_data)}")
+        print(f"Median: {median(lc_data)}")
+        print(f"Max: {max(lc_data)}")
 
         all_projects_mutation_score_data = filter_zeros(all_projects_mutation_score)
+        mc_data = []
         for data in all_projects_mutation_score_data:
             # Round to 4th decimal
             data = round(data / SCALAR, 4)
             append_item("MS Loss", data)
+            mc_data.append(data)
+
+        print("Mutation Score")
+        print(f"Min: {min(mc_data)}")
+        print(f"Median: {median(mc_data)}")
+        print(f"Max: {max(mc_data)}")
+        print(
+            "--------------------Preprocess data for box plot in R--------------------"
+        )
 
         # Create the pandas DataFrame
         df = pd.DataFrame(

@@ -1,0 +1,122 @@
+,Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details,Frank Type,Suraj Type,Final Type,Resolved Final Type,Frank Deletion Remarks,Suraj Remarks,Test Run,Test Fail Reason,Test Fail Details,BC Before Covered,BC Before Total,BC Before Cov %,BC After Covered,BC After Total,BC After Cov %,LC Before Covered,LC Before Total,LC Before Cov %,LC After Covered,LC After Total,LC After Cov %,Mutation Run,MC Before Killed,MC Before Total,MC Before Cov %,MC After Killed,MC After Total,MC After Cov %,BC Loss %,LC Loss %
+0,05/17/2003 18:24:21,d6f7028269df96a72cccf7b72a41b89aaa820e9f,71dfdabde1f5e9f0def1d2035822518b43e70587,tobrien@apache.org,"Added a FixedDoubleArray.  FixedDoubleArray supports a rolling mechanism
+that reuses an array of fixed length.  This classes was added to an efficient
+rolling mechanism.
+
+FixedDoubleArray was influenced by discussions on the commons-dev list and
+patches submitted by Mark Diggory.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/jakarta/commons/proper/math/trunk@140836 13f79535-47bb-0310-9956-ffa450edef68",src/test/org/apache/commons/math/ContractableDoubleArrayTest.java,ContractableDoubleArrayTest.java,testAdd1000,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,redundant,passed,,,320,396,808081.0,320,396,808081.0,294,450,653333.0,294,450,653333.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+1,05/17/2003 18:24:21,d6f7028269df96a72cccf7b72a41b89aaa820e9f,71dfdabde1f5e9f0def1d2035822518b43e70587,tobrien@apache.org,"Added a FixedDoubleArray.  FixedDoubleArray supports a rolling mechanism
+that reuses an array of fixed length.  This classes was added to an efficient
+rolling mechanism.
+
+FixedDoubleArray was influenced by discussions on the commons-dev list and
+patches submitted by Mark Diggory.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/jakarta/commons/proper/math/trunk@140836 13f79535-47bb-0310-9956-ffa450edef68",src/test/org/apache/commons/math/ContractableDoubleArrayTest.java,ContractableDoubleArrayTest.java,testAddElementRolling,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,redundant,passed,,,320,396,808081.0,320,396,808081.0,294,450,653333.0,294,450,653333.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+2,08/02/2011 23:16:23,98556fedcce9e7e4375f994cc171d4803e6c0ee9,b42223e931116ad3e8a1b3b3451d6bb14b8af82f,psteitz@apache.org,"Fixed bugs in AbstractRandomGenerator nextInt() and nextLong() default
+implementations.  Prior to the fix for this issue, these methods
+generated only positive values.
+
+JIRA: MATH-640
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/math/trunk@1153338 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/math/random/AbstractRandomGeneratorTest.java,AbstractRandomGeneratorTest.java,testNextInt2,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the test case was not testing any feature of the product,empty test,passed,,,21336,25664,831359.0,21336,25664,831359.0,24550,27773,883952.0,24550,27773,883952.0,passed,27444,45067,60.89599929,27444,45067,60.89599929,0,0
+3,08/02/2011 23:16:23,98556fedcce9e7e4375f994cc171d4803e6c0ee9,b42223e931116ad3e8a1b3b3451d6bb14b8af82f,psteitz@apache.org,"Fixed bugs in AbstractRandomGenerator nextInt() and nextLong() default
+implementations.  Prior to the fix for this issue, these methods
+generated only positive values.
+
+JIRA: MATH-640
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/math/trunk@1153338 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/math/random/AbstractRandomGeneratorTest.java,AbstractRandomGeneratorTest.java,testNextLong2,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the test case was not testing any feature of the product,empty test,passed,,,21336,25664,831359.0,21336,25664,831359.0,24550,27773,883952.0,24550,27773,883952.0,passed,27444,45067,60.89599929,27444,45067,60.89599929,0,0
+4,02/19/2014 14:31:47,1a6879a0023a2892323221622e0d1e759613c68f,499101c88c8158844e7bbdcba35b8fe91bed8314,luc@apache.org,"Make QR in GaussNewton faster and more accurate
+
+Re-factored the code in GaussNewtonOptimizer so that the decomposition
+algorithm sees the Jacobian and residuals instead of the normal
+equation. This lets the QR algorithm operate directly on the Jacobian
+matrix, which is faster and less sensitive to numerical errors. As a
+result, one test case that threw a singular matrix exception now passes
+with the QR decomposition.
+
+The refactoring also include a speed improvement when computing the
+normal matrix for the LU decomposition. Since the normal matrix is
+symmetric only half of is computed, which results in a factor of 2 speed
+up in computing the normal matrix for problems with many more
+measurements than states.
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/math/trunk@1569905 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/math3/fitting/leastsquares/GaussNewtonOptimizerWithQRTest.java,GaussNewtonOptimizerWithQRTest.java,testMoreEstimatedParametersSimple,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,probable redundant i.e code is present,passed,,,35773,39856,897556.0,35773,39856,897556.0,39664,44284,895673.0,39664,44284,895673.0,passed,35801,61065,58.6276918,35801,61065,58.6276918,0,0
+5,02/20/2014 10:16:19,a9d0cc42fe5ef7fe35256bff4844b9f1b6d347e1,1cd5a3229c2fb9b35fa0ced635765bf59497d074,luc@apache.org,"Relaxed specification for function mapping on vectors.
+
+JIRA: MATH-821
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/math/trunk@1570254 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/math3/linear/SparseRealVectorTest.java,SparseRealVectorTest.java,testMap,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,it was not testing any feature of the product,empty test; explicitly ignored during test run,passed,,,32156,37012,868799.0,32156,37012,868799.0,39706,44262,897067.0,39706,44262,897067.0,passed,31667,56965,55.59027473,31667,56965,55.59027473,0,0
+6,02/20/2014 10:16:19,a9d0cc42fe5ef7fe35256bff4844b9f1b6d347e1,1cd5a3229c2fb9b35fa0ced635765bf59497d074,luc@apache.org,"Relaxed specification for function mapping on vectors.
+
+JIRA: MATH-821
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/proper/math/trunk@1570254 13f79535-47bb-0310-9956-ffa450edef68",src/test/java/org/apache/commons/math3/linear/SparseRealVectorTest.java,SparseRealVectorTest.java,testMapToSelf,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,,empty test; explicitly ignored during test run,passed,,,32156,37012,868799.0,32156,37012,868799.0,39706,44262,897067.0,39706,44262,897067.0,passed,31667,56965,55.59027473,31667,56965,55.59027473,0,0
+7,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureLongIAE,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+8,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureLongNegativeToPositiveRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+9,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureLongNegativeRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+10,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureLongPositiveRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+11,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureIntIAE,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+12,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureIntNegativeToPositiveRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+13,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureIntNegativeRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+14,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureIntPositiveRange,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0
+15,05/20/2016 7:07:46,7550cb46417b396fed21f2ec149b465e7d039cef,4bbe9ee5bdd1c7fb210b99ed3eee720e51a3b54f,erans@apache.org,"MATH-1366
+
+Deleted a bunch of inter-dependent classes and unit tests.
+
+All RNG algorithms previously implemented in package ""o.a.c.m.random"" are now in package ""o.a.c.m.rng.internal.source32"".
+Functionalities of ""RandomDataGenerator"" are provided by ""RandomUtils.DataGenerator"" and classes in package ""o.a.c.m.distribution"".
+Base classes ""BitsStreamGenerator"" and ""AbstractWell"" are obsolete (replaced by classes in package ""o.a.c.m.rng.internal"" and below).",src/test/java/org/apache/commons/math4/random/RandomGeneratorAbstractTest.java,RandomGeneratorAbstractTest.java,testNextSecureHex,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,empty test case,empty test,passed,,,31456,37065,848671.0,31456,37065,848671.0,39713,43636,910097.0,39713,43636,910097.0,passed,32779,57065,57.44151406,32779,57065,57.44151406,0,0

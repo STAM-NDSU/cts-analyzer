@@ -1,0 +1,84 @@
+,Datetime,Hash,Parent,Author,Commit Msg,Filepath,Filename,Removed Test Case,Referenced Functions,Deleted With Source Code,Deleted With Source Code Decision,Deleted With Whole File,Type,Type Details,Frank Type,Suraj Type,Final Type,Resolved Final Type,Frank Remarks,Suraj Remarks,Test Run,Test Fail Reason,BC Before Covered,BC Before Total,BC Before Cov %,BC After Covered,BC After Total,BC After Cov %,LC Before Covered,LC Before Total,LC Before Cov %,LC After Covered,LC After Total,LC After Cov %,Mutation Run,MC Before Killed,MC Before Total,MC Before Cov %,MC After Killed,MC After Total,MC After Cov %,BC Loss %,LC Loss %
+113,08/07/2004 6:55:14,3f62b3a3ef59f954a14f09aeee97053618da1c74,c19bfe0c328518cb9d9734e8e15c174c150b86c0,scolebourne@joda.org,"Tests and fixes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@366 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestDuration_Basics.java,TestDuration_Basics.java,testNormalize,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the test case was modified,not proper tests body i.e lacks logic assertions,passed,,4466,8156,547572.0,4466,8156,547572.0,6133,8966,684029.0,6133,8966,684029.0,failed,296,435,68.04597701,296,435,68.04597701,0,0
+114,08/21/2004 16:29:39,5f2aa4794e8094eb6b3018589c3a751f61bd2fa6,7c064bbf222d8abec91abb9a0790014ff6f06cea,scolebourne@joda.org,"Create BasePeriod
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@415 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/time/TestPeriod_Basics.java,TestPeriod_Basics.java,testNormalize,,yes,undecided,no,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file still available,,passed,,4766,8356,570369.0,4766,8356,570369.0,6381,9555,667818.0,6381,9555,667818.0,failed,301,475,63.36842105,301,475,63.36842105,0,0
+115,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testEraConstant,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,refactor,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+116,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMillisOfSecond,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+117,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMillisOfDay,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+118,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testSecondOfMinute,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+119,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testSecondOfDay,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+120,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMinuteOfHour,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+121,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMinuteOfDay,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+122,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testHourOfDay,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+123,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testClockhourOfDay,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+124,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testHourOfHalfday,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+125,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testClockhourOfHalfday,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+126,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testAmPm,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+127,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfWeek,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+128,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfMonth,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+129,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testDayOfYear,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+130,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testWeekOfYearWeek,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+131,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testMonthOfYear,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+132,08/22/2004 10:25:24,3877455129a7ee0c1c50ff3a4cf9116732a26862,6bdd176eed470329a73d7ee08498183e579cea60,scolebourne@joda.org,"Remove old test classes
+
+
+git-svn-id: https://joda-time.svn.sourceforge.net/svnroot/joda-time/trunk@433 1e1cfbb7-5c0e-0410-a2f0-f98d92ec03a1",JodaTime/src/test/org/joda/test/time/TestBuddhistChronology.java,TestBuddhistChronology.java,testLeapYear,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the source code file is still available,empty,passed,,4965,8550,580702.0,4965,8550,580702.0,7269,10336,703270.0,7269,10336,703270.0,failed,0,0,#DIV/0!,0,0,#DIV/0!,0,0
+134,07/31/2011 17:41:30,c5a5190e19c062405ae4825c36e2172ae64202fb,49558a5286c3b7eb6c85d5f26e5ae94f11f7a892,scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecExpandedC,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the code within the test case was commented out,empty test i.e commented out body,passed,,7866,10968,717177.0,7866,10968,717177.0,11863,13149,902198.0,11863,13149,902198.0,passed,9866,15968,61.78607214,9866,15968,61.78607214,0,0
+135,07/31/2011 17:41:30,c5a5190e19c062405ae4825c36e2172ae64202fb,49558a5286c3b7eb6c85d5f26e5ae94f11f7a892,scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecWeekTruncatedDWD,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the test case was not testing any feature of the product,empty test,passed,,7866,10968,717177.0,7866,10968,717177.0,11863,13149,902198.0,11863,13149,902198.0,passed,9866,15968,61.78607214,9866,15968,61.78607214,0,0
+136,07/31/2011 17:41:30,c5a5190e19c062405ae4825c36e2172ae64202fb,49558a5286c3b7eb6c85d5f26e5ae94f11f7a892,scolebourne@joda.org,Remove broken test class,src/test/java/org/joda/time/TestParseISO.java,TestParseISO.java,testSpecWeekTruncatedDW,,yes,undecided,yes,concurrent obsolete,na,not obsolete,not obsolete,not obsolete,not obsolete,the test case was not testing any feature of the product,empty test,passed,,7866,10968,717177.0,7866,10968,717177.0,11863,13149,902198.0,11863,13149,902198.0,passed,9866,15968,61.78607214,9866,15968,61.78607214,0,0
